@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "El espejo del tiempo",
+    "descripcion": "Una niña descubre un espejo que muestra su futuro… hasta que aparece alguien más atrapado en su reflejo."
+  },
+  {
+    "titulo": "La biblioteca de los sueños",
+    "descripcion": "Cada libro que se abre te transporta a una historia. Un joven cae en una novela de la que no puede salir."
+  },
+  {
+    "titulo": "La moneda del deseo inverso",
+    "descripcion": "Una moneda concede deseos... pero siempre al revés. El último deseo desata el caos."
+  },
+  {
+    "titulo": "El tren de las 3:33",
+    "descripcion": "Un tren fantasma pasa a las 3:33 AM. Una joven sube y despierta en 1925 sin forma de volver."
+  },
+  {
+    "titulo": "El bosque de los nombres olvidados",
+    "descripcion": "Cada árbol lleva el nombre de alguien que se perdió. Un chico encuentra el suyo."
+  },
+  {
+    "titulo": "El reloj que detenía la muerte",
+    "descripcion": "Un relojero crea un reloj que detiene la muerte… pero también congela lo que ama."
+  },
+  {
+    "titulo": "La sirena que cantaba al revés",
+    "descripcion": "Una sirena canta para liberar almas atrapadas, pero al cantar su nombre, se condena."
+  },
+  {
+    "titulo": "El niño sin sombra",
+    "descripcion": "Nace un niño sin sombra. Cuando aparece, no lo sigue a él… sigue a otra persona."
+  },
+  {
+    "titulo": "La ciudad que desaparece al dormir",
+    "descripcion": "Cada vez que alguien duerme, parte de la ciudad desaparece. Solo los insomnes la pueden salvar."
+  },
+  {
+    "titulo": "La carta del futuro",
+    "descripcion": "Una chica recibe una carta de sí misma fechada 30 años en el futuro con una advertencia urgente."
+  },
+  {
+    "titulo": "El mural viviente",
+    "descripcion": "Un artista pinta un mural que cobra vida por las noches y borra lo que no le gusta."
+  },
+  {
+    "titulo": "El faro del fin del mundo",
+    "descripcion": "Un faro encendido llama a criaturas que solo existen más allá del océano conocido."
+  },
+  {
+    "titulo": "El péndulo del olvido",
+    "descripcion": "Un péndulo borra recuerdos. Alguien lo usa para olvidar... pero también olvida quién es."
+  },
+  {
+    "titulo": "La lluvia que revela lo invisible",
+    "descripcion": "Cada vez que llueve, aparecen caminos, personas y puertas que no estaban antes."
+  },
+  {
+    "titulo": "La isla que cambia de lugar",
+    "descripcion": "Una isla mágica nunca está en el mismo lugar. Cada aparición trae un nuevo secreto."
+  },
+  {
+    "titulo": "El zorro que sabía hablar",
+    "descripcion": "Un zorro habla solo al atardecer. Sus palabras siempre predicen tragedias."
+  },
+  {
+    "titulo": "El circo de las realidades alternas",
+    "descripcion": "Un circo aparece solo para quienes tomaron una decisión equivocada en su vida."
+  },
+  {
+    "titulo": "La flauta del eco eterno",
+    "descripcion": "Una flauta reproduce todo lo que alguna vez se dijo cerca... incluso lo que no debía oírse."
+  },
+  {
+    "titulo": "El pez que concedía recuerdos",
+    "descripcion": "Un pez mágico no da deseos, da recuerdos de vidas que nunca viviste… o quizás sí."
+  },
+  {
+    "titulo": "La escuela bajo el lago",
+    "descripcion": "Una escuela sumergida en un lago educa a niños que desaparecieron hace décadas."
+  },
+  {
+    "titulo": "El diario que escribía solo",
+    "descripcion": "Un diario aparece con relatos que se cumplen al día siguiente, hasta que predice la muerte de su lector."
+  },
+  {
+    "titulo": "La brújula que señala a quien miente",
+    "descripcion": "Una brújula mágica no apunta al norte, apunta al mentiroso más cercano."
+  },
+  {
+    "titulo": "El huésped invisible",
+    "descripcion": "Alguien vive en tu casa sin que lo veas. Solo deja una marca: una silla movida cada mañana."
+  },
+  {
+    "titulo": "La estatua que llora de noche",
+    "descripcion": "Una estatua en la plaza llora cuando cae la noche. Sus lágrimas son saladas y humanas."
+  },
+  {
+    "titulo": "El pozo que escucha deseos",
+    "descripcion": "Un pozo concede deseos... pero cada uno cobra una memoria importante como pago."
+  },
+  {
+    "titulo": "El guardián de las llaves",
+    "descripcion": "Un anciano posee llaves para abrir puertas a otros mundos, pero cada puerta solo puede abrirse una vez."
+  },
+  {
+    "titulo": "La marioneta sin hilos",
+    "descripcion": "Una marioneta escapa de su titiritero y comienza a manipular personas reales."
+  },
+  {
+    "titulo": "La habitación número 0",
+    "descripcion": "Un hotel tiene una habitación secreta que solo aparece en sueños… y lo que pasa allí se refleja al despertar."
+  },
+  {
+    "titulo": "El retrato que envejece solo",
+    "descripcion": "Un niño pinta un retrato de sí mismo que envejece mientras él permanece joven… hasta que el retrato desaparece."
+  },
+  {
+    "titulo": "La máscara del otro yo",
+    "descripcion": "Al ponerse una máscara, una chica adopta la vida de otra versión de sí misma, más feliz, más rica… y más peligrosa."
+  },
+  {
+    "titulo": "El parque que gira en el tiempo",
+    "descripcion": "Un carrusel de feria gira más rápido de lo normal. Cada vuelta envejece 1 año al que se sube."
+  },
+  {
+    "titulo": "El cuaderno de realidades",
+    "descripcion": "Todo lo que se escribe en él se convierte en cierto, pero cada palabra cambia algo imprevisible."
+  },
+  {
+    "titulo": "La cabaña que aparece cuando estás perdido",
+    "descripcion": "Solo los verdaderamente perdidos pueden ver la cabaña. Pero entrar tiene consecuencias."
+  },
+  {
+    "titulo": "El árbol de los secretos",
+    "descripcion": "Un árbol milenario susurra los secretos de quienes se sientan bajo su sombra."
+  },
+  {
+    "titulo": "La linterna que revela el pasado",
+    "descripcion": "Al iluminar con ella, ves escenas del pasado en el lugar exacto donde sucedieron."
+  },
+  {
+    "titulo": "La brújula del corazón",
+    "descripcion": "No apunta al norte, sino a lo que más desea tu corazón. Pero a veces lo que deseas… te destruye."
+  },
+  {
+    "titulo": "La voz del viento",
+    "descripcion": "En una aldea, el viento trae voces cada noche. Un niño empieza a responder… y recibe respuestas."
+  },
+  {
+    "titulo": "El ascensor sin fondo",
+    "descripcion": "Un ascensor de un edificio abandonado no tiene piso 0… sigue bajando, y bajando, y bajando."
+  },
+  {
+    "titulo": "La montaña que te muestra tu muerte",
+    "descripcion": "Quien sube la cima de esa montaña ve cómo morirá. Solo unos pocos sobreviven para contarlo."
+  },
+  {
+    "titulo": "La cámara que roba almas",
+    "descripcion": "Una cámara antigua toma fotos perfectas… y deja al retratado en coma."
+  },
+  {
+    "titulo": "El niño que hablaba con su sombra",
+    "descripcion": "Su sombra tenía voz, voluntad, y secretos que ningún niño debería saber."
+  },
+  {
+    "titulo": "La radio del más allá",
+    "descripcion": "Una radio vieja solo sintoniza voces de personas que ya murieron."
+  },
+  {
+    "titulo": "La sonrisa que no se borra",
+    "descripcion": "Una joven recibe una sonrisa mágica… pero pronto no puede dejar de sonreír, ni siquiera cuando llora."
+  },
+  {
+    "titulo": "El vendedor de recuerdos",
+    "descripcion": "Un hombre ofrece cambiarte tus peores recuerdos por los de otra persona. Pero algunos recuerdos son peores que los tuyos."
+  },
+  {
+    "titulo": "El susurro en la biblioteca",
+    "descripcion": "Cada vez que alguien se queda solo en la biblioteca, un susurro le cuenta algo… que solo esa persona debía saber."
+  },
+  {
+    "titulo": "La caja que atrapa promesas rotas",
+    "descripcion": "Toda promesa incumplida aparece en esa caja. Cuando se llena, la caja elige a alguien para castigar."
+  },
+  {
+    "titulo": "El violinista sin rostro",
+    "descripcion": "Toca melodías que hacen llorar a todos. Nadie recuerda su cara, pero todos juran haberlo visto."
+  },
+  {
+    "titulo": "El pacto de las luciérnagas",
+    "descripcion": "Una noche, una niña sigue una luciérnaga… y termina sellando un pacto con una criatura de luz."
+  },
+  {
+    "titulo": "El pueblo que solo existe en invierno",
+    "descripcion": "Aparece cada año bajo la nieve. Sus habitantes no saben que desaparecen en primavera."
+  },
+  {
+    "titulo": "La feria de los sueños rotos",
+    "descripcion": "Solo abre una vez cada 13 años. Cada juego te enfrenta a lo que más temés haber perdido."
+  },
+  {
+    "titulo": "El mapa que cambia al mirarlo",
+    "descripcion": "Cada persona ve algo distinto en él. Algunos ven caminos, otros ven advertencias."
+  },
+  {
+    "titulo": "El huésped del segundo piso",
+    "descripcion": "Nadie alquila ese piso, pero siempre hay pasos. Cuando alguien sube, no baja."
+  },
+  {
+    "titulo": "El reflejo que no se mueve",
+    "descripcion": "Un espejo antiguo devuelve un reflejo que no te imita… pero te observa."
+  },
+  {
+    "titulo": "La canción que detiene el tiempo",
+    "descripcion": "Cuando suena, todo se congela. Pero alguien siempre se mueve igual… y se acerca."
+  },
+  {
+    "titulo": "La profecía del péndulo",
+    "descripcion": "Un péndulo ancestral da predicciones, pero cada predicción cuesta un año de tu vida."
+  },
+  {
+    "titulo": "El desfile de los ausentes",
+    "descripcion": "Una vez al año, las almas olvidadas desfilan por la ciudad. Solo los culpables pueden verlas."
+  },
+  {
+    "titulo": "La casa que se alimenta del miedo",
+    "descripcion": "Cada visitante que entra deja parte de su miedo. Y la casa crece."
+  },
+  {
+    "titulo": "El tren que llega a destinos que no existen",
+    "descripcion": "No aparece en los horarios. El destino en el cartel siempre cambia… y no existe en ningún mapa."
+  },
+  {
+    "titulo": "La noche que duró un mes",
+    "descripcion": "El sol no vuelve a salir. Algo se despierta bajo la oscuridad perpetua."
+  },
+  {
+    "titulo": "El teléfono del silencio",
+    "descripcion": "No tiene tono. Pero si contestás, alguien del otro lado sabe todo de vos."
+  },
+  {
+    "titulo": "El niño de los paraguas rojos",
+    "descripcion": "Aparece solo los días de tormenta, reparte paraguas… y desaparece justo antes del rayo."
+  },
+  {
+    "titulo": "El teatro que muestra vidas alternativas",
+    "descripcion": "Las obras muestran lo que podrías haber sido. Algunos no soportan volver."
+  },
+  {
+    "titulo": "El lápiz que dibuja realidades",
+    "descripcion": "Todo lo que se dibuja con él se vuelve real… pero desaparece al borrar el trazo original."
+  },
+  {
+    "titulo": "La habitación sin puerta",
+    "descripcion": "Una vez adentro, nadie recuerda cómo entró. Salir depende de recordar lo que más quisiste olvidar."
+  },
+  {
+    "titulo": "La voz en el pozo",
+    "descripcion": "Una voz llama desde lo profundo. Dice saber cosas que solo vos podrías saber."
+  },
+  {
+    "titulo": "El león de mármol",
+    "descripcion": "En la plaza, una estatua de león cambia de posición cada noche. Siempre se acerca más a la fuente."
+  },
+  {
+    "titulo": "La noria infinita",
+    "descripcion": "Una rueda de feria nunca detiene su giro. Quien sube, ve su vida completa en un ciclo eterno."
+  },
+  {
+    "titulo": "La lluvia de fuego azul",
+    "descripcion": "Una vez por siglo, cae una lluvia que transforma a quien toca. Nadie recuerda qué fue."
+  },
+  {
+    "titulo": "El pintor que borraba el dolor",
+    "descripcion": "Sus cuadros sanaban emociones… hasta que alguien le pidió olvidar el amor de su vida."
+  },
+  {
+    "titulo": "La caracola que grita",
+    "descripcion": "Al acercarla al oído, no se oye el mar, sino un grito ahogado que pide ayuda desde otro plano."
+  },
+  {
+    "titulo": "El reloj del último segundo",
+    "descripcion": "Marca siempre la hora exacta del fin del mundo para quien lo mira."
+  },
+  {
+    "titulo": "La ventana a la infancia",
+    "descripcion": "Una ventana muestra escenas exactas de tu niñez… incluso las que reprimiste."
+  },
+  {
+    "titulo": "El espantapájaros que se mueve",
+    "descripcion": "Solo de noche, cambia de posición. Siempre más cerca de la casa."
+  },
+  {
+    "titulo": "La fuente de las memorias",
+    "descripcion": "Al beber, recuperás un recuerdo perdido… pero olvidás otro que amabas."
+  },
+  {
+    "titulo": "El visitante del eclipse",
+    "descripcion": "Solo aparece durante eclipses solares. Te hace una pregunta. Una sola. Responder mal… cuesta caro."
+  },
+  {
+    "titulo": "La linterna que muestra lo que otros ocultan",
+    "descripcion": "Al iluminar a alguien, revela lo que esa persona intenta esconder… incluso a sí misma."
+  },
+  {
+    "titulo": "El huésped del reloj de péndulo",
+    "descripcion": "Un viejo reloj no funciona hace años, pero suena cada vez que alguien está por morir en la casa."
+  },
+  {
+    "titulo": "La muñeca que se mueve sola",
+    "descripcion": "Una niña encuentra una muñeca abandonada. Por las noches cambia de lugar… y de rostro."
+  },
+  {
+    "titulo": "El eclipse que borra identidades",
+    "descripcion": "Durante un eclipse total, algunas personas olvidan quiénes son… y otras ocupan su lugar."
+  },
+  {
+    "titulo": "La niebla que borra caminos",
+    "descripcion": "Una densa niebla cubre el pueblo y los caminos cambian. Quienes entran, nunca regresan igual."
+  },
+  {
+    "titulo": "El pacto de medianoche",
+    "descripcion": "A la medianoche exacta, podés hacer un pacto para cambiar un recuerdo. Pero otro cambiará sin aviso."
+  },
+  {
+    "titulo": "La guitarra de los suspiros",
+    "descripcion": "Cada nota robada es un suspiro humano. El músico no recuerda a quién le pertenecía cada uno."
+  },
+  {
+    "titulo": "La carta que llegó antes de ser escrita",
+    "descripcion": "Una joven recibe una carta con su letra… pero aún no la escribió. El contenido cambia cada día."
+  },
+  {
+    "titulo": "El búho de los mil ojos",
+    "descripcion": "Un búho observa desde un árbol seco. Cada ojo pertenece a un alma que no quiso ser observada."
+  },
+  {
+    "titulo": "La red social de los muertos",
+    "descripcion": "Una app permite chatear con los muertos. Solo pueden responder durante 30 segundos por noche."
+  },
+  {
+    "titulo": "El cuadro que se termina solo",
+    "descripcion": "Un artista comienza un retrato y cada mañana amanece más completo… hasta que lo ve parpadear."
+  },
+  {
+    "titulo": "La escalera infinita",
+    "descripcion": "Un edificio tiene una escalera que sube sin parar. Nadie recuerda desde cuándo sube."
+  },
+  {
+    "titulo": "El visitante de los espejos",
+    "descripcion": "Un reflejo aparece en todos los espejos de la casa, pero no es el tuyo. Se mueve solo."
+  },
+  {
+    "titulo": "El reloj sin agujas",
+    "descripcion": "No tiene manecillas, pero todos los días marca el momento exacto de una tragedia."
+  },
+  {
+    "titulo": "La estación sin trenes",
+    "descripcion": "Una estación abandonada donde cada tanto se oye llegar un tren… pero nunca se ve."
+  },
+  {
+    "titulo": "El bosque que se repliega",
+    "descripcion": "De noche, los árboles del bosque se mueven sutilmente, cerrando caminos y abriendo otros nuevos."
+  },
+  {
+    "titulo": "La historia que se escribe sola",
+    "descripcion": "Una novela aparece escrita en una máquina de escribir cada noche. Narra tu vida… con 1 día de adelanto."
+  },
+  {
+    "titulo": "El guardián de los susurros",
+    "descripcion": "Una figura encapuchada recolecta susurros de quienes mienten. Cuando tiene suficientes, vuelve."
+  },
+  {
+    "titulo": "La vidente que predice silencios",
+    "descripcion": "No predice palabras, sino silencios. Y esos son los más difíciles de evitar."
+  },
+  {
+    "titulo": "El café de los olvidados",
+    "descripcion": "Un pequeño café aparece solo para quienes fueron olvidados por todos. Allí esperan… algo."
+  },
+  {
+    "titulo": "La puerta que aparece en sueños",
+    "descripcion": "Todos sueñan con la misma puerta. Solo uno la abre… y los demás desaparecen."
+  },
+  {
+    "titulo": "El faro que apunta a lo invisible",
+    "descripcion": "Gira como cualquier faro, pero ilumina cosas que nadie más puede ver: barcos que no existen, personas que no están."
+  },
+  {
+    "titulo": "El pueblo sin relojes",
+    "descripcion": "En este pueblo, nadie usa relojes. El tiempo fluye distinto… y los forasteros envejecen en horas."
+  },
+  {
+    "titulo": "La promesa de los gatos negros",
+    "descripcion": "Si uno te sigue tres veces, debés cumplir un deseo que no es tuyo… o pagar el precio."
+  },
+  {
+    "titulo": "La última palabra",
+    "descripcion": "Una persona muere cada vez que se pronuncia esta palabra. Solo uno la conoce. Y la recuerda todas las noches."
+  }
+]

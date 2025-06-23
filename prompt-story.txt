@@ -1,0 +1,32 @@
+Quiero que generes un video corto estilo "reel" de 30 segundos, basado en la siguiente idea de historia fantasiosa:
+
+{{IDEA_STORY}}
+
+El video debe estar compuesto por tres elementos:
+
+1. `textos`: una lista ordenada de fragmentos narrativos que serán leídos en voz en off. Cada texto debe tener su duración en milisegundos (`milisegundos`) y el contenido del texto (`texto`). El total debe sumar aproximadamente 30,000 milisegundos (30 segundos).
+
+2. `imagenes`: una lista de descripciones de imágenes que se mostrarán junto al texto. Cada una debe tener una duración (`milisegundos`) y una descripción visual creativa (`descripcion`) que represente lo que se narra en ese momento.
+
+3. `audio`: el nombre de una pieza musical instrumental conocida (sin letra) que acompañe el tono de la historia. Puede ser clásica, épica, ambiental o melancólica, según lo que mejor se ajuste.
+
+El formato de salida debe ser estrictamente este JSON:
+
+```json
+{
+  "textos": [
+    {
+      "milisegundos": 4000,
+      "texto": "Ejemplo de texto narrado..."
+    },
+    ...
+  ],
+  "imagenes": [
+    {
+      "milisegundos": 4000,
+      "descripcion": "Ejemplo de imagen..."
+    },
+    ...
+  ],
+  "audio": "Nombre de la pieza musical instrumental"
+}
