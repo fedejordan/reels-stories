@@ -98,15 +98,30 @@ def generar_imagenes(imagenes, image_dir):
         except Exception as e:
             print("❌ Error generando imagen:", e)
 
+from elevenlabs.client import ElevenLabs
+
+client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
+
 def generar_audios(textos, audio_dir):
     os.makedirs(audio_dir, exist_ok=True)
     audio_files = []
     durations = []
 
+    VOICE_ID = "Rachel"  # o "Bella", "Adam", u otra voz preexistente
+
     for idx, fragmento in enumerate(textos, 1):
         texto = fragmento["texto"]
         filename = os.path.abspath(os.path.join(audio_dir, f"{idx:03}.mp3"))
-        gTTS(text=texto, lang='es').save(filename)
+
+        audio = client.generate(
+            text=texto,
+            voice=VOICE_ID,
+            model="eleven_multilingual_v2"
+        )
+
+        with open(filename, "wb") as f:
+            f.write(audio)
+
         audio_files.append(filename)
 
         audio_clip = AudioFileClip(filename)
@@ -115,6 +130,7 @@ def generar_audios(textos, audio_dir):
 
         print(f"🎙️ Fragmento {idx:03} generado ({durations[-1]:.2f}s): {texto[:40]}...")
 
+    # Concatenar todos los clips
     concat_path = os.path.join(audio_dir, "concat_list.txt")
     with open(concat_path, "w", encoding="utf-8") as f:
         for file in audio_files:
@@ -123,6 +139,7 @@ def generar_audios(textos, audio_dir):
     final_audio = os.path.join(audio_dir, "cuento_completo.mp3")
     subprocess.run(["ffmpeg", "-f", "concat", "-safe", "0", "-i", concat_path, "-c", "copy", final_audio])
     return final_audio, durations
+
 
 def download_music(query, output_path, max_duration_sec=600):
     print(f"🔍 Buscando música: {query}")
@@ -258,11 +275,34 @@ import sys
 if __name__ == "__main__":
     start_time = time.time()
 
-    if len(sys.argv) == 2:
-        # Modo reutilizar historia existente por ID
+    if len(sys.argv) >= 2:
         story_id = sys.argv[1]
+        modo = sys.argv[2] if len(sys.argv) > 2 else "video"  # default = generar video
         print(f"📂 Usando historia ya generada: {story_id}")
-        generar_video_desde_story_id(story_id)
+        story_dir = os.path.join(OUTPUT_DIR, story_id)
+        json_path = os.path.join(story_dir, "story.json")
+
+        if not os.path.exists(json_path):
+            print("❌ No se encontró story.json")
+            exit(1)
+
+        with open(json_path, "r", encoding="utf-8") as f:
+            historia_json = json.load(f)
+        textos = historia_json["textos"]
+
+        if modo == "imagenes":
+            image_dir = os.path.join(story_dir, "images")
+            generar_imagenes(historia_json["imagenes"], image_dir)
+
+        elif modo == "audios":
+            audio_dir = os.path.join(story_dir, "audios")
+            generar_audios(historia_json["textos"], audio_dir)
+
+        elif modo == "video":
+            generar_video_desde_story_id(story_id)
+
+        else:
+            print("❌ Modo no reconocido. Usá uno de: imagenes | audios | video")
     else:
         # Modo generación completa
         story_id = str(uuid.uuid4())[:8]
