@@ -14,6 +14,8 @@ import requests
 import time
 from moviepy.video.tools.subtitles import SubtitlesClip
 from moviepy.editor import TextClip
+from moviepy.video.fx.all import resize
+from elevenlabs.client import ElevenLabs
 
 # === CONFIGURACIÓN ===
 load_dotenv()
@@ -25,6 +27,7 @@ OUTPUT_DIR = "stories"
 os.environ["IMAGEMAGICK_BINARY"] = "/opt/homebrew/bin/convert"  # o el path que te dé `which convert`
 FINAL_WIDTH = 1080
 FINAL_HEIGHT = 1920
+client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 
 
 def sanitize_filename(text):
@@ -51,8 +54,14 @@ El video debe estar compuesto por tres elementos:
 
 3. `audio`: el nombre exacto de una pieza musical instrumental conocida y disponible en YouTube (sin letra). Debe ser una canción real y buscable como: "Time - Hans Zimmer", "Clair de Lune - Debussy", "Lux Aeterna - Clint Mansell". No incluyas descripciones ni efectos de sonido.
 
-Formato de salida (JSON):
-{{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"..."}}"""
+⚠️ Además, generá un campo extra llamado `contexto_visual_global`, donde describas de forma clara y unificada:
+- el **estilo gráfico común** (realismo, animación digital, acuarela, etc)
+- características de los **personajes principales** (edad, género, expresión, vestimenta)
+- ambientación general (época, lugar, iluminación, clima)
+Este campo se usará para mantener la coherencia visual en todas las imágenes.
+
+Formato de salida:
+{{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}"""
 
 def llamar_a_deepseek(prompt):
     headers = {
@@ -86,11 +95,11 @@ def guardar_historia_json(story_dir, idea, contenido_json):
         }, f, ensure_ascii=False, indent=2)
     return json_path
 
-def generar_imagenes(imagenes, image_dir):
+def generar_imagenes(imagenes, image_dir, contexto_visual_global=None):
     os.makedirs(image_dir, exist_ok=True)
     client = InferenceClient(token=HF_TOKEN)
     for idx, img in enumerate(imagenes, 1):
-        prompt = img["descripcion"]
+        prompt = f"{contexto_visual_global}. {img['descripcion']}" if contexto_visual_global else img["descripcion"]
         print(f"🖼️ Generando imagen {idx:03} → {prompt}")
         try:
             image = client.text_to_image(prompt)
@@ -98,12 +107,20 @@ def generar_imagenes(imagenes, image_dir):
         except Exception as e:
             print("❌ Error generando imagen:", e)
 
-from elevenlabs.client import ElevenLabs
 
-client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 
 def generar_audios(textos, audio_dir):
     os.makedirs(audio_dir, exist_ok=True)
+
+    # Crear un archivo de silencio de 0.5s si no existe
+    silencio_path = os.path.join(audio_dir, "silencio.mp3")
+    if not os.path.exists(silencio_path):
+        subprocess.run([
+            "ffmpeg", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
+            "-t", "0.5", "-q:a", "9", "-acodec", "libmp3lame", silencio_path
+        ])
+
+
     audio_files = []
     durations = []
 
@@ -122,6 +139,17 @@ def generar_audios(textos, audio_dir):
         with open(filename, "wb") as f:
             for chunk in audio:
                 f.write(chunk)
+        
+        # Ralentizar el audio usando FFmpeg (tempo < 1.0 para hacerlo más lento)
+        slow_filename = filename.replace(".mp3", "_slow.mp3")
+        subprocess.run([
+            "ffmpeg", "-i", filename,
+            "-filter:a", "atempo=0.9",
+            "-y", slow_filename
+        ])
+
+        # Usar la versión ralentizada
+        os.replace(slow_filename, filename)
 
         audio_files.append(filename)
 
@@ -134,12 +162,41 @@ def generar_audios(textos, audio_dir):
     # Concatenar todos los clips
     concat_path = os.path.join(audio_dir, "concat_list.txt")
     with open(concat_path, "w", encoding="utf-8") as f:
-        for file in audio_files:
-            f.write(f"file '{file}'\n")
+        for i, file in enumerate(audio_files):
+            rel_path = os.path.relpath(file, audio_dir)
+            f.write(f"file '{rel_path}'\n")
+            if i != len(audio_files) - 1:  # no agregues silencio al final
+                f.write(f"file 'silencio.mp3'\n")  # silencio está en el mismo dir
+
 
     final_audio = os.path.join(audio_dir, "cuento_completo.mp3")
-    subprocess.run(["ffmpeg", "-f", "concat", "-safe", "0", "-i", concat_path, "-c", "copy", final_audio])
+    subprocess.run([
+        "ffmpeg", "-f", "concat", "-safe", "0", "-i", "concat_list.txt",
+        "-c", "copy", "cuento_completo.mp3"
+    ], cwd=audio_dir)
     return final_audio, durations
+
+def unir_audios_fragmentados(audio_dir, num_fragmentos):
+    silencio_path = os.path.join(audio_dir, "silencio.mp3")
+    if not os.path.exists(silencio_path):
+        subprocess.run([
+            "ffmpeg", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
+            "-t", "0.5", "-q:a", "9", "-acodec", "libmp3lame", "silencio.mp3"
+        ], cwd=audio_dir)
+
+    audio_files = [f"{i:03}.mp3" for i in range(1, num_fragmentos + 1)]
+    concat_path = os.path.join(audio_dir, "concat_list.txt")
+    with open(concat_path, "w", encoding="utf-8") as f:
+        for i, filename in enumerate(audio_files):
+            f.write(f"file '{filename}'\n")
+            if i != len(audio_files) - 1:
+                f.write(f"file 'silencio.mp3'\n")
+
+    subprocess.run([
+        "ffmpeg", "-f", "concat", "-safe", "0", "-i", "concat_list.txt",
+        "-c", "copy", "cuento_completo.mp3"
+    ], cwd=audio_dir)
+    print(f"✅ Audio final generado: {os.path.join(audio_dir, 'cuento_completo.mp3')}")
 
 
 def download_music(query, output_path, max_duration_sec=600):
@@ -173,8 +230,6 @@ def download_music(query, output_path, max_duration_sec=600):
 
     print("❌ No se encontró música válida.")
     return None
-
-from moviepy.video.fx.all import resize
 
 def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, output_path):
     clips = []
@@ -293,7 +348,7 @@ if __name__ == "__main__":
 
         if modo == "imagenes":
             image_dir = os.path.join(story_dir, "images")
-            generar_imagenes(historia_json["imagenes"], image_dir)
+            generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
 
         elif modo == "audios":
             audio_dir = os.path.join(story_dir, "audios")
@@ -308,6 +363,20 @@ if __name__ == "__main__":
 
         elif modo == "video":
             generar_video_desde_story_id(story_id)
+
+        elif modo == "juntar-audios":
+            audio_dir = os.path.join(story_dir, "audios")
+            if not os.path.exists(audio_dir):
+                print("❌ No existe la carpeta de audios")
+                exit(1)
+
+            num_fragmentos = len([f for f in os.listdir(audio_dir) if f.endswith(".mp3") and not f.startswith("cuento") and not f.startswith("silencio")])
+            if num_fragmentos == 0:
+                print("❌ No se encontraron fragmentos .mp3 para unir")
+                exit(1)
+
+            unir_audios_fragmentados(audio_dir, num_fragmentos)
+
 
         else:
             print("❌ Modo no reconocido. Usá uno de: imagenes | audios | video")
@@ -325,7 +394,7 @@ if __name__ == "__main__":
         historia_json = extraer_json(llamar_a_deepseek(prompt))
         guardar_historia_json(story_dir, idea, historia_json)
 
-        generar_imagenes(historia_json["imagenes"], image_dir)
+        generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
         narracion_path, duraciones = generar_audios(historia_json["textos"], audio_dir)
         musica_path = download_music(historia_json["audio"], os.path.join(story_dir, "music"))
 
