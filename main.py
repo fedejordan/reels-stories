@@ -23,6 +23,9 @@ DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
 IDEAS_FILE = "ideas.json"
 OUTPUT_DIR = "stories"
 os.environ["IMAGEMAGICK_BINARY"] = "/opt/homebrew/bin/convert"  # o el path que te dé `which convert`
+FINAL_WIDTH = 1080
+FINAL_HEIGHT = 1920
+
 
 def sanitize_filename(text):
     return re.sub(r'[^a-zA-Z0-9_-]', '_', text).lower()
@@ -160,7 +163,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
 
     for idx, dur in enumerate(duraciones, 1):
         img_path = os.path.join(image_dir, f"{idx:03}.png")
-        base_clip = ImageClip(img_path, duration=dur).fadein(0.2).fadeout(0.2)
+        base_clip = ImageClip(img_path, duration=dur).resize(height=1920).fadein(0.2).fadeout(0.2)
 
         # Zoom aleatorio: in (acercar) o out (alejar)
         zoom_type = random.choice(["in", "out"])
@@ -171,16 +174,43 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
         texto_subtitulo = textos[idx - 1]["texto"]
 
         # Crear clip con subtítulo
+        subtitle_clip = TextClip(
+            texto_subtitulo,
+            fontsize=32,
+            font="Arial-Bold",
+            color='white',
+            method='caption',
+            size=(int(FINAL_WIDTH * 0.9), None),
+            align='center'
+        )
+
+        subtitle_w, subtitle_h = subtitle_clip.size
+
         subtitle = (
-            TextClip(texto_subtitulo, fontsize=32, font="Arial-Bold", color='white', method='caption', size=(int(base_clip.w * 0.9), None), align='center')
-            .on_color(size=(base_clip.w, None), color=(0, 0, 0), col_opacity=0.5)  # fondo negro translúcido
+            subtitle_clip
+            .on_color(size=(FINAL_WIDTH, subtitle_h), color=(0, 0, 0), col_opacity=0.5)
             .set_duration(dur)
-            .set_position(("center", base_clip.h - 100))  # alineado abajo sin cubrir el centro
+            .set_position(("center", FINAL_HEIGHT - subtitle_h - 100))  # al fondo sin salir
         )
 
 
-        # Zoom con subtítulo sobre el clip
-        animated_clip = base_clip.resize(lambda t: zoom_factor_start + (zoom_factor_end - zoom_factor_start) * (t / dur))
+
+
+        # Zoom centrado (resize + crop para evitar bordes negros)
+        zoom = lambda t: zoom_factor_start + (zoom_factor_end - zoom_factor_start) * (t / dur)
+
+        # Escalamos y centramos para mantener movimiento y relación 9:16
+        animated_clip = (
+            base_clip
+            .resize(lambda t: zoom(t))
+            .crop(
+                width=FINAL_WIDTH,
+                height=FINAL_HEIGHT,
+                x_center=base_clip.w / 2,
+                y_center=base_clip.h / 2
+            )
+        )
+
         composed = CompositeVideoClip([animated_clip, subtitle])
 
         clips.append(composed)
