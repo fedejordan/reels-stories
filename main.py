@@ -12,6 +12,8 @@ from moviepy.editor import *
 import yt_dlp
 import requests
 import time
+from moviepy.video.tools.subtitles import SubtitlesClip
+from moviepy.editor import TextClip
 
 # === CONFIGURACIÓN ===
 load_dotenv()
@@ -20,6 +22,7 @@ DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
 IDEAS_FILE = "ideas.json"
 OUTPUT_DIR = "stories"
+os.environ["IMAGEMAGICK_BINARY"] = "/opt/homebrew/bin/convert"  # o el path que te dé `which convert`
 
 def sanitize_filename(text):
     return re.sub(r'[^a-zA-Z0-9_-]', '_', text).lower()
@@ -152,7 +155,7 @@ def download_music(query, output_path, max_duration_sec=600):
 
 from moviepy.video.fx.all import resize
 
-def generar_video(imagenes, duraciones, image_dir, narracion_path, musica_path, output_path):
+def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, output_path):
     clips = []
 
     for idx, dur in enumerate(duraciones, 1):
@@ -164,8 +167,23 @@ def generar_video(imagenes, duraciones, image_dir, narracion_path, musica_path, 
         zoom_factor_start = 1.0 if zoom_type == "in" else 1.1
         zoom_factor_end = 1.1 if zoom_type == "in" else 1.0
 
+        # Texto del fragmento correspondiente
+        texto_subtitulo = textos[idx - 1]["texto"]
+
+        # Crear clip con subtítulo
+        subtitle = (
+            TextClip(texto_subtitulo, fontsize=32, font="Arial-Bold", color='white', method='caption', size=(int(base_clip.w * 0.9), None), align='center')
+            .on_color(size=(base_clip.w, None), color=(0, 0, 0), col_opacity=0.5)  # fondo negro translúcido
+            .set_duration(dur)
+            .set_position(("center", base_clip.h - 100))  # alineado abajo sin cubrir el centro
+        )
+
+
+        # Zoom con subtítulo sobre el clip
         animated_clip = base_clip.resize(lambda t: zoom_factor_start + (zoom_factor_end - zoom_factor_start) * (t / dur))
-        clips.append(animated_clip)
+        composed = CompositeVideoClip([animated_clip, subtitle])
+
+        clips.append(composed)
 
     video = concatenate_videoclips(clips, method="compose")
 
@@ -176,37 +194,70 @@ def generar_video(imagenes, duraciones, image_dir, narracion_path, musica_path, 
     video = video.set_audio(CompositeAudioClip([audio_musica, audio_narracion]))
     video.write_videofile(output_path, fps=24, codec='libx264', audio_codec='aac')
 
-
-# === EJECUCIÓN PRINCIPAL ===
-if __name__ == "__main__":
-    start_time = time.time()
-
-    # Preparar estructura de carpetas por historia
-    story_id = str(uuid.uuid4())[:8]
+def generar_video_desde_story_id(story_id):
     story_dir = os.path.join(OUTPUT_DIR, story_id)
     image_dir = os.path.join(story_dir, "images")
     audio_dir = os.path.join(story_dir, "audios")
-    os.makedirs(story_dir, exist_ok=True)
-
-    # Generar historia
-    idea = elegir_idea()
-    print(f"🧠 Generando historia para: {idea['titulo']}")
-    prompt = generar_prompt(idea)
-    historia_json = extraer_json(llamar_a_deepseek(prompt))
-    guardar_historia_json(story_dir, idea, historia_json)
-
-    # Generar imágenes, audios y música
-    generar_imagenes(historia_json["imagenes"], image_dir)
-    narracion_path, duraciones = generar_audios(historia_json["textos"], audio_dir)
-    musica_path = download_music(historia_json["audio"], os.path.join(story_dir, "music"))
-
-    if not musica_path or not os.path.exists(musica_path):
-        print("❌ No se pudo descargar música válida. Abortando.")
-        exit(1)
-
-    # Generar video final
+    musica_path = os.path.join(story_dir, "music.mp3")
+    narracion_path = os.path.join(audio_dir, "cuento_completo.mp3")
+    json_path = os.path.join(story_dir, "story.json")
     final_video_path = os.path.join(story_dir, "video.mp4")
-    generar_video(historia_json["imagenes"], duraciones, image_dir, narracion_path, musica_path, final_video_path)
 
-    print(f"\n🎬 Video final generado: {final_video_path}")
+    if not all(os.path.exists(p) for p in [image_dir, audio_dir, musica_path, narracion_path, json_path]):
+        print("❌ Faltan archivos requeridos. Verificá que estén generadas las imágenes, audio, música y JSON.")
+        return
+
+    with open(json_path, "r", encoding="utf-8") as f:
+        historia_json = json.load(f)
+
+    textos = historia_json["textos"]
+
+    # Calcular duraciones de los fragmentos ya grabados
+    duraciones = []
+    for idx in range(1, len(textos) + 1):
+        audio_clip = AudioFileClip(os.path.join(audio_dir, f"{idx:03}.mp3"))
+        duraciones.append(audio_clip.duration)
+        audio_clip.close()
+
+    generar_video(textos, duraciones, image_dir, narracion_path, musica_path, final_video_path)
+    print(f"🎞️ Video generado desde datos existentes: {final_video_path}")
+
+
+import sys
+
+if __name__ == "__main__":
+    start_time = time.time()
+
+    if len(sys.argv) == 2:
+        # Modo reutilizar historia existente por ID
+        story_id = sys.argv[1]
+        print(f"📂 Usando historia ya generada: {story_id}")
+        generar_video_desde_story_id(story_id)
+    else:
+        # Modo generación completa
+        story_id = str(uuid.uuid4())[:8]
+        story_dir = os.path.join(OUTPUT_DIR, story_id)
+        image_dir = os.path.join(story_dir, "images")
+        audio_dir = os.path.join(story_dir, "audios")
+        os.makedirs(story_dir, exist_ok=True)
+
+        idea = elegir_idea()
+        print(f"🧠 Generando historia para: {idea['titulo']}")
+        prompt = generar_prompt(idea)
+        historia_json = extraer_json(llamar_a_deepseek(prompt))
+        guardar_historia_json(story_dir, idea, historia_json)
+
+        generar_imagenes(historia_json["imagenes"], image_dir)
+        narracion_path, duraciones = generar_audios(historia_json["textos"], audio_dir)
+        musica_path = download_music(historia_json["audio"], os.path.join(story_dir, "music"))
+
+        if not musica_path or not os.path.exists(musica_path):
+            print("❌ No se pudo descargar música válida. Abortando.")
+            exit(1)
+
+        final_video_path = os.path.join(story_dir, "video.mp4")
+        generar_video(historia_json["textos"], duraciones, image_dir, narracion_path, musica_path, final_video_path)
+        print(f"\n🎬 Video final generado: {final_video_path}")
+
     print(f"⏱️ Tiempo total de ejecución: {time.time() - start_time:.2f} segundos")
+
