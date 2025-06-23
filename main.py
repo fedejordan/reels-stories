@@ -107,20 +107,21 @@ def generar_audios(textos, audio_dir):
     audio_files = []
     durations = []
 
-    VOICE_ID = "Rachel"  # o "Bella", "Adam", u otra voz preexistente
+    VOICE_ID = "80lPKtzJMPh1vjYMUgwe"  # o "Bella", "Adam", u otra voz preexistente
 
     for idx, fragmento in enumerate(textos, 1):
         texto = fragmento["texto"]
         filename = os.path.abspath(os.path.join(audio_dir, f"{idx:03}.mp3"))
 
-        audio = client.generate(
-            text=texto,
-            voice=VOICE_ID,
-            model="eleven_multilingual_v2"
+        audio = client.text_to_speech.convert(
+            voice_id=VOICE_ID,
+            model_id="eleven_multilingual_v2",
+            text=texto
         )
 
         with open(filename, "wb") as f:
-            f.write(audio)
+            for chunk in audio:
+                f.write(chunk)
 
         audio_files.append(filename)
 
@@ -297,6 +298,13 @@ if __name__ == "__main__":
         elif modo == "audios":
             audio_dir = os.path.join(story_dir, "audios")
             generar_audios(historia_json["textos"], audio_dir)
+
+        elif modo == "musica":
+            musica_path = download_music(historia_json["audio"], os.path.join(story_dir, "music"))
+            if musica_path:
+                print(f"🎵 Música descargada: {musica_path}")
+            else:
+                print("❌ No se pudo descargar música válida.")
 
         elif modo == "video":
             generar_video_desde_story_id(story_id)
