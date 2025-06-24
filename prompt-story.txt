@@ -1,32 +1,22 @@
 Quiero que generes un video corto estilo "reel" de 30 segundos, basado en la siguiente idea de historia fantasiosa:
 
-{{IDEA_STORY}}
+{idea['descripcion']}
 
 El video debe estar compuesto por tres elementos:
 
-1. `textos`: una lista ordenada de fragmentos narrativos que serán leídos en voz en off. Cada texto debe tener su duración en milisegundos (`milisegundos`) y el contenido del texto (`texto`). El total debe sumar aproximadamente 30,000 milisegundos (30 segundos).
+1. `textos`: una lista ordenada de fragmentos narrativos que serán leídos en voz en off. Cada texto debe tener su duración en milisegundos (`milisegundos`) y el contenido del texto (`texto`). La narrativa debe desarrollarse progresivamente, manteniendo una estructura clara de introducción, desarrollo y cierre.
 
-2. `imagenes`: una lista de descripciones de imágenes que se mostrarán junto al texto. Cada una debe tener una duración (`milisegundos`) y una descripción visual creativa (`descripcion`) que represente lo que se narra en ese momento.
+2. `imagenes`: una lista de descripciones visuales para acompañar cada fragmento de texto. Cada una debe tener su campo `milisegundos` (inicio) y `descripcion`. Es fundamental que TODAS las imágenes mantengan un estilo visual coherente entre sí (por ejemplo: realista, animación digital, dibujo a mano, estilo oscuro, mágico, etc.). Además, deben reflejar el mismo tono emocional y la atmósfera general de la historia (por ejemplo: tenebroso, épico, melancólico, fantástico).
 
-3. `audio`: el nombre de una pieza musical instrumental conocida (sin letra) que acompañe el tono de la historia. Puede ser clásica, épica, ambiental o melancólica, según lo que mejor se ajuste.
+    Las descripciones de imagen deben estar contextualizadas dentro del universo de la historia, reflejando personajes, lugares o transformaciones que ya se mencionaron o se intuyen.
 
-El formato de salida debe ser estrictamente este JSON:
+3. `audio`: el nombre exacto de una pieza musical instrumental conocida y disponible en YouTube (sin letra). Debe ser una canción real y buscable como: "Time - Hans Zimmer", "Clair de Lune - Debussy", "Lux Aeterna - Clint Mansell". No incluyas descripciones ni efectos de sonido.
 
-```json
-{
-  "textos": [
-    {
-      "milisegundos": 4000,
-      "texto": "Ejemplo de texto narrado..."
-    },
-    ...
-  ],
-  "imagenes": [
-    {
-      "milisegundos": 4000,
-      "descripcion": "Ejemplo de imagen..."
-    },
-    ...
-  ],
-  "audio": "Nombre de la pieza musical instrumental"
-}
+⚠️ Además, generá un campo extra llamado `contexto_visual_global`, donde describas de forma clara y unificada:
+- el **estilo gráfico común** (realismo, animación digital, acuarela, etc)
+- características de los **personajes principales** (edad, género, expresión, vestimenta)
+- ambientación general (época, lugar, iluminación, clima)
+Este campo se usará para mantener la coherencia visual en todas las imágenes.
+
+Formato de salida:
+{{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}

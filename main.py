@@ -16,18 +16,24 @@ from moviepy.video.tools.subtitles import SubtitlesClip
 from moviepy.editor import TextClip
 from moviepy.video.fx.all import resize
 from elevenlabs.client import ElevenLabs
+import traceback
+
 
 # === CONFIGURACIÓN ===
 load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
-IDEAS_FILE = "ideas.json"
+# IDEAS_FILE = "ideas.json"
+IDEAS_FILE = "real-stories.json"
 OUTPUT_DIR = "stories"
 os.environ["IMAGEMAGICK_BINARY"] = "/opt/homebrew/bin/convert"  # o el path que te dé `which convert`
 FINAL_WIDTH = 1080
 FINAL_HEIGHT = 1920
 client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
+SILENCIO_SEGUNDOS = 0.5
+MAX_REINTENTOS = 10
+
 
 
 def sanitize_filename(text):
@@ -40,28 +46,32 @@ def elegir_idea():
 
 def generar_prompt(idea):
     return f"""
-Quiero que generes un video corto estilo "reel" de 30 segundos, basado en la siguiente idea de historia fantasiosa:
+Quiero que generes un video corto estilo "reel" de 2 minutos, basado en la siguiente idea de historia fantasiosa:
 
 {idea['descripcion']}
 
-El video debe estar compuesto por tres elementos:
+El video debe tener tres elementos:
 
-1. `textos`: una lista ordenada de fragmentos narrativos que serán leídos en voz en off. Cada texto debe tener su duración en milisegundos (`milisegundos`) y el contenido del texto (`texto`). La narrativa debe desarrollarse progresivamente, manteniendo una estructura clara de introducción, desarrollo y cierre.
+1. `textos`: una lista ordenada de fragmentos narrativos para voz en off. Cada uno con duración (`milisegundos`) y contenido (`texto`). 
+   - El primer fragmento debe enganchar al espectador con intriga o sorpresa.
+   - El relato debe tener introducción, desarrollo con giro o tensión, y un cierre poderoso o emocional.
+   - La curva emocional debe estar clara.
 
-2. `imagenes`: una lista de descripciones visuales para acompañar cada fragmento de texto. Cada una debe tener su campo `milisegundos` (inicio) y `descripcion`. Es fundamental que TODAS las imágenes mantengan un estilo visual coherente entre sí (por ejemplo: realista, animación digital, dibujo a mano, estilo oscuro, mágico, etc.). Además, deben reflejar el mismo tono emocional y la atmósfera general de la historia (por ejemplo: tenebroso, épico, melancólico, fantástico).
+2. `imagenes`: una lista con descripciones visuales alineadas a cada texto, también con `milisegundos` y `descripcion`.
+   - Indicá tipo de plano (general, primer plano, detalle).
+   - Todas deben compartir un estilo visual coherente.
 
-    Las descripciones de imagen deben estar contextualizadas dentro del universo de la historia, reflejando personajes, lugares o transformaciones que ya se mencionaron o se intuyen.
+3. `audio`: nombre exacto de una pieza instrumental real (sin letra), en YouTube, que intensifique el tono de la historia.
 
-3. `audio`: el nombre exacto de una pieza musical instrumental conocida y disponible en YouTube (sin letra). Debe ser una canción real y buscable como: "Time - Hans Zimmer", "Clair de Lune - Debussy", "Lux Aeterna - Clint Mansell". No incluyas descripciones ni efectos de sonido.
-
-⚠️ Además, generá un campo extra llamado `contexto_visual_global`, donde describas de forma clara y unificada:
-- el **estilo gráfico común** (realismo, animación digital, acuarela, etc)
-- características de los **personajes principales** (edad, género, expresión, vestimenta)
-- ambientación general (época, lugar, iluminación, clima)
-Este campo se usará para mantener la coherencia visual en todas las imágenes.
+⚠️ Agregá un campo `contexto_visual_global` con detalles sobre:
+- Estética cinematográfica (tipo de película o animación que inspire el estilo)
+- Paleta de colores
+- Personajes principales (edad, ropa, apariencia)
+- Iluminación, clima y época
 
 Formato de salida:
-{{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}"""
+{{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}.
+"""
 
 def llamar_a_deepseek(prompt):
     headers = {
@@ -99,7 +109,7 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None):
     os.makedirs(image_dir, exist_ok=True)
     client = InferenceClient(token=HF_TOKEN)
     for idx, img in enumerate(imagenes, 1):
-        prompt = f"{contexto_visual_global}. {img['descripcion']}" if contexto_visual_global else img["descripcion"]
+        prompt = f"Imagen a dibujar (principal, dale mas importancia): {img['descripcion']}\n\nContexto de imagen (secundario): {contexto_visual_global}." if contexto_visual_global else img["descripcion"]
         print(f"🖼️ Generando imagen {idx:03} → {prompt}")
         try:
             image = client.text_to_image(prompt)
@@ -109,7 +119,7 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None):
 
 
 
-def generar_audios(textos, audio_dir):
+def generar_audios(textos, audio_dir, use_elevenlabs=False):
     os.makedirs(audio_dir, exist_ok=True)
 
     # Crear un archivo de silencio de 0.5s si no existe
@@ -117,7 +127,7 @@ def generar_audios(textos, audio_dir):
     if not os.path.exists(silencio_path):
         subprocess.run([
             "ffmpeg", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
-            "-t", "0.5", "-q:a", "9", "-acodec", "libmp3lame", silencio_path
+            "-t", str(SILENCIO_SEGUNDOS), "-q:a", "9", "-acodec", "libmp3lame", silencio_path
         ])
 
 
@@ -130,26 +140,28 @@ def generar_audios(textos, audio_dir):
         texto = fragmento["texto"]
         filename = os.path.abspath(os.path.join(audio_dir, f"{idx:03}.mp3"))
 
-        audio = client.text_to_speech.convert(
-            voice_id=VOICE_ID,
-            model_id="eleven_multilingual_v2",
-            text=texto
-        )
+        if use_elevenlabs:
+            VOICE_ID = "80lPKtzJMPh1vjYMUgwe"
+            audio = client.text_to_speech.convert(
+                voice_id=VOICE_ID,
+                model_id="eleven_multilingual_v2",
+                text=texto
+            )
+            with open(filename, "wb") as f:
+                for chunk in audio:
+                    f.write(chunk)
 
-        with open(filename, "wb") as f:
-            for chunk in audio:
-                f.write(chunk)
-        
-        # Ralentizar el audio usando FFmpeg (tempo < 1.0 para hacerlo más lento)
-        slow_filename = filename.replace(".mp3", "_slow.mp3")
-        subprocess.run([
-            "ffmpeg", "-i", filename,
-            "-filter:a", "atempo=0.9",
-            "-y", slow_filename
-        ])
+            # Ralentizar el audio (tempo < 1.0 = más lento)
+            # slow_filename = filename.replace(".mp3", "_slow.mp3")
+            # subprocess.run([
+            #     "ffmpeg", "-i", filename,
+            #     "-filter:a", "atempo=0.9",
+            #     "-y", slow_filename
+            # ])
+            # os.replace(slow_filename, filename)
 
-        # Usar la versión ralentizada
-        os.replace(slow_filename, filename)
+        else:
+            gTTS(text=texto, lang='es').save(filename)
 
         audio_files.append(filename)
 
@@ -181,7 +193,7 @@ def unir_audios_fragmentados(audio_dir, num_fragmentos):
     if not os.path.exists(silencio_path):
         subprocess.run([
             "ffmpeg", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono",
-            "-t", "0.5", "-q:a", "9", "-acodec", "libmp3lame", "silencio.mp3"
+            "-t", str(SILENCIO_SEGUNDOS), "-q:a", "9", "-acodec", "libmp3lame", "silencio.mp3"
         ], cwd=audio_dir)
 
     audio_files = [f"{i:03}.mp3" for i in range(1, num_fragmentos + 1)]
@@ -315,12 +327,19 @@ def generar_video_desde_story_id(story_id):
 
     textos = historia_json["textos"]
 
-    # Calcular duraciones de los fragmentos ya grabados
+    # Calcular los tiempos de entrada y duración exactos de cada fragmento
+    fragment_paths = [os.path.join(audio_dir, f"{idx:03}.mp3") for idx in range(1, len(textos) + 1)]
+
+    # Leer duraciones individuales
+    fragment_durations = [AudioFileClip(p).duration for p in fragment_paths]
+
+    # Sumamos los silencios intermedios
     duraciones = []
-    for idx in range(1, len(textos) + 1):
-        audio_clip = AudioFileClip(os.path.join(audio_dir, f"{idx:03}.mp3"))
-        duraciones.append(audio_clip.duration)
-        audio_clip.close()
+    for i, dur in enumerate(fragment_durations):
+        if i != len(fragment_durations) - 1:
+            dur += SILENCIO_SEGUNDOS
+        duraciones.append(dur)
+
 
     generar_video(textos, duraciones, image_dir, narracion_path, musica_path, final_video_path)
     print(f"🎞️ Video generado desde datos existentes: {final_video_path}")
@@ -330,6 +349,7 @@ import sys
 
 if __name__ == "__main__":
     start_time = time.time()
+    reintento = 0
 
     if len(sys.argv) >= 2:
         story_id = sys.argv[1]
@@ -381,30 +401,44 @@ if __name__ == "__main__":
         else:
             print("❌ Modo no reconocido. Usá uno de: imagenes | audios | video")
     else:
-        # Modo generación completa
-        story_id = str(uuid.uuid4())[:8]
-        story_dir = os.path.join(OUTPUT_DIR, story_id)
-        image_dir = os.path.join(story_dir, "images")
-        audio_dir = os.path.join(story_dir, "audios")
-        os.makedirs(story_dir, exist_ok=True)
+        while reintento < MAX_REINTENTOS:
+            try:
+                # Modo generación completa
+                story_id = str(uuid.uuid4())[:8]
+                story_dir = os.path.join(OUTPUT_DIR, story_id)
+                image_dir = os.path.join(story_dir, "images")
+                audio_dir = os.path.join(story_dir, "audios")
+                os.makedirs(story_dir, exist_ok=True)
 
-        idea = elegir_idea()
-        print(f"🧠 Generando historia para: {idea['titulo']}")
-        prompt = generar_prompt(idea)
-        historia_json = extraer_json(llamar_a_deepseek(prompt))
-        guardar_historia_json(story_dir, idea, historia_json)
+                idea = elegir_idea()
+                print(f"🧠 Generando historia para: {idea['titulo']}")
+                prompt = generar_prompt(idea)
+                historia_json = extraer_json(llamar_a_deepseek(prompt))
+                guardar_historia_json(story_dir, idea, historia_json)
 
-        generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
-        narracion_path, duraciones = generar_audios(historia_json["textos"], audio_dir)
-        musica_path = download_music(historia_json["audio"], os.path.join(story_dir, "music"))
+                generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
+                narracion_path, duraciones = generar_audios(historia_json["textos"], audio_dir)
+                print(f"🕒 Duración total del video (con silencios): {sum(duraciones):.2f} segundos")
+                musica_path = download_music(historia_json["audio"], os.path.join(story_dir, "music"))
 
-        if not musica_path or not os.path.exists(musica_path):
-            print("❌ No se pudo descargar música válida. Abortando.")
-            exit(1)
+                if not musica_path or not os.path.exists(musica_path):
+                    print("❌ No se pudo descargar música válida. Abortando.")
+                    exit(1)
 
-        final_video_path = os.path.join(story_dir, "video.mp4")
-        generar_video(historia_json["textos"], duraciones, image_dir, narracion_path, musica_path, final_video_path)
-        print(f"\n🎬 Video final generado: {final_video_path}")
+                final_video_path = os.path.join(story_dir, "video.mp4")
+                generar_video(historia_json["textos"], duraciones, image_dir, narracion_path, musica_path, final_video_path)
+                print(f"\n🎬 Video final generado: {final_video_path}")
+                break
+
+            except Exception as e:
+                reintento += 1
+                print(f"\n⚠️ Falló el intento {reintento} de {MAX_REINTENTOS}: {str(e)}")
+                traceback.print_exc()
+                if reintento >= MAX_REINTENTOS:
+                    print("❌ Máximo de reintentos alcanzado. Abortando.")
+                    exit(1)
+                else:
+                    print("🔄 Reintentando todo el proceso...\n")
 
     print(f"⏱️ Tiempo total de ejecución: {time.time() - start_time:.2f} segundos")
 

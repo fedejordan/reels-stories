@@ -1,0 +1,26 @@
+Quiero que generes un video corto estilo "reel" de 30 segundos, basado en la siguiente idea de historia fantasiosa:
+
+{idea['descripcion']}
+
+El video debe tener tres elementos:
+
+1. `textos`: una lista ordenada de fragmentos narrativos para voz en off. Cada uno con duración (`milisegundos`) y contenido (`texto`). 
+   - El primer fragmento debe enganchar al espectador con intriga o sorpresa.
+   - El relato debe tener introducción, desarrollo con giro o tensión, y un cierre poderoso o emocional.
+   - La curva emocional debe estar clara.
+
+2. `imagenes`: una lista con descripciones visuales alineadas a cada texto, también con `milisegundos` y `descripcion`.
+   - Indicá tipo de plano (general, primer plano, detalle).
+   - Sugerí efectos visuales si aplican (cámara lenta, zoom, luz dramática).
+   - Todas deben compartir un estilo visual coherente.
+
+3. `audio`: nombre exacto de una pieza instrumental real (sin letra), en YouTube, que intensifique el tono de la historia.
+
+⚠️ Agregá un campo `contexto_visual_global` con detalles sobre:
+- Estética cinematográfica (tipo de película o animación que inspire el estilo)
+- Paleta de colores
+- Personajes principales (edad, ropa, apariencia)
+- Iluminación, clima y época
+
+Formato de salida:
+{{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}.
