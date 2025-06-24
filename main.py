@@ -17,6 +17,9 @@ from moviepy.editor import TextClip
 from moviepy.video.fx.all import resize
 from elevenlabs.client import ElevenLabs
 import traceback
+from moviepy.video.fx import all as vfx
+from moviepy.audio.fx import all as afx
+
 
 
 # === CONFIGURACIÓN ===
@@ -33,6 +36,8 @@ FINAL_HEIGHT = 1920
 client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
+SPEED = 0.8           # mismo factor que usás en speedx
+
 
 
 
@@ -306,8 +311,19 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
     audio_musica = AudioFileClip(musica_path).volumex(0.2)
     audio_musica = audio_musica.subclip(0, min(audio_narracion.duration, audio_musica.duration))
 
-    video = video.set_audio(CompositeAudioClip([audio_musica, audio_narracion]))
-    video.write_videofile(output_path, fps=24, codec='libx264', audio_codec='aac')
+    # Combinar audio
+    audio_final = CompositeAudioClip([audio_musica, audio_narracion])
+
+    # Aplicar ralentización del 20% (velocidad 0.8x)
+    video_slow  = video.fx(vfx.speedx, SPEED).set_audio(audio_final.fx(afx.audio_speedx, SPEED))
+    # audio_slow = audio_final.fx(afx.audio_speedx, 0.8)
+
+    # Setear audio ralentizado
+    # video_slow = video_slow.set_audio(audio_slow)
+
+    # Exportar video
+    video_slow.write_videofile(output_path, fps=24, codec='libx264', audio_codec='aac')
+
 
 def generar_video_desde_story_id(story_id):
     story_dir = os.path.join(OUTPUT_DIR, story_id)
@@ -335,10 +351,10 @@ def generar_video_desde_story_id(story_id):
 
     # Sumamos los silencios intermedios
     duraciones = []
-    for i, dur in enumerate(fragment_durations):
+    for i, d in enumerate(fragment_durations):
         if i != len(fragment_durations) - 1:
-            dur += SILENCIO_SEGUNDOS
-        duraciones.append(dur)
+            d += SILENCIO_SEGUNDOS
+        duraciones.append(d)
 
 
     generar_video(textos, duraciones, image_dir, narracion_path, musica_path, final_video_path)
@@ -418,6 +434,14 @@ if __name__ == "__main__":
 
                 generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
                 narracion_path, duraciones = generar_audios(historia_json["textos"], audio_dir)
+                duraciones_corregidas = []
+                for i, d in enumerate(duraciones):
+                    if i != len(duraciones) - 1:          # silencio entre fragmentos
+                        d += SILENCIO_SEGUNDOS
+                    duraciones_corregidas.append(d)
+
+                print(f"Duracion imágenes : {sum(duraciones_corregidas):.2f}s")
+                print(f"Duracion audio solo: {AudioFileClip(narracion_path).duration:.2f}s")
                 print(f"🕒 Duración total del video (con silencios): {sum(duraciones):.2f} segundos")
                 musica_path = download_music(historia_json["audio"], os.path.join(story_dir, "music"))
 
@@ -426,7 +450,7 @@ if __name__ == "__main__":
                     exit(1)
 
                 final_video_path = os.path.join(story_dir, "video.mp4")
-                generar_video(historia_json["textos"], duraciones, image_dir, narracion_path, musica_path, final_video_path)
+                generar_video(historia_json["textos"], duraciones_corregidas, image_dir, narracion_path, musica_path, final_video_path)
                 print(f"\n🎬 Video final generado: {final_video_path}")
                 break
 
