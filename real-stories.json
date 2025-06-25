@@ -1,242 +1,403 @@
 [
   {
-    "titulo": "El experimento perdido de Tesla",
-    "descripcion": "Nikola Tesla construye un dispositivo que le permite ver futuros posibles. En uno de ellos, ve su propio nombre olvidado por la historia... y decide sabotearlo todo."
+    "titulo": "El experimento olvidado de Tesla",
+    "descripcion": "En 1898, Nikola Tesla presentó al mundo un barco controlado por radiofrecuencia. La prensa lo tomó por un truco de magia. Frustrado por la incomprensión, Tesla archivó otros inventos que podrían haber revolucionado el siglo XX… pero jamás los mostró."
   },
   {
     "titulo": "La manzana de Newton",
-    "descripcion": "Cuando Isaac Newton ve caer la manzana, algo más cae con ella: un fragmento de un universo paralelo donde la gravedad funciona al revés."
+    "descripcion": "Un día cualquiera en su jardín, Isaac Newton observa cómo cae una manzana. No fue un golpe literal, sino una chispa mental: la idea de que la misma fuerza que hace caer una fruta mantiene la Luna en órbita. Así nació la ley de gravitación universal."
   },
   {
-    "titulo": "Franklin y el relámpago eterno",
-    "descripcion": "Durante su famoso experimento con la cometa, Benjamin Franklin recibe un rayo que le permite oír pensamientos… pero solo de quienes están a punto de morir."
+    "titulo": "Franklin y el rayo que cambió la ciencia",
+    "descripcion": "Durante una tormenta en 1752, Benjamin Franklin voló una cometa con una llave de metal atada. El rayo no lo mató, pero sí confirmó algo asombroso: que el rayo era electricidad. Su experimento marcó el inicio de una nueva era científica."
   },
   {
-    "titulo": "Edison y la bombilla del alma",
-    "descripcion": "Thomas Edison inventa una bombilla que no ilumina habitaciones, sino recuerdos olvidados. Una noche, enciende uno que no es suyo."
+    "titulo": "Edison y su máquina para hablar con los muertos",
+    "descripcion": "Thomas Edison confesó estar trabajando en un dispositivo para comunicarse con espíritus. Aunque nunca se hallaron planos ni prototipos, su obsesión con registrar la voz humana dio origen al fonógrafo y a una revolución sonora imparable."
   },
   {
-    "titulo": "Napoleón y el mapa que se mueve",
-    "descripcion": "Napoleón encuentra un mapa que cambia sus fronteras en tiempo real. Pero pronto nota que el mapa también redibuja su destino."
+    "titulo": "Napoleón y la batalla perdida por el clima",
+    "descripcion": "Durante la invasión a Rusia en 1812, Napoleón sufrió la derrota más brutal de su carrera. No fue solo por el enemigo, sino por el invierno: una helada histórica que congeló a miles de soldados. El clima selló el destino del emperador más temido de Europa."
   },
   {
-    "titulo": "Alejandro y la ciudad que no existe",
-    "descripcion": "Alejandro Magno escucha rumores de una ciudad invisible a los ojos humanos. La encuentra, pero ningún soldado regresa con él."
+    "titulo": "Alejandro y el fin del mundo conocido",
+    "descripcion": "Alejandro Magno llegó hasta lo que hoy es Pakistán buscando el fin del mundo. Su ejército, agotado, se negó a seguir. En ese punto, Alejandro comprendió que no siempre se puede conquistar más… y regresó, sin saber que le quedaban pocos años de vida."
   },
   {
-    "titulo": "La carta secreta de Leonardo",
-    "descripcion": "Leonardo da Vinci escribe una carta con tinta que sólo aparece bajo la luna llena. Su mensaje revela un invento que aún no existe en el siglo XXI."
+    "titulo": "Leonardo y su cuaderno secreto",
+    "descripcion": "Entre sus cuadernos, Leonardo da Vinci dibujó una máquina voladora y una ciudad ideal con sistemas sanitarios que el mundo tardaría siglos en comprender. Muchos de sus inventos quedaron ocultos hasta siglos después, redescubiertos con asombro."
   },
   {
-    "titulo": "Darwin y el ser no evolucionado",
-    "descripcion": "En su viaje por Galápagos, Darwin encuentra una criatura que no ha cambiado en milenios… y que parece conocerlo por su nombre."
+    "titulo": "Darwin y el hallazgo en Galápagos",
+    "descripcion": "Durante su expedición en el Beagle, Darwin observó pinzones con picos distintos en cada isla. Ese pequeño detalle desencadenó la teoría de la evolución por selección natural. Lo que parecía una curiosidad, cambió para siempre cómo entendemos la vida."
   },
   {
-    "titulo": "La noche infinita de Marie Curie",
-    "descripcion": "Marie Curie trabaja en su laboratorio durante una tormenta. Cada rayo ralentiza el tiempo, hasta que se da cuenta de que la noche no termina nunca."
+    "titulo": "La noche radiante de Marie Curie",
+    "descripcion": "En su laboratorio, Marie Curie observó cómo ciertas sustancias brillaban en la oscuridad. Había descubierto la radiactividad. No sabía aún que ese brillo hermoso traía un peligro invisible. Su dedicación la llevó a dos premios Nobel… y a una muerte precoz."
   },
   {
-    "titulo": "El reloj de Einstein",
-    "descripcion": "Einstein recibe un reloj de bolsillo como obsequio. Cada vez que lo abre, vive el mismo día… pero en otra línea temporal donde no es físico, sino poeta."
+    "titulo": "El reloj de bolsillo de Einstein",
+    "descripcion": "Einstein solía llevar un reloj mientras caminaba por Berna. Su obsesión con el tiempo y los trenes suizos lo llevó a formular la teoría de la relatividad. Aquel reloj no viajaba en el tiempo, pero su dueño cambió para siempre cómo lo medimos."
   },
   {
-    "titulo": "Leon Trotsky y un objeto",
-    "descripcion": "Leon Trotsky descubre un objeto que cambia el pasado, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Leon Trotsky y su legado",
+    "descripcion": "Durante su exilio en México, Trotsky escribió incansablemente sobre la Revolución Rusa. Sus ideas seguían generando temor en el Kremlin. En 1940, fue asesinado por un agente estalinista. Su muerte no borró su influencia, que perdura en la historia del marxismo."
   },
   {
-    "titulo": "Marie Antoinette y una brújula",
-    "descripcion": "Marie Antoinette descubre una brújula que señala a quien más te necesita, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Marie Antoinette y su legado",
+    "descripcion": "Reina en una Francia al borde del colapso, Marie Antoinette fue símbolo de lujo mientras el pueblo pasaba hambre. Su famosa frase nunca dicha —\"que coman pasteles\"— selló su destino. Fue ejecutada en 1793 en medio de la Revolución Francesa."
   },
   {
-    "titulo": "Ada Lovelace y un espejo",
-    "descripcion": "Ada Lovelace descubre un espejo que muestra realidades alternas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Ada Lovelace y su legado",
+    "descripcion": "En el siglo XIX, Ada Lovelace escribió el primer algoritmo para una máquina que no existía: el motor analítico de Babbage. Fue la primera programadora de la historia, en una época donde las mujeres no participaban en la ciencia."
   },
   {
-    "titulo": "Oppenheimer y un objeto",
-    "descripcion": "Oppenheimer descubre un objeto que cambia el pasado, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "J. Robert Oppenheimer y su legado",
+    "descripcion": "Líder del Proyecto Manhattan, Oppenheimer presenció la primera explosión nuclear en 1945. Citó a Bhagavad Gita: 'Me he convertido en la muerte, el destructor de mundos'. Años después, se volvió crítico del uso de armas nucleares."
   },
   {
-    "titulo": "Nelson Mandela y un objeto",
-    "descripcion": "Nelson Mandela descubre un objeto que cambia el pasado, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Nelson Mandela y su legado",
+    "descripcion": "Tras 27 años en prisión por luchar contra el apartheid, Mandela salió libre en 1990 y se convirtió en presidente de Sudáfrica. Su liderazgo pacífico evitó una guerra civil y marcó un hito en la historia de los derechos humanos."
   },
   {
-    "titulo": "Buda y una brújula",
-    "descripcion": "Buda descubre una brújula que señala a quien más te necesita, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Buda y su legado",
+    "descripcion": "Siddhartha Gautama abandonó su vida de lujo al ver el sufrimiento humano. A través de la meditación profunda, alcanzó la iluminación. Su mensaje de compasión y desapego sentó las bases del budismo, que millones siguen practicando."
   },
   {
-    "titulo": "Aristóteles y un manuscrito",
-    "descripcion": "Aristóteles descubre un manuscrito que escribe solo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Aristóteles y su legado",
+    "descripcion": "Filósofo griego que enseñó a Alejandro Magno y escribió sobre lógica, ética, política y biología. Sus ideas dominaron el pensamiento occidental durante siglos y siguen influyendo en la ciencia y la filosofía moderna."
   },
   {
-    "titulo": "Amelia Earhart y un manuscrito",
-    "descripcion": "Amelia Earhart descubre un manuscrito que escribe solo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Amelia Earhart y su legado",
+    "descripcion": "Primera mujer en cruzar el Atlántico en solitario, Earhart fue pionera de la aviación. En 1937 desapareció intentando dar la vuelta al mundo. Su historia sigue inspirando a quienes rompen barreras."
   },
   {
-    "titulo": "Grace Hopper y una carta",
-    "descripcion": "Grace Hopper descubre una carta enviada desde el futuro, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Grace Hopper y su legado",
+    "descripcion": "Almirante y pionera de la computación, Hopper creó el primer compilador y popularizó el término 'bug'. Su trabajo sentó las bases de los lenguajes de programación modernos."
   },
   {
-    "titulo": "Beatrix Potter y una criatura",
-    "descripcion": "Beatrix Potter descubre una criatura mitológica que ofrece sabiduría a cambio de recuerdos, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Beatrix Potter y su legado",
+    "descripcion": "Autora de cuentos infantiles y amante de la naturaleza, Potter fue también una científica autodidacta. Su trabajo con hongos fue rechazado por ser mujer, pero hoy es reconocido por su precisión."
   },
   {
-    "titulo": "Beatrix Potter y una criatura",
-    "descripcion": "Beatrix Potter descubre una criatura mitológica que ofrece sabiduría a cambio de recuerdos, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Theodore Roosevelt y su legado",
+    "descripcion": "En 1901, Roosevelt asumió la presidencia tras el asesinato de McKinley. Reformista, amante de la naturaleza y figura clave en la creación de parques nacionales, transformó la política estadounidense con su energía imparable."
   },
   {
-    "titulo": "Aristóteles y un eclipse",
-    "descripcion": "Aristóteles descubre un eclipse que revela verdades ocultas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Jane Austen y su legado",
+    "descripcion": "Austen escribió sobre el amor, la clase y la inteligencia femenina en una Inglaterra rígida. Aunque su obra pasó casi desapercibida en vida, hoy es una de las autoras más leídas de la historia."
   },
   {
-    "titulo": "Jane Austen y un reloj",
-    "descripcion": "Jane Austen descubre un reloj que reinicia el tiempo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Isaac Asimov y su legado",
+    "descripcion": "Asimov revolucionó la ciencia ficción con su saga de la Fundación y las leyes de la robótica. También escribió más de 500 libros de divulgación científica, haciendo accesible el conocimiento a millones."
   },
   {
-    "titulo": "Hipatia de Alejandría y un objeto",
-    "descripcion": "Hipatia de Alejandría descubre un objeto que cambia el pasado, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Albert Einstein y su legado",
+    "descripcion": "Einstein transformó la física moderna con su teoría de la relatividad. Su fórmula E=mc² no solo cambió la ciencia: ayudó a comprender el universo y marcó el siglo XX."
   },
   {
-    "titulo": "Theodore Roosevelt y un eclipse",
-    "descripcion": "Theodore Roosevelt descubre un eclipse que revela verdades ocultas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Hipatia de Alejandría y su legado",
+    "descripcion": "Filósofa, matemática y astrónoma del siglo IV, Hipatia fue asesinada por su pensamiento libre en una época de fanatismo. Su vida representa el valor del conocimiento frente a la intolerancia."
   },
   {
-    "titulo": "Sócrates y una criatura",
-    "descripcion": "Sócrates descubre una criatura mitológica que ofrece sabiduría a cambio de recuerdos, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Malala Yousafzai y su legado",
+    "descripcion": "A los 15 años, Malala fue atacada por defender el derecho de las niñas a la educación en Pakistán. Sobrevivió y se convirtió en la ganadora del Nobel de la Paz más joven de la historia."
   },
   {
-    "titulo": "Isaac Asimov y un eclipse",
-    "descripcion": "Isaac Asimov descubre un eclipse que revela verdades ocultas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Karl Marx y su legado",
+    "descripcion": "En 1848, Marx y Engels publicaron el 'Manifiesto Comunista'. Su análisis del capitalismo marcó la política global durante más de un siglo y sigue generando debates encendidos."
   },
   {
-    "titulo": "Julio César y un instrumento",
-    "descripcion": "Julio César descubre un instrumento que invoca memorias de otras vidas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Rosa Parks y su legado",
+    "descripcion": "En 1955, Rosa Parks se negó a ceder su asiento a un blanco en un autobús segregado. Su acto de desobediencia inspiró el movimiento por los derechos civiles en Estados Unidos."
   },
   {
-    "titulo": "Aristóteles y un espejo",
-    "descripcion": "Aristóteles descubre un espejo que muestra realidades alternas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Martin Luther King Jr. y su legado",
+    "descripcion": "Con su discurso 'I Have a Dream', King movilizó a millones en busca de igualdad racial. Su lucha pacífica dejó una huella imborrable en la historia de los derechos humanos."
   },
   {
-    "titulo": "Emily Dickinson y un reloj",
-    "descripcion": "Emily Dickinson descubre un reloj que reinicia el tiempo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Sigmund Freud y su legado",
+    "descripcion": "Freud propuso que la mente humana está gobernada por fuerzas inconscientes. Aunque polémicas, sus ideas fundaron el psicoanálisis y cambiaron la forma en que entendemos la conducta humana."
   },
   {
-    "titulo": "Amelia Earhart y un retrato",
-    "descripcion": "Amelia Earhart descubre un retrato que envejece en lugar del dueño, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Ludwig van Beethoven y su legado",
+    "descripcion": "A pesar de quedarse sordo, Beethoven compuso algunas de las obras más poderosas de la historia. Su Novena Sinfonía es un himno universal a la humanidad."
   },
   {
-    "titulo": "Sigmund Freud y un objeto",
-    "descripcion": "Sigmund Freud descubre un objeto que cambia el pasado, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Cleopatra y su legado",
+    "descripcion": "Cleopatra gobernó Egipto con astucia en un mundo dominado por hombres. Políglota, estratega y aliada de Julio César y Marco Antonio, su figura sigue fascinando dos mil años después."
   },
   {
-    "titulo": "Oscar Wilde y una brújula",
-    "descripcion": "Oscar Wilde descubre una brújula que señala a quien más te necesita, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Oscar Wilde y su legado",
+    "descripcion": "Con obras como 'El retrato de Dorian Gray', Wilde desafió la moral victoriana. Fue encarcelado por su orientación sexual, pero su ingenio y valentía lo volvieron inmortal."
   },
   {
-    "titulo": "Johann Sebastian Bach y un objeto",
-    "descripcion": "Johann Sebastian Bach descubre un objeto que cambia el pasado, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Florence Nightingale y su legado",
+    "descripcion": "Revolucionó la enfermería durante la Guerra de Crimea, reduciendo drásticamente la mortalidad. Su enfoque científico cambió la medicina moderna para siempre."
   },
   {
-    "titulo": "Beatrix Potter y una ciudad",
-    "descripcion": "Beatrix Potter descubre una ciudad oculta en otra dimensión, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Johannes Gutenberg y su legado",
+    "descripcion": "Inventó la imprenta de tipos móviles en el siglo XV. Su creación democratizó el conocimiento y dio origen a la revolución cultural más grande desde la escritura."
   },
   {
-    "titulo": "Cleopatra y una brújula",
-    "descripcion": "Cleopatra descubre una brújula que señala a quien más te necesita, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Charles Darwin y su legado",
+    "descripcion": "Tras su viaje en el Beagle, Darwin formuló la teoría de la evolución por selección natural. Su obra 'El origen de las especies' cambió para siempre nuestra visión del mundo."
   },
   {
-    "titulo": "Rosa Parks y un objeto",
-    "descripcion": "Rosa Parks descubre un objeto que cambia el pasado, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Charles Dickens y su legado",
+    "descripcion": "Desde Oliver Twist hasta Grandes Esperanzas, Dickens denunció la injusticia social en la Inglaterra victoriana. Su obra ayudó a formar conciencia sobre la pobreza infantil."
   },
   {
-    "titulo": "Cleopatra y una brújula",
-    "descripcion": "Cleopatra descubre una brújula que señala a quien más te necesita, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Emily Dickinson y su legado",
+    "descripcion": "Poeta reclusa, Dickinson escribió más de 1.800 poemas que desafiaban las reglas de su tiempo. Su voz, tímida en vida, se convirtió en una de las más poderosas de la literatura estadounidense."
   },
   {
-    "titulo": "Malala Yousafzai y una criatura",
-    "descripcion": "Malala Yousafzai descubre una criatura mitológica que ofrece sabiduría a cambio de recuerdos, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Che Guevara y su legado",
+    "descripcion": "Médico argentino y guerrillero revolucionario, Guevara se convirtió en ícono global de la rebeldía. Su figura genera admiración y controversia en igual medida."
   },
   {
-    "titulo": "Confucio y un eclipse",
-    "descripcion": "Confucio descubre un eclipse que revela verdades ocultas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Sócrates y su legado",
+    "descripcion": "Sócrates no dejó escritos, pero sus preguntas moldearon la filosofía occidental. Condenado a muerte por sus ideas, prefirió el veneno antes que traicionar su pensamiento."
   },
   {
-    "titulo": "Beatrix Potter y una carta",
-    "descripcion": "Beatrix Potter descubre una carta enviada desde el futuro, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Platón y su legado",
+    "descripcion": "Discípulo de Sócrates y maestro de Aristóteles, Platón fundó la Academia de Atenas y desarrolló teorías sobre el alma, el conocimiento y la justicia que siguen siendo estudiadas hoy."
   },
   {
-    "titulo": "Abraham Lincoln y un espejo",
-    "descripcion": "Abraham Lincoln descubre un espejo que muestra realidades alternas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Julio César y su legado",
+    "descripcion": "Militar brillante y político astuto, César transformó la República Romana en una dictadura de facto. Su asesinato marcó el inicio del Imperio Romano y un punto de inflexión en la historia de Occidente."
   },
   {
-    "titulo": "Charles Dickens y un objeto",
-    "descripcion": "Charles Dickens descubre un objeto que cambia el pasado, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Abraham Lincoln y su legado",
+    "descripcion": "Decidido a preservar la Unión y abolir la esclavitud, Lincoln lideró EE.UU. durante su guerra más sangrienta. Su asesinato dejó inconcluso un sueño de reconciliación."
   },
   {
-    "titulo": "Ada Lovelace y un retrato",
-    "descripcion": "Ada Lovelace descubre un retrato que envejece en lugar del dueño, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Alan Turing y su legado",
+    "descripcion": "Turing descifró el código Enigma nazi y acortó la Segunda Guerra Mundial. Fue perseguido por su homosexualidad y murió joven, pero hoy es reconocido como padre de la informática moderna."
   },
   {
-    "titulo": "Jane Austen y un reloj",
-    "descripcion": "Jane Austen descubre un reloj que reinicia el tiempo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Isaac Newton y su legado",
+    "descripcion": "Descubrió las leyes del movimiento y la gravitación universal, sentando las bases de la física moderna. Su obra 'Principia' cambió nuestra visión del universo para siempre."
   },
   {
-    "titulo": "Alan Turing y un instrumento",
-    "descripcion": "Alan Turing descubre un instrumento que invoca memorias de otras vidas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Nikola Tesla y su legado",
+    "descripcion": "Inventor de mente brillante, Tesla contribuyó al desarrollo de la corriente alterna, la radio y más. Murió solo y olvidado, pero hoy es considerado un genio adelantado a su tiempo."
   },
   {
-    "titulo": "Leon Trotsky y un retrato",
-    "descripcion": "Leon Trotsky descubre un retrato que envejece en lugar del dueño, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Thomas Edison y su legado",
+    "descripcion": "Con más de mil patentes, Edison perfeccionó la bombilla eléctrica, el fonógrafo y el cine. Fue tanto inventor como empresario, y su legado define la era moderna."
   },
   {
-    "titulo": "Aristóteles y una criatura",
-    "descripcion": "Aristóteles descubre una criatura mitológica que ofrece sabiduría a cambio de recuerdos, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Johann Sebastian Bach y su legado",
+    "descripcion": "Maestro del contrapunto y compositor prolífico, Bach dejó obras que aún emocionan por su precisión matemática y su profunda espiritualidad. Su música es eterna."
   },
   {
-    "titulo": "Florence Nightingale y una brújula",
-    "descripcion": "Florence Nightingale descubre una brújula que señala a quien más te necesita, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Confucio y su legado",
+    "descripcion": "Filósofo chino que predicó la ética, la educación y el respeto por los mayores. Sus enseñanzas moldearon la cultura de Asia oriental durante más de dos milenios."
   },
   {
-    "titulo": "Johannes Gutenberg y un manuscrito",
-    "descripcion": "Johannes Gutenberg descubre un manuscrito que escribe solo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Beethoven y su lucha contra el silencio",
+    "descripcion": "A pesar de perder la audición, Beethoven compuso algunas de las piezas más emotivas de la historia. Su Novena Sinfonía es símbolo universal de libertad y hermandad."
   },
   {
-    "titulo": "Ludwig van Beethoven y un manuscrito",
-    "descripcion": "Ludwig van Beethoven descubre un manuscrito que escribe solo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Winston Churchill y su legado",
+    "descripcion": "Con su oratoria firme, Churchill lideró al Reino Unido durante la Segunda Guerra Mundial. Su temple ante el nazismo lo convirtió en uno de los grandes estadistas del siglo XX."
   },
   {
-    "titulo": "Sigmund Freud y un manuscrito",
-    "descripcion": "Sigmund Freud descubre un manuscrito que escribe solo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Leonardo da Vinci y su legado",
+    "descripcion": "Artista e inventor renacentista, Da Vinci dejó planos de máquinas voladoras y estudios anatómicos asombrosos. Fue un genio polifacético que encarnó la unión entre arte y ciencia."
   },
   {
-    "titulo": "Theodore Roosevelt y una criatura",
-    "descripcion": "Theodore Roosevelt descubre una criatura mitológica que ofrece sabiduría a cambio de recuerdos, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Galileo Galilei y su legado",
+    "descripcion": "Observó los cielos con su telescopio y defendió que la Tierra gira alrededor del Sol. Fue condenado por la Inquisición, pero su método científico cambió el mundo."
   },
   {
-    "titulo": "Platón y un reloj",
-    "descripcion": "Platón descubre un reloj que reinicia el tiempo, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Marie Curie y su legado",
+    "descripcion": "Descubrió el radio y el polonio, y fue la primera persona en ganar dos premios Nobel en distintas disciplinas. Su trabajo pionero en radiactividad abrió nuevos caminos para la medicina."
   },
   {
-    "titulo": "Martin Luther King Jr. y una criatura",
-    "descripcion": "Martin Luther King Jr. descubre una criatura mitológica que ofrece sabiduría a cambio de recuerdos, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Pablo Picasso y su legado",
+    "descripcion": "Revolucionó el arte del siglo XX con el cubismo. Con obras como 'Guernica', Picasso mostró que el arte puede ser tanto bello como brutalmente político."
   },
   {
-    "titulo": "Johann Sebastian Bach y un espejo",
-    "descripcion": "Johann Sebastian Bach descubre un espejo que muestra realidades alternas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Simón Bolívar y su legado",
+    "descripcion": "Lideró la independencia de varios países sudamericanos. Soñó con una América Latina unida, y aunque no lo logró, sigue siendo símbolo de libertad y lucha."
   },
   {
-    "titulo": "Karl Marx y un espejo",
-    "descripcion": "Karl Marx descubre un espejo que muestra realidades alternas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Stephen Hawking y su legado",
+    "descripcion": "A pesar de su enfermedad degenerativa, exploró los misterios del tiempo y los agujeros negros. Su libro 'Breve historia del tiempo' acercó el cosmos al público general."
   },
   {
-    "titulo": "Che Guevara y un espejo",
-    "descripcion": "Che Guevara descubre un espejo que muestra realidades alternas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Teresa de Calcuta y su legado",
+    "descripcion": "Dedicó su vida a cuidar enfermos y pobres en India. Fundó las Misioneras de la Caridad y ganó el Nobel de la Paz. Su labor humanitaria conmovió al mundo."
   },
   {
-    "titulo": "Jane Austen y un instrumento",
-    "descripcion": "Jane Austen descubre un instrumento que invoca memorias de otras vidas, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Nelson Mandela y el poder del perdón",
+    "descripcion": "Tras décadas en prisión, Mandela no buscó venganza. Apostó por la reconciliación, guiando a Sudáfrica hacia una transición pacífica. Su mensaje aún resuena."
   },
   {
-    "titulo": "Sócrates y un retrato",
-    "descripcion": "Sócrates descubre un retrato que envejece en lugar del dueño, lo que desencadena una cadena de eventos que podría cambiar el curso de la historia humana."
+    "titulo": "Virginia Woolf y su legado",
+    "descripcion": "Pionera del monólogo interior, Woolf rompió moldes literarios y sociales. Su obra y su vida abrieron caminos para el feminismo y la narrativa moderna."
+  },
+  {
+    "titulo": "Frida Kahlo y su legado",
+    "descripcion": "A través de su arte crudo y simbólico, Frida Kahlo expresó su dolor físico y emocional. Su vida marcada por el sufrimiento se convirtió en un emblema de resiliencia y libertad creativa."
+  },
+  {
+    "titulo": "Harriet Tubman y su legado",
+    "descripcion": "Escapó de la esclavitud y luego arriesgó su vida para liberar a otros. Tubman guió a más de 70 esclavos hacia la libertad a través del Ferrocarril Subterráneo, convirtiéndose en heroína de los derechos humanos."
+  },
+  {
+    "titulo": "Simone de Beauvoir y su legado",
+    "descripcion": "Con 'El segundo sexo', Beauvoir desnudó la construcción social del rol femenino. Su obra fue clave para el feminismo del siglo XX y sigue siendo un texto fundamental para la igualdad."
+  },
+  {
+    "titulo": "Galeno y su legado",
+    "descripcion": "Médico romano cuyas teorías dominaron la medicina durante más de mil años. Aunque muchas fueron superadas, su método observacional sentó bases para la anatomía y fisiología."
+  },
+  {
+    "titulo": "Baruch Spinoza y su legado",
+    "descripcion": "Filósofo excomulgado por sus ideas radicales sobre Dios y la naturaleza. Spinoza anticipó conceptos clave del pensamiento moderno, como la libertad de pensamiento y el racionalismo."
+  },
+  {
+    "titulo": "Desmond Tutu y su legado",
+    "descripcion": "Arzobispo sudafricano que luchó contra el apartheid con palabras, no armas. Defendió la verdad y la reconciliación, dejando un mensaje de paz duradero."
+  },
+  {
+    "titulo": "Haruki Murakami y su legado",
+    "descripcion": "Con un estilo único que fusiona realismo y surrealismo, Murakami transformó la literatura contemporánea. Sus obras exploran la soledad, el tiempo y la identidad en el mundo moderno."
+  },
+  {
+    "titulo": "Rachel Carson y su legado",
+    "descripcion": "Con su libro 'Primavera silenciosa', denunció los efectos del DDT y provocó el nacimiento del movimiento ecologista moderno. Carson cambió para siempre la relación entre ciencia y conciencia."
+  },
+  {
+    "titulo": "Alexander Fleming y su legado",
+    "descripcion": "Descubrió accidentalmente la penicilina en 1928. Su hallazgo salvó millones de vidas y dio inicio a la era de los antibióticos, transformando la medicina moderna."
+  },
+  {
+    "titulo": "Antonio Gramsci y su legado",
+    "descripcion": "Filósofo y político italiano, escribió desde la cárcel sus 'Cuadernos de la prisión', donde reflexionó sobre cultura, hegemonía y poder. Sus ideas siguen siendo estudiadas en todo el mundo."
+  },
+  {
+    "titulo": "Helen Keller y su legado",
+    "descripcion": "Quedó sorda y ciega a los 19 meses, pero aprendió a comunicarse gracias a su maestra Anne Sullivan. Keller se convirtió en escritora, oradora y símbolo de superación personal."
+  },
+  {
+    "titulo": "Malcolm X y su legado",
+    "descripcion": "Activista afroamericano que exigió igualdad 'por cualquier medio necesario'. Su visión radical y su trágico asesinato lo convirtieron en ícono de la lucha contra el racismo en EE.UU."
+  },
+  {
+    "titulo": "Ada Yonath y su legado",
+    "descripcion": "Científica israelí que estudió la estructura de los ribosomas, esenciales para la vida. Ganó el Nobel de Química en 2009, abriendo caminos en la biología estructural."
+  },
+  {
+    "titulo": "Greta Thunberg y su legado",
+    "descripcion": "Con apenas 15 años, inició una huelga escolar por el clima. En poco tiempo, se convirtió en líder global del activismo ambiental, exigiendo acción urgente contra el cambio climático."
+  },
+  {
+    "titulo": "Andrei Sájarov y su legado",
+    "descripcion": "Físico soviético y padre de la bomba de hidrógeno rusa, Sájarov se convirtió en disidente y defensor de los derechos humanos, ganando el Nobel de la Paz en 1975."
+  },
+  {
+    "titulo": "Jean-Jacques Rousseau y su legado",
+    "descripcion": "Filósofo clave de la Ilustración, defendió la libertad, la igualdad y la educación. Su idea del 'contrato social' influenció la Revolución Francesa y la democracia moderna."
+  },
+  {
+    "titulo": "James Baldwin y su legado",
+    "descripcion": "Escritor y activista afroamericano que narró con brillantez la experiencia racial en EE.UU. Su obra sigue desafiando prejuicios y reclamando humanidad."
+  },
+  {
+    "titulo": "René Descartes y su legado",
+    "descripcion": "Filósofo francés que propuso el racionalismo moderno con su célebre frase 'Pienso, luego existo'. Su método influenció la ciencia y la filosofía por siglos."
+  },
+  {
+    "titulo": "Ayn Rand y su legado",
+    "descripcion": "Autora de 'La rebelión de Atlas', defendió el individualismo radical y el capitalismo. Su filosofía objetivista ha sido influyente y polémica por igual."
+  },
+  {
+    "titulo": "Carl Sagan y su legado",
+    "descripcion": "Astrónomo y divulgador que acercó el universo al público con su serie 'Cosmos'. Defensor del pensamiento crítico, dejó un mensaje claro: somos polvo de estrellas, con capacidad de asombro."
+  },
+  {
+    "titulo": "Clara Campoamor y su legado",
+    "descripcion": "En plena Segunda República Española, Clara Campoamor defendió con firmeza el derecho al voto femenino. Gracias a su lucha, las mujeres españolas votaron por primera vez en 1933."
+  },
+  {
+    "titulo": "Stephen Jay Gould y su legado",
+    "descripcion": "Biólogo y divulgador, Gould propuso la teoría del equilibrio puntuado y desafió la visión lineal de la evolución. Convirtió la ciencia en relato comprensible y apasionante."
+  },
+  {
+    "titulo": "Bertrand Russell y su legado",
+    "descripcion": "Filósofo, matemático y pacifista, Russell luchó contra la guerra, el dogma y la irracionalidad. Su claridad lógica y su valentía política dejaron una huella profunda en el siglo XX."
+  },
+  {
+    "titulo": "Mary Shelley y su legado",
+    "descripcion": "A los 18 años escribió 'Frankenstein', obra fundacional de la ciencia ficción. Su historia no solo hablaba de monstruos, sino de responsabilidad científica y humana."
+  },
+  {
+    "titulo": "Rachel Maddow y su legado",
+    "descripcion": "Primera presentadora abiertamente homosexual en la televisión estadounidense de horario central. Su periodismo incisivo y documentado ha marcado la agenda pública."
+  },
+  {
+    "titulo": "Neil Armstrong y su legado",
+    "descripcion": "El 20 de julio de 1969 se convirtió en el primer ser humano en pisar la Luna. Su frase 'un pequeño paso para un hombre…' quedó grabada en la historia de la humanidad."
+  },
+  {
+    "titulo": "Rosalind Franklin y su legado",
+    "descripcion": "Su trabajo con rayos X fue clave para descubrir la estructura del ADN. Aunque no fue reconocida en vida, hoy es un símbolo de la lucha por la igualdad en la ciencia."
+  },
+  {
+    "titulo": "Margaret Mead y su legado",
+    "descripcion": "Antropóloga que desafió los estereotipos de género y cultura. Sus estudios en Oceanía revolucionaron la forma en que entendemos la adolescencia, la familia y la sociedad."
+  },
+  {
+    "titulo": "Angela Davis y su legado",
+    "descripcion": "Filósofa, activista y referente de los derechos civiles. Enfrentó la cárcel por sus ideas y hoy es símbolo de resistencia contra el racismo y el sistema penitenciario."
+  },
+  {
+    "titulo": "Jacques Cousteau y su legado",
+    "descripcion": "Explorador del océano y pionero del documental ambiental, Cousteau mostró al mundo las maravillas submarinas y advirtió sobre la fragilidad del planeta azul."
+  },
+  {
+    "titulo": "Noam Chomsky y su legado",
+    "descripcion": "Lingüista que revolucionó su disciplina con la gramática generativa. También es uno de los intelectuales más críticos de la política exterior de EE.UU. y los medios de comunicación."
+  },
+  {
+    "titulo": "Jane Goodall y su legado",
+    "descripcion": "Primatóloga que vivió entre chimpancés en África. Sus observaciones transformaron la biología y demostraron la cercanía emocional y social entre humanos y animales."
+  },
+  {
+    "titulo": "José de San Martín y su legado",
+    "descripcion": "Libertador de Argentina, Chile y Perú, San Martín cruzó los Andes con un ejército casi imposible. Su estrategia y renuncia al poder lo convirtieron en héroe continental."
+  },
+  {
+    "titulo": "Harvey Milk y su legado",
+    "descripcion": "Primer político abiertamente gay electo en California. Su valentía y asesinato prematuro lo convirtieron en un símbolo de la lucha LGBTQ+ en todo el mundo."
+  },
+  {
+    "titulo": "Hypatia y la biblioteca perdida",
+    "descripcion": "Última gran científica de Alejandría, Hypatia fue asesinada por una turba religiosa. Su muerte marcó el fin de una era de conocimiento clásico en el mundo antiguo."
+  },
+  {
+    "titulo": "Turing y la máquina que venció a Hitler",
+    "descripcion": "Durante la Segunda Guerra Mundial, Alan Turing desarrolló una máquina que descifró los códigos nazis. Se estima que acortó la guerra por dos años, salvando millones de vidas."
+  },
+  {
+    "titulo": "Antoine Lavoisier y su legado",
+    "descripcion": "Padre de la química moderna, Lavoisier explicó la conservación de la masa y ayudó a establecer el sistema métrico. Murió en la guillotina, pero su ciencia sobrevivió."
+  },
+  {
+    "titulo": "Dorothy Vaughan y su legado",
+    "descripcion": "Matemática afroamericana que trabajó en la NASA durante la segregación. Fue pionera en computación y liderazgo femenino en ciencia, reconocida décadas después por su impacto."
+  },
+  {
+    "titulo": "Henrietta Lacks y su legado",
+    "descripcion": "Sin saberlo, sus células cancerosas fueron tomadas y se multiplicaron en laboratorios por décadas. Su caso abrió el debate sobre ética médica y consentimiento."
+  },
+  {
+    "titulo": "Le Corbusier y su legado",
+    "descripcion": "Arquitecto que reinventó la forma de construir ciudades. Su visión funcional y racionalista influyó en el urbanismo moderno y en cómo vivimos hoy."
   }
 ]
+

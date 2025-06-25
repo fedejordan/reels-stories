@@ -51,27 +51,30 @@ def elegir_idea():
 
 def generar_prompt(idea):
     return f"""
-Quiero que generes un video corto estilo "reel" de 2 minutos, basado en la siguiente idea de historia fantasiosa:
+Quiero que generes un video corto estilo "reel" de 2 minutos, basado en la siguiente historia real sobre una figura histórica célebre:
 
 {idea['descripcion']}
 
-El video debe tener tres elementos:
+El objetivo es emocionar, sorprender e informar al espectador, manteniendo su atención hasta el final. No debe ser una biografía plana, sino una narrativa poderosa basada en hechos reales, que destaque un momento clave, un dilema, un conflicto o una decisión crucial en la vida de ese personaje.
+
+El video debe tener estos elementos:
 
 1. `textos`: una lista ordenada de fragmentos narrativos para voz en off. Cada uno con duración (`milisegundos`) y contenido (`texto`). 
-   - El primer fragmento debe enganchar al espectador con intriga o sorpresa.
-   - El relato debe tener introducción, desarrollo con giro o tensión, y un cierre poderoso o emocional.
-   - La curva emocional debe estar clara.
+   - El primer fragmento debe captar la atención con una pregunta intrigante, una afirmación inesperada o una situación límite.
+   - El relato debe tener introducción (contexto histórico breve), desarrollo (tensión, dilema, desafío) y un cierre emocional o inspirador.
+   - Mostrá claramente la curva emocional.
+   - IMPORTANTE: El texto debe ser exactamente lo narrado, no incluyas aclaraciones (como indicar silencios, o sonidos de fondo, etc) ya que se leerán y no tendrian sentido al escucharse
 
 2. `imagenes`: una lista con descripciones visuales alineadas a cada texto, también con `milisegundos` y `descripcion`.
    - Indicá tipo de plano (general, primer plano, detalle).
-   - Todas deben compartir un estilo visual coherente.
+   - Todas deben compartir un estilo visual coherente y representativo de la época histórica.
 
-3. `audio`: nombre exacto de una pieza instrumental real (sin letra), en YouTube, que intensifique el tono de la historia.
+3. `audio`: nombre exacto de una pieza instrumental real (sin letra), disponible en YouTube, que intensifique el tono narrativo del video. Puede ser épico, melancólico, intrigante o inspirador según el caso.
 
 ⚠️ Agregá un campo `contexto_visual_global` con detalles sobre:
-- Estética cinematográfica (tipo de película o animación que inspire el estilo)
+- Estética cinematográfica (películas, series o documentales que inspiren el estilo visual)
 - Paleta de colores
-- Iluminación, clima y época
+- Iluminación, clima y época histórica representada
 
 Formato de salida:
 {{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}.
@@ -200,7 +203,7 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None):
 
 
 
-def generar_audios(textos, audio_dir, use_elevenlabs=False):
+def generar_audios(textos, audio_dir, use_elevenlabs=True):
     os.makedirs(audio_dir, exist_ok=True)
 
     # Crear un archivo de silencio de 0.5s si no existe
@@ -351,7 +354,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
             font="Arial-Bold",
             color='white',
             method='caption',
-            size=(int(FINAL_WIDTH * 0.2), None),
+            size=(int(FINAL_WIDTH * 0.9), None),
             align='center'
         )
 
@@ -361,7 +364,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
             subtitle_clip
             .on_color(size=(FINAL_WIDTH, subtitle_h), color=(0, 0, 0), col_opacity=0.5)
             .set_duration(dur)
-            .set_position(("center", FINAL_HEIGHT * 0.20))  # 20% desde arriba
+            .set_position(("center", FINAL_HEIGHT * 0.80))  # 80% desde arriba
         )
 
 
