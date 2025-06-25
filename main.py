@@ -16,6 +16,10 @@ from moviepy.video.tools.subtitles import SubtitlesClip
 from moviepy.editor import TextClip
 from elevenlabs.client import ElevenLabs
 import traceback
+from gradio_client import Client
+from PIL import Image
+from moviepy.editor import VideoFileClip
+
 
 
 # === CONFIGURACIÓN ===
@@ -32,6 +36,7 @@ FINAL_HEIGHT = 1920
 client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
+MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
 
 
 
@@ -104,17 +109,94 @@ def guardar_historia_json(story_dir, idea, contenido_json):
         }, f, ensure_ascii=False, indent=2)
     return json_path
 
+def prepare_image_dimensions(input_path, base_height=512):
+    with Image.open(input_path) as im:
+        im = im.convert("RGB")
+        orig_w, orig_h = im.size
+        aspect_ratio = orig_w / orig_h
+
+        new_height = base_height
+        new_width = int(round(base_height * aspect_ratio))
+
+        # Redondear al múltiplo de 32 más cercano
+        new_width = (new_width // 32) * 32
+        new_height = (new_height // 32) * 32
+
+        resized = im.resize((new_width, new_height))
+        temp_path = input_path.replace(".png", f"_{new_width}x{new_height}.png")
+        resized.save(temp_path)
+
+        return temp_path, new_width, new_height
+
+def ralentizar_video(input_path, duracion_objetivo, output_path):
+    clip = VideoFileClip(input_path)
+    velocidad = clip.duration / duracion_objetivo
+    if velocidad > 0:
+        clip_ralentizado = clip.fx(vfx.speedx, factor=velocidad)
+        clip_ralentizado = clip_ralentizado.set_duration(duracion_objetivo)
+        clip_ralentizado.write_videofile(output_path, codec="libx264", audio=False, fps=24)
+        clip_ralentizado.close()
+    clip.close()
+    
+def animar_imagen(input_image_path, prompt, output_video_path, duracion):
+    try:
+        print(f"🎨 Animando imagen {input_image_path} con duración {duracion:.2f}s...")
+        resized_img, width, height = prepare_image_dimensions(input_image_path)
+
+        from gradio_client import handle_file
+        import shutil
+
+        result = client_wan.predict(
+            input_image=handle_file(resized_img),
+            prompt="make this image come alive, cinematic motion, smooth animation",
+            height=height,
+            width=width,
+            negative_prompt=(
+                "Bright tones, overexposed, static, blurred details, subtitles, style, works, paintings, images, "
+                "static, overall gray, worst quality, low quality, JPEG compression residue, ugly, incomplete, "
+                "extra fingers, poorly drawn hands, poorly drawn faces, deformed, disfigured, misshapen limbs, "
+                "fused fingers, still picture, messy background, watermark, text, signature"
+            ),
+            duration_seconds=2,
+            guidance_scale=1,
+            steps=4,
+            seed=42,
+            randomize_seed=True,
+            api_name="/generate_video"
+        )
+
+        video_path = result[0]["video"]
+        temp_path = output_video_path.replace(".mp4", "_original.mp4")
+        shutil.copy(video_path, temp_path)
+        print(f"🎞️ Video base copiado: {temp_path}")
+
+        ralentizar_video(temp_path, duracion, output_video_path)
+        print(f"🐢 Video ralentizado guardado: {output_video_path}")
+
+    except Exception as e:
+        print("❌ Excepción al animar imagen:", e)
+
+
+
 def generar_imagenes(imagenes, image_dir, contexto_visual_global=None):
     os.makedirs(image_dir, exist_ok=True)
     client = InferenceClient(token=HF_TOKEN)
     for idx, img in enumerate(imagenes, 1):
-        prompt = f"Imagen a dibujar (principal, dale mas importancia): {img['descripcion']}\n\nContexto de imagen (secundario): {contexto_visual_global}." if contexto_visual_global else img["descripcion"]
+        prompt = f"Imagen a dibujar: {img['descripcion']}\n\nContexto: {contexto_visual_global}." if contexto_visual_global else img["descripcion"]
         print(f"🖼️ Generando imagen {idx:03} → {prompt}")
         try:
             image = client.text_to_image(prompt)
-            image.save(os.path.join(image_dir, f"{idx:03}.png"))
+            img_path = os.path.join(image_dir, f"{idx:03}.png")
+            image.save(img_path)
+
+            if MODO_ANIMADO:
+                anim_path = os.path.join(image_dir, f"{idx:03}.mp4")
+                duracion = img.get("milisegundos", 2000) / 1000.0  # convertir a segundos
+                animar_imagen(img_path, prompt, anim_path, duracion)
+
         except Exception as e:
             print("❌ Error generando imagen:", e)
+
 
 
 
@@ -246,8 +328,13 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
     clips = []
 
     for idx, dur in enumerate(duraciones, 1):
-        img_path = os.path.join(image_dir, f"{idx:03}.png")
-        base_clip = ImageClip(img_path, duration=dur).resize(height=1920).fadein(0.2).fadeout(0.2)
+        if MODO_ANIMADO:
+            video_path = os.path.join(image_dir, f"{idx:03}.mp4")
+            base_clip = VideoFileClip(video_path).subclip(0, dur).resize(height=1920)
+        else:
+            img_path = os.path.join(image_dir, f"{idx:03}.png")
+            base_clip = ImageClip(img_path, duration=dur).resize(height=1920).fadein(0.2).fadeout(0.2)
+
 
         # Zoom aleatorio: in (acercar) o out (alejar)
         zoom_type = random.choice(["in", "out"])
@@ -260,11 +347,11 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
         # Crear clip con subtítulo
         subtitle_clip = TextClip(
             texto_subtitulo,
-            fontsize=32,
+            fontsize=42,
             font="Arial-Bold",
             color='white',
             method='caption',
-            size=(int(FINAL_WIDTH * 0.9), None),
+            size=(int(FINAL_WIDTH * 0.2), None),
             align='center'
         )
 
@@ -274,7 +361,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
             subtitle_clip
             .on_color(size=(FINAL_WIDTH, subtitle_h), color=(0, 0, 0), col_opacity=0.5)
             .set_duration(dur)
-            .set_position(("center", FINAL_HEIGHT - subtitle_h - 100))  # al fondo sin salir
+            .set_position(("center", FINAL_HEIGHT * 0.20))  # 20% desde arriba
         )
 
 
@@ -348,12 +435,14 @@ def generar_video_desde_story_id(story_id):
     generar_video(textos, duraciones, image_dir, narracion_path, musica_path, final_video_path)
     print(f"🎞️ Video generado desde datos existentes: {final_video_path}")
 
-
 import sys
 
 if __name__ == "__main__":
     start_time = time.time()
     reintento = 0
+
+    if MODO_ANIMADO:
+        client_wan = Client("multimodalart/wan2-1-fast")  # carga remota correcta
 
     if len(sys.argv) >= 2:
         story_id = sys.argv[1]
