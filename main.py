@@ -14,12 +14,8 @@ import requests
 import time
 from moviepy.video.tools.subtitles import SubtitlesClip
 from moviepy.editor import TextClip
-from moviepy.video.fx.all import resize
 from elevenlabs.client import ElevenLabs
 import traceback
-from moviepy.video.fx import all as vfx
-from moviepy.audio.fx import all as afx
-
 
 
 # === CONFIGURACIÓN ===
@@ -36,7 +32,6 @@ FINAL_HEIGHT = 1920
 client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
-SPEED = 0.8           # mismo factor que usás en speedx
 
 
 
@@ -71,7 +66,6 @@ El video debe tener tres elementos:
 ⚠️ Agregá un campo `contexto_visual_global` con detalles sobre:
 - Estética cinematográfica (tipo de película o animación que inspire el estilo)
 - Paleta de colores
-- Personajes principales (edad, ropa, apariencia)
 - Iluminación, clima y época
 
 Formato de salida:
@@ -313,16 +307,10 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
 
     # Combinar audio
     audio_final = CompositeAudioClip([audio_musica, audio_narracion])
-
-    # Aplicar ralentización del 20% (velocidad 0.8x)
-    video_slow  = video.fx(vfx.speedx, SPEED).set_audio(audio_final.fx(afx.audio_speedx, SPEED))
-    # audio_slow = audio_final.fx(afx.audio_speedx, 0.8)
-
-    # Setear audio ralentizado
-    # video_slow = video_slow.set_audio(audio_slow)
+    video_final = video.set_audio(audio_final)
 
     # Exportar video
-    video_slow.write_videofile(output_path, fps=24, codec='libx264', audio_codec='aac')
+    video_final.write_videofile(output_path, fps=24, codec='libx264', audio_codec='aac')
 
 
 def generar_video_desde_story_id(story_id):
