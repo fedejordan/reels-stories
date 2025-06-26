@@ -351,7 +351,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
             fontsize=36,
             font="Arial-Bold",
             color='white',
-            method='caption',
+            method='pillow',
             size=(int(FINAL_WIDTH * 0.7), None),
             align='center'
         )
