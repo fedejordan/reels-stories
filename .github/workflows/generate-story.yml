@@ -21,9 +21,11 @@ jobs:
     - name: 🐍 Instalar dependencias
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        PIP_PREFER_BINARY=1 python -m pip install --no-cache-dir -r requirements.txt
         sudo apt-get update
         sudo apt-get install ffmpeg imagemagick
+      env:
+        PYTHON_VERSION: "3.12.0"
 
     - name: 🔐 Cargar variables de entorno
       env:
