@@ -36,7 +36,7 @@ FINAL_HEIGHT = 1920
 client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
-MODO_ANIMADO = True  # Cambiar a False para usar imágenes estáticas
+MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 
 
