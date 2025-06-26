@@ -62,19 +62,19 @@ jobs:
         python generar-descripcion-tiktok.py ${{ steps.detectar.outputs.story_id }}
 
     - name: 📦 Subir video final como artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: video-${{ steps.detectar.outputs.story_id }}
         path: stories/${{ steps.detectar.outputs.story_id }}/video.mp4
 
     - name: 📦 Subir descripción TikTok como artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: tiktok-desc-${{ steps.detectar.outputs.story_id }}
         path: stories/${{ steps.detectar.outputs.story_id }}/tiktok.txt
 
     - name: 📦 Subir imágenes generadas como artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: imagenes-${{ steps.detectar.outputs.story_id }}
         path: stories/${{ steps.detectar.outputs.story_id }}/images/*.png
