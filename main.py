@@ -37,7 +37,7 @@ client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
 MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
-
+SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 
 
 
@@ -181,24 +181,37 @@ def animar_imagen(input_image_path, prompt, output_video_path, duracion):
 
 
 
-def generar_imagenes(imagenes, image_dir, contexto_visual_global=None):
+def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reintentos=10):
     os.makedirs(image_dir, exist_ok=True)
     client = InferenceClient(token=HF_TOKEN)
+
     for idx, img in enumerate(imagenes, 1):
         prompt = f"Imagen a dibujar: {img['descripcion']}\n\nContexto: {contexto_visual_global}." if contexto_visual_global else img["descripcion"]
-        print(f"🖼️ Generando imagen {idx:03} → {prompt}")
-        try:
-            image = client.text_to_image(prompt)
-            img_path = os.path.join(image_dir, f"{idx:03}.png")
-            image.save(img_path)
+        intentos = 0
+        exito = False
 
-            if MODO_ANIMADO:
-                anim_path = os.path.join(image_dir, f"{idx:03}.mp4")
-                duracion = img.get("milisegundos", 2000) / 1000.0  # convertir a segundos
-                animar_imagen(img_path, prompt, anim_path, duracion)
+        while intentos < max_reintentos and not exito:
+            print(f"🖼️ Generando imagen {idx:03} (intento {intentos + 1}) → {prompt}")
+            try:
+                image = client.text_to_image(prompt)
+                img_path = os.path.join(image_dir, f"{idx:03}.png")
+                image.save(img_path)
+                exito = True
 
-        except Exception as e:
-            print("❌ Error generando imagen:", e)
+                if MODO_ANIMADO:
+                    anim_path = os.path.join(image_dir, f"{idx:03}.mp4")
+                    duracion = img.get("milisegundos", 2000) / 1000.0
+                    animar_imagen(img_path, prompt, anim_path, duracion)
+
+            except Exception as e:
+                print(f"❌ Error generando imagen {idx:03}: {e}")
+                intentos += 1
+                if intentos < max_reintentos:
+                    print("🔄 Reintentando...")
+                    time.sleep(2)  # Espera entre intentos
+                else:
+                    print(f"🚫 No se pudo generar la imagen {idx:03} después de {max_reintentos} intentos.")
+
 
 
 
@@ -340,7 +353,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
 
 
         # Zoom aleatorio: in (acercar) o out (alejar)
-        zoom_type = random.choice(["in", "out"])
+        zoom_type = "in" #random.choice(["in", "out"])
         zoom_factor_start = 1.0 if zoom_type == "in" else 1.1
         zoom_factor_end = 1.1 if zoom_type == "in" else 1.0
 
@@ -350,11 +363,11 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
         # Crear clip con subtítulo
         subtitle_clip = TextClip(
             texto_subtitulo,
-            fontsize=42,
+            fontsize=36,
             font="Arial-Bold",
             color='white',
             method='caption',
-            size=(int(FINAL_WIDTH * 0.9), None),
+            size=(int(FINAL_WIDTH * 0.7), None),
             align='center'
         )
 
@@ -364,7 +377,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
             subtitle_clip
             .on_color(size=(FINAL_WIDTH, subtitle_h), color=(0, 0, 0), col_opacity=0.5)
             .set_duration(dur)
-            .set_position(("center", FINAL_HEIGHT * 0.80))  # 80% desde arriba
+            .set_position(("center", FINAL_HEIGHT * 0.75))  # 70% desde arriba
         )
 
 
@@ -385,7 +398,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
             )
         )
 
-        composed = CompositeVideoClip([animated_clip, subtitle])
+        composed = CompositeVideoClip([animated_clip, subtitle]) if SHOULD_INCLUDE_SUBTITLES else animated_clip
 
         clips.append(composed)
 
