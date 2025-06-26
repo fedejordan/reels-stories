@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "Diego Maradona y el gol imposible",
+    "descripcion": "En 1986, en el Mundial de México, Diego Maradona dejó al mundo sin aliento. Primero marcó el 'Gol del Siglo', eludiendo a medio equipo inglés. Luego, con picardía criolla, anotó la 'Mano de Dios'. Argentina fue campeona y Diego, inmortal."
+  },
+  {
+    "titulo": "Mario Kempes y la gloria del 78",
+    "descripcion": "En plena dictadura, Argentina organizó su primer Mundial. Mario Kempes, con su melena salvaje y goles decisivos, fue el héroe del torneo. Sus dos tantos en la final contra Holanda sellaron el primer campeonato del mundo para la albiceleste."
+  },
+  {
+    "titulo": "Lionel Messi y la redención eterna",
+    "descripcion": "Durante años, Messi fue cuestionado por no brillar como en Barcelona. Pero en 2022, a los 35 años, lideró a Argentina a conquistar el mundo en Qatar. Con su último baile, se convirtió en leyenda viva del fútbol mundial."
+  },
+  {
+    "titulo": "Oscar Ruggeri, el caudillo de hierro",
+    "descripcion": "Firme en la marca y líder en el vestuario, Ruggeri fue el alma defensiva del equipo campeón en 1986. Su entrega y carácter marcaron una era de garra y gloria para la Selección."
+  },
+  {
+    "titulo": "Gabriel Batistuta, el goleador implacable",
+    "descripcion": "Con su melena rubia y su potencia letal, Batistuta dejó una marca indeleble: 10 goles en tres mundiales y récords goleadores con la camiseta argentina. Siempre aparecía cuando más se lo necesitaba."
+  },
+  {
+    "titulo": "Ubaldo Fillol y los reflejos del campeón",
+    "descripcion": "Arquero del título mundial en 1978, Fillol combinó reflejos felinos y personalidad serena. Sus atajadas sostuvieron al equipo en momentos críticos y lo convirtieron en un ícono bajo los tres palos."
+  },
+  {
+    "titulo": "Juan Román Riquelme y el pase eterno",
+    "descripcion": "Riquelme jugaba al ritmo de su pausa. Maestro del pase filtrado y la visión de juego, condujo a la Selección olímpica al oro en 2008 y dejó una huella de arte y rebeldía en cada toque."
+  },
+  {
+    "titulo": "Javier Mascherano, el jefe silencioso",
+    "descripcion": "'Hoy te convertís en héroe', le gritó a Chiquito Romero en 2014. Mascherano fue corazón, garra y liderazgo silencioso. En Brasil, comandó a Argentina hasta la final del mundo."
+  },
+  {
+    "titulo": "Ángel Di María y los goles en las finales",
+    "descripcion": "Durante años cuestionado, Di María apareció siempre cuando importaba: gol en la final olímpica 2008, gol en la final de la Copa América 2021 y gol en la final del Mundial 2022. El 'Fideo' hizo llorar de alegría a un país."
+  },
+  {
+    "titulo": "Carlos Tévez, el Apache del pueblo",
+    "descripcion": "Nacido en Fuerte Apache, Tévez llevó su lucha a las canchas del mundo. Velocidad, garra y goles inolvidables, como el bombazo a México en 2010. Siempre jugó como si fuera la última vez."
+  },
+  {
+    "titulo": "Roberto Perfumo, el mariscal elegante",
+    "descripcion": "Dueño de una clase inusual para un defensor, Perfumo lideró la zaga argentina en los 60 y 70 con temple y visión. Su apodo, 'el Mariscal', resumía su jerarquía silenciosa."
+  },
+  {
+    "titulo": "Fernando Redondo, el mago que no volvió",
+    "descripcion": "Redondo brilló en el Real Madrid y en el Mundial 94, pero una pelea con Bielsa lo dejó fuera del 98. Su ausencia se convirtió en mito, como su zurda elegante y cerebral."
+  },
+  {
+    "titulo": "Claudio Caniggia y el gol a Brasil",
+    "descripcion": "Italia 90. Brasil dominaba. Maradona arrancó en mitad de cancha, rompió marcas y asistió a Caniggia, que eludió a Taffarel y anotó. Fue el grito más inesperado y celebrado de ese Mundial."
+  },
+  {
+    "titulo": "Daniel Passarella, el capitán del 78",
+    "descripcion": "Firme, técnico y con alma de líder, Passarella alzó la Copa del Mundo en 1978. Fue el primer argentino en tocar la gloria y uno de los pocos en repetir presencia en los títulos del 78 y 86."
+  },
+  {
+    "titulo": "Ricardo Bochini, el ídolo de Maradona",
+    "descripcion": "Genio de Independiente, Bochini jugó solo unos minutos en México 86. Cuando entró, Diego le dijo: 'Pase maestro, lo estábamos esperando'. Su nombre quedó ligado a la magia y al respeto."
+  },
+  {
+    "titulo": "Jorge Valdano y el gol con literatura",
+    "descripcion": "Además de delantero, Valdano fue filósofo del fútbol. En la final del 86, anotó un gol clave. Después, sus palabras explicaron como pocos la belleza de ese juego."
+  },
+  {
+    "titulo": "René Houseman, el loco impredecible",
+    "descripcion": "Extremo explosivo, gambeteador imparable. Houseman podía pasar de una jugada mágica a un gesto insólito. Fue campeón del mundo en 1978 y leyenda de Huracán."
+  },
+  {
+    "titulo": "Pablo Aimar, el ídolo de Messi",
+    "descripcion": "Delicado, técnico, cerebral. Aimar encarnó el estilo argentino más fino. Messi lo admiró desde chico y hoy lo tiene como maestro en el cuerpo técnico de la Selección."
+  },
+  {
+    "titulo": "Ángel Labruna, el goleador pionero",
+    "descripcion": "Ídolo de River y figura de los años 40, Labruna fue goleador de la albiceleste en tiempos en que los partidos eran batallas y las camisetas se transpiraban hasta el alma."
+  },
+  {
+    "titulo": "Julio Olarticoechea, el obrero de los campeones",
+    "descripcion": "En el 86, mientras otros brillaban, el 'Vasco' hacía el trabajo sucio. Su salvada ante Bélgica es tan valiosa como un gol. Humilde, incansable y querido."
+  },
+  {
+    "titulo": "Héctor Enrique y el pase a la historia",
+    "descripcion": "Dicen que le dio la asistencia a Maradona para el Gol del Siglo. Él lo recuerda con humor: 'Yo se la pasé, después hizo todo lo demás'. Fue parte clave del campeón del 86."
+  },
+  {
+    "titulo": "Nery Pumpido, el arquero del Mundial",
+    "descripcion": "Sólido y confiable, Pumpido fue el arquero titular del campeón del 86. En el 90, una lesión lo marginó, pero su lugar en la historia ya estaba asegurado."
+  },
+  {
+    "titulo": "Leopoldo Luque, el bigote del 78",
+    "descripcion": "Goleador potente y carismático, Luque brilló en el Mundial del 78. Sus goles, y su particular estilo, fueron clave en la campaña de Menotti."
+  },
+  {
+    "titulo": "Jorge Burruchaga y el gol eterno",
+    "descripcion": "Final del 86. Alemania empata. Maradona da un pase perfecto. Burruchaga corre, define y hace el 3-2. Su nombre quedó grabado para siempre en la historia argentina."
+  },
+  {
+    "titulo": "Hernán Crespo, el heredero del gol",
+    "descripcion": "Con Batistuta como referencia, Crespo heredó la 9. Goleador nato, técnico y elegante, dejó su marca en eliminatorias, mundiales y copas."
+  },
+  {
+    "titulo": "Javier Zanetti, el eterno capitán",
+    "descripcion": "Jugador con más presencias durante años, Zanetti representó constancia y profesionalismo. Jugó dos mundiales, pero increíblemente no fue convocado para el del 2010."
+  },
+  {
+    "titulo": "Sergio Goycochea y los penales del destino",
+    "descripcion": "Italia 90. Tras la lesión de Pumpido, Goyco tomó el arco y atajó penales clave ante Yugoslavia y luego ante Italia. Se convirtió en héroe nacional en cuestión de días."
+  },
+  {
+    "titulo": "Ezequiel Lavezzi, alegría y entrega",
+    "descripcion": "El 'Pocho' fue más que un delantero. En la era de Sabella y Martino, aportó goles, asistencia y sobre todo, un espíritu contagioso que unió al grupo."
+  },
+  {
+    "titulo": "Lisandro López, el crack que faltó",
+    "descripcion": "Figura en Racing y en Europa, Lisandro brilló pero nunca tuvo su gran momento en la Selección. Su ausencia en convocatorias fue tan comentada como su talento."
+  },
+  {
+    "titulo": "Nicolás Otamendi, el guerrero de tres mundiales",
+    "descripcion": "Criticado y elogiado por igual, Otamendi supo reinventarse. En Qatar 2022, fue pieza clave para la consagración, combinando experiencia y firmeza."
+  },
+  {
+    "titulo": "Enzo Fernández, la revelación de Qatar",
+    "descripcion": "Entró desde el banco en el segundo partido. No salió más. Golazo a México, figura contra Croacia y campeón del mundo con apenas 21 años. El futuro llegó."
+  },
+  {
+    "titulo": "Rodrigo De Paul, el motor de Messi",
+    "descripcion": "Pulmón del mediocampo y escudo emocional de Messi. De Paul se convirtió en imprescindible con Scaloni, combinando marca, entrega y conexión total con el capitán."
+  },
+  {
+    "titulo": "Emiliano Martínez y los penales salvadores",
+    "descripcion": "Dibu apareció cuando más se lo necesitaba: semifinal ante Colombia en 2021, final ante Francia en 2022. Con atajadas, bailes y gritos, se metió en la historia grande."
+  },
+  {
+    "titulo": "Leandro Paredes, el equilibrio invisible",
+    "descripcion": "Volante fino y con carácter, Paredes supo combinar juego y fricción. Su rol en las finales de Copa América y Mundial fue clave para sostener al equipo."
+  },
+  {
+    "titulo": "Nicolás Tagliafico, el que siempre está",
+    "descripcion": "Silencioso, cumplidor, firme. Tagliafico fue parte de todos los títulos recientes con Scaloni. Sin brillar, se ganó su lugar con constancia y compromiso."
+  },
+  {
+    "titulo": "Lautaro Martínez, el toro de la nueva era",
+    "descripcion": "Goleador y luchador, Lautaro fue clave en la Copa América 2021. En Qatar no tuvo su mejor Mundial, pero su penal final fue parte del título eterno."
+  },
+  {
+    "titulo": "Julian Álvarez, el chico que deslumbró al mundo",
+    "descripcion": "De Calchín al mundo. En Qatar, se metió en el equipo titular y no salió más: goles a Croacia, a Polonia y una energía imparable. Otro campeón joven con futuro brillante."
+  },
+  {
+    "titulo": "Giovanni Lo Celso, el ausente más presente",
+    "descripcion": "Lesionado antes del Mundial 2022, Lo Celso fue parte vital del proceso. Aunque no jugó en Qatar, sus compañeros lo mencionaron como pieza fundamental del grupo."
+  },
+  {
+    "titulo": "Walter Samuel, el muro silencioso",
+    "descripcion": "Firme y casi infranqueable, Samuel fue parte del proceso de Bielsa y luego asistente de Scaloni. Siempre serio, siempre clave, dentro o fuera del campo."
+  },
+  {
+    "titulo": "Ermindo Onega, el 10 elegante de los 60",
+    "descripcion": "Con su zurda mágica y visión de juego, Onega fue uno de los grandes talentos argentinos de su época. Aunque no ganó títulos con la Selección, su clase dejó una huella imborrable."
+  },
+  {
+    "titulo": "Norberto Alonso, magia y personalidad",
+    "descripcion": "Ídolo de River, el 'Beto' jugó el Mundial 78 y fue campeón. Su zurda y carácter encendían partidos y dividían tribunas, pero nadie dudaba de su talento."
+  },
+  {
+    "titulo": "Ramón Díaz, el socio ausente de Maradona",
+    "descripcion": "Brilló con Diego en el Mundial 82, pero una pelea lo alejó de futuras convocatorias. Fue ídolo en Italia y dejó la sensación de que pudo dar más con la celeste y blanca."
+  },
+  {
+    "titulo": "Oscar Córdoba, el goleador que se despidió pronto",
+    "descripcion": "Delantero potente de los 50, Córdoba fue clave en la Copa América 1955. Su carrera en la Selección fue breve, pero explosiva."
+  },
+  {
+    "titulo": "Carlos Babington, el inglés más argentino",
+    "descripcion": "Dueño de una pegada exquisita, Babington fue parte del proceso de Menotti en los 70. Su apodo, 'el inglés', contrastaba con su amor incondicional por la albiceleste."
+  },
+  {
+    "titulo": "Daniel Bertoni y el gol que aseguró la Copa",
+    "descripcion": "En la final del Mundial 78, Bertoni selló el 3-1 definitivo ante Holanda. Convirtió en partidos clave y fue parte de una delantera inolvidable."
+  },
+  {
+    "titulo": "Rubén Galván, el volante silencioso del 78",
+    "descripcion": "Discreto, eficaz y trabajador. Galván no fue titular, pero aportó al grupo campeón del mundo desde la humildad y el compañerismo."
+  },
+  {
+    "titulo": "Pedro Pasculli y el gol a Uruguay",
+    "descripcion": "En octavos del 86, Pasculli anotó el único gol ante Uruguay. En un Mundial de gigantes, él dejó su huella en el partido más cerrado."
+  },
+  {
+    "titulo": "Néstor Clausen, el lateral campeón",
+    "descripcion": "Parte del equipo de Bilardo, Clausen fue un defensor firme y confiable. Su paso por el Mundial 86 le aseguró un lugar en la historia."
+  },
+  {
+    "titulo": "José Luis Brown y el gol con el hombro roto",
+    "descripcion": "Final del 86. Brown cabecea el primer gol de la final y después juega lesionado, con el hombro fuera de lugar. Coraje puro. Leyenda para siempre."
+  },
+  {
+    "titulo": "Ricardo Giusti, el equilibrio del campeón",
+    "descripcion": "Volante de marca pero también de juego, Giusti fue clave en el equipo del 86. Jugó todos los partidos y fue un engranaje vital en la estructura de Bilardo."
+  },
+  {
+    "titulo": "Sergio Batista, el cinco que todo lo ordenaba",
+    "descripcion": "El 'Checho' organizó desde el mediocampo en México 86. Fue el cerebro del equipo campeón, siempre correcto y sereno en el pase."
+  },
+  {
+    "titulo": "José Basualdo, el comodín de dos finales",
+    "descripcion": "Versátil y resistente, Basualdo jugó los mundiales del 90 y 94. Con su despliegue y actitud, fue una pieza de confianza en dos generaciones."
+  },
+  {
+    "titulo": "Diego Simeone, el temperamento hecho fútbol",
+    "descripcion": "El 'Cholo' jugó tres mundiales y fue capitán de la Selección. Garra, entrega y carácter lo definieron, tanto dentro como fuera de la cancha."
+  },
+  {
+    "titulo": "Ariel Ortega, la gambeta impredecible",
+    "descripcion": "El 'Burrito' emocionó a millones con su talento y rebeldía. Jugó tres mundiales y dejó momentos mágicos… y otros trágicos, como la roja ante Holanda en el 98."
+  },
+  {
+    "titulo": "Claudio López, el rayo del 98",
+    "descripcion": "Velocidad letal y goles importantes. El 'Piojo' brilló en Francia 98, anotando ante Inglaterra y en cuartos. Una flecha al espacio."
+  },
+  {
+    "titulo": "Marcelo Gallardo, talento que faltó en mundiales",
+    "descripcion": "Genio táctico como DT, como jugador fue un volante fino e inteligente. Estuvo cerca, pero no logró consolidarse en los mundiales con la Selección."
+  },
+  {
+    "titulo": "Juan Sebastián Verón, la clase y la presión",
+    "descripcion": "Técnico, cerebral, líder. Verón fue figura en clubes, pero con la Selección siempre quedó bajo la lupa, sobre todo tras la eliminación en Corea-Japón 2002."
+  },
+  {
+    "titulo": "Esteban Cambiasso, el gol de todos los toques",
+    "descripcion": "Copa del Mundo 2006. Argentina arma una jugada con 25 toques. Cambiasso la define con zurda. Uno de los mejores goles colectivos de la historia de los mundiales."
+  },
+  {
+    "titulo": "Carlos Roa, el arquero que detuvo a Inglaterra",
+    "descripcion": "Francia 98. Octavos de final. Carlos Roa ataja el penal decisivo y elimina a Inglaterra. Después se alejaría del fútbol por razones espirituales."
+  },
+  {
+    "titulo": "Walter Samuel, el muro de acero",
+    "descripcion": "Defensor imponente, Samuel jugó dos mundiales como jugador y ganó uno como asistente. Su seriedad y firmeza lo convirtieron en un líder silencioso."
+  },
+  {
+    "titulo": "Fabricio Coloccini, el rubio de la Sub-20",
+    "descripcion": "Campeón juvenil y figura en las juveniles de Pekerman. Con la mayor no tuvo continuidad, pero su nombre es sinónimo de proyección y promesa cumplida a medias."
+  },
+  {
+    "titulo": "Gabriel Heinze, el defensor de la garra",
+    "descripcion": "Contundente, temperamental y apasionado. Heinze defendió la albiceleste con el alma en tres mundiales. Amado y discutido por igual."
+  },
+  {
+    "titulo": "Ezequiel Garay, el gol que abrió una semifinal",
+    "descripcion": "Brasil 2014. Ante Holanda, pateó el primer penal con seguridad. Su solidez defensiva fue clave en la campaña hasta la final."
+  },
+  {
+    "titulo": "Martín Demichelis, el regreso inesperado",
+    "descripcion": "Tras años sin ser convocado, Sabella lo llamó para Brasil 2014. Demichelis respondió con jerarquía y experiencia en los partidos decisivos."
+  },
+  {
+    "titulo": "Sergio Romero, el héroe de los penales",
+    "descripcion": "Romero atajó los penales ante Holanda en 2014 y metió a Argentina en una final del mundo después de 24 años. 'Chiquito' se volvió gigante."
+  },
+  {
+    "titulo": "Marcos Rojo, el salvador de Nigeria",
+    "descripcion": "Mundial 2018. Argentina se jugaba la clasificación. Rojo apareció como delantero y definió como goleador para sellar el pase a octavos. Inolvidable."
+  },
+  {
+    "titulo": "Ever Banega, el pase entre líneas",
+    "descripcion": "Con calidad y pausa, Banega dio un pase quirúrgico a Messi contra Nigeria en 2018. Talento innegable, pero irregular en su vínculo con la Selección."
+  },
+  {
+    "titulo": "Lucas Biglia, el sacrificio silencioso",
+    "descripcion": "Volante de equilibrio, Biglia fue parte de las finales entre 2014 y 2016. Nunca fue figura, pero sí confiable para todos sus entrenadores."
+  },
+  {
+    "titulo": "Gonzalo Higuaín, el 9 que rozó la gloria",
+    "descripcion": "Anotó goles claves en 2010 y 2014, pero sus finales erradas quedaron marcadas. Pese a todo, fue uno de los delanteros más constantes de su generación."
+  },
+  {
+    "titulo": "Erik Lamela, la rabona que recorrió el mundo",
+    "descripcion": "Más recordado por sus goles espectaculares en clubes, Lamela tuvo pocas chances con la Selección, pero siempre ilusionó con su zurda talentosa."
+  },
+  {
+    "titulo": "Manuel Lanzini, el mundial que se le escapó",
+    "descripcion": "Estaba convocado a Rusia 2018, pero una lesión de último momento lo dejó fuera. Su nombre quedó ligado al 'y si...' del destino."
+  },
+  {
+    "titulo": "Guido Rodríguez, el gol que valió una Copa",
+    "descripcion": "Ante Uruguay en la Copa América 2021, Guido anotó el único gol del partido. Un volante silencioso que siempre rinde cuando entra."
+  },
+  {
+    "titulo": "Alejandro 'Papu' Gómez, el baile y el gol",
+    "descripcion": "Carisma, gol ante Paraguay en la Copa América, y una conexión especial con Messi. El Papu trajo alegría y rendimiento en su paso por la Selección."
+  },
+  {
+    "titulo": "Germán Pezzella, el líder que espera",
+    "descripcion": "Central sólido y líder natural. Aunque no siempre titular, Pezzella es parte del grupo campeón del mundo y símbolo de confianza para Scaloni."
+  },
+  {
+    "titulo": "Nahuel Molina, la carrera hasta la gloria",
+    "descripcion": "Qatar 2022. Messi le pone un pase milimétrico. Molina define con frialdad. Fue el gol que abrió la semifinal contra Croacia. De promesa a figura."
+  },
+  {
+    "titulo": "Cristian Romero, el defensor del futuro",
+    "descripcion": "Fuerte, veloz y con gran anticipo. 'Cuti' Romero fue revelación en la Copa América y bastión defensivo en el Mundial. Un nuevo caudillo."
+  },
+  {
+    "titulo": "Alexis Mac Allister, el cerebro de Qatar",
+    "descripcion": "Orden, pausa y claridad. Mac Allister fue clave en el mediocampo argentino campeón del mundo, incluyendo asistencia en la final ante Francia."
+  },
+  {
+    "titulo": "Enzo Pérez, el reemplazo inesperado",
+    "descripcion": "En 2014, entró al equipo por la lesión de Di María. Terminó siendo uno de los mejores en la semifinal y la final. Ejemplo de adaptación y entrega."
+  },
+  {
+    "titulo": "Lucas Ocampos, la potencia que asomó",
+    "descripcion": "Figura en Europa y con algunas apariciones en la Selección. Ocampos mostró garra y desborde, aunque le faltó continuidad."
+  },
+  {
+    "titulo": "Leandro Cufré, el defensor de un solo Mundial",
+    "descripcion": "Convocado a Alemania 2006, jugó poco pero formó parte de una camada de calidad. Su nombre queda en una época de promesas truncas."
+  },
+  {
+    "titulo": "Emiliano Buendía, el que espera su momento",
+    "descripcion": "Convocado tras su gran nivel en Inglaterra, Buendía aún espera su chance real con la albiceleste. Calidad le sobra."
+  },
+  {
+    "titulo": "Franco Armani, el arquero local campeón del mundo",
+    "descripcion": "En plena era de figuras europeas, Armani se mantuvo como arquero de River y parte estable del grupo campeón del mundo en Qatar."
+  },
+  {
+    "titulo": "Gerónimo Rulli, el héroe invisible",
+    "descripcion": "Aunque no jugó en Qatar, su penal atajado en la final de la Europa League lo convirtió en leyenda de Villarreal. En la Selección, siempre listo."
+  },
+  {
+    "titulo": "Thiago Almada, el campeón más joven",
+    "descripcion": "Con apenas 21 años, Almada fue parte del plantel campeón en Qatar. Su presencia simboliza el recambio que ya se asoma en la albiceleste."
+  },
+  {
+    "titulo": "José Sanfilippo, el goleador sin filtro",
+    "descripcion": "Temido por sus rivales y por los micrófonos, Sanfilippo fue un goleador letal en los años 60. Su carácter fuerte lo alejó de algunos mundiales, pero sus goles no se olvidan."
+  },
+  {
+    "titulo": "Alberto Tarantini, el conejo campeón",
+    "descripcion": "Con su melena salvaje y actitud rebelde, Tarantini fue un lateral de ida y vuelta en el Mundial 78. Su juventud no le impidió brillar entre los grandes."
+  },
+  {
+    "titulo": "Jorge Carrascosa, el capitán que renunció",
+    "descripcion": "Capitán del proceso de Menotti, Carrascosa renunció antes del Mundial 78 por motivos personales. No fue campeón, pero su ética y liderazgo aún se recuerdan."
+  },
+  {
+    "titulo": "Luis Artime, el delantero que siempre la metía",
+    "descripcion": "Goleador serial de los años 60, Artime marcó en casi todos los partidos que jugó con la albiceleste. No tuvo mundiales, pero sí eficacia inigualable."
+  },
+  {
+    "titulo": "Daniel Valencia, la zurda cordobesa del 78",
+    "descripcion": "Talentoso y elegante, Valencia formó parte del plantel campeón del 78. Su participación fue breve, pero su clase fue reconocida por todos."
+  },
+  {
+    "titulo": "Claudio Borghi, campeón sin minutos",
+    "descripcion": "Figura en Argentinos Juniors y parte del plantel campeón en México 86, Borghi no sumó minutos en el Mundial, pero vivió la gloria desde adentro."
+  },
+  {
+    "titulo": "Carlos Tapia y el caño inolvidable",
+    "descripcion": "En el 86, Tapia entró unos minutos y metió un caño a un inglés. Fue su única jugada destacada en el torneo… pero quedó para la historia."
+  },
+  {
+    "titulo": "Julio Saldaña, el zurdo que pudo ser",
+    "descripcion": "Promesa del fútbol argentino, Saldaña integró procesos juveniles con gran expectativa. No llegó a consolidarse en la mayor, pero dejó destellos inolvidables."
+  },
+  {
+    "titulo": "Mauricio Pochettino, el defensor con futuro de DT",
+    "descripcion": "Jugó con Bielsa y fue parte de la Selección en el Mundial 2002. Su paso fue breve, pero su carrera como técnico lo devolvió al primer plano."
+  },
+  {
+    "titulo": "Federico Fazio, el central callado",
+    "descripcion": "Parte del plantel en Rusia 2018, Fazio sumó pocos minutos pero siempre fue un defensor confiable en las convocatorias de su generación."
+  },
+  {
+    "titulo": "Emiliano Insúa, el que rozó la consolidación",
+    "descripcion": "Proyectado como futuro lateral izquierdo de la Selección, Insúa tuvo oportunidades pero nunca se consolidó. Fue parte de la transición post-Maradona."
+  },
+  {
+    "titulo": "Facundo Quiroga, el defensor polivalente",
+    "descripcion": "Versátil y correcto, Quiroga jugó en la era de Bielsa y Pekerman. Siempre cumplidor, aunque sin lograr un lugar fijo en los grandes torneos."
+  },
+  {
+    "titulo": "Eduardo Berizzo, el zaguero con temple",
+    "descripcion": "Líder defensivo en la era Bielsa, Berizzo aportó experiencia y solidez. Más tarde, sería entrenador, manteniendo su vínculo con la celeste y blanca."
+  },
+  {
+    "titulo": "Cristian Ansaldi, la sorpresa del 2018",
+    "descripcion": "Convocado sorpresivamente por Sampaoli para Rusia 2018, Ansaldi fue símbolo de las decisiones inesperadas. No jugó, pero vivió un Mundial."
+  },
+  {
+    "titulo": "Patricio Hernández, el 10 del cambio generacional",
+    "descripcion": "Suplente de Maradona en 1982, Hernández tuvo la difícil tarea de reemplazar al futuro mejor del mundo. Buen jugador, atrapado entre generaciones."
+  },
+  {
+    "titulo": "José Chamot, el zurdo de tres mundiales",
+    "descripcion": "Firme y de perfil bajo, Chamot jugó tres Copas del Mundo. Fue parte del recambio de los 90 y una garantía defensiva durante años."
+  }
+]

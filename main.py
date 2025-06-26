@@ -19,6 +19,9 @@ import traceback
 from gradio_client import Client
 from PIL import Image
 from moviepy.editor import VideoFileClip
+import argparse
+from requests.exceptions import Timeout
+from PIL import ImageDraw, ImageFont
 
 
 
@@ -28,7 +31,10 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
 # IDEAS_FILE = "ideas.json"
-IDEAS_FILE = "real-stories.json"
+# IDEAS_FILE = "real-stories.json"
+# IDEAS_FILE = "argentina-football-players.json"
+IDEAS_FILE = None  # Se asignará por argparse más abajo
+
 OUTPUT_DIR = "stories"
 os.environ["IMAGEMAGICK_BINARY"] = "/opt/homebrew/bin/convert"  # o el path que te dé `which convert`
 FINAL_WIDTH = 1080
@@ -193,7 +199,7 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
         while intentos < max_reintentos and not exito:
             print(f"🖼️ Generando imagen {idx:03} (intento {intentos + 1}) → {prompt}")
             try:
-                image = client.text_to_image(prompt)
+                image = client.text_to_image(prompt) #), timeout=300)
                 img_path = os.path.join(image_dir, f"{idx:03}.png")
                 image.save(img_path)
                 exito = True
@@ -202,7 +208,8 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
                     anim_path = os.path.join(image_dir, f"{idx:03}.mp4")
                     duracion = img.get("milisegundos", 2000) / 1000.0
                     animar_imagen(img_path, prompt, anim_path, duracion)
-
+            except Timeout:
+                print(f"⚠️ Timeout alcanzado al generar imagen {idx:03}")
             except Exception as e:
                 print(f"❌ Error generando imagen {idx:03}: {e}")
                 intentos += 1
@@ -324,6 +331,42 @@ def download_music(query, output_path=None, max_duration_sec=600):
     print(f"🎵 Música seleccionada: {ruta_completa}")
     return ruta_completa
 
+def crear_subtitulo_como_imagen(texto, width, fontsize=36):
+    # Crear imagen base
+    img = Image.new("RGBA", (width, 500), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+
+    # Intentar cargar una fuente compatible
+    try:
+        font = ImageFont.truetype("DejaVuSans-Bold.ttf", fontsize)
+    except:
+        font = ImageFont.load_default()
+
+    # Calcular tamaño de texto
+    lines = []
+    words = texto.split()
+    line = ""
+
+    for word in words:
+        test_line = f"{line} {word}".strip()
+        if draw.textlength(test_line, font=font) <= width * 0.9:
+            line = test_line
+        else:
+            lines.append(line)
+            line = word
+    lines.append(line)
+
+    total_height = len(lines) * (fontsize + 10)
+    img = Image.new("RGBA", (width, total_height), (0, 0, 0, 128))  # fondo semitransparente
+    draw = ImageDraw.Draw(img)
+
+    for i, line in enumerate(lines):
+        w = draw.textlength(line, font=font)
+        draw.text(((width - w) / 2, i * (fontsize + 10)), line, font=font, fill=(255, 255, 255, 255))
+
+    temp_path = f"/tmp/subtitle_{uuid.uuid4().hex}.png"
+    img.save(temp_path)
+    return temp_path
 
 def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, output_path):
     clips = []
@@ -346,26 +389,12 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
         texto_subtitulo = textos[idx - 1]["texto"]
 
         # Crear clip con subtítulo
-        subtitle_clip = TextClip(
-            texto_subtitulo,
-            fontsize=36,
-            font="Arial-Bold",
-            color='white',
-            method='pillow',
-            size=(int(FINAL_WIDTH * 0.7), None)
-        )
-
-        subtitle_w, subtitle_h = subtitle_clip.size
-
+        subtitle_path = crear_subtitulo_como_imagen(texto_subtitulo, FINAL_WIDTH)
         subtitle = (
-            subtitle_clip
-            .on_color(size=(FINAL_WIDTH, subtitle_h), color=(0, 0, 0), col_opacity=0.5)
+            ImageClip(subtitle_path)
             .set_duration(dur)
-            .set_position(("center", FINAL_HEIGHT * 0.75))  # 70% desde arriba
+            .set_position(("center", FINAL_HEIGHT * 0.75))
         )
-
-
-
 
         # Zoom centrado (resize + crop para evitar bordes negros)
         zoom = lambda t: zoom_factor_start + (zoom_factor_end - zoom_factor_start) * (t / dur)
@@ -439,6 +468,18 @@ import sys
 
 if __name__ == "__main__":
     start_time = time.time()
+    parser = argparse.ArgumentParser(description="Generador de historias en video")
+
+    parser.add_argument(
+        "--ideas-file", type=str, default="general-history.json",
+        help="Archivo JSON con las ideas base"
+    )
+
+    args = parser.parse_args()
+    IDEAS_FILE = args.ideas_file
+    sys.argv = [sys.argv[0]]
+
+
     reintento = 0
 
     if MODO_ANIMADO:
