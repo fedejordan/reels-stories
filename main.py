@@ -36,7 +36,7 @@ FINAL_HEIGHT = 1920
 client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
-MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
+MODO_ANIMADO = True  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 
 
@@ -308,37 +308,22 @@ def unir_audios_fragmentados(audio_dir, num_fragmentos):
     print(f"✅ Audio final generado: {os.path.join(audio_dir, 'cuento_completo.mp3')}")
 
 
-def download_music(query, output_path, max_duration_sec=600):
-    print(f"🔍 Buscando música: {query}")
-    ydl_opts_info = {
-        'format': 'bestaudio/best',
-        'quiet': True,
-        'noplaylist': True,
-    }
+def download_music(query, output_path=None, max_duration_sec=600):
+    music_dir = os.path.join("assets", "music")
+    if not os.path.exists(music_dir):
+        print("❌ No se encontró la carpeta de música local.")
+        return None
 
-    with yt_dlp.YoutubeDL(ydl_opts_info) as ydl:
-        results = ydl.extract_info(f"ytsearch10:{query}", download=False)["entries"]
+    archivos = [f for f in os.listdir(music_dir) if f.endswith(".mp3")]
+    if not archivos:
+        print("❌ No hay archivos .mp3 en la carpeta de música.")
+        return None
 
-    for entry in results:
-        if entry.get("duration", 0) <= max_duration_sec:
-            print(f"🎵 Descargando: {entry['title']} ({entry['duration']} segundos)")
-            ydl_opts_download = {
-                'format': 'bestaudio/best',
-                'outtmpl': output_path + ".%(ext)s",
-                'quiet': True,
-                'noplaylist': True,
-                'postprocessors': [{
-                    'key': 'FFmpegExtractAudio',
-                    'preferredcodec': 'mp3',
-                    'preferredquality': '192',
-                }],
-            }
-            with yt_dlp.YoutubeDL(ydl_opts_download) as ydl:
-                ydl.download([entry["webpage_url"]])
-            return output_path + ".mp3"
+    seleccionada = random.choice(archivos)
+    ruta_completa = os.path.join(music_dir, seleccionada)
+    print(f"🎵 Música seleccionada: {ruta_completa}")
+    return ruta_completa
 
-    print("❌ No se encontró música válida.")
-    return None
 
 def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, output_path):
     clips = []
@@ -484,7 +469,7 @@ if __name__ == "__main__":
             generar_audios(historia_json["textos"], audio_dir)
 
         elif modo == "musica":
-            musica_path = download_music(historia_json["audio"], os.path.join(story_dir, "music"))
+            musica_path = download_music()
             if musica_path:
                 print(f"🎵 Música descargada: {musica_path}")
             else:
