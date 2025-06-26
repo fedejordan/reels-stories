@@ -44,7 +44,6 @@ jobs:
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
       run: |
-        source env/bin/activate
         if [ -z "${{ github.event.inputs.story_id }}" ]; then
           python main.py
         else
@@ -59,7 +58,6 @@ jobs:
 
     - name: ✍️ Generar descripción TikTok
       run: |
-        source env/bin/activate
         python generar-descripcion-tiktok.py ${{ steps.detectar.outputs.story_id }}
 
     - name: 📦 Subir video final como artifact
