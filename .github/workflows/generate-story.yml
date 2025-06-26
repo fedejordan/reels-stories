@@ -1,0 +1,80 @@
+name: Generar Historia Reel
+
+on:
+  workflow_dispatch:
+    inputs:
+      story_id:
+        description: 'ID de la historia (opcional: si querés generar desde un story.json existente)'
+        required: false
+
+jobs:
+  generar-reel:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: 📥 Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: 🐍 Instalar dependencias
+      run: |
+        python -m venv env
+        source env/bin/activate
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        sudo apt-get update
+        sudo apt-get install ffmpeg imagemagick
+
+    - name: 🔐 Cargar variables de entorno
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      run: |
+        echo "HF_TOKEN=${HF_TOKEN}" >> .env
+        echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" >> .env
+        echo "ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}" >> .env
+
+    - name: 🧠 Ejecutar generación completa o por ID
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      run: |
+        source env/bin/activate
+        if [ -z "${{ github.event.inputs.story_id }}" ]; then
+          python main.py
+        else
+          python main.py ${{ github.event.inputs.story_id }} video
+        fi
+
+    - name: 🔎 Detectar último story_id generado
+      id: detectar
+      run: |
+        STORY_ID=$(ls -td stories/* | head -n 1 | xargs -n1 basename)
+        echo "story_id=${STORY_ID}" >> $GITHUB_OUTPUT
+
+    - name: ✍️ Generar descripción TikTok
+      run: |
+        source env/bin/activate
+        python generar-descripcion-tiktok.py ${{ steps.detectar.outputs.story_id }}
+
+    - name: 📦 Subir video final como artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: video-${{ steps.detectar.outputs.story_id }}
+        path: stories/${{ steps.detectar.outputs.story_id }}/video.mp4
+
+    - name: 📦 Subir descripción TikTok como artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: tiktok-desc-${{ steps.detectar.outputs.story_id }}
+        path: stories/${{ steps.detectar.outputs.story_id }}/tiktok.txt
+
+    - name: 📦 Subir imágenes generadas como artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: imagenes-${{ steps.detectar.outputs.story_id }}
+        path: stories/${{ steps.detectar.outputs.story_id }}/images/*.png
