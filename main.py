@@ -352,8 +352,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
             font="Arial-Bold",
             color='white',
             method='pillow',
-            size=(int(FINAL_WIDTH * 0.7), None),
-            align='center'
+            size=(int(FINAL_WIDTH * 0.7), None)
         )
 
         subtitle_w, subtitle_h = subtitle_clip.size
