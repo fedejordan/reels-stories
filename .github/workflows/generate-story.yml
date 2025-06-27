@@ -18,6 +18,7 @@ on:
 
 jobs:
   generar-reel:
+    name: 📽️ Generar Reel - ${{ inputs.ideas_file }}
     runs-on: ubuntu-latest
     defaults:
       run:
