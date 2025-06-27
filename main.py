@@ -506,7 +506,7 @@ if __name__ == "__main__":
     parser.add_argument("--mode", type=str, default="video", help="Modo de ejecución: imagenes | audios | video | musica | juntar-audios")
 
     args = parser.parse_args()
-    IDEAS_FILE = args.ideas_file
+    IDEAS_FILE = "ideas/" + args.ideas_file
     SUBTITLE_AS_IMAGE = args.subtitle_as_image
     story_id = args.story_id
     modo = args.mode
