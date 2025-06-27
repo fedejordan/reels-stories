@@ -23,8 +23,6 @@ import argparse
 from requests.exceptions import Timeout
 from PIL import ImageDraw, ImageFont
 
-
-
 # === CONFIGURACIÓN ===
 load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")
@@ -44,7 +42,7 @@ SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
 MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
-SUBTITLE_AS_IMAGE = True
+SUBTITLE_AS_IMAGE = False
 
 
 def sanitize_filename(text):
@@ -498,11 +496,18 @@ if __name__ == "__main__":
         help="Archivo JSON con las ideas base"
     )
 
+    parser.add_argument(
+        "--subtitle-as-image", action="store_true",
+        default=False,
+        help="Generar subtítulos como imágenes en lugar de texto superpuesto"
+    )
+
     parser.add_argument("--story-id", type=str, help="ID de la historia generada (carpeta dentro de stories/)")
     parser.add_argument("--mode", type=str, default="video", help="Modo de ejecución: imagenes | audios | video | musica | juntar-audios")
 
     args = parser.parse_args()
     IDEAS_FILE = args.ideas_file
+    SUBTITLE_AS_IMAGE = args.subtitle_as_image
     story_id = args.story_id
     modo = args.mode
 

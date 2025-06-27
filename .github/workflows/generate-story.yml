@@ -3,9 +3,6 @@ name: Generar Historia Reel
 on:
   workflow_dispatch:
     inputs:
-      story_id:
-        description: 'ID de la historia (opcional: si querés generar desde un story.json existente)'
-        required: false
       ideas_file:
         description: 'Archivo de ideas (ej: argentina-football-players.json o general-history.json)'
         required: true
@@ -54,11 +51,7 @@ jobs:
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
       run: |
-        if [ -z "${{ github.event.inputs.story_id }}" ]; then
-          python main.py --ideas-file ${{ github.event.inputs.ideas_file }}
-        else
-          python main.py ${{ github.event.inputs.story_id }} video
-        fi
+        python main.py --ideas-file ${{ github.event.inputs.ideas_file }} --subtitle-as-image
 
     - name: 🔎 Detectar último story_id generado
       id: detectar
