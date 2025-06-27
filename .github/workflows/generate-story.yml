@@ -6,6 +6,15 @@ on:
       story_id:
         description: 'ID de la historia (opcional: si querés generar desde un story.json existente)'
         required: false
+      ideas_file:
+        description: 'Archivo de ideas (ej: argentina-football-players.json o general-history.json)'
+        required: true
+        default: 'general-history.json'
+        type: choice
+        options:
+          - general-history.json
+          - argentina-football-players.json
+          - real-stories.json
 
 jobs:
   generar-reel:
@@ -45,7 +54,7 @@ jobs:
         ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
       run: |
         if [ -z "${{ github.event.inputs.story_id }}" ]; then
-          python main.py
+          python main.py --ideas-file ${{ github.event.inputs.ideas_file }}
         else
           python main.py ${{ github.event.inputs.story_id }} video
         fi
