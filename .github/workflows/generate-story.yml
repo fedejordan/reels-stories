@@ -11,7 +11,16 @@ on:
         options:
           - general-history.json
           - argentina-football-players.json
-          - real-stories.json
+          - cinema-legends.json
+          - dark-history.json
+          - decisions-that-changed-everything.json
+          - hidden-figures.json
+          - inventions-that-changed-the-world.json
+          - latin-american-rebels.json
+          - music-legends.json
+          - olympic-heroes.json
+          - scientific-breakthroughs.json
+          - women-who-changed-history.json
 
 jobs:
   generar-reel:

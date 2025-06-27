@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "Katherine Johnson, la mente que llevó al hombre a la Luna",
+    "descripcion": "Durante décadas, el trabajo de Katherine Johnson en la NASA fue invisible. Su precisión matemática fue vital para calcular las trayectorias del Apolo 11. Sin su genio, la historia espacial podría haber sido muy distinta… pero su nombre casi se pierde."
+  },
+  {
+    "titulo": "Alan Turing y el secreto que ganó la guerra",
+    "descripcion": "Descifró el código Enigma y ayudó a acortar la Segunda Guerra Mundial. Pero Alan Turing fue condenado por su homosexualidad y murió sin reconocimiento. Solo mucho después el mundo entendió que le debía su libertad… y el nacimiento de la computación moderna."
+  },
+  {
+    "titulo": "Henrietta Lacks: la mujer inmortal sin saberlo",
+    "descripcion": "En 1951, sin su consentimiento, científicos tomaron células del cuerpo de Henrietta Lacks. Esas células, llamadas HeLa, se multiplicaron infinitamente y revolucionaron la medicina. Pero ella nunca lo supo. Su legado vive en miles de laboratorios."
+  },
+  {
+    "titulo": "Claudette Colvin, la adolescente que se sentó primero",
+    "descripcion": "Antes que Rosa Parks, Claudette Colvin —una joven de 15 años— se negó a ceder su asiento en un autobús segregado. Fue arrestada y luchó en los tribunales, pero su historia fue silenciada. No encajaba con la narrativa que buscaban los líderes del movimiento."
+  },
+  {
+    "titulo": "Lise Meitner, la física que partió el átomo",
+    "descripcion": "Colaboró en la explicación científica de la fisión nuclear, pero su colega Otto Hahn recibió solo el Nobel. Lise Meitner, una judía exiliada por los nazis, fue borrada de los créditos. La historia le hizo justicia, pero demasiado tarde."
+  },
+  {
+    "titulo": "Mary Anning, la cazadora de fósiles olvidada",
+    "descripcion": "En las costas de Inglaterra, Mary Anning descubrió algunos de los fósiles más importantes del siglo XIX. Pero como mujer y de clase baja, fue ignorada por la comunidad científica. Hoy, es reconocida como pionera de la paleontología moderna."
+  },
+  {
+    "titulo": "Rosalind Franklin y la doble hélice silenciada",
+    "descripcion": "Su fotografía 51 fue clave para descubrir la estructura del ADN. Pero su aporte fue usado sin permiso por Watson y Crick, quienes se llevaron el Nobel. Rosalind Franklin murió joven, sin saber que su lente había capturado la esencia de la vida."
+  },
+  {
+    "titulo": "Percy Julian, el químico que venció el racismo",
+    "descripcion": "Descendiente de esclavos, Percy Julian desarrolló medicamentos vitales como la cortisona sintética. Pero durante años fue excluido por su color de piel. Su ciencia salvó millones, aunque su nombre tardó décadas en ser pronunciado."
+  },
+  {
+    "titulo": "Alice Ball, la cura borrada",
+    "descripcion": "A los 23 años, desarrolló el primer tratamiento efectivo contra la lepra. Tras su muerte, un colega blanco se atribuyó el crédito. Solo mucho después, Alice Ball fue reconocida como la mente brillante que el mundo quiso olvidar."
+  },
+  {
+    "titulo": "Chien-Shiung Wu, la reina de la física",
+    "descripcion": "Refutó una ley fundamental de la física con un experimento brillante. Pero cuando llegó el Nobel, fue ignorada. Chien-Shiung Wu desafió el mundo atómico, pero su victoria fue escrita con tinta invisible."
+  },
+  {
+    "titulo": "Sybil Ludington, la jinete de medianoche",
+    "descripcion": "A los 16 años, recorrió más del doble que Paul Revere para alertar a las tropas revolucionarias. Pero la historia la olvidó. Sybil Ludington cabalgó por la libertad, pero su galope se perdió en el eco del tiempo."
+  },
+  {
+    "titulo": "Dorothy Vaughan, la programadora del espacio",
+    "descripcion": "Antes de que existieran computadoras, ella era una. Dirigió el equipo de mujeres negras que calcularon las órbitas espaciales. Sin sus códigos, no habría despegue. Pero su nombre tardó medio siglo en salir del anonimato."
+  },
+  {
+    "titulo": "Ignaz Semmelweis, el doctor que descubrió la higiene",
+    "descripcion": "En el siglo XIX, notó que lavarse las manos salvaba vidas. Sus colegas se burlaron y fue internado en un manicomio. Murió sin reconocimiento. Hoy, su verdad es la base de toda medicina moderna."
+  },
+  {
+    "titulo": "Sophie Scholl, la rosa blanca que desafió a Hitler",
+    "descripcion": "A los 21 años, imprimía panfletos contra el régimen nazi. Fue ejecutada por rebelarse con palabras. Décadas después, Alemania reconoció su valentía. Pero el silencio pesó más que su voz por años."
+  },
+  {
+    "titulo": "Émilie du Châtelet, la mente que tradujo a Newton",
+    "descripcion": "Física, matemática y filósofa, tradujo y explicó los Principia de Newton mejor que nadie. Su versión aún se usa. Pero como mujer del siglo XVIII, su genio fue reducido a notas a pie de página."
+  },
+  {
+    "titulo": "Fritz Haber, el salvador y destructor invisible",
+    "descripcion": "Inventó un método para fijar nitrógeno y alimentar al mundo. Pero también creó gases para la guerra. Ganó el Nobel, pero su historia fue oscurecida por su ambigüedad moral. Un héroe incómodo para los libros de texto."
+  },
+  {
+    "titulo": "Nettie Stevens y el secreto del sexo biológico",
+    "descripcion": "Descubrió que los cromosomas X e Y determinan el sexo de los humanos. Pero fue eclipsada por hombres con más reputación. Su hallazgo fue crucial, pero su nombre quedó relegado a los márgenes."
+  },
+  {
+    "titulo": "William and Ellen Craft, los fugitivos disfrazados",
+    "descripcion": "Un matrimonio esclavo que escapó del sur de EE.UU.: ella se disfrazó de hombre blanco y él, de su sirviente. Cruzaron estados enemigos en plena libertad fingida. Su audacia desafió a un sistema entero… y fue casi olvidada."
+  },
+  {
+    "titulo": "Vera Rubin y la materia oscura",
+    "descripcion": "Detectó que las galaxias giraban de forma extraña. Su hallazgo apuntaba a una fuerza invisible: la materia oscura. El Nobel nunca llegó. Su descubrimiento cambió la cosmología, pero el universo fue más justo que los jurados."
+  },
+  {
+    "titulo": "Bessie Coleman, la aviadora prohibida",
+    "descripcion": "Como mujer negra y pobre, ninguna escuela de vuelo la aceptó en EE.UU. Aprendió en Francia y se convirtió en pionera del cielo. Su historia fue eclipsada por los hermanos Wright, pero ella voló contra todo pronóstico."
+  },
+  {
+    "titulo": "Murasaki Shikibu, la primera novelista del mundo",
+    "descripcion": "Mil años antes de la novela moderna, escribió 'Genji Monogatari' en Japón. Fue mujer en una corte dominada por hombres. Su obra sobrevivió siglos, pero su genio apenas se menciona en la literatura universal."
+  },
+  {
+    "titulo": "Olaudah Equiano, el esclavo que escribió su libertad",
+    "descripcion": "Secuestrado de niño y vendido como esclavo, compró su libertad y escribió una autobiografía que sacudió a Europa. Fue clave para abolir la esclavitud, pero su historia fue borrada de los programas escolares."
+  },
+  {
+    "titulo": "Anandibai Joshi, la doctora de la India colonial",
+    "descripcion": "Fue la primera mujer india en convertirse en médica occidental. Lo hizo enfrentando prejuicios religiosos, raciales y familiares. Murió joven, pero su ejemplo abrió una puerta que parecía sellada por siglos."
+  },
+  {
+    "titulo": "James Armistead Lafayette, el espía esclavo",
+    "descripcion": "Durante la Guerra de Independencia de EE.UU., fingió ser un esclavo leal a los británicos y pasó información vital a los revolucionarios. Fue clave en la victoria, pero su historia se mantuvo encadenada al olvido."
+  },
+  {
+    "titulo": "Edmonia Lewis, la escultora sin patria",
+    "descripcion": "Afroamericana e indígena, fue rechazada por ambos mundos. Esculpió obras magistrales en mármol en el siglo XIX, pero su nombre fue enterrado bajo prejuicios. Hoy, su arte resurge como una voz tallada en piedra."
+  },
+  {
+    "titulo": "Rebecca Lee Crumpler, la primera doctora negra",
+    "descripcion": "En plena Guerra Civil, se convirtió en la primera mujer negra médica en EE.UU. Atendió a miles de esclavos liberados. Su historia no está en los libros, pero su bisturí abrió caminos imposibles."
+  },
+  {
+    "titulo": "Walter Tull, el futbolista que fue soldado",
+    "descripcion": "Primer jugador negro en la liga inglesa, y luego uno de los primeros oficiales negros del ejército británico. Murió en combate en la Primera Guerra Mundial. Su hazaña quedó fuera de los podios y los memoriales."
+  },
+  {
+    "titulo": "Maria Sibylla Merian, la madre de la entomología",
+    "descripcion": "En el siglo XVII, estudió insectos en la selva de Surinam. Observó ciclos de vida que nadie más documentaba. Su trabajo fue ignorado durante siglos, aunque sentó las bases de la biología moderna."
+  },
+  {
+    "titulo": "Mary Seacole, la enfermera olvidada de la guerra",
+    "descripcion": "Jamaiquina, curó soldados en la Guerra de Crimea mientras Florence Nightingale ganaba fama. Fue aplaudida por los soldados, pero excluida de los libros de historia. Hoy, su nombre vuelve con justicia."
+  },
+  {
+    "titulo": "Jane Jacobs, la rebelde del urbanismo",
+    "descripcion": "Sin título universitario, enfrentó a arquitectos y gobiernos para defender barrios vivos y humanos. Sus ideas cambiaron las ciudades, pero durante años fue ridiculizada por los expertos."
+  },
+  {
+    "titulo": "Tu Youyou, la cazadora de curas milenarias",
+    "descripcion": "Estudió textos antiguos para encontrar una cura contra la malaria. Aisló un compuesto clave y salvó millones de vidas. Ganó el Nobel, pero casi medio siglo después. Su laboratorio fue la historia… y la paciencia."
+  },
+  {
+    "titulo": "Charles Drew, el pionero de la sangre separada",
+    "descripcion": "Desarrolló técnicas para almacenar sangre y creó los primeros bancos de plasma. Pero como afroamericano, vio cómo su propio país segregaba donantes por raza. Murió joven, sin saber que millones vivirían gracias a su ciencia."
+  },
+  {
+    "titulo": "Mary Eliza Mahoney, la primera enfermera negra",
+    "descripcion": "En una época en que las mujeres negras apenas accedían a la educación, ella se convirtió en la primera enfermera registrada en EE.UU. Cuidó a cientos, pero su legado sanó en silencio."
+  },
+  {
+    "titulo": "Benjamin Banneker, el astrónomo autodidacta",
+    "descripcion": "Nacido libre en una familia afroamericana en 1731, construyó un reloj de madera, predijo eclipses y ayudó a diseñar Washington D.C. Su genio fue borrado de los mapas por siglos."
+  },
+  {
+    "titulo": "Gertrude Elion, la química sin doctorado que salvó millones",
+    "descripcion": "Creó fármacos clave contra la leucemia, el VIH y los trasplantes. Nunca tuvo un PhD, pero sí un Nobel. Su camino fue solitario y brillante, aunque pocos la recuerdan fuera de los laboratorios."
+  },
+  {
+    "titulo": "Tenzing Norgay, el sherpa que conquistó el Everest",
+    "descripcion": "Fue quien realmente abrió el camino a la cima junto a Edmund Hillary. Pero los titulares olvidaron su nombre. En la montaña más alta, su huella fue la primera… y la menos celebrada."
+  },
+  {
+    "titulo": "Clara Campoamor, la voz del voto femenino en España",
+    "descripcion": "En 1931, defendió el sufragio femenino en un parlamento que no la quería escuchar. Ganó la batalla, pero fue exiliada. El derecho quedó; su nombre, no tanto."
+  },
+  {
+    "titulo": "Ynes Mexía, la botánica de las selvas olvidadas",
+    "descripcion": "A los 55 años empezó a explorar América Latina sola. Descubrió 500 especies nuevas. Pero sus contribuciones fueron archivadas como notas de campo sin firma."
+  },
+  {
+    "titulo": "Bayard Rustin, el estratega del sueño de Martin Luther King",
+    "descripcion": "Fue el cerebro logístico detrás de la marcha sobre Washington, pero su homosexualidad lo condenó al ostracismo. Su causa era justa; su identidad, castigada."
+  },
+  {
+    "titulo": "Fatima al-Fihri, la fundadora de la primera universidad",
+    "descripcion": "En el año 859, en Marruecos, una mujer musulmana creó la primera institución que otorgaba títulos de estudios. Su obra sigue en pie… aunque su historia casi no se enseña."
+  },
+  {
+    "titulo": "James Baldwin, la voz que incomodó a América",
+    "descripcion": "Negro, gay y brillante, escribió con fuego sobre raza y desigualdad en EE.UU. Su verdad fue tan potente que muchos prefirieron olvidarla. Hoy, sus palabras arden más que nunca."
+  },
+  {
+    "titulo": "Cecilia Payne, quien descubrió el sol",
+    "descripcion": "Demostró que el Sol estaba hecho principalmente de hidrógeno. Sus colegas minimizaron su hallazgo, que luego aceptaron… sin mencionarla. Ella iluminó el cielo, pero el crédito fue opacado."
+  },
+  {
+    "titulo": "Bessie Blount, la inventora de la dignidad",
+    "descripcion": "Durante la Segunda Guerra Mundial, creó dispositivos para ayudar a soldados amputados a comer solos. Como mujer negra, sus patentes fueron ignoradas. Su ingenio restauró humanidad en silencio."
+  },
+  {
+    "titulo": "Ona Judge, la esclava que escapó de Washington",
+    "descripcion": "George Washington la perseguía con leyes especiales para recuperarla. Ella resistió y vivió libre. Mientras se enseñaba la historia del 'padre de la patria', su historia fue borrada."
+  },
+  {
+    "titulo": "John Edmonstone, el maestro de Darwin",
+    "descripcion": "Un hombre negro liberado que enseñó taxidermia a Charles Darwin en Edimburgo. Sin él, quizá no habría teoría de la evolución. Pero su nombre nunca cruzó el océano."
+  },
+  {
+    "titulo": "Zora Neale Hurston, la antropóloga silenciada",
+    "descripcion": "Escritora y estudiosa de la cultura afroamericana, murió en la pobreza y fue enterrada sin lápida. Hoy, su voz resuena en cada página que sobrevivió al olvido."
+  },
+  {
+    "titulo": "George Washington Carver, el alquimista del maní",
+    "descripcion": "Creó más de 300 usos para el maní y revitalizó la agricultura sureña. Pero como afroamericano, fue reducido a anécdotas. Su genio agrícola era ciencia, no folclore."
+  },
+  {
+    "titulo": "Sophia Brahe, la astrónoma eclipsada por su hermano",
+    "descripcion": "Trabajó con Tycho Brahe para trazar órbitas celestes, pero su rol fue minimizado. El universo que estudió nunca reconoció que tenía dos ojos… y una mente precisa."
+  },
+  {
+    "titulo": "Barbara McClintock, la genetista adelantada a su tiempo",
+    "descripcion": "Descubrió la transposición genética en los 40, pero nadie le creyó. Décadas después, su trabajo ganó un Nobel. Durante años, hablaba sola… con razón."
+  },
+  {
+    "titulo": "Robert Smalls, el esclavo que robó un barco y ganó la libertad",
+    "descripcion": "Durante la Guerra Civil, se disfrazó de capitán y escapó con su familia en un buque confederado. Luego fue congresista. Su historia merece más que un pie de página."
+  },
+  {
+    "titulo": "Heinrich Schliemann, el soñador que halló Troya",
+    "descripcion": "Obsesionado con la Ilíada, buscó Troya donde nadie creía. La encontró, pero su falta de métodos lo volvió polémico. Sin él, la ciudad de los mitos seguiría bajo tierra."
+  },
+  {
+    "titulo": "Trotula de Salerno, la médica medieval olvidada",
+    "descripcion": "Escribió tratados sobre salud femenina en el siglo XI. Por siglos, se creyó que 'Trotula' era un seudónimo masculino. Su sabiduría sobrevivió… a pesar del anonimato forzado."
+  },
+  {
+    "titulo": "Hans Asperger, el pediatra y la doble verdad",
+    "descripcion": "Dio nombre a un síndrome, pero su colaboración con el régimen nazi fue ignorada por décadas. La historia lo recordó como pionero, hasta que empezó a mirar de cerca."
+  },
+  {
+    "titulo": "Mildred Fish-Harnack, la espía literaria",
+    "descripcion": "Única estadounidense ejecutada por orden directa de Hitler. Fundó una red antinazi y fue traicionada. Su legado quedó sepultado entre archivos secretos."
+  },
+  {
+    "titulo": "Janusz Korczak, el pedagogo mártir",
+    "descripcion": "Dirigía un orfanato judío en Polonia. Cuando llegó el tren a Treblinka, rechazó salvarse. Subió con sus niños y murió con ellos. Su educación era amor… y coraje final."
+  },
+  {
+    "titulo": "Enheduanna, la primera autora de la historia",
+    "descripcion": "Hace 4.300 años, escribió himnos en Sumeria firmando con su nombre. Su obra fue poesía, religión y política. Pero casi nadie sabe que la literatura comenzó con una mujer."
+  },
+  {
+    "titulo": "Bertha Benz, la primera en probar un auto",
+    "descripcion": "En 1888, sin permiso, condujo el primer automóvil más de 100 km para probar que el invento de su esposo funcionaba. Detuvo el auto, lo reparó y convenció al mundo. La historia llevó el apellido Benz, pero olvidó su impulso."
+  },
+  {
+    "titulo": "Jocelyn Bell Burnell, la astrónoma que oyó las estrellas",
+    "descripcion": "Descubrió los púlsares, señales de estrellas moribundas. Pero su profesor recibió el Nobel. Ella, joven y mujer, fue aplaudida… en silencio."
+  },
+  {
+    "titulo": "Taki Katei, el pintor invisible del Japón imperial",
+    "descripcion": "Pintó para la corte del emperador Meiji y fusionó estilos milenarios con modernidad. Su obra fue relegada por siglos hasta que museos europeos la redescubrieron."
+  },
+  {
+    "titulo": "Mamie Phipps Clark, la psicóloga que venció la segregación",
+    "descripcion": "Sus estudios sobre identidad racial infantil ayudaron a derogar la segregación en escuelas de EE.UU. Fue ignorada por décadas. Su ciencia fue justicia antes que ley."
+  },
+  {
+    "titulo": "Ida B. Wells, la periodista contra el linchamiento",
+    "descripcion": "A fines del siglo XIX, denunció con datos los linchamientos en el sur de EE.UU. Su valentía puso precio a su cabeza. El periodismo valiente tiene raíces en su pluma."
+  },
+  {
+    "titulo": "Lois Weber, la directora que Hollywood olvidó",
+    "descripcion": "En los años 1910, dirigió películas con técnica, guión y profundidad moral. Fue la cineasta mejor paga de su tiempo, pero el paso a los 'talkies' la borró de la memoria."
+  },
+  {
+    "titulo": "Ellen Swallow Richards, la científica de la vida diaria",
+    "descripcion": "Fundó el campo de la química doméstica y abogó por la seguridad alimentaria. Su trabajo transformó los hogares… pero no los manuales escolares."
+  },
+  {
+    "titulo": "José Celestino Mutis, el botánico de América ignorado",
+    "descripcion": "En el siglo XVIII catalogó miles de plantas en Colombia. Sus dibujos fueron olvidados por siglos en archivos coloniales. Hoy florecen en museos."
+  },
+  {
+    "titulo": "Tamar de Georgia, la reina que fue rey",
+    "descripcion": "Gobernó en el siglo XII con título masculino para imponerse en un mundo de hombres. Bajo su mando, Georgia vivió su edad dorada. Fue venerada, pero su historia se apagó fuera de su tierra."
+  },
+  {
+    "titulo": "Francisca Rivas, la ingeniera ferroviaria sin título",
+    "descripcion": "En el siglo XIX, en Argentina, supervisó obras clave del ferrocarril disfrazada de asistente. Nunca pudo firmar planos, pero sin ella no habría rieles al norte."
+  },
+  {
+    "titulo": "Margaret Hamilton, la mujer que llevó código a la Luna",
+    "descripcion": "Programó a mano el software del Apolo 11. Su código evitó una catástrofe durante el alunizaje. Su nombre no fue grabado en la placa lunar, pero lo merecía."
+  },
+  {
+    "titulo": "Maria W. Stewart, la primera oradora pública afroamericana",
+    "descripcion": "En 1831, habló sobre libertad y educación en Boston. Fue rechazada, insultada y olvidada. Su voz abrió el camino para todas las que vinieron después."
+  },
+  {
+    "titulo": "Raja Ram Mohan Roy, el reformador invisible de la India",
+    "descripcion": "Luchó contra la quema de viudas, defendió la educación y tradujo textos sagrados. Su rol fue clave en el despertar intelectual indio, pero su historia se esfumó."
+  },
+  {
+    "titulo": "Mary Beatrice Davidson, la inventora de lo cotidiano",
+    "descripcion": "Registró más de 100 patentes, incluyendo el sistema de bolsas de basura y el dispensador de papel higiénico. Pero como mujer negra, rara vez se le dio crédito."
+  },
+  {
+    "titulo": "Andrés Bello, el jurista que fundó una lengua",
+    "descripcion": "Redactó códigos civiles, promovió la educación y fijó normas del español americano. Su influencia es inmensa, aunque muchos lo confunden con nombres ajenos."
+  },
+  {
+    "titulo": "Anna Julia Cooper, la voz de las invisibles",
+    "descripcion": "Nacida esclava, se convirtió en doctora en Filosofía. Su libro de 1892 anticipó teorías feministas modernas. Fue ignorada por generaciones… hasta ahora."
+  },
+  {
+    "titulo": "Artemisia Gentileschi, la pintora que venció al barroco y al abuso",
+    "descripcion": "Sobrevivió a una violación, pintó heroínas bíblicas con furia y realismo, y desafió a Caravaggio. Su firma fue ocultada tras las de hombres durante siglos."
+  },
+  {
+    "titulo": "James C. Hogg, el médico que entendió el pulmón",
+    "descripcion": "Sus estudios permitieron comprender el EPOC. Salvo entre neumólogos, su nombre se borró. Respiramos gracias a él, aunque no lo sepamos."
+  },
+  {
+    "titulo": "Ángela Ruiz Robles, la madre del libro electrónico",
+    "descripcion": "En 1949 inventó un libro mecánico con textos intercambiables. Era España, y nadie invirtió. Décadas después, el e-book tomó el mundo. Ella, el olvido."
+  },
+  {
+    "titulo": "Yuri Kochiyama, la activista de mil causas",
+    "descripcion": "Japonesa-americana, estuvo con Malcolm X cuando fue asesinado y luchó por derechos civiles, paz y justicia global. Fue vigilada, no premiada."
+  },
+  {
+    "titulo": "Adolphe Quetelet, el creador del 'hombre promedio'",
+    "descripcion": "Inventó el concepto del índice de masa corporal. Su intención era científica, no estética. Hoy su legado es usado sin entender su profundidad."
+  },
+  {
+    "titulo": "Nanny of the Maroons, la reina rebelde de Jamaica",
+    "descripcion": "Lideró revueltas contra los británicos en el siglo XVIII. Guerrera, espiritual y táctica, logró acuerdos de autonomía. Fue leyenda oral por siglos."
+  },
+  {
+    "titulo": "Sylvia Earle, la guardiana del océano",
+    "descripcion": "Pionera de la exploración marina, rompió récords de profundidad y fundó campañas de protección marina. Su voz aún lucha por mares invisibles."
+  },
+  {
+    "titulo": "Oscar Zariski, el matemático exiliado",
+    "descripcion": "Huyó de la persecución en Rusia y fundó la geometría algebraica moderna en EE.UU. Su nombre es clave en los papers, pero ausente en los libros escolares."
+  },
+  {
+    "titulo": "Lucy Hicks Anderson, la mujer que desafió la ley",
+    "descripcion": "Nació con sexo asignado masculino, vivió como mujer en los años 40, se casó y fue encarcelada por 'fraude'. Defendió su identidad ante el tribunal. Su historia es resistencia."
+  },
+  {
+    "titulo": "Gerty Cori, la química que explicó la energía",
+    "descripcion": "Descubrió cómo el cuerpo convierte el glucógeno en energía. Compartió el Nobel con su esposo, pero su nombre siempre fue el segundo. Su ciencia fue el motor de la vida celular."
+  },
+  {
+    "titulo": "Elsie Widdowson, la nutricionista de guerra",
+    "descripcion": "Durante la Segunda Guerra Mundial, formuló las raciones británicas que evitaron la hambruna. Su impacto fue nacional, pero sus medallas llegaron tarde… y pequeñas."
+  },
+  {
+    "titulo": "André Rebouças, el ingeniero abolicionista de Brasil",
+    "descripcion": "Negro y brillante, diseñó infraestructuras y luchó por el fin de la esclavitud. Fue exiliado y murió olvidado. Su nombre no aparece en calles, pero construyó naciones."
+  },
+  {
+    "titulo": "Esther Lederberg, la pionera de la genética bacteriana",
+    "descripcion": "Descubrió el fago lambda y técnicas fundamentales para la genética. Su esposo ganó el Nobel. Ella quedó en la sombra, a pesar de iluminar el camino."
+  },
+  {
+    "titulo": "Fanny Mendelssohn, la música que firmó con otro nombre",
+    "descripcion": "Compuso más de 400 obras, muchas atribuidas a su hermano Felix. Su talento fue negado por ser mujer. La armonía llevaba su firma… escondida."
+  },
+  {
+    "titulo": "Bhikaiji Cama, la madre de la bandera india",
+    "descripcion": "Exiliada en Europa, diseñó la primera bandera de India y exigió libertad décadas antes de Gandhi. Fue silenciada, pero su símbolo sobrevivió."
+  },
+  {
+    "titulo": "Henrietta Swan Leavitt, la astrónoma de las distancias",
+    "descripcion": "Descubrió cómo medir el universo con estrellas variables. Su fórmula permitió conocer la escala cósmica. Murió antes de que se entendiera su hallazgo."
+  },
+  {
+    "titulo": "Eufrosina Cruz, la voz indígena del poder",
+    "descripcion": "Primera mujer indígena zapoteca en presidir el Congreso de Oaxaca. Luchó contra usos y costumbres que negaban derechos. Su lengua y su lucha siguen."
+  },
+  {
+    "titulo": "Julius Eastman, el compositor radical",
+    "descripcion": "Negro, gay y minimalista, compuso obras provocadoras en los 70. Murió en la pobreza, sus partituras perdidas. Hoy su música regresa como un grito."
+  },
+  {
+    "titulo": "Margaret E. Knight, la inventora de las bolsas de papel",
+    "descripcion": "Diseñó una máquina para producir bolsas con base cuadrada. Un hombre intentó robarle la patente. Peleó en juicio… y ganó. Pero su historia fue embalada en silencio."
+  },
+  {
+    "titulo": "Benjamin Lay, el profeta contra la esclavitud",
+    "descripcion": "En el siglo XVIII, denunciaba la esclavitud con acciones teatrales y profecías. Fue expulsado de círculos religiosos. Su prédica fue recordada… siglos después."
+  },
+  {
+    "titulo": "Maud Menten, la bioquímica tras la ecuación",
+    "descripcion": "Codiseñó la famosa ecuación de Michaelis-Menten que explica reacciones enzimáticas. Su coautor ganó fama; ella, solo notas al pie. Su fórmula aún respira en cada célula."
+  },
+  {
+    "titulo": "Olympe de Gouges, la feminista de la guillotina",
+    "descripcion": "En 1791 escribió la Declaración de los Derechos de la Mujer. Fue ejecutada por ello. Su pluma sangró antes que el feminismo tuviera nombre."
+  },
+  {
+    "titulo": "Norbert Rillieux, el ingeniero del azúcar",
+    "descripcion": "Inventó un sistema revolucionario de evaporación al vacío para refinar azúcar. Salvó vidas y modernizó la industria, pero su condición racial lo mantuvo en las sombras."
+  },
+  {
+    "titulo": "Charlotte Maxeke, la madre del activismo sudafricano",
+    "descripcion": "Primera mujer negra en graduarse en Sudáfrica, fundó movimientos sociales y feministas. Fue faro en la oscuridad del apartheid, aunque el mundo no lo supo."
+  },
+  {
+    "titulo": "Hypatia de Alejandría, la mártir del pensamiento",
+    "descripcion": "Matemática, astrónoma y filósofa, fue asesinada por una turba en el siglo V. Su crimen: enseñar a razonar en un mundo que eligió la fe ciega."
+  },
+  {
+    "titulo": "Mihailo Petrović, el matemático pescador",
+    "descripcion": "Llamado 'el Arquímedes serbio', desarrolló complejos instrumentos de cálculo y filosofías profundas, pero fue marginado por su vida bohemia y sus redes… de pescar."
+  },
+  {
+    "titulo": "Geraldine Mock, la mujer que dio la vuelta al mundo volando",
+    "descripcion": "En 1964, completó un vuelo global en solitario antes que muchas figuras célebres. La prensa la olvidó. Su avión hizo historia, su nombre no."
+  },
+  {
+    "titulo": "Gladys West, la mente detrás del GPS",
+    "descripcion": "Modeló matemáticamente la forma de la Tierra, clave para crear el GPS. Trabajó en silencio, mientras el mundo usaba su invención sin saber de ella."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "Jesse Owens y la victoria que humilló a Hitler",
+    "descripcion": "Berlín, 1936. Mientras el régimen nazi intentaba demostrar la superioridad aria, Jesse Owens, un atleta afroamericano, ganó cuatro medallas de oro frente a los ojos de Hitler. Su velocidad no solo desafió récords, sino también ideologías."
+  },
+  {
+    "titulo": "El 10 perfecto de Nadia Comăneci",
+    "descripcion": "Montreal, 1976. Con solo 14 años, Nadia Comăneci ejecutó una rutina tan impecable que los marcadores no estaban preparados: mostraron 1.00 en lugar de 10. Su perfección redefinió la gimnasia para siempre."
+  },
+  {
+    "titulo": "Eric 'el Anguila' Moussambani",
+    "descripcion": "Sídney, 2000. Nunca había visto una piscina olímpica. Nadó solo, torpemente, y con esfuerzo sobrehumano terminó último. Pero su valentía y espíritu de lucha conmovieron al mundo. Eric se convirtió en leyenda sin ganar una medalla."
+  },
+  {
+    "titulo": "Abebe Bikila y la maratón descalzo",
+    "descripcion": "Roma, 1960. Sin zapatillas, el etíope Abebe Bikila corrió la maratón olímpica descalzo… y ganó. Se convirtió en el primer africano en lograr el oro y demostró que la determinación corre más rápido que la tecnología."
+  },
+  {
+    "titulo": "El Dream Team que reinventó el básquet",
+    "descripcion": "Barcelona, 1992. Por primera vez, estrellas de la NBA compitieron en los Juegos Olímpicos. Jordan, Magic, Bird y compañía no solo ganaron todos sus partidos: convirtieron el básquet en un espectáculo global."
+  },
+  {
+    "titulo": "Derek Redmond y el abrazo de su padre",
+    "descripcion": "Barcelona, 1992. En plena semifinal de 400m, Derek se lesionó y cayó al suelo. Podía haberse rendido. En cambio, se levantó y cojeó hasta la meta, ayudado por su padre que saltó desde las gradas. Una ovación inmortal."
+  },
+  {
+    "titulo": "Wilma Rudolph, la niña que venció a la polio",
+    "descripcion": "A los 4 años, Wilma Rudolph no podía caminar sin aparatos ortopédicos. A los 20, ganó tres oros en Roma 1960 y se convirtió en la mujer más rápida del mundo. Su historia fue una inspiración para generaciones."
+  },
+  {
+    "titulo": "Usain Bolt y la velocidad sobrenatural",
+    "descripcion": "Pekín, 2008. Usain Bolt bajó los brazos antes de la meta… y aun así rompió el récord mundial. Su carisma y dominio absoluto hicieron del jamaiquino una leyenda viva del atletismo."
+  },
+  {
+    "titulo": "Kerri Strug y el salto con el tobillo roto",
+    "descripcion": "Atlanta, 1996. Con su equipo necesitando un último salto para el oro, Kerri Strug lo ejecutó… con un tobillo lesionado. Aterrizó en un solo pie y cayó después. El sacrificio valió el oro y el corazón del público."
+  },
+  {
+    "titulo": "Yusra Mardini, nadadora y refugiada",
+    "descripcion": "Huyó de Siria nadando kilómetros para salvar su vida. Años después, Yusra Mardini compitió en Río 2016 como parte del equipo de refugiados. Su presencia en la piscina fue un símbolo de esperanza."
+  },
+  {
+    "titulo": "Michael Phelps y las 8 medallas de oro",
+    "descripcion": "Pekín, 2008. Michael Phelps ganó ocho oros en una sola edición, rompiendo récords históricos. Pero lo más impactante fue su precisión milimétrica… y su mente inquebrantable."
+  },
+  {
+    "titulo": "Lasse Virén, la caída que terminó en oro",
+    "descripcion": "Múnich, 1972. El finlandés cayó en plena final de 10.000 metros. Se levantó, alcanzó a todos… y ganó. Luego repitió el oro en 5.000. La caída fue solo un impulso para la gloria."
+  },
+  {
+    "titulo": "Gabriela Andersen-Schiess y la llegada más épica",
+    "descripcion": "Los Ángeles, 1984. Deshidratada y tambaleante, Gabriela Andersen-Schiess rechazó ayuda médica para no ser descalificada. Cruzó la meta en zigzag, entre lágrimas. Su valentía emocionó al mundo."
+  },
+  {
+    "titulo": "Simone Biles y la fuerza de decir basta",
+    "descripcion": "Tokio, 2021. La gimnasta más dominante del siglo decidió priorizar su salud mental y se retiró de varias pruebas. Su decisión rompió estigmas y redefinió qué significa ser fuerte."
+  },
+  {
+    "titulo": "Paavo Nurmi, el ‘finlandés volador’",
+    "descripcion": "París, 1924. Paavo Nurmi corrió y ganó cinco medallas de oro… en seis días. Usaba cronómetro propio en las carreras, obsesionado con el ritmo. Fue el pionero de la ciencia en el deporte."
+  },
+  {
+    "titulo": "Naim Süleymanoğlu, el Hércules de bolsillo",
+    "descripcion": "Con solo 1,47 m de altura, el pesista turco Naim Süleymanoğlu levantaba más del triple de su peso. En Seúl 1988, rompió tres récords mundiales en minutos. Pura potencia y corazón."
+  },
+  {
+    "titulo": "Fanny Blankers-Koen, madre y campeona",
+    "descripcion": "Londres, 1948. A los 30 años y con dos hijos, ganó cuatro oros en atletismo. Le decían que era vieja para correr. Respondió con récords y una sonrisa."
+  },
+  {
+    "titulo": "Mutaz Barshim y Gianmarco Tamberi: oro compartido",
+    "descripcion": "Tokio, 2021. Ambos empatados en salto alto, podían desempatar. Pero decidieron compartir el oro. Un gesto de amistad y respeto que conmovió a todo el estadio."
+  },
+  {
+    "titulo": "Mark Spitz y el récord que parecía imposible",
+    "descripcion": "Múnich, 1972. Mark Spitz ganó siete oros en natación, todos con récord mundial. Su hazaña se mantuvo imbatida por 36 años, hasta que llegó otro tiburón: Michael Phelps."
+  },
+  {
+    "titulo": "Derartu Tulu, la primera africana en ganar oro",
+    "descripcion": "Barcelona, 1992. Derartu Tulu ganó los 10.000 metros y se convirtió en la primera mujer africana negra en obtener una medalla dorada. Dio una vuelta con su rival blanca, en señal de unidad."
+  },
+  {
+    "titulo": "Lawrence Lemieux y el acto de nobleza en alta mar",
+    "descripcion": "Seúl, 1988. Iba segundo en vela. Vio que otro competidor volcó y se tiró al agua para salvarlo. Renunció a su medalla, pero ganó algo más: el respeto eterno del olimpismo."
+  },
+  {
+    "titulo": "Haile Gebrselassie y su sonrisa invencible",
+    "descripcion": "Sídney, 2000. Con una zancada perfecta y una sonrisa contagiosa, el etíope ganó el oro en los 10.000 metros. Era asmático… y el más rápido de todos."
+  },
+  {
+    "titulo": "Rulon Gardner y la caída del invencible ruso",
+    "descripcion": "Sídney, 2000. Aleksandr Karelin no perdía hace 13 años. El estadounidense Rulon Gardner, casi desconocido, lo derrotó en lucha grecorromana. Fue una de las sorpresas más grandes de la historia olímpica."
+  },
+  {
+    "titulo": "Marjorie Gestring, la campeona adolescente",
+    "descripcion": "Berlín, 1936. Con solo 13 años, ganó oro en clavados. Se convirtió en la atleta olímpica más joven en lograrlo. Su juventud no impidió su grandeza."
+  },
+  {
+    "titulo": "Tatyana McFadden, la reina de las ruedas",
+    "descripcion": "Nacida con espina bífida y criada en un orfanato ruso, Tatyana se convirtió en una de las atletas paralímpicas más dominantes de la historia. Su motor: la resiliencia."
+  },
+  {
+    "titulo": "Billy Mills y el oro imposible",
+    "descripcion": "Tokio, 1964. Nadie apostaba por el indígena americano Billy Mills. En los últimos metros, sprintó como un relámpago y ganó los 10.000 metros. Su victoria fue poesía inesperada."
+  },
+  {
+    "titulo": "Cathy Freeman y la carrera por la igualdad",
+    "descripcion": "Sídney, 2000. Cathy Freeman, de origen aborigen, corrió con todo un país sobre sus hombros. Ganó el oro en los 400m y emocionó a Australia como nunca antes."
+  },
+  {
+    "titulo": "Tommie Smith y el puño que cambió la historia",
+    "descripcion": "México, 1968. Tras ganar el oro en 200m, Tommie Smith alzó el puño en protesta contra el racismo. Lo sancionaron, pero su gesto quedó grabado en la memoria colectiva."
+  },
+  {
+    "titulo": "Saori Yoshida, la emperatriz de la lucha",
+    "descripcion": "Con tres oros olímpicos y trece mundiales, la japonesa Saori Yoshida dominó la lucha libre como nadie. Su técnica era precisión samurái."
+  },
+  {
+    "titulo": "Ibtihaj Muhammad, el velo y la espada",
+    "descripcion": "Río, 2016. Fue la primera atleta estadounidense en competir usando hiyab. En esgrima, demostró que la fe y la excelencia pueden ir de la mano."
+  },
+  {
+    "titulo": "Yulimar Rojas y el salto al infinito",
+    "descripcion": "Tokio, 2021. La venezolana voló 15,67 metros y rompió el récord mundial de triple salto. Su emoción pura al caer en la arena conmovió a todo el planeta."
+  },
+  {
+    "titulo": "Im Dong-Hyun, el arquero ciego que rompió récords",
+    "descripcion": "Londres, 2012. El coreano Im Dong-Hyun tiene una visión legalmente ciega. Aun así, rompió el récord mundial de tiro con arco. Disparaba viendo formas borrosas… y daba en el blanco."
+  },
+  {
+    "titulo": "Refugiados sin bandera, pero con sueños",
+    "descripcion": "Río, 2016. Por primera vez, un equipo olímpico de refugiados participó en los Juegos. Sin patria oficial, compitieron con dignidad y valor, representando a millones sin voz."
+  },
+  {
+    "titulo": "Greg Louganis, el salto tras el golpe",
+    "descripcion": "Seúl, 1988. Greg Louganis chocó su cabeza contra la plataforma. Sangrando, volvió al trampolín. Su siguiente salto fue perfecto, ganó el oro y la ovación del mundo."
+  },
+  {
+    "titulo": "Oscar Pistorius, el hombre biónico",
+    "descripcion": "Londres, 2012. Con prótesis en ambas piernas, Oscar Pistorius corrió en los Juegos Olímpicos entre atletas convencionales. Su presencia rompió barreras físicas y mentales."
+  },
+  {
+    "titulo": "Naomi Osaka y el fuego encendido por la diversidad",
+    "descripcion": "Tokio, 2021. La tenista japonesa encendió el pebetero olímpico, simbolizando una nueva generación: multicultural, consciente y poderosa."
+  },
+  {
+    "titulo": "Shun Fujimoto, el oro con una pierna rota",
+    "descripcion": "Montreal, 1976. En gimnasia por equipos, Fujimoto se rompió la pierna… pero siguió compitiendo. Su salto final fue tan perfecto como doloroso. Japón ganó el oro, y él la inmortalidad."
+  },
+  {
+    "titulo": "Kipchoge y la maratón como arte",
+    "descripcion": "Tokio, 2021. Eliud Kipchoge no corrió: flotó. Con paso firme y rostro sereno, cruzó la meta primero, como si dominara el tiempo mismo. Era su segunda maratón olímpica ganada."
+  },
+  {
+    "titulo": "Liu Xiang y el peso de un país",
+    "descripcion": "Pekín, 2008. Era el héroe chino. Pero una lesión lo obligó a abandonar. La imagen de Liu saliendo en silencio, con lágrimas, fue uno de los momentos más tristes de los Juegos."
+  },
+  {
+    "titulo": "Joan Benoit y la primera maratón femenina",
+    "descripcion": "Los Ángeles, 1984. Joan Benoit ganó la primera maratón olímpica para mujeres. Antes de eso, decían que correr tanto era peligroso para ellas. Joan respondió con pasos de gloria."
+  },
+  {
+    "titulo": "Matthew Mitcham y el salto perfecto",
+    "descripcion": "Pekín, 2008. El clavadista australiano necesitaba una puntuación casi imposible. Saltó… y logró el salto más alto en la historia olímpica. Oro con justicia matemática."
+  },
+  {
+    "titulo": "La bandera compartida de Corea",
+    "descripcion": "Pyeongchang, 2018. Corea del Norte y del Sur desfilaron juntas bajo una misma bandera. Fue más que deporte: fue un respiro de paz en medio de décadas de tensión."
+  },
+  {
+    "titulo": "Algeria y el ciclista sin bicicleta",
+    "descripcion": "Los Ángeles, 1984. El argelino Mustapha Afandi se presentó sin bicicleta. Un rival francés le prestó una. No ganó, pero demostró que el espíritu olímpico no tiene dueño."
+  },
+  {
+    "titulo": "Clarisse Agbegnenou y la promesa cumplida",
+    "descripcion": "Tokio, 2021. La judoca francesa perdió en Río 2016 y prometió volver más fuerte. En Tokio, ganó el oro y gritó con el alma. Su abrazo con su entrenadora fue puro fuego contenido."
+  },
+  {
+    "titulo": "Birgit Fischer, la reina del kayak eterno",
+    "descripcion": "Ganó su primer oro a los 18 y el último a los 42. Ocho oros, seis Juegos. La alemana Birgit Fischer fue longevidad, poder y elegancia sobre el agua."
+  },
+  {
+    "titulo": "Lamont Jacobs y la nueva era de los 100m",
+    "descripcion": "Tokio, 2021. Sin Bolt, nadie sabía quién sería el nuevo rey. Lamont Jacobs, italiano y desconocido, ganó los 100m. Su emoción fue la de un sueño que ni él creía real."
+  },
+  {
+    "titulo": "Sara Simeoni y el salto por amor",
+    "descripcion": "Moscú, 1980. La italiana ganó el oro en salto alto. Pero su mirada iba al entrenador, que luego fue su esposo. Saltó más allá del listón… y del corazón."
+  },
+  {
+    "titulo": "Yuliana Bolívar y el abrazo entre países",
+    "descripcion": "Lima, 2019. La venezolana nacionalizada peruana perdió su combate de judo. Su rival, también venezolana, la abrazó con lágrimas. Fue un momento de unidad entre dos patrias heridas."
+  },
+  {
+    "titulo": "Kano Jigoro, el fundador que nunca compitió",
+    "descripcion": "El creador del judo nunca pisó un tatami olímpico. Pero su legado es eterno. Cada vez que un judoka se inclina, Jigoro está presente. Fue incluido simbólicamente en Tokio 2021."
+  },
+  {
+    "titulo": "Caeleb Dressel y la emoción que no se esconde",
+    "descripcion": "Tokio, 2021. Ganó cinco oros. Pero su grandeza fue también humana: rompía en llanto después de cada carrera. El campeón que sentía como cualquiera."
+  },
+  {
+    "titulo": "Kelly Holmes, el oro tras años de lesiones",
+    "descripcion": "Atenas, 2004. Después de años de frustraciones y dolores, Kelly Holmes ganó el oro en 800 y 1500 metros. Su sonrisa tras cruzar la meta iluminó el estadio entero."
+  },
+  {
+    "titulo": "La maratón de Dorando Pietri",
+    "descripcion": "Londres, 1908. Pietri llegó tambaleando al estadio, desorientado. Cayó varias veces. Lo ayudaron a cruzar la meta, pero fue descalificado. Su esfuerzo quedó en la historia más que cualquier medalla."
+  },
+  {
+    "titulo": "Majlinda Kelmendi y el primer oro de Kosovo",
+    "descripcion": "Río, 2016. Kosovo participaba por primera vez en los Juegos. Majlinda Kelmendi ganó el oro en judo y puso a su país en lo más alto del podio mundial."
+  },
+  {
+    "titulo": "Takeru Kitazono, del accidente a la gloria",
+    "descripcion": "Un auto lo atropelló en 2018. Dijeron que no volvería a competir. En 2020, el gimnasta japonés ganó cinco oros en los Juegos Paralímpicos. Pura resurrección."
+  },
+  {
+    "titulo": "La flama de Hiroshima",
+    "descripcion": "Tokio, 2021. El relevo de la antorcha olímpica pasó por Hiroshima. Fue un homenaje silencioso a la paz, en la tierra donde una vez todo ardió."
+  },
+  {
+    "titulo": "Neeraj Chopra, el primer oro de India en atletismo",
+    "descripcion": "Tokio, 2021. Lanza la jabalina como quien lanza siglos de esperanza. Neeraj Chopra le dio a India su primer oro olímpico en atletismo. Una flecha al corazón del país."
+  },
+  {
+    "titulo": "Teófilo Stevenson, el campeón que rechazó millones",
+    "descripcion": "Ganó tres oros en boxeo para Cuba. Le ofrecieron millones para pelear profesionalmente, pero respondió: '¿Qué vale un millón de dólares comparado con el amor de ocho millones de cubanos?'"
+  },
+  {
+    "titulo": "Alexis Pizarro y el poder de seguir adelante",
+    "descripcion": "Puerto Rico, 2004. Tras quedar parapléjico por un accidente, Alexis Pizarro ganó bronce en lanzamiento de disco en los Paralímpicos. Su sonrisa era más grande que cualquier podio."
+  },
+  {
+    "titulo": "Allyson Felix, madre y velocista eterna",
+    "descripcion": "Después de dar a luz y luchar por igualdad para atletas embarazadas, Allyson Felix volvió. En Tokio 2021, ganó su medalla número 11. Una madre con alas."
+  },
+  {
+    "titulo": "Eric Liddell, el atleta que corrió por fe",
+    "descripcion": "París, 1924. Rechazó correr su prueba favorita porque coincidía con el domingo, día sagrado para él. Compitió en otra distancia… y ganó. Su historia inspiró 'Carros de fuego'."
+  },
+  {
+    "titulo": "Yana Egorian, la esgrimista sin miedo",
+    "descripcion": "Río, 2016. Con apenas 22 años, la rusa venció a la campeona olímpica en una final electrizante de sable. Su grito al ganar fue pura determinación juvenil."
+  },
+  {
+    "titulo": "Oksana Chusovitina, madre, leyenda y gimnasta eterna",
+    "descripcion": "Compitió en 8 Juegos Olímpicos. Lo hizo por su hijo enfermo, por pasión y por orgullo. A los 46, seguía volando sobre el potro. Aplausos de pie en Tokio 2021."
+  },
+  {
+    "titulo": "Linoy Ashram y la sorpresa israelí",
+    "descripcion": "Tokio, 2021. En rítmica, Rusia dominaba hace décadas. Pero Linoy, con gracia y coraje, rompió la hegemonía. Israel celebró su oro como un milagro."
+  },
+  {
+    "titulo": "Rulon Gardner, el granjero que venció al invencible",
+    "descripcion": "Sídney, 2000. Aleksandr Karelin no había perdido en 13 años. Rulon Gardner, un granjero de Wyoming, lo derrotó en lucha grecorromana. David venció a Goliat."
+  },
+  {
+    "titulo": "Monica Puig, la campeona que hizo historia para Puerto Rico",
+    "descripcion": "Río, 2016. Monica Puig ganó el primer oro olímpico de la historia para Puerto Rico, venciendo a tres top 10 en el camino. Su llanto al himno fue de todo un país."
+  },
+  {
+    "titulo": "Andre De Grasse y la constancia de la brisa",
+    "descripcion": "Bronce en Río, oro en Tokio. De Grasse nunca fue el más ruidoso, pero siempre estuvo ahí. En 200m, corrió como un poema suave y veloz. Canadá volvió a brillar."
+  },
+  {
+    "titulo": "Bajrang Punia y el luchador silencioso",
+    "descripcion": "Tokio, 2021. Lesionado, luchó hasta el final por el bronce. Cada punto era dolor. Pero la voluntad del indio fue más fuerte que cualquier músculo."
+  },
+  {
+    "titulo": "Yevgeny Plushenko y el arte sobre hielo",
+    "descripcion": "Turín, 2006. Patinó como si volara. Técnica perfecta, carisma de rockstar. Su oro fue poesía congelada. El hielo nunca tuvo tanto fuego."
+  },
+  {
+    "titulo": "Tom Daley, el oro entre saltos y agujas",
+    "descripcion": "Tokio, 2021. Tras años de intentarlo, ganó el oro en clavados sincronizados. En las gradas, tejía. Su calma, talento y lucha por la inclusión lo hicieron inolvidable."
+  },
+  {
+    "titulo": "Hideko Maehata, la heroína de Japón",
+    "descripcion": "Berlín, 1936. Ganó el oro en natación, primera mujer japonesa en lograrlo. Lo hizo por orgullo nacional, en una época donde ser mujer y atleta era una rebelión."
+  },
+  {
+    "titulo": "Usain Bolt y el rayo que sonreía",
+    "descripcion": "Ganó el oro, saludó a la cámara y aún le sobraba energía. Bolt hizo del atletismo un espectáculo global, pero su humildad lo convirtió en ídolo eterno."
+  },
+  {
+    "titulo": "Helen Maroulis y el oro ante la invencible",
+    "descripcion": "Río, 2016. Venció a Saori Yoshida, tres veces campeona olímpica. Helen, de EE.UU., rompió todos los pronósticos en una lucha épica. David otra vez venció."
+  },
+  {
+    "titulo": "Nicolás Massú y el doble oro inesperado",
+    "descripcion": "Atenas, 2004. El chileno ganó oro en singles y dobles, contra todo pronóstico. Su grito de victoria fue un eco eterno en Sudamérica."
+  },
+  {
+    "titulo": "Haile Gebrselassie, el hombre que corría sonriendo",
+    "descripcion": "Sídney, 2000. Ganó los 10.000 metros en el último metro. Con zancadas suaves y sonrisa amplia, mostró que correr también puede ser arte."
+  },
+  {
+    "titulo": "Arash Miresmaeili, el gesto por Palestina",
+    "descripcion": "Atenas, 2004. El judoka iraní se negó a competir contra un rival israelí. Fue descalificado, pero se convirtió en símbolo político. Polémico, pero inolvidable."
+  },
+  {
+    "titulo": "Yohann Diniz, la caminata del alma",
+    "descripcion": "Río, 2016. Deshidratado, con calambres y mareos, el francés Diniz siguió caminando. No ganó, pero cruzó la meta en honor a su padre fallecido."
+  },
+  {
+    "titulo": "Bobby Pearce, el remero que frenó por una familia de patos",
+    "descripcion": "Ámsterdam, 1928. Lideraba su carrera cuando frenó para dejar pasar una familia de patos. Aun así ganó. El fair play también puede remar."
+  },
+  {
+    "titulo": "Etenesh Diro y la carrera sin zapatilla",
+    "descripcion": "Río, 2016. En los 3000m con obstáculos, perdió una zapatilla tras una caída. Siguió corriendo descalza… y clasificó. Dolor, sangre y coraje."
+  },
+  {
+    "titulo": "Rashid Ramzi y la gloria efímera",
+    "descripcion": "Pekín, 2008. Ganó los 1500m para Baréin. Pero luego fue despojado por doping. Su historia es advertencia: no todo lo que brilla es oro."
+  },
+  {
+    "titulo": "Ma Long, el emperador del tenis de mesa",
+    "descripcion": "Río y Tokio. Nadie ha dominado el tenis de mesa como Ma Long. Técnica, precisión y serenidad. Su revés es leyenda en Asia y el mundo."
+  },
+  {
+    "titulo": "La lucha de Mary Kom",
+    "descripcion": "Londres, 2012. Madre de gemelos, boxeadora, india y pequeña. Pero con puños grandes como su corazón. Su bronce fue un canto de coraje."
+  },
+  {
+    "titulo": "Pita Taufatofua, el abanderado brillante",
+    "descripcion": "Río, 2016. Desfiló con el torso al descubierto y bañado en aceite. Representaba a Tonga en taekwondo, pero su imagen se volvió símbolo de orgullo y carisma olímpico."
+  },
+  {
+    "titulo": "Annette Kellerman y el traje de baño que hizo historia",
+    "descripcion": "En 1908, fue arrestada por usar un traje de baño entero en la playa. Luchó por el derecho de las mujeres a nadar libremente. Luego compitió y revolucionó la natación."
+  },
+  {
+    "titulo": "John Stephen Akhwari, el último que ganó el corazón",
+    "descripcion": "México, 1968. Llegó último a la maratón, sangrando y cojeando. Dijo: 'Mi país no me envió a empezar una carrera, sino a terminarla.'"
+  },
+  {
+    "titulo": "Flora Duffy y el oro de una isla",
+    "descripcion": "Tokio, 2021. Ganó el primer oro olímpico para Bermudas en triatlón. Con solo 60 mil habitantes, su país celebró como si fuera el planeta entero."
+  },
+  {
+    "titulo": "Chioma Ajunwa, la salto que voló para Nigeria",
+    "descripcion": "Atlanta, 1996. Fue futbolista y atleta. En salto largo, voló 7.12m y le dio a Nigeria su primer oro olímpico individual. Un salto para la eternidad."
+  },
+  {
+    "titulo": "Zola Budd y la carrera descalza del caos",
+    "descripcion": "Los Ángeles, 1984. Corrió descalza y chocó con Mary Decker en plena final. Fue abucheada, lloró y terminó en silencio. Una historia de tensión y tragedia."
+  },
+  {
+    "titulo": "George Eyser, el gimnasta con una pierna de madera",
+    "descripcion": "San Luis, 1904. Tenía una pierna amputada y usaba una prótesis de madera. Aun así, ganó seis medallas en un solo día. Imposible no admirarlo."
+  },
+  {
+    "titulo": "Hicham El Guerrouj y la doble corona de fondo",
+    "descripcion": "Atenas, 2004. Tras años de frustración, ganó los 1500 y los 5000 metros. Primera vez desde 1924 que alguien lo lograba. El rey del mediofondo."
+  },
+  {
+    "titulo": "Liu Zige, la sorpresa de la mariposa",
+    "descripcion": "Pekín, 2008. Nadie apostaba por ella. En su país, frente a miles, rompió el récord mundial en los 200m mariposa. China celebró con lágrimas."
+  },
+  {
+    "titulo": "Javier Sotomayor y el salto que desafió la gravedad",
+    "descripcion": "Nunca nadie saltó tan alto como él en salto en alto. Aunque su récord mundial es de 1993, su legado olímpico y su técnica aún flotan en el aire."
+  },
+  {
+    "titulo": "Derartu Tulu, la vuelta por la hermandad",
+    "descripcion": "Barcelona, 1992. Tras ganar los 10.000m, dio la vuelta de honor junto a su rival blanca. Un símbolo de unidad entre África y Europa, entre oponentes y hermanas."
+  },
+  {
+    "titulo": "Valentina Vezzali, la esgrimista de los milagros",
+    "descripcion": "Tres oros individuales, seis oros totales. En pleno combate, parecía perdida… hasta que remontaba. Su florete era una aguja de precisión poética."
+  },
+  {
+    "titulo": "Kimia Alizadeh, la voz que rompió el silencio",
+    "descripcion": "Río, 2016. Primera mujer iraní en ganar una medalla olímpica. Luego huyó del país y denunció opresión. En la lona y fuera de ella, fue valiente."
+  },
+  {
+    "titulo": "Dawn Fraser, la rebelde de las piscinas",
+    "descripcion": "Ganó tres oros consecutivos en 100m libres. Fue suspendida por 'mala conducta' al portar una bandera no autorizada. El agua era su libertad."
+  },
+  {
+    "titulo": "Jade Jones y la niña dorada del taekwondo",
+    "descripcion": "Ganó el primer oro olímpico para Gran Bretaña en taekwondo a los 19 años. Luego repitió. Patadas rápidas, mente de acero."
+  },
+  {
+    "titulo": "Carlo Airoldi, el maratonista que caminó hasta Atenas",
+    "descripcion": "1896. Desde Italia hasta Grecia, recorrió 2000 km a pie para competir en la maratón. Al llegar, lo descalificaron. Su viaje fue más largo que su carrera."
+  },
+  {
+    "titulo": "La cinta de Kabaeva",
+    "descripcion": "Atenas, 2004. La rusa Alina Kabaeva hizo volar su cinta con tanta gracia que parecía magia. Su oro fue tan artístico como atlético."
+  },
+  {
+    "titulo": "Alain Mimoun, el seguidor que superó al maestro",
+    "descripcion": "Melbourne, 1956. Siempre segundo detrás de Zatopek. En la maratón, por fin lo venció. Y al terminar, preguntó: '¿Dónde está Emil?' La rivalidad más noble."
+  },
+  {
+    "titulo": "El regreso dorado de Mariel Zagunis",
+    "descripcion": "Atenas, 2004. Entró a último momento por la baja de una rival. Terminó ganando el oro en esgrima para EE.UU. El destino afiló su espada."
+  }
+]

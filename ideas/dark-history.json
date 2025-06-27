@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "El grito ignorado de Kitty Genovese",
+    "descripcion": "En 1964, Kitty Genovese fue atacada durante más de media hora en plena calle de Nueva York. Sus gritos fueron oídos por decenas de vecinos… pero nadie hizo nada. Su caso dio origen al estudio del 'efecto espectador' y cambió para siempre el sistema de emergencias 911."
+  },
+  {
+    "titulo": "Unit 731: el horror bajo bata blanca",
+    "descripcion": "Durante la Segunda Guerra Mundial, el ejército japonés creó la Unidad 731: un laboratorio humano en China. Allí, miles fueron víctimas de experimentos brutales disfrazados de ciencia. Al final de la guerra, muchos responsables fueron protegidos a cambio de sus datos."
+  },
+  {
+    "titulo": "Jonestown: el día que bebieron veneno por fe",
+    "descripcion": "En 1978, más de 900 personas murieron en la selva de Guyana tras seguir a su líder, Jim Jones. Bebieron un cóctel letal en lo que él llamó un 'acto revolucionario'. Fue el mayor suicidio colectivo de la historia moderna, y una tragedia anunciada por años."
+  },
+  {
+    "titulo": "La bomba sobre Hiroshima",
+    "descripcion": "El 6 de agosto de 1945, una bomba atómica cayó sobre Hiroshima. En segundos, la ciudad se volvió cenizas. Más de 140.000 personas murieron, muchas lentamente, por quemaduras o radiación. Fue el inicio de la era nuclear… y un trauma imborrable para la humanidad."
+  },
+  {
+    "titulo": "El tren de la muerte nazi",
+    "descripcion": "En los últimos días del Tercer Reich, los nazis enviaron trenes llenos de prisioneros sin destino claro. Uno quedó varado por días en el bosque alemán, sin comida ni agua. Los sobrevivientes fueron liberados por el ejército aliado… apenas quedaban unos pocos vivos."
+  },
+  {
+    "titulo": "El experimento de la prisión de Stanford",
+    "descripcion": "En 1971, un estudio psicológico en la Universidad de Stanford simuló una prisión. Los voluntarios, divididos entre 'guardias' y 'prisioneros', cayeron en abusos reales en apenas días. El experimento tuvo que ser cancelado. Mostró cuán frágil es la moral humana ante el poder."
+  },
+  {
+    "titulo": "El silencio mortal de Chernóbil",
+    "descripcion": "En 1986, un reactor nuclear explotó en Chernóbil. Las autoridades tardaron días en informar, mientras la radiación se esparcía por Europa. Bomberos y trabajadores murieron sin saber a qué se enfrentaban. Fue el peor accidente nuclear de la historia."
+  },
+  {
+    "titulo": "La niña que lloró sangre en Auschwitz",
+    "descripcion": "Una sobreviviente de Auschwitz recordaba cómo una niña, aterrada, sangraba por los ojos del miedo. Los nazis no sólo mataban, también quebraban el alma. Años después, esa imagen siguió persiguiendo a los pocos que lograron salir con vida."
+  },
+  {
+    "titulo": "El caso Mary Bell: infancia rota",
+    "descripcion": "En 1968, Mary Bell fue arrestada por matar a dos niños en Inglaterra. Tenía solo 11 años. Su infancia estuvo marcada por abuso y abandono. El caso abrió un debate perturbador: ¿los monstruos nacen o se hacen?"
+  },
+  {
+    "titulo": "La casa de los horrores de Fred y Rosemary West",
+    "descripcion": "Durante dos décadas, esta pareja británica asesinó al menos a 12 mujeres, muchas enterradas en su propia casa. Algunas eran sus hijas. La policía descubrió los cuerpos en 1994. La fachada normal de su hogar ocultaba un infierno doméstico."
+  },
+  {
+    "titulo": "El naufragio del Wilhelm Gustloff",
+    "descripcion": "En 1945, un submarino soviético hundió este barco alemán lleno de civiles. Más de 9.000 personas murieron, la mayoría niños. Fue el mayor desastre marítimo de la historia… y casi nadie lo recuerda."
+  },
+  {
+    "titulo": "Los 43 de Ayotzinapa",
+    "descripcion": "En 2014, 43 estudiantes desaparecieron en Iguala, México. Se presume que fueron secuestrados y asesinados por narcos, con complicidad policial. Aún hoy, no hay justicia ni certeza. Sus padres siguen marchando con las fotos en alto."
+  },
+  {
+    "titulo": "Los pozos del franquismo",
+    "descripcion": "Durante la dictadura de Franco, miles de opositores fueron asesinados y enterrados en fosas comunes. Décadas después, España sigue desenterrando restos y verdades ocultas. El país aún debate cómo cerrar heridas que nunca cicatrizaron."
+  },
+  {
+    "titulo": "La tragedia de Bhopal",
+    "descripcion": "En 1984, una planta química en India liberó gas tóxico sobre la ciudad de Bhopal. Murieron más de 15.000 personas. La empresa culpable apenas pagó multas. Las víctimas siguen padeciendo enfermedades décadas después."
+  },
+  {
+    "titulo": "La madre que olvidó a su bebé en el auto",
+    "descripcion": "En un día caluroso, una madre ocupada olvidó a su hijo dormido en el asiento trasero. Horas después, el bebé murió por el calor. No fue negligencia intencional, sino un fallo trágico del cerebro humano. Desde entonces, se estudia como 'olvido fatal'."
+  },
+  {
+    "titulo": "Los niños del hambre en Ucrania",
+    "descripcion": "Entre 1932 y 1933, millones murieron en Ucrania por una hambruna provocada por Stalin. El 'Holodomor' fue una política de exterminio silenciosa. Familias comían pasto, corteza… o a sus muertos. La memoria aún duele en cada campo vacío."
+  },
+  {
+    "titulo": "La noche de los lápices",
+    "descripcion": "En 1976, estudiantes argentinos fueron secuestrados y torturados por pedir el boleto estudiantil. La dictadura los borró del mapa. Sólo uno sobrevivió para contar cómo la juventud fue silenciada a golpes y picana."
+  },
+  {
+    "titulo": "El experimento Tuskegee",
+    "descripcion": "Durante 40 años, el gobierno de EE.UU. negó tratamiento a hombres negros con sífilis para estudiar la evolución de la enfermedad. Nunca se les dijo la verdad. Murieron sin saber que eran parte de un experimento encubierto."
+  },
+  {
+    "titulo": "El niño de El Pozito",
+    "descripcion": "Julen, un niño de dos años, cayó a un pozo estrecho en España en 2019. El país entero siguió el rescate durante 13 días. Cuando lo hallaron, ya era tarde. Su muerte abrió un debate sobre negligencia, dolor mediático y esperanza rota."
+  },
+  {
+    "titulo": "La cacería de brujas de Salem",
+    "descripcion": "En 1692, el miedo y la superstición desataron una ola de histeria en Salem. 20 personas fueron ejecutadas por 'brujería'. Eran inocentes. Fue uno de los episodios más oscuros de la justicia colonial americana."
+  },
+  {
+    "titulo": "La muerte por selfie",
+    "descripcion": "Cada año, decenas de personas mueren por intentar sacarse selfies en acantilados, trenes o techos. En la búsqueda de likes, muchos pierden la vida. Las estadísticas son más altas que las de ataques de tiburón."
+  },
+  {
+    "titulo": "La familia Franklin congelada en el Ártico",
+    "descripcion": "En 1845, John Franklin lideró una expedición para encontrar el Paso del Noroeste. Su barco quedó atrapado en el hielo. Nunca volvieron. Años después se hallaron restos humanos… y señales de canibalismo."
+  },
+  {
+    "titulo": "El incendio de la fábrica Triangle",
+    "descripcion": "En 1911, un incendio arrasó una fábrica textil en Nueva York. Murieron 146 trabajadores, en su mayoría mujeres inmigrantes, atrapadas por puertas cerradas. La tragedia cambió las leyes laborales para siempre."
+  },
+  {
+    "titulo": "El secuestro de Colleen Stan",
+    "descripcion": "Colleen fue secuestrada en 1977 por una pareja. Pasó siete años encerrada en una caja debajo de una cama, usada como esclava. Logró escapar gracias a una decisión arriesgada… y un momento de piedad."
+  },
+  {
+    "titulo": "La isla de los caníbales soviéticos",
+    "descripcion": "En 1933, Stalin deportó a miles a una isla sin comida ni refugio. Abandonados, los prisioneros recurrieron al canibalismo. Fue una pesadilla real, documentada por los propios agentes soviéticos."
+  },
+  {
+    "titulo": "La tragedia del circo Hartford",
+    "descripcion": "En 1944, un circo lleno de niños ardió en minutos por un error con gasolina y lona impermeabilizada. Más de 160 personas murieron. Entre ellas, una niña nunca identificada: fue llamada 'Little Miss 1565'."
+  },
+  {
+    "titulo": "El niño que inspiró el exorcista",
+    "descripcion": "En 1949, un adolescente fue sometido a un exorcismo en EE.UU. Testigos afirmaron que hablaba lenguas desconocidas y flotaba. El caso real fue la base de la novela y película ‘El Exorcista’. Aunque nunca se reveló su identidad, su historia sigue siendo debatida."
+  },
+  {
+    "titulo": "El monstruo de los Andes",
+    "descripcion": "Pedro Alonso López asesinó a más de 300 niñas en Colombia, Ecuador y Perú. Fue liberado en 1998 por 'buena conducta' y desapareció. Hasta hoy, nadie sabe dónde está. Su caso es uno de los más escalofriantes de la historia criminal latinoamericana."
+  },
+  {
+    "titulo": "El vuelo que desapareció en el aire",
+    "descripcion": "En 2014, el vuelo MH370 de Malaysia Airlines desapareció con 239 personas a bordo. Nunca se encontró el avión completo. Años de búsqueda no lograron resolver el misterio. Fue como si se lo hubiera tragado el cielo."
+  },
+  {
+    "titulo": "El suicidio colectivo de Heaven’s Gate",
+    "descripcion": "En 1997, 39 personas se quitaron la vida creyendo que sus almas subirían a una nave espacial detrás del cometa Hale-Bopp. Vestían ropa idéntica y zapatillas negras. Era el final de una secta obsesionada con la trascendencia cósmica."
+  },
+  {
+    "titulo": "El caso de Junko Furuta",
+    "descripcion": "En 1988, Junko Furuta, una adolescente japonesa, fue secuestrada, torturada y asesinada durante 44 días por un grupo de jóvenes. El caso conmocionó a Japón por su brutalidad. Sus asesinos recibieron sentencias menores, generando indignación nacional."
+  },
+  {
+    "titulo": "La masacre de Columbine",
+    "descripcion": "En 1999, dos estudiantes entraron armados a su secundaria en Colorado. Mataron a 13 personas antes de suicidarse. Fue una de las primeras masacres escolares en EE.UU. y abrió un debate eterno sobre armas, bullying y salud mental."
+  },
+  {
+    "titulo": "La tragedia de Love Canal",
+    "descripcion": "En los años 70, un barrio entero en Nueva York fue evacuado tras descubrir que sus casas estaban sobre un antiguo basurero químico. Las enfermedades se multiplicaban. Fue uno de los mayores escándalos ambientales en la historia de EE.UU."
+  },
+  {
+    "titulo": "El horror del orfanato Tuam",
+    "descripcion": "En Irlanda, se descubrieron restos de al menos 800 niños en una fosa común. Murieron en un orfanato gestionado por monjas entre 1925 y 1961. Muchos jamás fueron registrados oficialmente. La Iglesia guardó silencio durante décadas."
+  },
+  {
+    "titulo": "La mujer que ardió por dentro",
+    "descripcion": "Mary Reeser fue hallada en 1951 completamente calcinada… excepto por su pie intacto. Su caso dio origen a la teoría de la 'combustión humana espontánea'. Hasta hoy, sigue siendo un misterio no resuelto."
+  },
+  {
+    "titulo": "El genocidio de Ruanda",
+    "descripcion": "En 1994, en solo 100 días, más de 800.000 personas fueron asesinadas en Ruanda. Hutus y tutsis, vecinos y amigos, se convirtieron en enemigos mortales. El mundo miró hacia otro lado. Fue una de las peores matanzas del siglo XX."
+  },
+  {
+    "titulo": "La cárcel que volvió locos a sus presos",
+    "descripcion": "En la prisión de Alcatraz, los prisioneros vivían en condiciones extremas de aislamiento. Algunos terminaron con psicosis o suicidios. La cárcel cerró en 1963, pero sus historias aún se escuchan entre los muros abandonados."
+  },
+  {
+    "titulo": "El niño que sobrevivió a Auschwitz",
+    "descripcion": "Elie Wiesel tenía 15 años cuando fue deportado con su familia. Solo él sobrevivió. Escribió 'La noche', un testimonio crudo del horror nazi. Su voz fue clave para que el mundo no olvide lo que puede pasar cuando reina el odio."
+  },
+  {
+    "titulo": "Los pacientes de lobotomía",
+    "descripcion": "Durante décadas, miles de personas con trastornos mentales fueron sometidas a lobotomías: se les destruía parte del cerebro con un picahielos. Muchos quedaron con secuelas permanentes. Era medicina… hasta que fue considerado barbarie."
+  },
+  {
+    "titulo": "El envenenamiento de Minamata",
+    "descripcion": "En Japón, durante décadas, una fábrica arrojó mercurio al mar. Miles enfermaron con daños neurológicos irreversibles. Los pescadores lo llamaban 'la enfermedad del gato danzante'. Fue una tragedia ambiental y humana silenciada durante años."
+  },
+  {
+    "titulo": "La tragedia del estadio de Hillsborough",
+    "descripcion": "En 1989, una avalancha humana mató a 97 hinchas del Liverpool. Las autoridades culparon falsamente a los fanáticos. Recién 27 años después, se reconoció que fue culpa de la policía. Las familias lucharon décadas por justicia."
+  },
+  {
+    "titulo": "La mujer que vivió con su cadáver",
+    "descripcion": "Carl Tanzler robó el cuerpo de una joven a la que había amado en vida. Lo conservó, maquilló y durmió junto a él durante años. Cuando lo descubrieron, dijo que lo hacía por amor. Su historia parece ficción… pero es real."
+  },
+  {
+    "titulo": "La pesadilla del incendio en Cromañón",
+    "descripcion": "En 2004, una bengala encendida en un recital de rock argentino provocó un incendio mortal. Murieron 194 personas, la mayoría jóvenes. El local no tenía salidas de emergencia habilitadas. Fue una tragedia que marcó una generación."
+  },
+  {
+    "titulo": "El hambre de Leningrado",
+    "descripcion": "Durante el sitio nazi a Leningrado, más de un millón de personas murieron de hambre. La gente comía pegamento, cuero, hasta cadáveres. Fue uno de los asedios más brutales de la historia moderna."
+  },
+  {
+    "titulo": "El caso Fritzl",
+    "descripcion": "Josef Fritzl mantuvo encerrada a su hija durante 24 años en un sótano en Austria. Tuvo 7 hijos con ella, fruto de violaciones. El mundo entero quedó horrorizado cuando se descubrió la historia en 2008."
+  },
+  {
+    "titulo": "La tragedia de Aberfan",
+    "descripcion": "En 1966, una avalancha de lodo y carbón sepultó una escuela en Gales. Murieron 144 personas, la mayoría niños. Era una catástrofe anunciada, pero las advertencias fueron ignoradas. El pueblo quedó marcado para siempre."
+  },
+  {
+    "titulo": "La operación Paperclip",
+    "descripcion": "Después de la Segunda Guerra Mundial, EE.UU. reclutó a científicos nazis —incluidos criminales de guerra— para trabajar en sus programas espaciales. Lo hicieron en secreto. La ciencia avanzó, pero a qué precio moral."
+  },
+  {
+    "titulo": "Los bebés robados del franquismo",
+    "descripcion": "Durante décadas, en España, miles de recién nacidos fueron robados a madres pobres o disidentes y entregados a familias 'aprobadas' por el régimen. Las madres eran engañadas con falsos certificados de muerte. El escándalo salió a la luz recién en los 2000."
+  },
+  {
+    "titulo": "El culto del Templo del Pueblo en Argentina",
+    "descripcion": "Antes de mudarse a Guyana, Jim Jones instaló su secta en una granja en Misiones, Argentina. Allí adoctrinó a sus seguidores y preparó el éxodo a Jonestown. Pocos sabían que, en esas tierras, empezó la pesadilla que terminaría en tragedia."
+  },
+  {
+    "titulo": "El niño que cayó al pozo",
+    "descripcion": "En 1987, 'Baby Jessica' cayó a un pozo de 20 cm de diámetro en Texas. El rescate duró 58 horas y fue seguido por todo EE.UU. Lograron salvarla, pero la angustia colectiva quedó marcada como uno de los dramas televisados más intensos del siglo."
+  },
+  {
+    "titulo": "La ejecución de Rosa Luxemburgo",
+    "descripcion": "En 1919, la filósofa y revolucionaria Rosa Luxemburgo fue asesinada por paramilitares en Berlín. La golpearon, le dispararon y arrojaron su cuerpo a un canal. Su crimen fue silenciado durante décadas. Hoy es símbolo de lucha e injusticia política."
+  },
+  {
+    "titulo": "El incendio del club Happy Land",
+    "descripcion": "En 1990, un hombre prendió fuego a un club nocturno en Nueva York tras ser expulsado por su ex. Murieron 87 personas. No había salidas de emergencia. Fue una venganza pasional que terminó en masacre."
+  },
+  {
+    "titulo": "La tragedia de la discoteca Kiss",
+    "descripcion": "En 2013, un show pirotécnico en una discoteca de Brasil desató un incendio mortal. Murieron 242 personas, la mayoría jóvenes. Las salidas estaban bloqueadas. Fue una tragedia nacional causada por negligencia."
+  },
+  {
+    "titulo": "La masacre de My Lai",
+    "descripcion": "En 1968, soldados estadounidenses asesinaron a más de 500 civiles vietnamitas, incluidos mujeres y niños. Fue uno de los peores crímenes de guerra de EE.UU. El encubrimiento duró años, hasta que un soldado lo denunció."
+  },
+  {
+    "titulo": "El tren fantasma de Armero",
+    "descripcion": "En 1985, un volcán arrasó la ciudad colombiana de Armero. Más de 20.000 personas murieron bajo el lodo. La foto de una niña atrapada entre escombros, aún consciente, dio la vuelta al mundo. Murió antes de ser rescatada."
+  },
+  {
+    "titulo": "La paciente sin nombre",
+    "descripcion": "En 1933, una joven ingresó a un hospital canadiense. No hablaba, no comía. Solo gemía. La llamaron 'la paciente X'. Nunca supieron quién era. Murió décadas después, aún sin identidad, convertida en un misterio médico y humano."
+  },
+  {
+    "titulo": "La caza de brujas en Zugarramurdi",
+    "descripcion": "En el siglo XVII, la Inquisición arrestó a decenas de mujeres en un pequeño pueblo del País Vasco por supuesta brujería. Once fueron quemadas vivas. El miedo y la superstición convirtieron la religión en castigo."
+  },
+  {
+    "titulo": "La prisión secreta de Hohenschönhausen",
+    "descripcion": "En la RDA comunista, esta prisión no figuraba en mapas. Allí, la Stasi interrogaba y torturaba a disidentes. Nadie sabía si saldrían. Hoy es museo, pero sus pasillos aún huelen a miedo."
+  },
+  {
+    "titulo": "Los cuerpos del Titanic recuperados por error",
+    "descripcion": "Tras el hundimiento, el barco Mackay-Bennett recuperó decenas de cuerpos. Pero solo conservaron los de primera clase. Los de tercera fueron lanzados al mar. La tragedia continuó con la desigualdad incluso después de la muerte."
+  },
+  {
+    "titulo": "El orfanato del terror en Mendoza",
+    "descripcion": "En los años 2000, se reveló que menores en un hogar estatal argentino eran abusados por décadas. Había encubrimiento policial, judicial y religioso. Las víctimas aún esperan justicia. El dolor no prescribió."
+  },
+  {
+    "titulo": "El infierno de Nankín",
+    "descripcion": "En 1937, tropas japonesas invadieron la ciudad china de Nankín. Mataron a más de 200.000 civiles y violaron a miles de mujeres. Fue uno de los peores crímenes de guerra de la historia moderna. Aún se discute su memoria."
+  },
+  {
+    "titulo": "La fábrica de cuerpos plastinados",
+    "descripcion": "Exhibiciones anatómicas muestran cuerpos reales plastinados con fines educativos. Pero en 2004, se descubrió que algunos provenían de prisioneros ejecutados en China. Detrás de la ciencia, se escondía un mercado oscuro."
+  },
+  {
+    "titulo": "La isla del Dr. Moreau… real",
+    "descripcion": "En los 70, científicos británicos abandonaron monos en una isla panameña tras experimentos con hepatitis. Los animales desarrollaron comportamientos extraños y agresivos. La isla aún está prohibida. Un experimento que salió mal… y quedó libre."
+  },
+  {
+    "titulo": "La niña vampiro de Croacia",
+    "descripcion": "En 2006, se halló el esqueleto de una niña enterrada con una piedra en la boca. Era una práctica medieval para evitar que 'regresara de la muerte'. El hallazgo reveló siglos de miedo ocultos bajo tierra."
+  },
+  {
+    "titulo": "El caso de las hermanas Papin",
+    "descripcion": "En 1933, dos criadas francesas asesinaron brutalmente a su patrona y su hija. Las investigaciones revelaron una mezcla de maltrato, represión y posible psicosis compartida. Fue uno de los crímenes más debatidos del siglo XX."
+  },
+  {
+    "titulo": "La enfermera del infierno",
+    "descripcion": "Beverley Allitt, apodada 'el ángel de la muerte', mató a cuatro niños y atentó contra otros nueve en un hospital británico. Era enfermera pediátrica. Su motivación: necesidad de atención. Hoy cumple cadena perpetua."
+  },
+  {
+    "titulo": "El grito de los pozos de Siberia",
+    "descripcion": "Una leyenda urbana dice que un equipo soviético perforó tan profundo en Siberia que escucharon gritos desde las entrañas de la Tierra. El llamado “Pozo del Infierno” nunca fue confirmado, pero el mito persistió como reflejo de los miedos humanos."
+  },
+  {
+    "titulo": "El pueblo que desapareció en Canadá",
+    "descripcion": "En 1930, todos los habitantes de Angikuni, una aldea inuit, desaparecieron sin dejar rastro. La comida estaba servida, los perros muertos, y no había señales de lucha. El misterio jamás se resolvió. Algunos hablan de abducción. Otros, de histeria."
+  },
+  {
+    "titulo": "La boda mortal en Bangladesh",
+    "descripcion": "En 2021, un rayo mató a 17 invitados mientras llegaban en bote a una boda. Fue un fenómeno natural extremo, pero dejó una comunidad entera marcada por la tragedia en un día que debía ser de celebración."
+  },
+  {
+    "titulo": "Los niños topo de Moscú",
+    "descripcion": "Se descubrieron comunidades enteras viviendo en túneles abandonados bajo Moscú. Algunos niños nacieron y crecieron allí, sin documentos ni acceso al mundo exterior. Invisibles para el Estado. Reales para el subsuelo."
+  },
+  {
+    "titulo": "La tumba colectiva de San Fernando",
+    "descripcion": "En 2011, se hallaron más de 190 cuerpos en fosas clandestinas en México. Fueron víctimas del crimen organizado, asesinadas por no pagar extorsiones. Muchos eran pasajeros de ómnibus. Nunca llegaron a destino."
+  },
+  {
+    "titulo": "La escuela del horror en Irlanda",
+    "descripcion": "En 2002, se reveló que en una escuela católica, cientos de niños fueron abusados sistemáticamente durante décadas. Las denuncias habían sido ignoradas. Fue una de las exposiciones más devastadoras de abuso clerical en Europa."
+  },
+  {
+    "titulo": "La secta del suicidio en masa en Uganda",
+    "descripcion": "En 2000, más de 700 miembros de una secta religiosa murieron quemados en una iglesia. Se pensó que era suicidio, pero luego se descubrieron más cuerpos en fosas. Fue un asesinato colectivo, disfrazado de apocalipsis."
+  },
+  {
+    "titulo": "La mujer que vivió en un aeropuerto 18 años",
+    "descripcion": "Mehran Karimi Nasseri vivió entre 1988 y 2006 en el aeropuerto Charles de Gaulle tras perder sus documentos. Fue invisible para el sistema. Su historia inspiró la película *La Terminal*, pero su vida fue mucho menos romántica."
+  },
+  {
+    "titulo": "El bebé de la valija en Ezeiza",
+    "descripcion": "En 2008, una pareja fue detenida en el aeropuerto de Buenos Aires con una valija sospechosa. Dentro había un recién nacido, vivo. Iban a traficarlo. El horror no siempre grita… a veces viaja en silencio."
+  },
+  {
+    "titulo": "El secuestro de Elizabeth Smart",
+    "descripcion": "En 2002, con solo 14 años, Elizabeth Smart fue secuestrada de su casa mientras dormía. Pasó nueve meses cautiva, víctima de abusos. Fue rescatada tras ser vista caminando con sus captores. Hoy es activista contra la violencia."
+  },
+  {
+    "titulo": "La enfermera que envenenó por compasión",
+    "descripcion": "Charles Cullen mató a más de 40 pacientes en hospitales de EE.UU. decía hacerlo para evitarles sufrimiento… pero muchos no estaban muriendo. Fue condenado a cadena perpetua. Su caso destapó negligencias del sistema médico."
+  },
+  {
+    "titulo": "La tragedia del Challenger",
+    "descripcion": "En 1986, el transbordador espacial Challenger explotó 73 segundos después del despegue. Murieron los siete tripulantes, incluida una maestra que iba al espacio como símbolo de esperanza. La NASA fue duramente cuestionada por ignorar advertencias."
+  },
+  {
+    "titulo": "La masacre del Museo del Holocausto",
+    "descripcion": "En 2009, un supremacista blanco ingresó armado al Museo del Holocausto en Washington y mató a un guardia. Su objetivo era negar la historia… pero terminó reforzando la memoria de millones que no olvidan."
+  },
+  {
+    "titulo": "El genocidio de los herero",
+    "descripcion": "A inicios del siglo XX, el Imperio Alemán exterminó a decenas de miles de hereros y namas en África. Fueron encerrados en el desierto y privados de agua. Es considerado el primer genocidio moderno, pero aún no ha sido plenamente reparado."
+  },
+  {
+    "titulo": "La desaparición del submarino ARA San Juan",
+    "descripcion": "En 2017, un submarino argentino con 44 tripulantes desapareció en el Atlántico Sur. Tardaron un año en hallar sus restos. Las familias aún exigen respuestas. Fue una tragedia naval rodeada de silencio oficial."
+  },
+  {
+    "titulo": "La matanza de Utøya",
+    "descripcion": "En 2011, un extremista asesinó a 77 personas en Noruega, la mayoría adolescentes en un campamento político. Fue el peor ataque en la historia del país. Noruega respondió con más democracia, no con odio."
+  },
+  {
+    "titulo": "El tren que nunca debió pasar",
+    "descripcion": "En 2004, un tren en Sri Lanka fue arrasado por un tsunami. Más de 1.700 personas murieron. Era el tren más mortal de la historia. La mayoría eran familias que viajaban por las fiestas. Solo quedaron los rieles y el silencio."
+  },
+  {
+    "titulo": "Los desaparecidos del franquismo",
+    "descripcion": "Miles de personas fueron asesinadas y enterradas en fosas anónimas durante la dictadura de Franco. Muchas siguen sin identificar. España aún lucha por memoria, verdad y justicia."
+  },
+  {
+    "titulo": "El caso de Sylvia Likens",
+    "descripcion": "En 1965, Sylvia, de 16 años, fue torturada y asesinada por su cuidadora y un grupo de niños en EE.UU. El crimen fue tan atroz que el jurado lloró al escuchar los detalles. Su historia inspiró novelas y películas, pero el horror fue real."
+  },
+  {
+    "titulo": "Los bebés de la dictadura argentina",
+    "descripcion": "Durante la última dictadura militar, cientos de bebés nacidos en cautiverio fueron robados y entregados a otras familias. Las Abuelas de Plaza de Mayo aún buscan a muchos de ellos. Ya han recuperado más de 130 identidades."
+  },
+  {
+    "titulo": "La niña de las napalm",
+    "descripcion": "Una foto captó a Kim Phuc, de 9 años, corriendo desnuda tras un ataque con napalm en Vietnam. La imagen dio la vuelta al mundo. Kim sobrevivió, pero sufrió quemaduras graves. Hoy es activista por la paz."
+  },
+  {
+    "titulo": "La tragedia del ferry Doña Paz",
+    "descripcion": "En 1987, dos barcos chocaron en Filipinas. Más de 4.000 personas murieron en el mar. Muchos no estaban en listas oficiales. Fue el desastre marítimo más mortal de la historia en tiempos de paz."
+  },
+  {
+    "titulo": "Los cuadernos de Ana Frank",
+    "descripcion": "Ana Frank escribió su diario ocultándose de los nazis. Fue arrestada y murió en un campo de concentración. Su cuaderno, hallado después, se convirtió en símbolo de la inocencia destruida por el odio."
+  },
+  {
+    "titulo": "El hambre de Bengala",
+    "descripcion": "En 1943, más de 3 millones de personas murieron de hambre en la India británica. Las políticas coloniales agraviaron la catástrofe. El gobierno de Churchill negó responsabilidades. Fue una hambruna evitable."
+  },
+  {
+    "titulo": "La lluvia negra de Hiroshima",
+    "descripcion": "Tras la bomba atómica, cayó una lluvia tóxica sobre Hiroshima. Muchos sobrevivientes murieron semanas o años después por la radiación. La lluvia negra fue invisible… pero letal."
+  },
+  {
+    "titulo": "La casa de los mil cadáveres en México",
+    "descripcion": "En 2011, se descubrieron hornos donde el narco disolvía cuerpos en ácido. Miles de restos humanos fueron hallados en tambos y ranchos. La violencia dejó de ser solo números: eran personas desaparecidas por el terror."
+  },
+  {
+    "titulo": "La isla de los leprosos",
+    "descripcion": "En Spinalonga, Grecia, los leprosos eran aislados del mundo. Muchos vivieron y murieron allí sin ver a sus familias. Hoy es un sitio turístico, pero sus muros aún guardan historias de abandono y dolor."
+  },
+  {
+    "titulo": "El fuego de Notre Dame",
+    "descripcion": "En 2019, la catedral de Notre Dame ardió por horas. Aunque no hubo víctimas, millones sintieron que perdían un símbolo. Fue un recordatorio de que incluso lo eterno puede caer… en cenizas."
+  },
+  {
+    "titulo": "La masacre de San Valentín",
+    "descripcion": "En 1929, siete hombres fueron asesinados en Chicago durante un ajuste de cuentas entre mafias. Al Capone fue el principal sospechoso. Las fotos del crimen helaron a la nación. Era el lado oscuro del auge americano."
+  },
+  {
+    "titulo": "La autopsia sin consentimiento",
+    "descripcion": "David Reimer fue criado como niña tras una circuncisión fallida. Su historia fue usada en estudios de género sin su consentimiento. Terminó quitándose la vida. Fue víctima de una ciencia que quiso probar una teoría, sin pensar en la persona."
+  },
+  {
+    "titulo": "La masacre de Orlando",
+    "descripcion": "En 2016, un atacante abrió fuego en un club LGBT+ en Florida. Murieron 49 personas. Fue el tiroteo más mortal de EE.UU. hasta ese momento. La comunidad respondió con duelo… y orgullo."
+  },
+  {
+    "titulo": "El incendio del Palacio de Hierro",
+    "descripcion": "En 1911, un incendio arrasó el mayor centro comercial de México. Murieron decenas de personas atrapadas por la estructura metálica. El lujo se convirtió en trampa mortal. Fue el 11-S de la Belle Époque mexicana."
+  },
+  {
+    "titulo": "El asilo de Willowbrook",
+    "descripcion": "Durante décadas, niños con discapacidad fueron internados en condiciones infrahumanas en un asilo de Nueva York. Maltrato, hacinamiento y abusos eran cotidianos. Un periodista infiltrado expuso el horror. Así comenzó el cambio."
+  },
+  {
+    "titulo": "La tragedia de los Andes",
+    "descripcion": "En 1972, un avión con un equipo de rugby se estrelló en la cordillera de los Andes. Los sobrevivientes pasaron 72 días a la intemperie. Para vivir, debieron alimentarse de los fallecidos. Fue una lección extrema de supervivencia humana."
+  }
+]

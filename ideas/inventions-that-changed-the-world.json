@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "El snack que creó el microondas",
+    "descripcion": "En 1945, el ingeniero Percy Spencer notó que una barra de chocolate se le derretía en el bolsillo mientras trabajaba con un radar. Experimentó con granos de maíz y nació el microondas. Un accidente delicioso que transformó cocinas en todo el mundo."
+  },
+  {
+    "titulo": "El perro que inspiró el velcro",
+    "descripcion": "En 1941, Georges de Mestral volvió de una caminata con su perro cubierto de semillas pegajosas. Al analizarlas al microscopio, vio ganchos diminutos. Así nació el velcro, imitando la naturaleza para reemplazar botones y cordones."
+  },
+  {
+    "titulo": "GPS: un regalo de la Guerra Fría",
+    "descripcion": "El GPS nació como un sistema militar estadounidense para espiar desde el cielo. Hoy guía nuestros autos y teléfonos. Lo irónico: el sistema fue abierto al público tras que un avión comercial se desviara y se estrellara por falta de navegación precisa."
+  },
+  {
+    "titulo": "La penicilina y el moho salvador",
+    "descripcion": "En 1928, Alexander Fleming notó que una bacteria había desaparecido misteriosamente de su placa de Petri. El culpable: un hongo contaminante. Así nació la penicilina, el primer antibiótico que cambiaría la medicina moderna."
+  },
+  {
+    "titulo": "El día que nació Internet (sin querer)",
+    "descripcion": "En 1969, un grupo de científicos del Pentágono conectó dos computadoras para compartir datos militares. Nadie imaginaba que esa red—llamada ARPANET—sería la semilla de internet, la herramienta que redefiniría cómo vive y piensa el mundo."
+  },
+  {
+    "titulo": "La tostadora que activó la domótica",
+    "descripcion": "En 1990, un ingeniero conectó su tostadora a Internet como experimento. Fue el primer electrodoméstico inteligente. Hoy, esa pequeña broma dio paso a casas enteras que se controlan desde el celular."
+  },
+  {
+    "titulo": "El teclado QWERTY nació para ser lento",
+    "descripcion": "¿Por qué no usamos un teclado más lógico? En 1873, el diseño QWERTY fue creado para evitar que las teclas se trabaran en las primeras máquinas de escribir. Iba a ser temporal, pero se volvió el estándar global que usamos hasta hoy."
+  },
+  {
+    "titulo": "El fuego del hombre que no quería cocinar",
+    "descripcion": "El encendedor moderno fue inventado antes que las cerillas. En 1823, un químico alemán creó un dispositivo que generaba fuego al presionar un botón. ¿La razón? Quería evitar usar fósforos. Su capricho prendió la chispa del fuego portátil."
+  },
+  {
+    "titulo": "La anestesia que nació por diversión",
+    "descripcion": "En el siglo XIX, jóvenes ricos inhalaban óxido nitroso en fiestas. Un dentista observó que uno de ellos se golpeó fuerte... y no sintió dolor. Así nació la anestesia moderna, gracias a una moda recreativa."
+  },
+  {
+    "titulo": "La cámara web que vigilaba café",
+    "descripcion": "La primera webcam de la historia no fue para videollamadas, sino para ver si quedaba café en una oficina de Cambridge. Un invento banal que, sin querer, anticipó el futuro del streaming y la vigilancia remota."
+  },
+  {
+    "titulo": "La bicicleta creó el pantalón femenino",
+    "descripcion": "Cuando las mujeres comenzaron a andar en bicicleta en el siglo XIX, las faldas eran peligrosas. La solución fue un pantalón dividido: el “bloomers”. Así, el ciclismo impulsó una revolución en la moda y la libertad femenina."
+  },
+  {
+    "titulo": "El post-it fue un error pegajoso",
+    "descripcion": "Un científico de 3M intentaba hacer un súper adhesivo… pero falló. Creó un pegamento débil que no se secaba. Años después, otro empleado lo usó para marcar páginas en su himnario. Nacía el Post-it."
+  },
+  {
+    "titulo": "La silla eléctrica fue diseñada por un dentista",
+    "descripcion": "El primer prototipo de silla eléctrica fue creado por Alfred Southwick, un dentista. Quería una forma más ‘humana’ de ejecutar. Ironicamente, su experiencia con pacientes lo llevó a diseñar una herramienta para matar."
+  },
+  {
+    "titulo": "La impresora 3D que nació de la venganza",
+    "descripcion": "Chuck Hull estaba harto de esperar semanas por prototipos. En 1983, creó una máquina que imprimía capas de resina con luz ultravioleta. Su rabia por la lentitud industrial dio origen a la impresión 3D."
+  },
+  {
+    "titulo": "La lavandina que cambió la cirugía",
+    "descripcion": "Ignaz Semmelweis descubrió que los médicos que se lavaban las manos con cloro salvaban más vidas. Lo trataron de loco. Décadas después, sus ideas se convirtieron en norma. Hoy, lavarse salva millones."
+  },
+  {
+    "titulo": "La cafetera de cápsulas fue rechazada por todos",
+    "descripcion": "En los 80, Nespresso era un fracaso. Los ejecutivos pensaban que nadie pagaría por café en cápsulas. Solo cuando Nestlé cambió su marketing al estilo lujo italiano… el mundo se volvió adicto."
+  },
+  {
+    "titulo": "El bluetooth fue inspirado por vikingos",
+    "descripcion": "Bluetooth debe su nombre a Harald “Diente Azul”, un rey vikingo que unificó tribus. ¿Por qué? Porque el sistema conectaba dispositivos de diferentes fabricantes, como Harald unificó reinos. Una conexión histórica."
+  },
+  {
+    "titulo": "El teclado predictivo nació del Tetris",
+    "descripcion": "Un programador notó que mientras jugaba Tetris su cerebro predecía piezas. Aplicó esa lógica al texto, creando el primer sistema de autocompletado para celulares. Gracias al Tetris, hoy escribimos más rápido."
+  },
+  {
+    "titulo": "La Coca-Cola fue una medicina para adictos",
+    "descripcion": "En 1886, el farmacéutico John Pemberton creó un tónico para dejar la morfina. Tenía vino y extracto de coca. Al prohibirse el alcohol, la reformuló con azúcar y burbujas. Así nació Coca-Cola: una medicina que se volvió adicción global."
+  },
+  {
+    "titulo": "El código de barras salvó al supermercado",
+    "descripcion": "En los 70, las colas en los supermercados eran interminables. Un ingeniero propuso codificar los precios en líneas blancas y negras. El primer producto escaneado: un chicle. Hoy, el código de barras es omnipresente."
+  },
+  {
+    "titulo": "El Wi-Fi nació de un detector de agujeros negros",
+    "descripcion": "Una científica australiana intentaba detectar señales del universo profundo. El sistema fallaba… pero funcionaba perfecto para enviar datos entre computadoras. Sin querer, había inventado el Wi-Fi."
+  },
+  {
+    "titulo": "La aspirina viene del sauce",
+    "descripcion": "Hace siglos, las personas mascaban corteza de sauce para aliviar dolores. En 1897, Bayer sintetizó su componente activo en laboratorio. Así nació la aspirina, con raíces tan antiguas como la medicina misma."
+  },
+  {
+    "titulo": "El mouse fue ignorado por años",
+    "descripcion": "Douglas Engelbart presentó el primer mouse en 1968. Nadie entendió su utilidad. Durante años quedó archivado… hasta que Apple lo rescató y cambió para siempre cómo interactuamos con las máquinas."
+  },
+  {
+    "titulo": "El airbag salvó vidas… tras décadas de rechazo",
+    "descripcion": "En los 50, un ingeniero ideó una bolsa inflable para frenar impactos. Las automotrices lo ignoraron. Solo cuando los accidentes se dispararon, lo adoptaron. Hoy, es obligatorio en la mayoría del mundo."
+  },
+  {
+    "titulo": "La tarjeta de crédito nació por vergüenza",
+    "descripcion": "En 1949, un empresario olvidó su billetera en un restaurante. Prometió nunca más pasar esa vergüenza. Creó Diners Club, la primera tarjeta de crédito. De un olvido, surgió una industria millonaria."
+  },
+  {
+    "titulo": "El ascensor hizo posible el rascacielos",
+    "descripcion": "Antes del ascensor, los pisos altos eran los peores. Con la invención del elevador seguro por Otis en 1853, se invirtió la lógica: cuanto más alto, mejor. Y nacieron los rascacielos."
+  },
+  {
+    "titulo": "El pañal descartable nació de la frustración materna",
+    "descripcion": "En los 50, Marion Donovan se cansó de lavar pañales. Usó cortinas de baño y papel absorbente para crear uno descartable. La industria la ignoró. Hoy, su invento mueve miles de millones."
+  },
+  {
+    "titulo": "El reloj de pulsera fue idea de una mujer",
+    "descripcion": "En 1810, Carolina Bonaparte pidió a un relojero que le hiciera un reloj que pudiera llevar en la muñeca. Fue considerado una rareza femenina. Un siglo después, se volvió el estándar masculino también."
+  },
+  {
+    "titulo": "El velero solar que no se mueve… pero genera luz",
+    "descripcion": "En 1954, científicos crearon el primer panel solar al tratar de mejorar radios portátiles. El experimento no sirvió para eso, pero descubrieron que podía generar electricidad. El Sol, convertido en enchufe eterno."
+  },
+  {
+    "titulo": "El email fue más viejo que internet",
+    "descripcion": "En 1971, Ray Tomlinson envió el primer email… a sí mismo. Ni siquiera existía la web. El mensaje era una combinación sin sentido. Pero acababa de abrir la puerta al correo más usado del mundo."
+  },
+  {
+    "titulo": "El Teflón fue un error de laboratorio",
+    "descripcion": "Un químico intentaba crear un nuevo gas refrigerante. El experimento falló, pero en su lugar apareció un material ultraresbaladizo: el Teflón. Hoy, las sartenes lo agradecen."
+  },
+  {
+    "titulo": "Los rayos X fueron descubiertos por accidente",
+    "descripcion": "En 1895, Wilhelm Röntgen notó que una pantalla fluorescente brillaba cerca de su tubo de rayos catódicos, aunque estaba tapado. Sin querer, había visto el interior del cuerpo humano."
+  },
+  {
+    "titulo": "La nevera que nació del olor a carne podrida",
+    "descripcion": "En 1834, un inventor cansado de que su comida se pudriera en horas diseñó el primer sistema de refrigeración mecánica. Quería evitar que el mal olor invadiera su casa. Sin querer, cambió la forma en que conservamos alimentos para siempre."
+  },
+  {
+    "titulo": "El mando a distancia fue un invento contra los comerciales",
+    "descripcion": "En los años 50, un ingeniero cansado de la publicidad creó el primer control remoto. Su esposa lo odiaba porque tiraba cables por toda la sala. Años después, la tecnología se hizo inalámbrica y se volvió indispensable."
+  },
+  {
+    "titulo": "El papel higiénico fue un lujo escandaloso",
+    "descripcion": "En 1857, Joseph Gayetty lanzó el primer papel higiénico empaquetado. Lo publicitó como producto médico. Muchos lo veían como vulgar. Hoy, sería impensable vivir sin él."
+  },
+  {
+    "titulo": "La aspiradora fue inspirada por una silla de barbero",
+    "descripcion": "En 1901, un ingeniero vio cómo se esparcía el polvo mientras le cortaban el pelo. Imaginó un sistema de succión basado en el funcionamiento del fuelle. Así nació la primera aspiradora motorizada."
+  },
+  {
+    "titulo": "El parabrisas fue idea de una mujer harta de la lluvia",
+    "descripcion": "Mary Anderson, cansada de ver cómo los conductores sacaban la cabeza bajo la lluvia, ideó una palanca interna que movía una escobilla. Su invento fue ignorado… hasta que el auto se volvió masivo."
+  },
+  {
+    "titulo": "La cremallera fue diseñada por un olvidadizo",
+    "descripcion": "Whitcomb Judson se cansó de abotonarse y desabotonarse el calzado. En 1893, creó una fila de ganchos que se cerraban en línea. Así nació el cierre relámpago, o zipper."
+  },
+  {
+    "titulo": "El rayo láser fue primero una broma de ciencia ficción",
+    "descripcion": "Cuando se presentó el láser en 1960, muchos lo llamaron “una solución en busca de un problema”. Décadas después, curamos ojos, cortamos acero y reproducimos música gracias a ese rayo de luz concentrada."
+  },
+  {
+    "titulo": "La GoPro nació en una playa de surfistas",
+    "descripcion": "Nick Woodman quería filmarse surfeando, pero no había cámaras resistentes y portátiles. Armó un prototipo con goma y cinta adhesiva. Hoy, millones graban sus aventuras gracias a ese impulso veraniego."
+  },
+  {
+    "titulo": "El código Morse salvó al Titanic… pero no fue suficiente",
+    "descripcion": "El Titanic fue uno de los primeros barcos en usar el código Morse para comunicarse. En su noche trágica, logró enviar señales de auxilio… pero las respuestas llegaron tarde. Aun así, fue un punto de inflexión en las comunicaciones."
+  },
+  {
+    "titulo": "La batería de litio fue una apuesta universitaria",
+    "descripcion": "John B. Goodenough investigaba nuevos materiales en los años 80 cuando descubrió que el litio podía almacenar más energía. Su experimento dio lugar a las baterías que hoy alimentan casi todos los dispositivos móviles."
+  },
+  {
+    "titulo": "La televisión a color fue saboteada por el blanco y negro",
+    "descripcion": "Aunque existía desde los años 20, la televisión a color fue resistida por empresas que temían perder inversión en blanco y negro. Tuvieron que pasar décadas para que se volviera estándar."
+  },
+  {
+    "titulo": "El air acondicionado salvó millones de libros",
+    "descripcion": "En 1902, Willis Carrier no buscaba refrescar personas, sino evitar que el papel se deformara por la humedad. El aire acondicionado nació en una imprenta, no en una casa."
+  },
+  {
+    "titulo": "La primera calculadora portátil fue más cara que un auto",
+    "descripcion": "En 1971, la primera calculadora electrónica portátil costaba lo mismo que un coche usado. Hoy, llevamos miles de veces más poder de cálculo en el bolsillo… gratis."
+  },
+  {
+    "titulo": "La impresora láser fue un hobby de oficina",
+    "descripcion": "En los años 70, un ingeniero de Xerox quería imprimir gráficos nítidos desde su computadora. Usó la lógica de las fotocopiadoras y creó la impresora láser. Su jefe al principio lo ignoró."
+  },
+  {
+    "titulo": "El lápiz mecánico se inspiró en un paraguas",
+    "descripcion": "A principios del siglo XX, se pensó un mecanismo para hacer salir el grafito como si fuera el bastón de un paraguas. Así nació el lápiz que no necesita sacapuntas."
+  },
+  {
+    "titulo": "El bolígrafo fue un invento argentino",
+    "descripcion": "László Bíró, húngaro exiliado en Argentina, mejoró el diseño de pluma con una bola giratoria que usaba tinta viscosa. Hoy, el “birome” es un clásico escolar global."
+  },
+  {
+    "titulo": "El joystick nació en la Segunda Guerra",
+    "descripcion": "Los primeros joysticks no eran para juegos, sino para controlar misiles y aviones. Décadas después, el mismo concepto se usó para videojuegos y consolas caseras."
+  },
+  {
+    "titulo": "La energía solar nació como experimento musical",
+    "descripcion": "En 1839, Edmond Becquerel descubrió que ciertas células generaban electricidad al recibir luz. Buscaba amplificar sonidos… pero terminó sentando la base de la energía solar."
+  },
+  {
+    "titulo": "El dron fue pensado como blanco de práctica",
+    "descripcion": "Los primeros drones eran aviones no tripulados para que soldados practicaran disparos. Años después, se volvieron herramientas de filmación, agricultura y logística."
+  },
+  {
+    "titulo": "El correo electrónico se usó primero para dejar notas en la oficina",
+    "descripcion": "En los años 70, empleados del MIT enviaban mensajes entre computadoras del mismo edificio. Querían evitar dejar papeles en los escritorios. Así nació el email moderno."
+  },
+  {
+    "titulo": "El teclado Braille fue ideado por un niño",
+    "descripcion": "Louis Braille quedó ciego a los tres años. A los 15, adaptó un sistema militar de lectura nocturna y creó el sistema de puntos en relieve que revolucionó la educación para ciegos."
+  },
+  {
+    "titulo": "El GPS depende de la teoría de Einstein",
+    "descripcion": "Los satélites GPS deben corregirse por la dilatación del tiempo que predijo Einstein. Si no se ajustaran, darían coordenadas erróneas cada día. La relatividad guía nuestros mapas."
+  },
+  {
+    "titulo": "El papel burbuja iba a ser papel tapiz",
+    "descripcion": "En 1957, dos ingenieros intentaban crear un nuevo tipo de empapelado texturizado. Fracaso total. Pero descubrieron que su “papel burbuja” era ideal para embalar productos frágiles."
+  },
+  {
+    "titulo": "El clip fue símbolo de resistencia en la guerra",
+    "descripcion": "Durante la ocupación nazi, los noruegos usaban clips en la solapa como símbolo silencioso de unidad y resistencia. Un objeto de oficina convertido en símbolo de libertad."
+  },
+  {
+    "titulo": "El horno eléctrico nació gracias a un panadero frustrado",
+    "descripcion": "Un panadero de Chicago no lograba calor constante con carbón. En 1891, inventó un horno eléctrico para hornear sin interrupciones. Cambió la cocina moderna para siempre."
+  },
+  {
+    "titulo": "El radar nació cazando niebla",
+    "descripcion": "En los años 30, científicos británicos buscaban una forma de detectar aviones enemigos… pero primero probaron con la niebla. Accidentalmente, descubrieron cómo usar ondas de radio para ‘ver’ a través del aire. Había nacido el radar."
+  },
+  {
+    "titulo": "La fotocopiadora fue rechazada por 20 años",
+    "descripcion": "Chester Carlson inventó la xerografía en 1938, pero ninguna empresa la quiso. Decían que nadie necesitaba copiar tanto. Xerox apostó tarde… y revolucionó oficinas para siempre."
+  },
+  {
+    "titulo": "El botón 'snooze' fue diseñado con culpa",
+    "descripcion": "Los ingenieros del primer reloj despertador con ‘snooze’ pensaban que 9 minutos eran suficientes para no dormirse otra vez. Lo hicieron corto a propósito… y aún así seguimos usándolo mal."
+  },
+  {
+    "titulo": "La impresora de inyección nació por una gota caliente",
+    "descripcion": "Un ingeniero de Canon tocó accidentalmente su pluma con un soldador. La tinta salió disparada. Ese momento dio lugar al sistema de inyección térmica que hoy usan millones de impresoras."
+  },
+  {
+    "titulo": "El botón de 'me gusta' cambió tu cerebro",
+    "descripcion": "Facebook implementó el ‘Like’ en 2009. Lo que parecía un simple gesto de aprobación se convirtió en una poderosa fuente de dopamina que rediseñó la forma en que interactuamos… y pensamos."
+  },
+  {
+    "titulo": "El chip de silicio fue inspirado por una radio rota",
+    "descripcion": "En los años 40, un investigador examinó una radio dañada y notó que un cristal controlaba la corriente. Ese pequeño detalle fue clave para el nacimiento del chip moderno y la era digital."
+  },
+  {
+    "titulo": "El avión de papel fue clave para la aviación real",
+    "descripcion": "Ingenieros como Jack Northrop usaban aviones de papel para probar formas aerodinámicas antes de fabricar prototipos reales. Lo que parecía un juego, ayudó a crear aviones más seguros."
+  },
+  {
+    "titulo": "El horno tostador fue una revancha casera",
+    "descripcion": "Después de que su pan se quemara una y otra vez en el horno común, William Hadaway diseñó un dispositivo dedicado exclusivamente al tostado. En 1921, nació el primer horno tostador eléctrico."
+  },
+  {
+    "titulo": "El láser apuntaba a la Luna… literalmente",
+    "descripcion": "En 1969, científicos instalaron un espejo en la Luna. Hoy, se siguen disparando láseres desde la Tierra para medir la distancia exacta. Tecnología precisa para un romance astronómico."
+  },
+  {
+    "titulo": "La olla a presión fue inventada en 1679",
+    "descripcion": "Denis Papin, físico francés, creó un recipiente hermético para cocinar con vapor y ahorrar leña. Fue ridiculizado. Hoy, cocinamos en minutos gracias a su idea."
+  },
+  {
+    "titulo": "El e-book fue creado antes de que existiera internet",
+    "descripcion": "En 1971, Michael Hart digitó la 'Declaración de Independencia' como primer libro electrónico. Lo hizo para compartir cultura libre… sin saber que estaba fundando el Proyecto Gutenberg."
+  },
+  {
+    "titulo": "La silla de ruedas motorizada nació de un pedido personal",
+    "descripcion": "En 1950, un veterano de guerra pidió ayuda para moverse sin asistencia. George Klein, ingeniero canadiense, diseñó la primera silla eléctrica. Un invento que devolvió independencia a millones."
+  },
+  {
+    "titulo": "El metrónomo fue pensado como juguete",
+    "descripcion": "En el siglo XIX, Johann Maelzel mejoró un invento musical y lo promocionó como juguete. Beethoven lo usó para marcar ritmos, y el metrónomo pasó de pasatiempo a herramienta esencial."
+  },
+  {
+    "titulo": "La guitarra eléctrica nació de un problema de volumen",
+    "descripcion": "Les Paul no podía hacer que su guitarra sonara fuerte en las grandes bandas. Soldó pastillas y madera sólida para amplificarla. Así nació el rock… y una nueva era musical."
+  },
+  {
+    "titulo": "El botón de encendido fue idea de IBM",
+    "descripcion": "IBM introdujo el círculo con línea en los años 70 para estandarizar el encendido en sus equipos. Hoy es un símbolo universal. Pocas veces, un ícono representó tanto poder en tan poco espacio."
+  },
+  {
+    "titulo": "El Lego fue creado por un carpintero quebrado",
+    "descripcion": "Ole Kirk Christiansen perdió su taller en un incendio. Comenzó a hacer juguetes de madera. Luego los transformó en plástico… y uno de ellos encajó para siempre en la historia."
+  },
+  {
+    "titulo": "La linterna moderna nació por culpa de una pila débil",
+    "descripcion": "En 1899, la primera linterna solo duraba unos segundos, porque las baterías eran inestables. Eso le dio su nombre: ‘flashlight’. Con mejores pilas, se volvió esencial para la vida diaria."
+  },
+  {
+    "titulo": "El teclado musical electrónico fue inspirado por órganos rotos",
+    "descripcion": "En los años 30, Laurens Hammond experimentaba con motores eléctricos para reparar relojes. En el proceso, creó sonidos artificiales. Nació el órgano Hammond… y luego, el teclado moderno."
+  },
+  {
+    "titulo": "La pantalla táctil se inventó en los 60",
+    "descripcion": "Eric Johnson desarrolló un sistema de control por toque para radares militares. Tardó décadas en llegar al público. Hoy, casi todo lo que usamos responde a nuestros dedos."
+  },
+  {
+    "titulo": "El símbolo @ fue rescatado por un programador",
+    "descripcion": "Ray Tomlinson necesitaba un carácter que separara el usuario del servidor. Eligió el @, casi en desuso. Hoy, es uno de los íconos más usados del planeta gracias al email."
+  },
+  {
+    "titulo": "La tarjeta SIM fue diseñada para ser extraíble",
+    "descripcion": "En los 90, diseñadores de móviles buscaban una forma de identificar al usuario sin bloquearlo a un solo equipo. Así nació la SIM, ese chip que hoy movemos como llave digital."
+  },
+  {
+    "titulo": "El reloj de cuarzo fue inspirado por una radio rota",
+    "descripcion": "Un técnico notó que un cristal de cuarzo vibraba de forma estable cuando una radio fallaba. Años después, esa propiedad permitió construir relojes precisos y baratos."
+  },
+  {
+    "titulo": "La grapadora nació en la corte de Luis XV",
+    "descripcion": "El rey de Francia exigía que sus documentos estuvieran firmados… y engrapados. Mandó a fabricar un sistema mecánico con iniciales reales. Siglos después, se volvió herramienta de oficina."
+  },
+  {
+    "titulo": "El reconocimiento facial nació en los 60",
+    "descripcion": "Un científico de la Universidad de Stanford desarrolló un software que detectaba rostros en fotos. No era preciso… pero fue la semilla de la biometría que hoy desbloquea tu celular."
+  },
+  {
+    "titulo": "El USB fue creado para evitar romper computadoras",
+    "descripcion": "Ajay Bhatt diseñó el USB para simplificar conexiones y evitar daños eléctricos. Irónicamente, tardamos años en insertarlo bien a la primera. Aun así, es uno de los estándares más duraderos."
+  },
+  {
+    "titulo": "El termómetro nació por culpa del vino",
+    "descripcion": "Galileo quería medir la temperatura del vino sin probarlo. En 1593, creó un tubo con líquido que subía y bajaba según el calor. Era rudimentario, pero dio origen al termómetro moderno."
+  },
+  {
+    "titulo": "El botón de 'guardar' sobrevivió al disquete",
+    "descripcion": "Aunque el disquete cayó en desuso hace décadas, su ícono quedó como símbolo de ‘guardar’. Un caso único donde el símbolo duró más que el objeto real."
+  },
+  {
+    "titulo": "La calculadora nació del juego de dados",
+    "descripcion": "Blaise Pascal inventó una máquina de sumar para ayudar a su padre con cálculos fiscales. Inspirado por el conteo de dados, creó la primera calculadora mecánica en 1642."
+  },
+  {
+    "titulo": "El teclado Dvorak fue más eficiente… pero ignorado",
+    "descripcion": "En 1936, August Dvorak diseñó un teclado más rápido y ergonómico que el QWERTY. Aunque mejor en pruebas, no logró reemplazar al estándar por pura inercia cultural."
+  },
+  {
+    "titulo": "El paraguas fue visto como escándalo en Londres",
+    "descripcion": "En el siglo XVIII, los hombres que usaban paraguas eran ridiculizados por parecer ‘afeminados’. Aun así, el sentido común ganó: hoy nadie se burla de no mojarse."
+  },
+  {
+    "titulo": "El código QR nació del control de repuestos",
+    "descripcion": "En 1994, una empresa japonesa creó el QR para rastrear piezas en fábrica. Nadie pensó que años después escanearíamos menús y pagaríamos con él en todo el mundo."
+  },
+  {
+    "titulo": "El detector de humo fue inspirado por un pollo quemado",
+    "descripcion": "En los 30, un ingeniero notó que el humo de su cocina activaba ciertos sensores eléctricos. Lo perfeccionó… y salvó millones de vidas desde entonces."
+  },
+  {
+    "titulo": "La cámara instantánea nació por una niña curiosa",
+    "descripcion": "La hija de Edwin Land preguntó por qué no podía ver una foto al instante. Él se obsesionó y en 1948 inventó la Polaroid. A veces, las mejores ideas vienen de una pregunta simple."
+  },
+  {
+    "titulo": "El tubo fluorescente fue inspirado por un eclipse",
+    "descripcion": "Durante un eclipse solar, científicos notaron que ciertos gases brillaban con luz ultravioleta. Reprodujeron el efecto en tubos sellados. Así nació la iluminación fluorescente."
+  },
+  {
+    "titulo": "El velador fue una adaptación militar",
+    "descripcion": "La lámpara de escritorio moderna nació de focos ajustables usados en trincheras. Al volver la paz, los ingenieros la rediseñaron para oficinas y escritorios hogareños."
+  },
+  {
+    "titulo": "El símbolo Wi-Fi no es una W ni una antena",
+    "descripcion": "Aunque muchos creen que el ícono de Wi-Fi es una W o una señal de radio, en realidad representa ondas expandiéndose desde un punto. Minimalismo que conecta."
+  },
+  {
+    "titulo": "La cinta adhesiva nació en la pintura de autos",
+    "descripcion": "Richard Drew, de 3M, vio cómo los pintores de autos arruinaban detalles. Inventó una cinta fácil de retirar. Hoy, el masking tape tiene miles de usos caseros."
+  },
+  {
+    "titulo": "La alarma de incendios fue inventada por un pizzero frustrado",
+    "descripcion": "Después de quemar tres pizzas en una noche, un joven inventor conectó un sensor de calor a una campana. Su idea fue mejorada y hoy es ley en edificios del mundo."
+  },
+  {
+    "titulo": "La energía eólica moderna empezó en Dinamarca",
+    "descripcion": "En 1891, un maestro danés construyó el primer molino generador de electricidad para su casa. Hoy, ese principio mueve ciudades enteras con viento."
+  },
+  {
+    "titulo": "El auto eléctrico es más viejo que el de gasolina",
+    "descripcion": "En 1880 ya existían autos eléctricos. Eran más silenciosos y fáciles de manejar. Pero la gasolina ganó por precio… hasta que el siglo XXI le dio revancha a las baterías."
+  },
+  {
+    "titulo": "El botón 'home' fue inspirado en un tren",
+    "descripcion": "Diseñadores notaron que los botones en paneles de trenes siempre volvían al ‘inicio’. Aplicaron la idea en computadoras y celulares. Hoy, ese botón es sinónimo de volver a casa."
+  },
+  {
+    "titulo": "El mousepad fue inventado después del mouse",
+    "descripcion": "Durante años, los mouses se usaban directamente sobre la mesa. Recién en los 80 alguien pensó en una superficie optimizada… y el mousepad se volvió parte del escritorio."
+  },
+  {
+    "titulo": "La batería recargable fue descubierta por error",
+    "descripcion": "En 1859, Gaston Planté notó que una batería que parecía agotada recuperaba su carga tras reposar. Había descubierto el principio de recarga… y con él, la batería moderna."
+  }
+]

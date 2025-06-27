@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "Hedy Lamarr, la inventora oculta de Hollywood",
+    "descripcion": "Fue aclamada por su belleza en el cine, pero en secreto, Hedy Lamarr desarrolló una tecnología de salto de frecuencia para guiar torpedos. Décadas después, su idea sería clave para el WiFi y el Bluetooth. Nunca recibió una ovación por eso en vida."
+  },
+  {
+    "titulo": "Marie Curie y la luz en la oscuridad",
+    "descripcion": "Descubrió el radio y el polonio, iluminando literalmente la ciencia. Trabajó entre la radiactividad sin protección, ignorando los riesgos. Su cuerpo pagó el precio, pero su legado brilló por siglos: fue la primera persona en ganar dos Nobel en distintas ciencias."
+  },
+  {
+    "titulo": "Frida Kahlo: pinceles contra el dolor",
+    "descripcion": "Un accidente la dejó postrada, pero su espíritu jamás se quebró. Frida convirtió su dolor físico y emocional en arte inmortal. Con cejas desafiantes y alma revolucionaria, pintó su historia… y la de millones que no tenían voz."
+  },
+  {
+    "titulo": "Malala y la bala que no pudo callarla",
+    "descripcion": "Tenía solo 15 años cuando los talibanes le dispararon por ir a la escuela. Malala sobrevivió, habló ante la ONU y ganó el Nobel de la Paz. Una niña con libros y coraje se convirtió en símbolo global de resistencia femenina."
+  },
+  {
+    "titulo": "Simone de Beauvoir y el segundo sexo",
+    "descripcion": "En una época de silencios, Simone escribió que no se nace mujer: se llega a serlo. Su libro desafió al patriarcado y sembró las bases del feminismo moderno. La filosofía, hasta entonces dominada por hombres, ya no volvería a ser la misma."
+  },
+  {
+    "titulo": "Rosa Parks y el asiento que hizo temblar a un país",
+    "descripcion": "En 1955, Rosa se negó a ceder su asiento a un blanco en Alabama. No parecía gran cosa… hasta que lo fue. Su gesto desencadenó el movimiento por los derechos civiles en EE.UU. A veces, la historia empieza con una mujer sentada con dignidad."
+  },
+  {
+    "titulo": "Ada Lovelace y el primer algoritmo",
+    "descripcion": "En el siglo XIX, Ada imaginó una máquina capaz de procesar símbolos más allá de los números. Su trabajo con Charles Babbage la convirtió en la primera programadora de la historia. Lo increíble: murió sin saber que inventó la informática moderna."
+  },
+  {
+    "titulo": "Valentina Tereshkova, la cosmonauta del cosmos",
+    "descripcion": "En 1963, sin más entrenamiento que los hombres, Valentina fue lanzada al espacio. Orbitó la Tierra 48 veces, sola, en una cápsula soviética. Fue la primera mujer en el espacio… y aún la única que lo hizo en una misión completamente en solitario."
+  },
+  {
+    "titulo": "Angela Davis y la lucha sin cadenas",
+    "descripcion": "Intelectual, feminista y activista por los derechos de los afroamericanos, Angela fue perseguida por el FBI y encarcelada. Pero no se quebró. Desde el aula y la calle, desafió al sistema y escribió contra la prisión como negocio. Su voz sigue libre."
+  },
+  {
+    "titulo": "Hipatia, la matemática silenciada",
+    "descripcion": "En la Alejandría del siglo IV, Hipatia enseñaba geometría y astronomía cuando las mujeres eran invisibles. Por desafiar el fanatismo, fue asesinada por una turba. Sus escritos se perdieron, pero su figura resurgió como símbolo del saber femenino."
+  },
+  {
+    "titulo": "Wangari Maathai y el ejército verde",
+    "descripcion": "Plantó más de 30 millones de árboles en Kenia, luchando contra la desertificación y por los derechos de las mujeres. Por ello fue golpeada, arrestada… y premiada con el Nobel de la Paz. Su legado florece en cada raíz que dejó atrás."
+  },
+  {
+    "titulo": "Sirimavo Bandaranaike y el poder sin precedentes",
+    "descripcion": "En 1960, en Sri Lanka, se convirtió en la primera mujer elegida democráticamente como primera ministra en el mundo. Su gobierno cambió las reglas del juego global… antes de que la mayoría de las mujeres pudieran votar en varios países."
+  },
+  {
+    "titulo": "Mary Shelley y la criatura inmortal",
+    "descripcion": "A los 18 años, Mary Shelley escribió *Frankenstein*, pionera de la ciencia ficción. Su historia no solo creó un monstruo: cuestionó la ética científica, los límites del poder y el rol de la mujer en la creación. Todo en una sola novela."
+  },
+  {
+    "titulo": "Emmeline Pankhurst y el voto a gritos",
+    "descripcion": "Fundó el movimiento sufragista británico. Marchó, protestó, fue encarcelada. No pedía permiso: exigía derechos. Gracias a su coraje, las mujeres del Reino Unido conquistaron el voto. Ella nunca vivió para emitirlo."
+  },
+  {
+    "titulo": "Amelia Earhart y el cielo sin límites",
+    "descripcion": "Primera mujer en cruzar el Atlántico en solitario, Amelia desafió la gravedad… y los prejuicios. Su avión desapareció en 1937, pero su figura no: se convirtió en ícono de valentía y libertad con alas."
+  },
+  {
+    "titulo": "Claudette Colvin, la adolescente que se negó antes que Rosa",
+    "descripcion": "A los 15 años, Claudette se negó a ceder su asiento en un bus de Alabama, nueve meses antes que Rosa Parks. Fue arrestada, pero silenciada por su juventud y su embarazo. Su acto fue el verdadero primer paso de la rebelión."
+  },
+  {
+    "titulo": "Rachel Carson y el eco que despertó al mundo",
+    "descripcion": "Su libro *Primavera silenciosa* alertó sobre los pesticidas y el colapso ambiental. Fue atacada por la industria, pero no se detuvo. Su trabajo dio origen al ecologismo moderno y cambió las leyes de EE.UU. para siempre."
+  },
+  {
+    "titulo": "Rigoberta Menchú y la voz de los sin voz",
+    "descripcion": "Indígena guatemalteca, testigo de una guerra brutal. Denunció crímenes desde el exilio, ganó el Nobel de la Paz y convirtió su historia en la historia de miles. Su lucha sigue con cada comunidad que resiste el olvido."
+  },
+  {
+    "titulo": "Marsha P. Johnson y la chispa de Stonewall",
+    "descripcion": "Afroamericana, trans y activista. Marsha fue una de las primeras en resistir en Stonewall, el estallido del orgullo LGBTIQ+. Sin dinero ni fama, defendió a los marginados hasta su misteriosa muerte. Hoy es un ícono global de la diversidad."
+  },
+  {
+    "titulo": "Joan Clarke y el código roto",
+    "descripcion": "Matemática brillante, ayudó a descifrar los códigos nazis junto a Alan Turing. Pero mientras él fue celebrado, a ella la relegaron. Su mente ayudó a ganar la guerra, aunque su nombre casi desaparece entre papeles clasificados."
+  },
+  {
+    "titulo": "Sojourner Truth y el discurso eterno",
+    "descripcion": "Nació esclavizada, escapó, y se convirtió en una voz feroz por los derechos civiles. Su frase “¿Acaso no soy yo una mujer?” resonó en 1851… y sigue latiendo en cada lucha por igualdad racial y de género."
+  },
+  {
+    "titulo": "Bertha Benz y el primer viaje",
+    "descripcion": "En 1888, sin permiso ni combustible seguro, Bertha condujo el primer automóvil más de 100 km para probarlo al mundo. Su viaje no solo validó el invento de su esposo: abrió el camino a la industria automotriz global."
+  },
+  {
+    "titulo": "Lise Meitner y la fisión ignorada",
+    "descripcion": "Descubrió la fisión nuclear junto a Otto Hahn, pero él recibió el Nobel solo. Mujer, judía y refugiada, Meitner fue borrada de la historia oficial. La ciencia le debe mucho más que una nota al pie."
+  },
+  {
+    "titulo": "Ching Shih, la pirata que gobernó mares",
+    "descripcion": "Exprostituta y luego líder de una flota de 300 barcos, Ching Shih aterrorizó al Imperio Chino. Nadie la venció. Se retiró con riquezas, indulto… y una leyenda que eclipsa a cualquier Jack Sparrow."
+  },
+  {
+    "titulo": "Elizabeth Blackwell y el bisturí pionero",
+    "descripcion": "En 1849, se convirtió en la primera médica con título en EE.UU. Fue rechazada, ridiculizada, pero nunca se rindió. Abrió hospitales, formó mujeres doctoras… y cortó con siglos de exclusión."
+  },
+  {
+    "titulo": "Tegla Loroupe y la carrera por la paz",
+    "descripcion": "Corredora keniana que rompió récords y estereotipos. Más allá del deporte, usó su fama para mediar en conflictos tribales. En cada zancada, llevó más que velocidad: llevó esperanza."
+  },
+  {
+    "titulo": "Ruth Bader Ginsburg y la justicia con genio",
+    "descripcion": "Abogada y jueza de la Corte Suprema de EE.UU., peleó por la igualdad de género desde el derecho. Con inteligencia quirúrgica, transformó leyes y mentalidades. Su collar de encaje se volvió símbolo de disenso… y de poder."
+  },
+  {
+    "titulo": "Artemisia Gentileschi y el arte como revancha",
+    "descripcion": "Pintora barroca violada por su maestro, lo denunció en juicio y siguió creando. Sus obras mostraban heroínas fuertes, vengativas, divinas. Pintó con rabia y belleza, siglos antes de que se hablara de feminismo."
+  },
+  {
+    "titulo": "Susan B. Anthony y el voto costoso",
+    "descripcion": "Fue arrestada por votar en 1872. No pidió perdón. Peleó toda su vida por el sufragio femenino en EE.UU., aunque murió antes de verlo hecho realidad. Hoy su rostro está en una moneda… que vale más por su historia."
+  },
+  {
+    "titulo": "Billie Jean King y el partido del siglo",
+    "descripcion": "Campeona de tenis, enfrentó y venció a un ex número uno masculino en un duelo televisado. Lo llamó la “batalla de los sexos”. Su victoria inspiró a millones de mujeres a nunca aceptar que eran ‘menos’."
+  },
+  {
+    "titulo": "Sophie Scholl y la flor de la resistencia",
+    "descripcion": "Estudiante alemana que, junto a su hermano, repartió panfletos contra Hitler. Fue capturada y ejecutada con solo 21 años. Su valentía sigue viva en las aulas que llevan su nombre y en cada joven que se atreve a decir la verdad."
+  },
+  {
+    "titulo": "Florence Nightingale y la ciencia del cuidado",
+    "descripcion": "En plena guerra de Crimea, transformó hospitales infectos en centros de sanación. Usó estadísticas para salvar vidas y fundó la enfermería moderna. Su lámpara iluminó mucho más que pasillos oscuros."
+  },
+  {
+    "titulo": "Rosa Luxemburg y el grito de la revolución",
+    "descripcion": "Filósofa, activista y mártir del socialismo alemán. Enfrentó tanto al poder capitalista como al autoritarismo comunista. Su voz fue silenciada por una bala… pero sus ideas siguen marchando."
+  },
+  {
+    "titulo": "Harriet Tubman y el tren hacia la libertad",
+    "descripcion": "Escapó de la esclavitud y regresó para salvar a cientos más. Condujo el ferrocarril subterráneo sin vías ni locomotoras: solo coraje. Luego fue espía, enfermera y símbolo de libertad indomable."
+  },
+  {
+    "titulo": "Tawakkol Karman, la voz del Yemen silenciado",
+    "descripcion": "Periodista, activista, Nobel de la Paz. Organizó protestas pacíficas en un país donde hablar es peligroso. La llamaron ‘madre de la revolución’. Ella respondió: soy solo una mujer con convicción."
+  },
+  {
+    "titulo": "Junko Tabei y la cima del mundo",
+    "descripcion": "En 1975, fue la primera mujer en conquistar el Everest. Lo hizo después de sobrevivir a una avalancha. No se detuvo allí: luego escaló las cumbres más altas de cada continente. Su bandera era la voluntad."
+  },
+  {
+    "titulo": "Nawal El Saadawi y la pluma contra la opresión",
+    "descripcion": "Médica y escritora egipcia, denunció la mutilación genital femenina y la represión sexual. Fue censurada, encarcelada, exiliada… pero nunca callada. Cada libro suyo es un acto de resistencia."
+  },
+  {
+    "titulo": "Annette Kellerman y el traje de baño prohibido",
+    "descripcion": "Nadadora australiana que desafió los corsés del siglo XIX. Promovió el traje de una sola pieza y fue arrestada por indecencia. Hoy, cada zambullida libre le debe una brazada a su rebeldía."
+  },
+  {
+    "titulo": "Lola Mora y las esculturas que escandalizaron",
+    "descripcion": "Primera escultora argentina, sus obras con desnudos femeninos fueron atacadas por moralistas. Pero ella siguió tallando piedra y prejuicios. Su Fuente de las Nereidas aún desafía a quienes quisieron esconderla."
+  },
+  {
+    "titulo": "Violeta Parra y la raíz de un pueblo",
+    "descripcion": "Cantautora, artista y recopiladora del folclore chileno. Cantó la pena, la lucha y el amor con voz rasgada y alma entera. Su “Gracias a la vida” fue despedida… y testamento."
+  },
+  {
+    "titulo": "Gertrude Ederle y el canal vencido",
+    "descripcion": "Primera mujer en cruzar a nado el Canal de la Mancha. Lo hizo en 1926, con olas furiosas y cronómetros incrédulos. Nadó más rápido que cualquier hombre antes. El agua no le tenía miedo."
+  },
+  {
+    "titulo": "Yayoi Kusama y los puntos del infinito",
+    "descripcion": "Artista japonesa que convirtió su dolor mental en universos de luces, espejos y repetición. Su obsesión con los puntos la llevó del exilio psiquiátrico a los museos más prestigiosos del mundo."
+  },
+  {
+    "titulo": "Benazir Bhutto y la silla que ardía",
+    "descripcion": "Fue la primera mujer en gobernar un país musulmán moderno. Su liderazgo en Pakistán desafió tanto al patriarcado como al extremismo. Fue asesinada, pero dejó una semilla de poder femenino en la política global."
+  },
+  {
+    "titulo": "María Remedios del Valle, la madre de la patria invisible",
+    "descripcion": "Luchó en las guerras por la independencia argentina como enfermera, soldado y capitana. Fue olvidada, mendigó. Hoy, la historia empieza a nombrarla: la ‘Madre de la Patria’ era negra y valiente."
+  },
+  {
+    "titulo": "Henrietta Lacks y las células inmortales",
+    "descripcion": "Murió sin saber que sus células, tomadas sin consentimiento, revolucionarían la medicina. Se multiplicaron en laboratorios, salvaron millones. Su historia muestra que la ciencia también tiene deudas humanas."
+  },
+  {
+    "titulo": "Nadia Comaneci y el 10 perfecto",
+    "descripcion": "En Montreal 1976, con solo 14 años, la gimnasta rumana logró la primera calificación perfecta de la historia. El marcador ni siquiera estaba preparado para mostrar un ‘10’. Ella sí lo estaba."
+  },
+  {
+    "titulo": "Gloria Steinem y el micrófono feminista",
+    "descripcion": "Periodista, activista y fundadora de Ms. Magazine. Con lentes grandes y voz clara, puso al feminismo en la portada. Demostró que el cambio cultural también se escribe… con estilo."
+  },
+  {
+    "titulo": "Kalpana Chawla y el viaje truncado",
+    "descripcion": "Primera mujer india en el espacio. Voló como ingeniera de la NASA, pero su misión terminó en tragedia con el Columbia. Su nombre quedó flotando en la atmósfera… junto a los sueños de millones de niñas."
+  },
+  {
+    "titulo": "Berta Cáceres y el río que no se vendió",
+    "descripcion": "Lideresa indígena hondureña, frenó la construcción de una represa que amenazaba tierras ancestrales. Fue asesinada en su casa, pero su lucha hizo eco en la selva, los tribunales… y la memoria colectiva."
+  },
+  {
+    "titulo": "Nettie Stevens y los cromosomas olvidados",
+    "descripcion": "Descubrió que el sexo biológico depende de los cromosomas X e Y. Pero su colega hombre se llevó el crédito. Ella murió pronto, pero la genética moderna aún se escribe con sus letras."
+  },
+  {
+    "titulo": "Sor Juana y la pluma de los conventos",
+    "descripcion": "En el México colonial, escribió con ingenio feroz sobre ciencia, religión y derechos de la mujer. Le prohibieron pensar… y respondió con poesía. Su celda fue biblioteca, aula y trinchera."
+  },
+  {
+    "titulo": "Murasaki Shikibu y la primera novela",
+    "descripcion": "Mil años antes de Jane Austen, escribió *El cuento de Genji* en Japón. Creó personajes complejos, tramas emocionales… y un género entero. Su tinta fluye aún en cada historia que nos conmueve."
+  },
+  {
+    "titulo": "Kathrine Switzer y el dorsal rebelde",
+    "descripcion": "En 1967, se coló en la maratón de Boston con un número falso. Cuando un organizador intentó sacarla a empujones, siguió corriendo. Cruzó la meta… y rompió la barrera de género en el deporte."
+  },
+  {
+    "titulo": "Rosalind Franklin y la doble hélice ignorada",
+    "descripcion": "Captó la imagen que revelaba la estructura del ADN, pero fue excluida del Nobel. Watson y Crick se llevaron la gloria. Sin ella, la biología moderna estaría desenrollando otras hipótesis."
+  },
+  {
+    "titulo": "Tamara de Lempicka y el arte del deseo",
+    "descripcion": "Pintora polaca del Art Déco, retrató a mujeres sensuales, poderosas y modernas. Su obra fue escandalosa, codiciada, olvidada… y rescatada por el siglo XXI con admiración pop."
+  },
+  {
+    "titulo": "Fannie Lou Hamer y el grito en Mississippi",
+    "descripcion": "Campesina afroamericana, fue golpeada y esterilizada contra su voluntad. Se convirtió en líder por el derecho al voto. Cuando habló ante el Congreso, su verdad incomodó tanto… que cortaron la transmisión."
+  },
+  {
+    "titulo": "Émilie du Châtelet y la física del siglo antes",
+    "descripcion": "Traductora y comentarista de Newton, corrigió errores y añadió ideas propias. En pleno siglo XVIII, su mente brillaba entre hombres. Murió tras dar a luz… pero su legado sigue orbitando en la historia de la ciencia."
+  },
+  {
+    "titulo": "Milena Jesenská y las cartas contra el horror",
+    "descripcion": "Periodista checa, traductora de Kafka y resistente antinazi. Salvó vidas y denunció horrores hasta ser enviada a Ravensbrück. Allí murió, pero su tinta sobrevivió. Fue más que una nota al pie de otra biografía."
+  },
+  {
+    "titulo": "Mary Anning y los dragones de piedra",
+    "descripcion": "Recolectora de fósiles autodidacta en Inglaterra, descubrió especies prehistóricas sin reconocimiento académico. Su trabajo fundó la paleontología moderna, aunque los museos firmaban con otros nombres."
+  },
+  {
+    "titulo": "Josephine Baker y el espía con plumas",
+    "descripcion": "Bailarina afroamericana adorada en París, usó su fama para espiar nazis durante la Segunda Guerra Mundial. Ocultaba mensajes en partituras… y luego desfilaba por los escenarios como si nada."
+  },
+  {
+    "titulo": "Ada Blackjack y la isla del hielo",
+    "descripcion": "Inuit, madre y única sobreviviente de una expedición ártica fallida. Aprendió a cazar, curar y resistir sola entre osos polares. Cuando la rescataron, nadie creía lo que había logrado."
+  },
+  {
+    "titulo": "Charlotte Cooper y el oro que hizo historia",
+    "descripcion": "Tenista británica, fue la primera mujer en ganar una medalla olímpica individual en 1900. Sorda desde los 26 años, no escuchaba aplausos, pero sí conocía el sonido de una victoria que abrió puertas."
+  },
+  {
+    "titulo": "Elena Cornaro y el primer doctorado femenino",
+    "descripcion": "En 1678, se convirtió en la primera mujer con un título universitario en Europa. Filósofa veneciana, hablaba ocho idiomas. Su diploma rompió una barrera que tardó siglos en desmoronarse del todo."
+  },
+  {
+    "titulo": "Anna Politkóvskaya y las palabras peligrosas",
+    "descripcion": "Periodista rusa que denunció crímenes en Chechenia y corrupción estatal. Fue envenenada, amenazada, y finalmente asesinada en 2006. Su pluma incomodó al poder hasta el final."
+  },
+  {
+    "titulo": "Alfonsina Storni y los versos que no pidieron perdón",
+    "descripcion": "Poeta argentina, escribió sobre amor, maternidad y feminismo en una época que exigía silencio. Se suicidó en el mar. Sus palabras siguen vivas, saladas y brillantes como las olas que la abrazaron."
+  },
+  {
+    "titulo": "Mary Edwards Walker y la medalla discutida",
+    "descripcion": "Médica y cirujana en la Guerra Civil estadounidense, fue la única mujer con la Medalla de Honor. Años después se la retiraron… y ella siguió usándola igual. Hoy, le fue restituida oficialmente."
+  },
+  {
+    "titulo": "Anacaona, la cacica que resistió al acero",
+    "descripcion": "Poeta y líder taína en el Caribe precolombino. Diplomática con los españoles hasta que la traicionaron. Murió ahorcada, pero su nombre quedó como símbolo de resistencia indígena y femenina."
+  },
+  {
+    "titulo": "Gwendolyn Brooks y el ritmo de los barrios",
+    "descripcion": "Primera afroamericana en ganar el Pulitzer de poesía. Sus versos capturaron la vida de Chicago con verdad, ritmo y dignidad. Cada poema suyo es un barrio entero respirando tinta."
+  },
+  {
+    "titulo": "Cecilia Grierson y el bisturí pionero del sur",
+    "descripcion": "Primera médica argentina, abrió paso entre prejuicios y burocracias. Fundó escuelas de enfermería y luchó por los derechos femeninos. La ciencia la necesitaba… aunque no la esperaba."
+  },
+  {
+    "titulo": "Raden Ajeng Kartini y la pluma javanesa",
+    "descripcion": "Noble indonesia que escribió sobre la educación de la mujer y el fin del matrimonio forzado. Murió joven, pero sus cartas inspiraron leyes, escuelas y un día nacional en su nombre."
+  },
+  {
+    "titulo": "Deborah Sampson y el uniforme prestado",
+    "descripcion": "En plena guerra de independencia de EE.UU., se disfrazó de hombre para alistarse en el ejército. Peleó, fue herida, y solo descubierta por enfermedad. Su historia fue borrada… y luego rescatada como símbolo."
+  },
+  {
+    "titulo": "Zitkala-Ša y la voz del pueblo silenciado",
+    "descripcion": "Escritora sioux, denunció la opresión a los pueblos nativos de EE.UU. Traducía historias ancestrales mientras luchaba por derechos civiles. Su nombre significa ‘Pájaro Rojo’… y así volaron sus palabras."
+  },
+  {
+    "titulo": "Elena Caffarena y el voto que tardó",
+    "descripcion": "Jurista y activista chilena, impulsó por décadas el sufragio femenino. Logró que fuera ley en 1949… pero el régimen la marginó. Su nombre recién volvió a sonar medio siglo después, con justicia."
+  },
+  {
+    "titulo": "Grace Hopper y el error que encendió la revolución",
+    "descripcion": "Almirante de la Marina de EE.UU. y pionera en informática, creó el primer compilador. También popularizó el término ‘bug’ tras encontrar una polilla real en una computadora. El código aún la recuerda."
+  },
+  {
+    "titulo": "Carmen Amaya y los tacones del trueno",
+    "descripcion": "Bailaora gitana que deslumbró con fuerza y arte en todo el mundo. Rompió las normas del flamenco bailando con pantalones y pasos viriles. Donde pisaba, el suelo respondía con respeto."
+  },
+  {
+    "titulo": "Marsha Linehan y la ciencia desde el abismo",
+    "descripcion": "Psicóloga que diseñó la terapia dialéctico-conductual. Lo asombroso: era para personas como ella, que habían pensado en rendirse muchas veces. Convirtió su dolor en una herramienta de vida para otros."
+  },
+  {
+    "titulo": "Eslanda Robeson y la mirada anticolonial",
+    "descripcion": "Antropóloga, escritora y activista, viajó por África denunciando el racismo y el imperialismo. Vivió a la sombra de su famoso esposo, pero escribió con luz propia. Su lente era aguda y justa."
+  },
+  {
+    "titulo": "Katharine Graham y el diario que se atrevió",
+    "descripcion": "Directora del Washington Post durante los Papeles del Pentágono y el caso Watergate. Publicó, resistió presiones… y ganó. Su temple convirtió al periódico en símbolo de la prensa libre."
+  },
+  {
+    "titulo": "Mina Loy y la modernidad feroz",
+    "descripcion": "Poeta, artista y pensadora del siglo XX. Rompió con el amor romántico, las normas sexuales y el canon literario masculino. No pedía espacio: lo creaba con cada línea."
+  },
+  {
+    "titulo": "Teuta de Iliria y la reina de los mares",
+    "descripcion": "En el siglo III a.C., gobernó tribus ilirias y desafió al mismísimo Imperio Romano desde el Adriático. Fue llamada pirata por los cronistas… pero en sus costas, la llamaban reina."
+  },
+  {
+    "titulo": "Fatima al-Fihri y la universidad eterna",
+    "descripcion": "En el año 859, fundó en Marruecos la Universidad de Qarawiyyin, aún activa hoy. Fue mujer, musulmana y visionaria. Su legado educa desde hace más de mil años… y sigue sumando mentes."
+  },
+  {
+    "titulo": "Olga Tokarczuk y la novela que respira",
+    "descripcion": "Psicóloga y escritora polaca, fusiona mística y ciencia con sensibilidad feroz. Ganó el Nobel de Literatura por explorar lo humano desde los márgenes. Sus palabras caminan más que corren, pero siempre llegan."
+  },
+  {
+    "titulo": "Isabel Barreto, la almiranta del Pacífico",
+    "descripcion": "En el siglo XVI, tomó el mando de una flota tras la muerte de su esposo. Navegó de Perú a Filipinas con autoridad y coraje. Fue la primera almiranta de la historia… en tiempos donde las mujeres no podían ni embarcar."
+  },
+  {
+    "titulo": "Audre Lorde y el poema como arma",
+    "descripcion": "Afroamericana, lesbiana, madre, poeta. Audre escribió con rabia lúcida sobre identidad, poder y silencio. Para ella, la poesía no era lujo: era herramienta de supervivencia."
+  },
+  {
+    "titulo": "Nellie Bly y la pluma infiltrada",
+    "descripcion": "Periodista pionera del siglo XIX, se infiltró en un manicomio para denunciar abusos y viajó sola alrededor del mundo. Donde otros escribían desde el escritorio, ella lo hacía desde el ojo del huracán."
+  },
+  {
+    "titulo": "Teresa de Calcuta y la fe en los olvidados",
+    "descripcion": "Fundadora de las Misioneras de la Caridad, dedicó su vida a cuidar enfermos y moribundos en India. Fue amada y criticada, canonizada por su entrega. Su figura sigue generando devoción y debate."
+  },
+  {
+    "titulo": "Irena Sendler y los frascos del futuro",
+    "descripcion": "Durante la ocupación nazi en Polonia, salvó a más de 2.500 niños judíos. Escondía sus nombres en frascos enterrados bajo un árbol, con la esperanza de reunirlos con sus familias. Muchos jamás supieron quién los salvó."
+  },
+  {
+    "titulo": "Rachel Levine y la medicina con identidad",
+    "descripcion": "Primera funcionaria federal abiertamente transgénero confirmada por el Senado de EE.UU. Su nombramiento rompió techos de cristal y tabúes en salud pública, con bata blanca y dignidad intacta."
+  },
+  {
+    "titulo": "Sayyida al-Hurra, la sultana del estrecho",
+    "descripcion": "Gobernó Tetuán en el siglo XVI y se alió con corsarios para controlar el Mediterráneo. Su nombre era temido por las flotas europeas. Fue reina y pirata, sin pedir permiso a ningún trono."
+  },
+  {
+    "titulo": "Juana Manso y las aulas rebeldes",
+    "descripcion": "Educadora argentina, impulsó la educación laica y el acceso de niñas al conocimiento. Enfrentó insultos y resistencias, pero fundó escuelas donde antes había dogmas. Enseñar también era revolucionar."
+  },
+  {
+    "titulo": "Jane Goodall y los chimpancés del alma",
+    "descripcion": "Sin títulos formales, revolucionó la primatología con observación paciente y respeto profundo. Descubrió que los chimpancés usan herramientas… y emociones. Su vínculo con ellos sigue siendo un puente entre especies."
+  },
+  {
+    "titulo": "Nanny of the Maroons y la montaña libre",
+    "descripcion": "Lideresa jamaicana del siglo XVIII, organizó una guerrilla contra los británicos y fundó comunidades libres. Usaba estrategias espirituales y militares. Su leyenda vive en billetes, canciones… y montañas."
+  },
+  {
+    "titulo": "Virginia Hall y la espía con pata de palo",
+    "descripcion": "Agente secreta de EE.UU. durante la Segunda Guerra Mundial, operó detrás de líneas enemigas con una prótesis. Hitler la llamó ‘la más peligrosa de todas’. Nunca la atraparon. Ni la pata, ni el miedo la frenaron."
+  },
+  {
+    "titulo": "Petrona Eyle y el bisturí feminista",
+    "descripcion": "Médica y activista suizo-argentina, fundó organizaciones por los derechos de la mujer y la infancia. Su bisturí no solo operaba: también cortaba con siglos de desigualdad legal y cultural."
+  },
+  {
+    "titulo": "Chien-Shiung Wu y la física sin Nobel",
+    "descripcion": "Descubrió que la paridad no se conserva en reacciones nucleares, cambiando la física moderna. Sus colegas hombres ganaron el Nobel. Ella, solo el respeto tardío de una ciencia que no supo verla a tiempo."
+  },
+  {
+    "titulo": "Patti Smith y el punk con alma de poeta",
+    "descripcion": "Cantautora, escritora y musa de varias generaciones. Su voz rugió en los 70 con fuerza cruda y lírica urbana. No pidió lugar: lo creó a patadas y versos."
+  },
+  {
+    "titulo": "Teresita de Barbieri y el género como campo de batalla",
+    "descripcion": "Socióloga mexicana pionera en estudios de género en América Latina. Convirtió teorías en herramientas políticas, y el feminismo académico en un movimiento vivo. Su aula fue trinchera."
+  },
+  {
+    "titulo": "Fatema Mernissi y el islam con mirada crítica",
+    "descripcion": "Socióloga marroquí, desafió las interpretaciones patriarcales del Corán. Escribió desde el Magreb, con rigor y poesía. Mostró que ser feminista y musulmana no era una contradicción, sino una posibilidad."
+  },
+  {
+    "titulo": "Graciela Fernández Meijide y las cifras del horror",
+    "descripcion": "Durante la dictadura argentina, perdió a su hijo y se convirtió en investigadora de desaparecidos. Su dolor se volvió trabajo, archivo, justicia. Fue voz y memoria cuando otros callaban o negaban."
+  },
+  {
+    "titulo": "Madeleine Albright y el poder con broche",
+    "descripcion": "Primera mujer en ser Secretaria de Estado de EE.UU. Usaba broches como mensaje diplomático: abejas para picar, tortugas para advertir. En un mundo de trajes grises, ella brilló sin perder filo."
+  }
+]

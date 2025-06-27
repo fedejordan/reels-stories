@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "La doble hélice del ADN",
+    "descripcion": "En 1953, James Watson y Francis Crick publicaron un modelo que cambiaría la biología para siempre: el ADN tenía forma de doble hélice. Pero tras el descubrimiento había una imagen clave… tomada por Rosalind Franklin, cuyo crédito tardó décadas en llegar."
+  },
+  {
+    "titulo": "El día que vencimos a la viruela",
+    "descripcion": "En 1796, Edward Jenner inoculó a un niño con viruela bovina para protegerlo contra la viruela humana. Fue el comienzo de las vacunas. Más de un siglo después, en 1980, la OMS declaró erradicada la enfermedad que mató a millones."
+  },
+  {
+    "titulo": "Bosón de Higgs: la partícula fantasma",
+    "descripcion": "Durante casi 50 años, el bosón de Higgs fue solo una predicción. En 2012, el CERN lo confirmó tras colisiones subatómicas en el Gran Colisionador de Hadrones. Era la última pieza faltante del Modelo Estándar… y estaba ahí, en el corazón de la materia."
+  },
+  {
+    "titulo": "Una cirugía que desafió lo imposible",
+    "descripcion": "En 1893, Daniel Hale Williams realizó una de las primeras cirugías exitosas a corazón abierto. Sin antibióticos ni rayos X, y en una época de prejuicios raciales, salvó a su paciente… y a generaciones futuras de cirujanos afroamericanos."
+  },
+  {
+    "titulo": "El origen de la anestesia moderna",
+    "descripcion": "En 1846, William Morton usó éter para dormir a un paciente antes de una cirugía. Por primera vez, alguien fue operado sin dolor. La medicina cambió en un instante: el sufrimiento ya no era el precio inevitable de curar."
+  },
+  {
+    "titulo": "El experimento de Mendel y los guisantes",
+    "descripcion": "En un jardín de monasterio, Gregor Mendel cruzó plantas de guisantes y descubrió patrones invisibles de herencia. Nadie le prestó atención… hasta décadas después, cuando su trabajo fue reconocido como el nacimiento de la genética."
+  },
+  {
+    "titulo": "Einstein y el instante que redefinió el tiempo",
+    "descripcion": "En 1905, Albert Einstein publicó su teoría de la relatividad especial. En ella, el tiempo ya no era absoluto: podía dilatarse. Con una ecuación sencilla —E=mc²— cambió para siempre nuestra visión del universo."
+  },
+  {
+    "titulo": "Pasteur y la revolución invisible",
+    "descripcion": "Louis Pasteur demostró que los microbios causaban enfermedades. Su trabajo salvó millones de vidas, no solo con vacunas, sino con un método cotidiano que lleva su nombre: la pasteurización."
+  },
+  {
+    "titulo": "Curie: radiante y radiactiva",
+    "descripcion": "Marie Curie descubrió dos elementos radiactivos, el polonio y el radio. Ganó dos premios Nobel, pero su obsesión científica le costó la salud. Nunca imaginó que su trabajo sería clave en la lucha contra el cáncer."
+  },
+  {
+    "titulo": "Cuando Galileo apuntó al cielo",
+    "descripcion": "En 1609, Galileo Galilei usó un telescopio para observar los cielos. Descubrió lunas en Júpiter, cráteres en la Luna… y una verdad incómoda: la Tierra no era el centro del universo."
+  },
+  {
+    "titulo": "El primer trasplante de corazón",
+    "descripcion": "En 1967, el doctor Christiaan Barnard realizó el primer trasplante de corazón humano exitoso. El paciente vivió solo 18 días, pero la cirugía abrió un nuevo capítulo para la medicina."
+  },
+  {
+    "titulo": "Tesla y la corriente alterna",
+    "descripcion": "Nikola Tesla apostó por la corriente alterna frente a la continua de Edison. Su visión ganó, iluminando ciudades enteras y dando origen al sistema eléctrico moderno."
+  },
+  {
+    "titulo": "Hubble y el universo en expansión",
+    "descripcion": "En 1929, Edwin Hubble descubrió que las galaxias se alejaban unas de otras. El universo no era estático… se expandía. Habíamos visto por primera vez el eco del Big Bang."
+  },
+  {
+    "titulo": "La estructura del universo en una ecuación",
+    "descripcion": "Paul Dirac unió la mecánica cuántica con la relatividad. En su ecuación, surgió algo inesperado: la antimateria. Lo que parecía una rareza matemática… existía."
+  },
+  {
+    "titulo": "El código de la vida secuenciado",
+    "descripcion": "En 2003, se completó el Proyecto Genoma Humano. Por primera vez, la humanidad leyó su propio manual biológico. Cada letra, cada gen… al alcance de la ciencia."
+  },
+  {
+    "titulo": "La revolución CRISPR",
+    "descripcion": "En 2012, Jennifer Doudna y Emmanuelle Charpentier presentaron una herramienta para editar genes como quien corrige un texto. Se llamaba CRISPR. Y la biología ya no volvió a ser la misma."
+  },
+  {
+    "titulo": "Aristóteles bajo el microscopio",
+    "descripcion": "En 1676, Anton van Leeuwenhoek miró por su microscopio y vio lo invisible: bacterias, espermatozoides, células vivas. Por primera vez, el mundo oculto cobró forma."
+  },
+  {
+    "titulo": "El big bang de las matemáticas modernas",
+    "descripcion": "En 1931, Kurt Gödel publicó sus teoremas de incompletitud. Mostró que en cualquier sistema lógico complejo… siempre habrá verdades imposibles de probar. La perfección matemática, para siempre fuera de alcance."
+  },
+  {
+    "titulo": "El ojo que fotografió un agujero negro",
+    "descripcion": "En 2019, un equipo internacional captó por primera vez la imagen de un agujero negro. Una mancha en el vacío. Una hazaña científica que unió telescopios en todo el planeta."
+  },
+  {
+    "titulo": "La primera píldora anticonceptiva",
+    "descripcion": "En 1960, la FDA aprobó la primera píldora anticonceptiva. Fue más que un avance médico: fue un cambio social, dando a millones de mujeres control sobre su fertilidad."
+  },
+  {
+    "titulo": "La inteligencia artificial venció al campeón",
+    "descripcion": "En 1997, la supercomputadora Deep Blue venció al campeón mundial de ajedrez, Garry Kasparov. Fue la primera vez que una máquina derrotaba al mejor humano en su propio juego."
+  },
+  {
+    "titulo": "El mapa de Marte, hecho desde la Tierra",
+    "descripcion": "En 1971, la sonda Mariner 9 se convirtió en el primer objeto humano en orbitar otro planeta. Desde allí, cartografió Marte… y nos mostró valles, volcanes y la posibilidad de agua antigua."
+  },
+  {
+    "titulo": "La primera célula sintética",
+    "descripcion": "En 2010, el equipo de Craig Venter creó una célula controlada por un genoma completamente sintetizado en laboratorio. Era vida… fabricada desde cero."
+  },
+  {
+    "titulo": "La revolución de las vacunas de ARNm",
+    "descripcion": "En 2020, el mundo enfrentó una pandemia. En tiempo récord, científicos usaron ARNm para crear vacunas eficaces contra el COVID-19. Era una tecnología en desarrollo… que llegó justo a tiempo."
+  },
+  {
+    "titulo": "Descubrimos la tectónica de placas",
+    "descripcion": "En los años 60, los geólogos confirmaron que la corteza terrestre se mueve. Montañas, terremotos, continentes: todo era parte de un gigantesco rompecabezas móvil bajo nuestros pies."
+  },
+  {
+    "titulo": "El día que las ondas gravitacionales hicieron ruido",
+    "descripcion": "En 2015, el observatorio LIGO captó una vibración del espacio-tiempo causada por dos agujeros negros colisionando. Era la primera vez que escuchábamos el universo sin luz… solo con gravedad."
+  },
+  {
+    "titulo": "Cuando un simio aprendió a hablar",
+    "descripcion": "Koko, la gorila, aprendió más de 1000 palabras en lenguaje de señas. No fue un experimento cualquiera: nos obligó a replantear la barrera entre humanos y animales."
+  },
+  {
+    "titulo": "El primer bebé probeta",
+    "descripcion": "En 1978 nació Louise Brown, el primer ser humano concebido por fertilización in vitro. Una vida que comenzó en una placa de Petri… y abrió nuevas posibilidades para millones de familias."
+  },
+  {
+    "titulo": "La bacteria que come plástico",
+    "descripcion": "En 2016, científicos descubrieron una bacteria capaz de descomponer PET, un tipo común de plástico. En ella, tal vez encontremos la clave para limpiar los océanos."
+  },
+  {
+    "titulo": "El sueño lúcido que se hizo ciencia",
+    "descripcion": "En 1975, un estudio logró captar señales voluntarias desde un sueño. Por primera vez, alguien dentro de un sueño lúcido pudo comunicarse con el mundo exterior."
+  },
+  {
+    "titulo": "El lenguaje secreto de las plantas",
+    "descripcion": "Científicos descubrieron que algunas plantas emiten sonidos ultrasónicos cuando están bajo estrés. No los escuchamos… pero otros seres vivos sí. El bosque, quizás, siempre estuvo hablando."
+  },
+  {
+    "titulo": "El código secreto de los girasoles",
+    "descripcion": "Investigadores descubrieron que los girasoles siguen al sol no solo por instinto, sino por un reloj interno sincronizado con la luz. Una danza vegetal milimétrica, guiada por genes y hormonas."
+  },
+  {
+    "titulo": "La penicilina y el descuido que salvó millones",
+    "descripcion": "En 1928, Alexander Fleming notó que un hongo había matado bacterias en una placa olvidada. Había nacido la penicilina… por accidente. La medicina jamás volvió a ser igual."
+  },
+  {
+    "titulo": "Las computadoras nacieron de la guerra",
+    "descripcion": "En la Segunda Guerra Mundial, Alan Turing construyó una máquina para descifrar códigos nazis. Sin saberlo, estaba dando forma a la primera computadora moderna."
+  },
+  {
+    "titulo": "El cometa que probó que no estamos solos",
+    "descripcion": "Cuando la sonda Rosetta aterrizó en el cometa 67P, encontró compuestos orgánicos complejos. Quizás la vida en la Tierra vino… del espacio."
+  },
+  {
+    "titulo": "Las neuronas espejo: el otro yo",
+    "descripcion": "En los años 90, científicos italianos descubrieron neuronas que se activaban al ver a otros hacer algo. Sentir, imitar, empatizar: todo tenía un reflejo biológico."
+  },
+  {
+    "titulo": "El primer exoplaneta",
+    "descripcion": "En 1995, se confirmó el hallazgo de un planeta fuera del sistema solar: 51 Pegasi b. Un mundo lejano, gaseoso y abrasador. No estábamos tan solos como creíamos."
+  },
+  {
+    "titulo": "La primera imagen de un átomo",
+    "descripcion": "En 2008, físicos lograron capturar una imagen directa de un solo átomo de hidrógeno. Lo invisible, al fin visible. Un punto, una partícula, un universo en miniatura."
+  },
+  {
+    "titulo": "El sol artificial de Corea",
+    "descripcion": "En 2020, científicos coreanos lograron mantener un plasma a 100 millones de grados durante 20 segundos. Era fusión nuclear controlada: el sueño de energía limpia… más cerca."
+  },
+  {
+    "titulo": "El mapa más antiguo del cerebro",
+    "descripcion": "En el siglo II, Galeno escribió sobre el cerebro y sus funciones basándose en disecciones animales. Aunque incompleto, fue el inicio de la neurociencia."
+  },
+  {
+    "titulo": "La impresión 3D que creó órganos",
+    "descripcion": "En 2019, investigadores israelíes imprimieron un corazón humano en 3D con células del propio paciente. No solo era ciencia… era esperanza impresa capa por capa."
+  },
+  {
+    "titulo": "La estrella que explotó ante nuestros ojos",
+    "descripcion": "En 1987, una supernova explotó en una galaxia cercana. Fue visible a simple vista, un raro espectáculo cósmico… y una mina de datos para la astrofísica."
+  },
+  {
+    "titulo": "La luna de Júpiter que esconde un océano",
+    "descripcion": "Europa, una de las lunas de Júpiter, tiene una corteza helada… pero bajo ella, un océano global. Donde hay agua líquida, hay posibilidad de vida."
+  },
+  {
+    "titulo": "El ADN antiguo que resucitó al neandertal",
+    "descripcion": "En 2010, científicos secuenciaron el genoma de un neandertal. Por primera vez, leímos el código de una especie humana extinta."
+  },
+  {
+    "titulo": "Cuando el plomo contaminó Roma",
+    "descripcion": "Análisis modernos revelaron niveles de plomo en las cañerías del Imperio Romano. La ingeniería hidráulica más avanzada… pudo haber envenenado a toda una civilización."
+  },
+  {
+    "titulo": "El satélite que encontró la edad del universo",
+    "descripcion": "La misión WMAP midió la radiación del Big Bang con una precisión sin precedentes. Con sus datos, supimos que el universo tenía 13.7 mil millones de años."
+  },
+  {
+    "titulo": "El grafeno: materia de ciencia ficción",
+    "descripcion": "En 2004, dos científicos aislaron una capa de grafeno usando cinta adhesiva. Fuerte, flexible, conductor… y con un futuro prometedor en electrónica y medicina."
+  },
+  {
+    "titulo": "El hongo que conecta el bosque",
+    "descripcion": "Científicos descubrieron que los árboles se comunican a través de redes subterráneas de hongos. El 'internet de la naturaleza'… había estado bajo nuestros pies todo el tiempo."
+  },
+  {
+    "titulo": "La bomba que dio origen a la energía nuclear",
+    "descripcion": "En 1942, el Proyecto Manhattan logró la primera reacción nuclear en cadena. Lo que empezó como física pura, terminó con dos bombas… y una nueva era energética."
+  },
+  {
+    "titulo": "La sangre artificial dio su primer paso",
+    "descripcion": "En 2017, se logró producir glóbulos rojos a partir de células madre. Aún no es masivo, pero promete un futuro sin escasez de sangre."
+  },
+  {
+    "titulo": "El lenguaje de las ballenas codificado",
+    "descripcion": "Con inteligencia artificial, investigadores están empezando a descifrar los patrones de canto de los cachalotes. Una lengua ancestral… que podríamos aprender a entender."
+  },
+  {
+    "titulo": "La primera mujer en el espacio",
+    "descripcion": "En 1963, Valentina Tereshkova orbitó la Tierra 48 veces. Su viaje no solo rompió barreras de gravedad, también de género."
+  },
+  {
+    "titulo": "Las vacunas de ADN ya son realidad",
+    "descripcion": "En 2021, India aprobó la primera vacuna de ADN contra el COVID-19. En lugar de virus, se usaba un fragmento genético programado. Biotecnología futurista… en nuestros brazos."
+  },
+  {
+    "titulo": "El sonido de Marte",
+    "descripcion": "En 2021, el rover Perseverance grabó audio en Marte. Viento marciano, crujidos mecánicos, el silencio del planeta rojo. Escuchamos otro mundo por primera vez."
+  },
+  {
+    "titulo": "Cuando una planta encendió una lámpara",
+    "descripcion": "En experimentos recientes, científicos lograron generar electricidad a partir del metabolismo de plantas vivas. Naturaleza y tecnología… enchufadas."
+  },
+  {
+    "titulo": "La memoria implantada",
+    "descripcion": "En 2013, neurocientíficos lograron implantar recuerdos artificiales en ratones. Una escena que parecía ciencia ficción… comenzaba a ser real."
+  },
+  {
+    "titulo": "Cuando una mujer predijo un cometa",
+    "descripcion": "En 1705, Edmond Halley usó las leyes de Newton para predecir el regreso de un cometa. Pero fue Mary Somerville quien explicó su órbita con una precisión asombrosa. La ciencia de los cielos… tenía también firma femenina."
+  },
+  {
+    "titulo": "La proteína que corrigió la evolución",
+    "descripcion": "En los años 80, se descubrió una enzima llamada PCR, capaz de multiplicar fragmentos de ADN. Su creador, Kary Mullis, recibió el Nobel. Sin ella, la biotecnología moderna no existiría."
+  },
+  {
+    "titulo": "El metal que recuerda su forma",
+    "descripcion": "Algunas aleaciones, como el nitinol, pueden doblarse y volver a su forma original al calentarse. Se usan en medicina, robótica y hasta en misiones espaciales. Como un músculo artificial con memoria."
+  },
+  {
+    "titulo": "El corazón de una estrella en la Tierra",
+    "descripcion": "Tokamak es una máquina que imita el sol para generar energía por fusión nuclear. Aún no alcanza el equilibrio perfecto… pero cuando lo haga, tendremos energía casi infinita."
+  },
+  {
+    "titulo": "El cuerpo humano en cifras",
+    "descripcion": "Tu cuerpo tiene más bacterias que células humanas, y el ADN de todos los humanos es 99.9% idéntico. Somos distintos… y casi iguales."
+  },
+  {
+    "titulo": "El experimento que midió lo intangible",
+    "descripcion": "En 1801, Thomas Young hizo pasar luz por dos rendijas. El resultado fue un patrón de interferencia. ¿Luz como partícula o como onda? La dualidad había nacido."
+  },
+  {
+    "titulo": "La foto que reveló la doble hélice",
+    "descripcion": "La famosa 'Fotografía 51' tomada por Rosalind Franklin fue clave para entender la estructura del ADN. Sin ella, quizás Watson y Crick no habrían visto la espiral genética."
+  },
+  {
+    "titulo": "La partícula que aparece y desaparece",
+    "descripcion": "Los neutrinos pasan a través de la Tierra como si no existiera. Se descubrieron en 1956, y todavía hoy son un misterio cuántico: están ahí… pero no los podemos atrapar."
+  },
+  {
+    "titulo": "El sonido que viajó en una botella",
+    "descripcion": "En 1877, Edison creó el fonógrafo. Por primera vez, una voz humana quedó atrapada en un cilindro. La música ya no moriría con el aire."
+  },
+  {
+    "titulo": "La célula que nunca murió",
+    "descripcion": "Las células de Henrietta Lacks, tomadas sin su consentimiento en 1951, se siguen reproduciendo hoy en laboratorios de todo el mundo. Permitieron vacunas, estudios genéticos y más. Nunca dejaron de crecer."
+  },
+  {
+    "titulo": "El hombre que sobrevivió a una barra de hierro",
+    "descripcion": "Phineas Gage, un obrero, sobrevivió en 1848 a una barra que atravesó su cráneo. Cambió su personalidad… y cambió la neurociencia para siempre."
+  },
+  {
+    "titulo": "La primera red neuronal artificial",
+    "descripcion": "En 1958, Frank Rosenblatt creó el Perceptrón, una máquina capaz de aprender. Era primitiva, pero plantó la semilla de lo que hoy llamamos inteligencia artificial."
+  },
+  {
+    "titulo": "El pez que regenera su corazón",
+    "descripcion": "El pez cebra puede regenerar hasta el 20% de su corazón. Los científicos estudian su genoma con la esperanza de que un día… también podamos hacerlo los humanos."
+  },
+  {
+    "titulo": "La sangre azul de los cangrejos",
+    "descripcion": "Los cangrejos herradura tienen sangre azul rica en cobre. Esa sangre se usa para detectar toxinas en medicamentos. Un animal prehistórico… que cuida nuestra salud."
+  },
+  {
+    "titulo": "La inteligencia de los pulpos",
+    "descripcion": "Los pulpos tienen tres corazones y una inteligencia sorprendente. Usan herramientas, resuelven problemas… y podrían tener una forma alienígena de conciencia."
+  },
+  {
+    "titulo": "El plástico que se disuelve solo",
+    "descripcion": "Científicos crearon un plástico biodegradable que se descompone en días al contacto con enzimas. Una solución prometedora para un planeta ahogado en residuos."
+  },
+  {
+    "titulo": "La oreja en la espalda de un ratón",
+    "descripcion": "En 1997, investigadores implantaron una estructura de oreja humana en la espalda de un ratón para probar ingeniería de tejidos. Una imagen extraña… con fines médicos."
+  },
+  {
+    "titulo": "Las piedras que cantan",
+    "descripcion": "En lugares como Stonehenge, ciertas rocas emiten sonidos cuando se golpean. ¿Casualidad geológica o instrumento ritual? La ciencia aún no lo explica del todo."
+  },
+  {
+    "titulo": "El ADN que sobrevivió a la extinción",
+    "descripcion": "En 2021, científicos extrajeron ADN de un mamut extinto hace más de 1 millón de años. La genética está cada vez más cerca de revivir especies perdidas."
+  },
+  {
+    "titulo": "La máquina que leyó el pensamiento",
+    "descripcion": "Con electrodos y algoritmos, investigadores lograron traducir ondas cerebrales en palabras. Un paso hacia las interfaces mente-computadora."
+  },
+  {
+    "titulo": "El ojo de un camarón que ve lo invisible",
+    "descripcion": "El camarón mantis tiene una visión tan compleja que detecta polarización y luz ultravioleta. Su ojo es más sofisticado que cualquier cámara humana."
+  },
+  {
+    "titulo": "El parásito que controla mentes",
+    "descripcion": "Toxoplasma gondii puede alterar el comportamiento de ratas, haciéndolas menos temerosas. En humanos, se investiga su vínculo con trastornos mentales."
+  },
+  {
+    "titulo": "El feto que se operó antes de nacer",
+    "descripcion": "En cirugías fetales modernas, los médicos intervienen dentro del útero para corregir malformaciones. Operar sin haber nacido… hoy es posible."
+  },
+  {
+    "titulo": "La pintura que limpia el aire",
+    "descripcion": "Nanotecnología y óxidos especiales permitieron crear pinturas que absorben contaminantes. Un edificio pintado puede actuar como cientos de árboles."
+  },
+  {
+    "titulo": "El hombre que desafió su propio ADN",
+    "descripcion": "David Sinclair, genetista, experimenta con terapias para revertir el envejecimiento. Cree que en el futuro… envejecer será opcional."
+  },
+  {
+    "titulo": "El hongo que respira electricidad",
+    "descripcion": "Científicos descubrieron hongos capaces de generar pequeñas corrientes eléctricas al descomponer materia orgánica. ¿Energía viva? Tal vez, un futuro bioeléctrico empieza bajo tierra."
+  },
+  {
+    "titulo": "La matemática que salvó un vuelo",
+    "descripcion": "En 1962, la matemática Katherine Johnson calculó la trayectoria del Apolo 11 a mano. Sin sus números, el primer alunizaje no habría llegado a destino."
+  },
+  {
+    "titulo": "El espejo que predijo la relatividad",
+    "descripcion": "En 1887, el experimento de Michelson y Morley no encontró el éter que supuestamente llenaba el espacio. El resultado desconcertante… allanó el camino para la teoría de Einstein."
+  },
+  {
+    "titulo": "El animal inmortal",
+    "descripcion": "La medusa *Turritopsis dohrnii* puede revertir su envejecimiento y volver a su fase juvenil. En teoría, es biológicamente inmortal. Un misterio que fascina a los científicos."
+  },
+  {
+    "titulo": "El planeta con lluvia de vidrio",
+    "descripcion": "En 2013, se descubrió un exoplaneta donde llueve vidrio… de lado, impulsado por vientos de 8000 km/h. La ciencia también revela horrores cósmicos."
+  },
+  {
+    "titulo": "La electricidad del cuerpo humano",
+    "descripcion": "Tu corazón late por impulsos eléctricos. En total, el cuerpo humano genera unos 100 vatios en reposo. Eres, literalmente, una batería biológica."
+  },
+  {
+    "titulo": "El pez que produce su propia luz",
+    "descripcion": "Muchos peces abisales generan bioluminiscencia para cazar o esconderse. La oscuridad del océano… iluminada por cuerpos vivos."
+  },
+  {
+    "titulo": "El escáner que ve dentro del cuerpo",
+    "descripcion": "En 1971, se usó el primer escáner de tomografía computada. Por primera vez, la medicina podía ver el interior del cuerpo… sin abrirlo."
+  },
+  {
+    "titulo": "La máquina que venció al lenguaje",
+    "descripcion": "En 2020, una IA fue capaz de generar textos casi indistinguibles de los humanos. No era consciente, pero había cruzado una barrera simbólica: entender el lenguaje como nunca antes."
+  },
+  {
+    "titulo": "La lagartija que respira bajo el agua",
+    "descripcion": "Ciertas especies de anolis pueden almacenar burbujas de aire en su hocico y usarlas para respirar bajo el agua. Un pequeño milagro evolutivo en acción."
+  },
+  {
+    "titulo": "El virus que cura",
+    "descripcion": "Algunos virus son modificados para atacar solo células cancerosas. Lo que una vez nos enfermaba… hoy podría salvarnos."
+  },
+  {
+    "titulo": "La ecuación que modela pandemias",
+    "descripcion": "El modelo SIR, creado en 1927, permite predecir la propagación de enfermedades. Una fórmula sencilla… que anticipa el destino de millones."
+  },
+  {
+    "titulo": "La abeja que entiende el cero",
+    "descripcion": "Investigaciones mostraron que las abejas pueden reconocer el concepto de 'nada'. Un insecto, con un cerebro del tamaño de una semilla… entendiendo el cero."
+  },
+  {
+    "titulo": "El reloj más preciso del mundo",
+    "descripcion": "Los relojes atómicos actuales pierden menos de un segundo cada 33 mil millones de años. Miden el tiempo con la oscilación de los átomos. El tic-tac más perfecto de la historia."
+  },
+  {
+    "titulo": "El hielo más caliente",
+    "descripcion": "En el laboratorio, los científicos lograron crear un tipo de hielo supercaliente llamado 'hielo-X'. Una paradoja física que solo puede existir bajo extrema presión."
+  },
+  {
+    "titulo": "La vacuna que usó cáscara de plátano",
+    "descripcion": "Científicos experimentaron con plantas genéticamente modificadas para producir antígenos. En el futuro, podríamos comer una fruta… y vacunarnos al mismo tiempo."
+  },
+  {
+    "titulo": "La nave que dejó el sistema solar",
+    "descripcion": "En 2012, la sonda Voyager 1 cruzó el límite del sistema solar. Lleva un disco con música, saludos en 55 idiomas… y la esperanza de ser encontrados."
+  },
+  {
+    "titulo": "La tormenta más larga del sistema solar",
+    "descripcion": "La Gran Mancha Roja de Júpiter es una tormenta que lleva más de 350 años activa. En ella cabrían tres Tierras. Un huracán… sin fin."
+  },
+  {
+    "titulo": "El sueño de dormir menos",
+    "descripcion": "Una mutación genética rara permite a algunas personas dormir solo 4 horas sin afectar su salud. El gen DEC2… la llave de un reloj biológico alternativo."
+  }
+]

@@ -1,0 +1,402 @@
+[
+  {
+    "titulo": "Zapata y la tierra que prometió",
+    "descripcion": "Emiliano Zapata no era político, era campesino. En 1910 tomó las armas para exigir tierra y libertad. Su Plan de Ayala pedía devolver las tierras robadas a los pueblos. Fue traicionado y asesinado, pero su grito sigue vivo en cada lucha agraria de México."
+  },
+  {
+    "titulo": "Evita y los descamisados",
+    "descripcion": "Evita Perón no nació en cuna de oro. Desde la radio y el poder, alzó la voz de los olvidados. Con hospitales, hogares y discursos incendiarios, desafió a la oligarquía. Murió joven, pero millones aún lloran a la mujer que hizo del pueblo su causa."
+  },
+  {
+    "titulo": "Allende y el sueño interrumpido",
+    "descripcion": "Salvador Allende quiso construir el socialismo con votos, no balas. En 1973, rodeado por tanques, se negó a rendirse. Su último mensaje fue para el pueblo. Murió en La Moneda, pero su idea de una patria digna aún resuena en las calles de Chile."
+  },
+  {
+    "titulo": "Rigoberta y la voz de los sin voz",
+    "descripcion": "Indígena, mujer, maya quiché. Rigoberta Menchú sobrevivió a la guerra civil en Guatemala y convirtió su dolor en denuncia. Con palabras, no armas, contó al mundo las masacres. Ganó el Nobel, pero sigue luchando como si recién empezara."
+  },
+  {
+    "titulo": "Marielle Franco: balas contra la verdad",
+    "descripcion": "Negra, lesbiana, favelada. Marielle Franco desafió al poder desde el corazón de Río. Denunció abusos policiales… y fue asesinada en 2018. Su muerte desató una ola de furia y memoria. Hoy, su nombre es bandera en cada marcha por justicia."
+  },
+  {
+    "titulo": "Che Guevara y el fuego que cruzó fronteras",
+    "descripcion": "De médico argentino a símbolo mundial de la rebelión. El Che Guevara dejó todo por la revolución. Peleó en Cuba, soñó con liberar África y murió en Bolivia. Su rostro sigue en remeras, pero su legado arde donde alguien se atreve a resistir."
+  },
+  {
+    "titulo": "Túpac Amaru y el grito que estremeció los Andes",
+    "descripcion": "En 1780, Túpac Amaru II se levantó contra el dominio español. Fue descuartizado en Cusco, pero gritó antes de morir: '¡Volveré y seré millones!'. Hoy su nombre revive en cada lucha indígena."
+  },
+  {
+    "titulo": "Berta Cáceres y el río que no se rindió",
+    "descripcion": "Defensora del agua y la tierra, Berta Cáceres frenó la construcción de una hidroeléctrica en Honduras. Fue asesinada por su resistencia, pero su causa fluyó como el río que juró proteger."
+  },
+  {
+    "titulo": "Camilo Cienfuegos, el rebelde del sombrero",
+    "descripcion": "Junto a Fidel y el Che, Camilo fue clave en la Revolución Cubana. Su desaparición en un avión sigue siendo un misterio. Para muchos, Camilo no murió: se volvió leyenda."
+  },
+  {
+    "titulo": "Lúcio Costa y la ciudad que imaginó el pueblo",
+    "descripcion": "Arquitecto del plan de Brasilia, Costa soñó con una ciudad que rompiera jerarquías. Su trazo urbano era una utopía de igualdad… hasta que la realidad la llenó de contrastes sociales."
+  },
+  {
+    "titulo": "Simón Bolívar: libertador de medio continente",
+    "descripcion": "No fue un rebelde, fue un huracán. Bolívar liberó cinco países del yugo español. Murió solo, traicionado por los suyos, pero su espada aún vibra en los anhelos de soberanía."
+  },
+  {
+    "titulo": "Pedro Albizu Campos y la furia boricua",
+    "descripcion": "Líder independentista de Puerto Rico, Albizu Campos fue encarcelado, torturado y silenciado. Pero nunca renegó de su causa. Su espíritu aún arde en la bandera que exige libertad."
+  },
+  {
+    "titulo": "Juana Azurduy y la lanza que no tembló",
+    "descripcion": "Boliviana, mestiza, madre y guerrera. Juana Azurduy lideró batallas por la independencia con su propio ejército. Hoy, su nombre reemplaza estatuas de conquistadores en plazas sudamericanas."
+  },
+  {
+    "titulo": "Oscar Arnulfo Romero y la misa del pueblo",
+    "descripcion": "Arzobispo salvadoreño, denunció la represión desde el púlpito. Lo mataron durante una misa. Pero su voz aún retumba: 'Si me matan, resucitaré en mi pueblo'. Y así fue."
+  },
+  {
+    "titulo": "Lucía Topolansky, la guerrillera que llegó al poder",
+    "descripcion": "Ex Tupamara, prisionera política, compañera de Mujica. Lucía Topolansky pasó de la cárcel al Senado uruguayo. Su historia es prueba de que la rebeldía puede gobernar con dignidad."
+  },
+  {
+    "titulo": "Manuela Sáenz: la libertadora del Libertador",
+    "descripcion": "Amante y aliada de Bolívar, Manuela Sáenz salvó su vida, espió, luchó y fue olvidada por la historia oficial. Hoy, su nombre resurge como símbolo de las mujeres invisibles en la revolución."
+  },
+  {
+    "titulo": "Carlos Fonseca y la semilla sandinista",
+    "descripcion": "Fundador del Frente Sandinista en Nicaragua, Fonseca cayó en combate. Pero su idea germinó en una revolución que cambiaría el destino de su país, por las buenas… o las balas."
+  },
+  {
+    "titulo": "Clara Zetkin del Sur: María Cano",
+    "descripcion": "La 'Flor del trabajo' colombiana, María Cano, lideró huelgas y fundó sindicatos. En un país dominado por élites, fue la voz firme de las obreras y obreros. La callaron, pero no la borraron."
+  },
+  {
+    "titulo": "Luis Espinal, mártir del pueblo boliviano",
+    "descripcion": "Sacerdote jesuita, periodista y activista. Denunció la dictadura y la injusticia. Fue secuestrado y asesinado. Su cuerpo apareció con signos de tortura. Su cruz aún guía a quienes no se rinden."
+  },
+  {
+    "titulo": "José Martí: versos que incendiaron un imperio",
+    "descripcion": "Poeta y patriota cubano, Martí luchó por la independencia desde el exilio. Murió en combate, sin ver la Cuba libre. Pero su pluma fue más letal que un fusil."
+  },
+  {
+    "titulo": "Francisco Villa y la revolución de los de abajo",
+    "descripcion": "Pancho Villa robaba trenes para alimentar pueblos. Campesino, bandido y general, puso en jaque a dictadores y gringos. Hoy su figura cabalga entre el mito y la resistencia popular."
+  },
+  {
+    "titulo": "Lélia Gonzalez: la voz negra de Brasil",
+    "descripcion": "Intelectual, feminista y militante antirracista. Lélia denunció el racismo estructural de Brasil y luchó por los derechos de las mujeres negras. Su legado crece en cada colectivo afrodescendiente."
+  },
+  {
+    "titulo": "Monteagudo, el radical olvidado",
+    "descripcion": "Fue uno de los cerebros de la independencia en el sur. Legalista y rebelde, Monteagudo fue silenciado por los mismos que celebraban la libertad. Pero su pluma sembró revoluciones."
+  },
+  {
+    "titulo": "Rosario Castellanos y la escritura como resistencia",
+    "descripcion": "Poeta, ensayista y embajadora, Castellanos fue una voz feminista antes del tiempo. Habló por las mujeres indígenas de México y convirtió la literatura en un acto político."
+  },
+  {
+    "titulo": "María Teresa Tula y el exilio armado",
+    "descripcion": "Sindicalista salvadoreña, presa y perseguida. Denunció torturas y se exilió. Desde el extranjero, siguió luchando por las trabajadoras como si estuviera en las barricadas."
+  },
+  {
+    "titulo": "Fernando Cardenal, cura rebelde",
+    "descripcion": "Jesuita nicaragüense, integró el gobierno sandinista. Fue expulsado de la orden religiosa por no abandonar la política. Su fe estaba con los pobres, no con el poder eclesiástico."
+  },
+  {
+    "titulo": "Domitila Chungara y la mina que habló",
+    "descripcion": "Hija de mineros bolivianos, lideró huelgas y denunció la dictadura. En un mundo de hombres y pólvora, su voz fue dinamita social. No pidió permiso para ser escuchada."
+  },
+  {
+    "titulo": "Carlos Marighella, el poeta del fusil",
+    "descripcion": "Brasileño, comunista, autor del 'Manual del guerrillero urbano'. Fue cazado por la dictadura. Lo mataron, pero sus palabras aún arman conciencias contra la opresión."
+  },
+  {
+    "titulo": "Vilma Espín, la revolución por dentro",
+    "descripcion": "Comandante guerrillera, ingeniera química, esposa de Raúl Castro. Vilma fundó la Federación de Mujeres Cubanas. Su revolución no fue con fusil, sino con organización y derechos."
+  },
+  {
+    "titulo": "Felipe Varela y la patria grande",
+    "descripcion": "Caudillo argentino, defendió a los pueblos del interior contra Buenos Aires. Soñaba una América Latina unida y federal. Lo vencieron las balas, pero su visión sobrevive en los marginados."
+  },
+  {
+    "titulo": "Gloria Gaitán: hija, memoria y bandera",
+    "descripcion": "Hija del asesinado Jorge Eliécer Gaitán, vivió marcada por la sangre de su padre. Luchó contra el olvido, el imperialismo y las falsas democracias. Su causa: justicia sin amnesia."
+  },
+  {
+    "titulo": "José Carlos Mariátegui y el marxismo andino",
+    "descripcion": "Desde Perú, Mariátegui escribió una revolución con pluma indígena. Adaptó el marxismo al alma andina y propuso un socialismo con raíces propias. Murió joven, pero su obra sigue despertando conciencias."
+  },
+  {
+    "titulo": "Ladina María Felipa y la rebelión de los bordados",
+    "descripcion": "Tejiendo en Chiapas, Felipa escondía mensajes de resistencia en cada prenda. Las mujeres aprendieron a leer hilos como si fueran balas. Su bordado fue grito y su aguja, arma silenciosa."
+  },
+  {
+    "titulo": "Félix Díaz y la revuelta de los olvidados",
+    "descripcion": "Nieto del dictador Porfirio, Félix rompió con la élite y abrazó a los marginados. Luchó por los pueblos originarios de México, pero su historia fue borrada de los libros oficiales."
+  },
+  {
+    "titulo": "Ramona, la comandante del pasamontañas",
+    "descripcion": "Pequeña, indígena, zapatista. La Comandanta Ramona desarmó al poder con su sola presencia en 1994. En un México que la ignoraba, se volvió símbolo de la dignidad rebelde."
+  },
+  {
+    "titulo": "Mauricio Gatti, el uruguayo que combatió el olvido",
+    "descripcion": "Militante tupamaro, fue secuestrado por la dictadura y desaparecido. Su hija Mariana dedicó su vida a buscarlo. Mauricio no volvió, pero su lucha dio origen a una generación sin miedo."
+  },
+  {
+    "titulo": "Eladio Romero, el cantor insurgente",
+    "descripcion": "Con su guitarra en Paraguay, Eladio Romero compuso canciones prohibidas. Su música se volvió clandestina y combativa. La dictadura intentó callarlo, pero su voz aún canta en los barrios."
+  },
+  {
+    "titulo": "Cristina Bautista y las madres que no se rinden",
+    "descripcion": "Líder indígena en Colombia, Cristina fue asesinada por defender su comunidad. 'Si me matan, levantaré los brazos de mil mujeres más', dijo. Hoy, su frase es escudo contra el olvido."
+  },
+  {
+    "titulo": "Gonzalo Guerrero, el español que se volvió maya",
+    "descripcion": "Naufragó en Yucatán y fue capturado. En vez de volver a España, abrazó la cultura maya y luchó contra los conquistadores. Se tatuó el rostro y murió combatiendo por su nueva patria."
+  },
+  {
+    "titulo": "Violeta Parra y la guitarra que lloró revoluciones",
+    "descripcion": "Cantora chilena, recolectora de saberes populares, Violeta usó el arte para incomodar. Con su voz denunció desigualdades y con su vida desafió etiquetas. No pidió perdón por ser volcán."
+  },
+  {
+    "titulo": "María Elena Moyano: la flor contra Sendero",
+    "descripcion": "Activista peruana, denunció tanto al Estado como al terrorismo. Sendero Luminoso la asesinó por su valentía. Su entierro fue multitudinario: la mataron por hablar, pero la hicieron eterna."
+  },
+  {
+    "titulo": "Bartolina Sisa: la aymara que desafió imperios",
+    "descripcion": "Junto a Túpac Katari, sitió La Paz en 1781. Fue capturada y brutalmente ejecutada. Su cuerpo fue despedazado, pero su nombre dio origen a movimientos de mujeres indígenas en toda América."
+  },
+  {
+    "titulo": "Freddy Alborta y la foto que desenmascaró al poder",
+    "descripcion": "Fotógrafo boliviano, capturó el cuerpo del Che muerto. Esa imagen, que pretendía humillar, terminó canonizándolo. Alborta no solo tomó una foto: parió un ícono eterno."
+  },
+  {
+    "titulo": "Marcos Ana, el poeta que sobrevivió a 23 años preso",
+    "descripcion": "Preso político del franquismo, salió libre y abrazó las luchas de América Latina. Con cada poema denunciaba al tirano y abrazaba a los pueblos. Su libertad fue contagiosa."
+  },
+  {
+    "titulo": "Micaela Bastidas, la mártir de la libertad",
+    "descripcion": "Esposa de Túpac Amaru, fue mucho más: estratega, líder, combatiente. Murió ahorcada tras ver morir a su hijo. Su voz de madre rebelde aún sacude los Andes."
+  },
+  {
+    "titulo": "Luis Carlos Prestes, el caballero de la esperanza",
+    "descripcion": "Militar brasileño que se volvió comunista. Encabezó la 'Columna Prestes', cruzando el país para despertar al pueblo. Fue preso, pero nunca traicionó su causa."
+  },
+  {
+    "titulo": "Nora Cortiñas y la ronda que no cesa",
+    "descripcion": "Madre de Plaza de Mayo, Nora camina cada jueves desde 1977. Busca a su hijo desaparecido y, en el camino, se volvió madre de miles. No perdona. No olvida. No se detiene."
+  },
+  {
+    "titulo": "Artigas y la república de los nadies",
+    "descripcion": "Caudillo uruguayo, soñó una confederación federal e igualitaria. Fue traicionado y murió en el exilio. Pero su bandera tricolor sigue ondeando por la dignidad de los pueblos."
+  },
+  {
+    "titulo": "Carmen Gloria Quintana, la joven que ardió por la verdad",
+    "descripcion": "En dictadura chilena, fue quemada viva por militares. Sobrevivió. Su testimonio fue clave para la justicia. Hoy, es símbolo viviente de lo que nunca debe repetirse."
+  },
+  {
+    "titulo": "Rubén Jaramillo, el general de los campesinos",
+    "descripcion": "Campesino mexicano, ex zapatista, fundó un movimiento agrario en Morelos. Fue asesinado junto a su familia. Su lucha por la tierra aún inspira a los sin tierra de América."
+  },
+  {
+    "titulo": "Juan Francisco Manzano, el esclavo que escribió su libertad",
+    "descripcion": "Poeta cubano, nació esclavo. Aprendió a leer y escribir en secreto. Sus memorias son testimonio de la brutalidad colonial. Con palabras, se liberó del olvido."
+  },
+  {
+    "titulo": "Francisca Ramírez y los machetes al sol",
+    "descripcion": "Campesina nicaragüense, lideró protestas contra el canal chino. Su voz y su machete abrieron camino en un país que quiso silenciarla. Hoy, es símbolo de lucha agraria."
+  },
+  {
+    "titulo": "Ana González y el silencio que denunció a Pinochet",
+    "descripcion": "Chilena, perdió a su esposo, dos hijos y una nuera. Nunca los encontró. Su voz rompió el miedo en plena dictadura. Murió sin justicia, pero dejó semillas de verdad."
+  },
+  {
+    "titulo": "Mario Roberto Santucho y el sueño revolucionario argentino",
+    "descripcion": "Fundador del ERP, creyó en una revolución socialista a sangre y fuego. Lo mataron en 1976. Su nombre aún divide aguas, pero nadie puede negar que ardía por transformar todo."
+  },
+  {
+    "titulo": "Herminia Brumana y la pluma feminista",
+    "descripcion": "Maestra y escritora argentina, denunció la opresión patriarcal en pleno siglo XX. Con humor y fuego, puso al machismo contra las cuerdas. La nombran pocas veces, pero está en todas partes."
+  },
+  {
+    "titulo": "Alcides Peña y el agua como trinchera",
+    "descripcion": "Líder indígena guaraní, defendió las fuentes de agua en Bolivia contra multinacionales. Fue criminalizado, perseguido y golpeado. Pero no se vendió. Su causa sigue fluyendo."
+  },
+  {
+    "titulo": "José Ignacio Rucci y el poder obrero que incomodaba",
+    "descripcion": "Dirigente sindical peronista, fue asesinado en 1973. Su figura encarna las tensiones entre el sindicalismo tradicional y la juventud revolucionaria. Su muerte marcó el comienzo de una era sangrienta."
+  },
+  {
+    "titulo": "Clodomiro Almeyda y la dignidad en el exilio",
+    "descripcion": "Ministro de Allende, se negó a aceptar la dictadura. En prisión y exiliado, nunca renunció a sus ideales. Regresó a Chile con la frente en alto, sin pedir perdón por resistir."
+  },
+  {
+    "titulo": "Leila Khaled y la solidaridad sin fronteras",
+    "descripcion": "Combatiente palestina, encontró eco en militantes latinoamericanos que vieron en su causa un espejo de sus propias luchas. Su rostro con kufiya cruzó océanos como emblema de resistencia."
+  },
+  {
+    "titulo": "Miguel Enríquez y la rebelión sin concesiones",
+    "descripcion": "Fundador del MIR chileno, rechazó los pactos y abrazó la lucha armada. Murió acribillado en 1974. Su nombre vive en las pintadas de quienes aún sueñan con revolución total."
+  },
+  {
+    "titulo": "Azucena Villaflor, la madre que parió una ronda",
+    "descripcion": "Fundadora de Madres de Plaza de Mayo, fue secuestrada por buscar a su hijo desaparecido. Su cuerpo apareció en la costa. Pero su ronda sigue girando cada jueves, sin pausa ni olvido."
+  },
+  {
+    "titulo": "José 'Pepe' Mujica, del calabozo a la presidencia",
+    "descripcion": "Pasó más de una década preso por ser tupamaro. Salió, pidió perdón, pero no permiso. Gobernó con humildad y filosofía. Su vida es lección viviente de resistencia sin rencor."
+  },
+  {
+    "titulo": "Salvador Puig Antich, ejecutado por Franco y recordado por América",
+    "descripcion": "Catalán, anarquista, su ejecución en garrote conmovió a militantes latinoamericanos. En muchas paredes de Buenos Aires y Santiago su nombre aún arde como un llamado a la memoria."
+  },
+  {
+    "titulo": "Rodolfo Walsh y la carta que desafió a la dictadura",
+    "descripcion": "Escritor, periodista, guerrillero. Su 'Carta Abierta a la Junta Militar' fue un acto suicida de dignidad. La envió… y desapareció. Hoy, esa carta se lee como testamento de la verdad."
+  },
+  {
+    "titulo": "Laura Chinchilla y la política con rostro propio",
+    "descripcion": "Primera presidenta de Costa Rica, enfrentó con firmeza la violencia de género y la corrupción. No fue perfecta, pero rompió techos de cristal y puso el cuerpo donde pocos lo hacen."
+  },
+  {
+    "titulo": "Carlos Pizarro y la metamorfosis del fusil",
+    "descripcion": "Comandante del M-19 colombiano, firmó la paz y dejó las armas para postularse a presidente. Lo asesinaron en campaña. Su rostro aún grita desde los muros: otra Colombia era posible."
+  },
+  {
+    "titulo": "Stella Calloni, la periodista que desenterró dictaduras",
+    "descripcion": "Investigadora argentina, narró el Plan Cóndor como pocos. Desenmascaró redes de represión que cruzaban fronteras. Su pluma es más temida que muchas balas."
+  },
+  {
+    "titulo": "Aracely Leuquén y la lucha desde adentro",
+    "descripcion": "Primera diputada mapuche en Chile. Desde un parlamento históricamente blanco, habló de tierra, identidad y racismo. Su presencia sola fue una afrenta al orden establecido."
+  },
+  {
+    "titulo": "Pedro Lemebel y el grito queer en dictadura",
+    "descripcion": "Escritor y performer chileno, homosexual, pobre y furioso. Enfrentó a la dictadura y a la izquierda homofóbica con tacones, pluma y fuego. Su crónica es herida y estandarte."
+  },
+  {
+    "titulo": "José Martí y la isla que lo soñó libre",
+    "descripcion": "Mucho antes de la Revolución Cubana, Martí sembró la idea de una Cuba soberana. Murió combatiendo, pero sus versos se volvieron bandera. Su voz aún guía a quienes no se rinden."
+  },
+  {
+    "titulo": "Cristina Calderón, la última yámana",
+    "descripcion": "Fue la última hablante del idioma yámana. Con ella se fue una lengua, pero no una cultura. Dedicó sus últimos años a enseñar, resistir el olvido y contar que aún existimos."
+  },
+  {
+    "titulo": "Victoria Donda, hija de desaparecidos, diputada del pueblo",
+    "descripcion": "Nacida en un centro clandestino, recuperó su identidad y la convirtió en lucha. Desde el Congreso argentino, alzó la voz por derechos humanos, aborto legal y memoria viva."
+  },
+  {
+    "titulo": "Hugo Blanco y la tierra para quien la trabaja",
+    "descripcion": "Campesino y trotskista peruano, organizó tomas de tierra en Cusco. Fue perseguido, preso y exiliado. Su vida es testimonio de que la revolución también se siembra."
+  },
+  {
+    "titulo": "Mujeres de Calama y la tierra como archivo",
+    "descripcion": "En Chile, estas mujeres buscaron a sus desaparecidos escarbando el desierto. No encontraron cuerpos, pero sí verdad. La arena guarda sus huellas y su rabia."
+  },
+  {
+    "titulo": "Raúl Sendic y la utopía de los nadies",
+    "descripcion": "Fundador de los Tupamaros uruguayos, soñó con una revolución para los olvidados. Fue torturado, aislado, pero jamás traicionó sus ideas. Murió pobre, pero entero."
+  },
+  {
+    "titulo": "Isabel Allende Bussi y la herencia de fuego",
+    "descripcion": "Hija del presidente derrocado, senadora de Chile. No heredó el poder, heredó la causa. Su nombre pesa, pero su lucha no se apoya en la sombra ajena. Camina con luz propia."
+  },
+  {
+    "titulo": "Francisco Bojórquez y la radio insurgente",
+    "descripcion": "Desde las montañas de Chiapas, Francisco emitía en una radio clandestina zapatista. Su voz cruzaba selvas y muros. Para muchos, fue el primer contacto con la verdad."
+  },
+  {
+    "titulo": "Flora Tristán, feminista antes del tiempo",
+    "descripcion": "Mitad peruana, mitad francesa, escribió sobre la opresión de las mujeres y de los trabajadores. Fue ignorada por su época, pero hoy es madre de todas las luchas interseccionales."
+  },
+  {
+    "titulo": "José María Arguedas y la escritura con alma quechua",
+    "descripcion": "Peruano, bilingüe desde niño, escribió en castellano para que el mundo escuche al mundo andino. Su obra no traduce, transmite. Su pluma aún tiembla entre cerros."
+  },
+  {
+    "titulo": "Teresa Rodríguez y la llama de Neuquén",
+    "descripcion": "Maestra argentina asesinada durante una represión policial en 1997. Su muerte encendió al país. Cada marcha docente lleva su nombre como escudo de tiza y fuego."
+  },
+  {
+    "titulo": "Lidia Gueiler, la voz firme en medio del golpe",
+    "descripcion": "Primera presidenta de Bolivia, asumió en plena crisis. Enfrentó a militares, machismo y traiciones. Fue derrocada, pero su coraje abrió paso a otras mujeres en el poder."
+  },
+  {
+    "titulo": "Rafael Cancel Miranda, el boricua que desafió al imperio",
+    "descripcion": "Disparó en el Congreso de EE.UU. por la independencia de Puerto Rico. Pasó décadas preso. Nunca pidió perdón. Murió libre, en su tierra, como quiso."
+  },
+  {
+    "titulo": "Delia Zapata Olivella y el baile como rebelión",
+    "descripcion": "Rescató las danzas afrocolombianas que el racismo quiso borrar. Su cuerpo fue archivo y resistencia. Cada paso era memoria, cada giro, desafío."
+  },
+  {
+    "titulo": "Marcos Ana, el poeta que no se quebró",
+    "descripcion": "Estuvo preso 23 años en España por ser comunista. Al salir, abrazó las luchas de América Latina. Su poesía sigue ardiendo como prueba de que la dignidad sobrevive al encierro."
+  },
+  {
+    "titulo": "Gladys Marín, la comunista que no se rindió",
+    "descripcion": "Chilena, diputada, perseguida. Perdió familia en la dictadura, pero jamás abandonó la lucha. Su tumba es santuario de quienes aún creen que otro Chile es posible."
+  },
+  {
+    "titulo": "Marcelo Quiroga Santa Cruz, la voz que incomodó al poder",
+    "descripcion": "Diputado boliviano, denunció corrupción y crímenes de Estado. Fue secuestrado en un golpe y nunca apareció. Su legado aún retumba en el Congreso que no pudo callarlo."
+  },
+  {
+    "titulo": "Diana Sacayán y el DNI que hizo historia",
+    "descripcion": "Activista travesti argentina, logró que el Estado reconociera su identidad. Fue asesinada en un crimen de odio, pero dejó una ley que lleva su nombre y una revolución imparable."
+  },
+  {
+    "titulo": "Benito Juárez y la reforma contra gigantes",
+    "descripcion": "Indígena zapoteca, presidente de México. Enfrentó al clero, al imperio y al racismo. Su frase lo resume todo: 'El respeto al derecho ajeno es la paz'."
+  },
+  {
+    "titulo": "María Pía Devoto y las bombas nucleares",
+    "descripcion": "Desde Argentina, lideró campañas globales contra el armamento nuclear. No tenía ejércitos, solo argumentos. Hoy representa al Sur Global donde muchos aún callan."
+  },
+  {
+    "titulo": "Pablo Milanés y la canción como trinchera",
+    "descripcion": "Desde la Nueva Trova Cubana, cantó al amor y a la revolución. Apoyó, criticó, y nunca se fue. Su guitarra fue puente entre generaciones que aún creen en el cambio."
+  },
+  {
+    "titulo": "Luis Felipe Noé y el arte como disidencia",
+    "descripcion": "Pintor argentino, rompió con las formas para retratar el caos político. Su obra incomodó dictaduras y mercados. Su pincel sigue lanzando preguntas, no respuestas."
+  },
+  {
+    "titulo": "Amparo Carvajal y la vigilia infinita",
+    "descripcion": "Defensora de derechos humanos en Bolivia. A los 80 años acampó semanas frente a oficinas estatales. Su edad es su escudo; su dignidad, un muro contra el abuso."
+  },
+  {
+    "titulo": "Víctor Jara, la guitarra que no pudieron callar",
+    "descripcion": "Cantautor chileno, lo mataron por cantar. Le rompieron las manos, pero no su mensaje. Hoy su voz sigue sonando donde alguien resiste con arte y memoria."
+  },
+  {
+    "titulo": "Mercedes Sosa, la voz de los sin voz",
+    "descripcion": "La Negra cantó a los pobres, a los exiliados, a los olvidados. Fue silenciada por la dictadura, pero su canto cruzó fronteras. Aún retumba como un eco de justicia."
+  },
+  {
+    "titulo": "Julio López, el testigo que volvió a desaparecer",
+    "descripcion": "Sobreviviente de la dictadura argentina, desapareció en democracia tras declarar contra un represor. Su ausencia es un grito: el horror no terminó, solo cambió de rostro."
+  },
+  {
+    "titulo": "Mónica Baltodano, comandante sin permiso",
+    "descripcion": "Ex guerrillera nicaragüense, se rebeló contra la dictadura… y luego contra sus propios compañeros devenidos en autoritarios. Su ética nunca se rindió al poder."
+  },
+  {
+    "titulo": "Ángela Davis en los Andes",
+    "descripcion": "Inspiró a feministas afrodescendientes de América Latina. Su figura cruzó continentes, y su mensaje encontró eco en mujeres que luchan por su derecho a existir sin pedir permiso."
+  },
+  {
+    "titulo": "Emilia Ferreiro y el derecho a leer",
+    "descripcion": "Psicóloga argentina que revolucionó la enseñanza de la lectoescritura en América Latina. Para ella, aprender era un acto de emancipación. Su legado alfabetizó rebeldías."
+  },
+  {
+    "titulo": "Manuel Quintín Lame, el cacique de la palabra",
+    "descripcion": "Indígena nasa, defendió derechos ancestrales en Colombia a comienzos del siglo XX. Fundó un movimiento que aún inspira. Escribía cartas con la dignidad como tinta."
+  },
+  {
+    "titulo": "Hebe de Bonafini, la madre incómoda",
+    "descripcion": "Co-fundadora de Madres de Plaza de Mayo. Amada y odiada, jamás pidió permiso para decir lo que pensaba. Su pañuelo blanco fue, y sigue siendo, una trinchera."
+  }
+]
