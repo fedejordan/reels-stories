@@ -44,7 +44,7 @@ SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
 MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
-
+SUBTITLE_AS_IMAGE = True
 
 
 def sanitize_filename(text):
@@ -315,7 +315,7 @@ def unir_audios_fragmentados(audio_dir, num_fragmentos):
     print(f"✅ Audio final generado: {os.path.join(audio_dir, 'cuento_completo.mp3')}")
 
 
-def download_music(query, output_path=None, max_duration_sec=600):
+def download_music(output_path=None, max_duration_sec=600):
     music_dir = os.path.join("assets", "music")
     if not os.path.exists(music_dir):
         print("❌ No se encontró la carpeta de música local.")
@@ -330,6 +330,8 @@ def download_music(query, output_path=None, max_duration_sec=600):
     ruta_completa = os.path.join(music_dir, seleccionada)
     print(f"🎵 Música seleccionada: {ruta_completa}")
     return ruta_completa
+
+    return temp_path
 
 def crear_subtitulo_como_imagen(texto, width, fontsize=36):
     # Crear imagen base
@@ -368,6 +370,7 @@ def crear_subtitulo_como_imagen(texto, width, fontsize=36):
     img.save(temp_path)
     return temp_path
 
+
 def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, output_path):
     clips = []
 
@@ -388,13 +391,33 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
         # Texto del fragmento correspondiente
         texto_subtitulo = textos[idx - 1]["texto"]
 
-        # Crear clip con subtítulo
-        subtitle_path = crear_subtitulo_como_imagen(texto_subtitulo, FINAL_WIDTH)
-        subtitle = (
-            ImageClip(subtitle_path)
-            .set_duration(dur)
-            .set_position(("center", FINAL_HEIGHT * 0.75))
-        )
+        if SUBTITLE_AS_IMAGE:
+            subtitle_path = crear_subtitulo_como_imagen(texto_subtitulo, FINAL_WIDTH)
+            subtitle = (
+                ImageClip(subtitle_path)
+                .set_duration(dur)
+                .set_position(("center", FINAL_HEIGHT * 0.75))  # 70% desde arriba
+            )
+        else:      
+            # Crear clip con subtítulo
+            subtitle_clip = TextClip(
+                texto_subtitulo,
+                fontsize=36,
+                font="Arial-Bold",
+                color='white',
+                method='caption',
+                align='center',
+                size=(int(FINAL_WIDTH * 0.7), None)
+            )
+
+            subtitle_w, subtitle_h = subtitle_clip.size
+
+            subtitle = (
+                subtitle_clip
+                .on_color(size=(FINAL_WIDTH, subtitle_h), color=(0, 0, 0), col_opacity=0.5)
+                .set_duration(dur)
+                .set_position(("center", FINAL_HEIGHT * 0.75))  # 70% desde arriba
+            )
 
         # Zoom centrado (resize + crop para evitar bordes negros)
         zoom = lambda t: zoom_factor_start + (zoom_factor_end - zoom_factor_start) * (t / dur)
@@ -433,7 +456,7 @@ def generar_video_desde_story_id(story_id):
     story_dir = os.path.join(OUTPUT_DIR, story_id)
     image_dir = os.path.join(story_dir, "images")
     audio_dir = os.path.join(story_dir, "audios")
-    musica_path = os.path.join(story_dir, "music.mp3")
+    musica_path = download_music()
     narracion_path = os.path.join(audio_dir, "cuento_completo.mp3")
     json_path = os.path.join(story_dir, "story.json")
     final_video_path = os.path.join(story_dir, "video.mp4")
@@ -475,9 +498,13 @@ if __name__ == "__main__":
         help="Archivo JSON con las ideas base"
     )
 
+    parser.add_argument("--story-id", type=str, help="ID de la historia generada (carpeta dentro de stories/)")
+    parser.add_argument("--mode", type=str, default="video", help="Modo de ejecución: imagenes | audios | video | musica | juntar-audios")
+
     args = parser.parse_args()
     IDEAS_FILE = args.ideas_file
-    sys.argv = [sys.argv[0]]
+    story_id = args.story_id
+    modo = args.mode
 
 
     reintento = 0
@@ -485,13 +512,11 @@ if __name__ == "__main__":
     if MODO_ANIMADO:
         client_wan = Client("multimodalart/wan2-1-fast")  # carga remota correcta
 
-    if len(sys.argv) >= 2:
-        story_id = sys.argv[1]
-        modo = sys.argv[2] if len(sys.argv) > 2 else "video"  # default = generar video
+    if story_id:
         print(f"📂 Usando historia ya generada: {story_id}")
         story_dir = os.path.join(OUTPUT_DIR, story_id)
         json_path = os.path.join(story_dir, "story.json")
-
+        print(f"📄 Leyendo JSON desde: {json_path}")
         if not os.path.exists(json_path):
             print("❌ No se encontró story.json")
             exit(1)
