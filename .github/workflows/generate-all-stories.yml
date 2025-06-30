@@ -1,0 +1,84 @@
+name: Generar Historias en Paralelo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generar-reel:
+    name: 📽️ Generar Reel - ${{ matrix.ideas_file }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ideas_file:
+          - general-history.json
+          - argentina-football-players.json
+          - cinema-legends.json
+          - dark-history.json
+          - decisions-that-changed-everything.json
+          - hidden-figures.json
+          - inventions-that-changed-the-world.json
+          - latin-american-rebels.json
+          - music-legends.json
+          - olympic-heroes.json
+          - scientific-breakthroughs.json
+          - women-who-changed-history.json
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: 📥 Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: 🐍 Instalar dependencias
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ffmpeg imagemagick zip libjpeg-dev zlib1g-dev libpng-dev libfreetype6-dev liblcms2-dev libopenjp2-7-dev libtiff-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk
+        python -m pip install --upgrade pip
+        PIP_PREFER_BINARY=1 python -m pip install --no-cache-dir -r requirements.txt
+
+    - name: 🔐 Cargar variables de entorno
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      run: |
+        echo "HF_TOKEN=${HF_TOKEN}" >> .env
+        echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" >> .env
+        echo "ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}" >> .env
+
+    - name: 🧠 Ejecutar generación de historia
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      run: |
+        python main.py --ideas-file "${{ matrix.ideas_file }}" --subtitle-as-image
+
+    - name: 🔎 Detectar story_id generado
+      id: detectar
+      run: |
+        STORY_ID=$(ls -td stories/* | head -n 1 | xargs -n1 basename)
+        echo "story_id=${STORY_ID}" >> $GITHUB_OUTPUT
+        echo "ZIP_NAME=story-${STORY_ID}__${{ matrix.ideas_file }}" >> $GITHUB_ENV
+
+    - name: ✍️ Generar descripción TikTok
+      run: |
+        python generar-descripcion-tiktok.py ${{ steps.detectar.outputs.story_id }}
+
+    - name: 📦 Empaquetar archivos
+      run: |
+        mkdir -p package_${{ steps.detectar.outputs.story_id }}
+        cp "stories/${{ steps.detectar.outputs.story_id }}/video.mp4" package_${{ steps.detectar.outputs.story_id }}/ || true
+        cp "stories/${{ steps.detectar.outputs.story_id }}/tiktok.txt" package_${{ steps.detectar.outputs.story_id }}/ || true
+        cp stories/${{ steps.detectar.outputs.story_id }}/images/*.png package_${{ steps.detectar.outputs.story_id }}/ || true
+        echo "ideas_file_used=${{ matrix.ideas_file }}" > package_${{ steps.detectar.outputs.story_id }}/info.txt
+        zip -r "$ZIP_NAME.zip" "package_${{ steps.detectar.outputs.story_id }}"
+
+    - name: ⬆️ Subir ZIP final
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ env.ZIP_NAME }}
+        path: ${{ env.ZIP_NAME }}.zip
