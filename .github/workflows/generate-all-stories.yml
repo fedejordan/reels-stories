@@ -62,7 +62,9 @@ jobs:
       run: |
         STORY_ID=$(ls -td stories/* | head -n 1 | xargs -n1 basename)
         echo "story_id=${STORY_ID}" >> $GITHUB_OUTPUT
-        echo "ZIP_NAME=story-${STORY_ID}__${{ matrix.ideas_file }}" >> $GITHUB_ENV
+        BASENAME=$(basename "${{ matrix.ideas_file }}" .json)
+        echo "ZIP_NAME=story-${STORY_ID}__${BASENAME}" >> $GITHUB_ENV
+
 
     - name: ✍️ Generar descripción TikTok
       run: |
