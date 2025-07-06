@@ -43,7 +43,16 @@ MAX_REINTENTOS = 10
 MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 SUBTITLE_AS_IMAGE = False
+USE_GEMINI = False  # Cambiar a True para usar Gemini en vez de DeepSeek
 
+def llamar_a_gemini(prompt):
+    import google.generativeai as genai
+
+    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+    model = genai.GenerativeModel("gemini-pro")
+
+    response = model.generate_content(prompt, stream=False)
+    return response.text
 
 def sanitize_filename(text):
     return re.sub(r'[^a-zA-Z0-9_-]', '_', text).lower()
@@ -84,6 +93,26 @@ Formato de salida:
 {{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}.
 """
 
+def llamar_a_modelo(prompt):
+    if USE_GEMINI:
+        return llamar_a_gemini(prompt)
+    else:
+        headers = {
+            "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+            "Content-Type": "application/json",
+        }
+        payload = {
+            "model": "deepseek-chat",
+            "messages": [
+                {"role": "system", "content": "Sos un guionista experto en reels"},
+                {"role": "user", "content": prompt}
+            ],
+            "temperature": 0.8
+        }
+        response = requests.post(DEEPSEEK_ENDPOINT, headers=headers, json=payload)
+        response.raise_for_status()
+        return response.json()["choices"][0]["message"]["content"]
+        
 def llamar_a_deepseek(prompt):
     headers = {
         "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
@@ -577,7 +606,7 @@ if __name__ == "__main__":
                 idea = elegir_idea()
                 print(f"🧠 Generando historia para: {idea['titulo']}")
                 prompt = generar_prompt(idea)
-                historia_json = extraer_json(llamar_a_deepseek(prompt))
+                historia_json = extraer_json(llamar_a_modelo(prompt))
                 guardar_historia_json(story_dir, idea, historia_json)
 
                 generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
