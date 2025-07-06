@@ -43,7 +43,7 @@ MAX_REINTENTOS = 10
 MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 SUBTITLE_AS_IMAGE = False
-USE_GEMINI = False  # Cambiar a True para usar Gemini en vez de DeepSeek
+USE_GEMINI = True  # Cambiar a True para usar Gemini en vez de DeepSeek
 
 def llamar_a_gemini(prompt):
     import google.generativeai as genai
