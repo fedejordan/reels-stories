@@ -49,7 +49,7 @@ def llamar_a_gemini(prompt):
     import google.generativeai as genai
 
     genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("models/gemini-pro")
 
     response = model.generate_content(prompt, stream=False)
     return response.text
