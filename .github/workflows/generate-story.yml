@@ -49,10 +49,12 @@ jobs:
         HF_TOKEN: ${{ secrets.HF_TOKEN }}
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        GEMINI_API_KEY: ${{ secreta.GEMINI_API_KEY }}
       run: |
         echo "HF_TOKEN=${HF_TOKEN}" >> .env
         echo "DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}" >> .env
         echo "ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY}" >> .env
+        echo "GEMINI_API_KEY=${GEMINI_API_KEY}" >> .env
 
     - name: 🧠 Ejecutar generación completa o por ID
       env:
