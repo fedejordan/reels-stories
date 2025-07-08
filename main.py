@@ -22,6 +22,8 @@ from moviepy.editor import VideoFileClip
 import argparse
 from requests.exceptions import Timeout
 from PIL import ImageDraw, ImageFont
+import signal
+import google.generativeai as genai
 
 # === CONFIGURACIÓN ===
 load_dotenv()
@@ -45,14 +47,37 @@ SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 SUBTITLE_AS_IMAGE = False
 USE_GEMINI = True  # Cambiar a True para usar Gemini en vez de DeepSeek
 
-def llamar_a_gemini(prompt):
-    import google.generativeai as genai
+def timeout_handler(signum, frame):
+    raise TimeoutError("Llamado a Gemini excedió el tiempo máximo permitido.")
 
-    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-    model = genai.GenerativeModel("models/gemini-pro")
+def llamar_a_gemini(prompt, model="gemini-pro"):
+    api_key = os.getenv("GEMINI_API_KEY")
+    genai.configure(api_key=api_key)
+    client = genai.Client(api_key=api_key)
 
-    response = model.generate_content(prompt, stream=False)
-    return response.text
+    max_attempts = 3
+    attempt = 0
+
+    # Setear handler de timeout
+    signal.signal(signal.SIGALRM, timeout_handler)
+
+    while attempt < max_attempts:
+        try:
+            attempt += 1
+            signal.alarm(60)  # 60 segundos de timeout
+
+            response = client.models.generate_content(
+                model=model,
+                contents=[{"role": "user", "parts": [prompt]}]
+            )
+
+            signal.alarm(0)  # Desactivar alarma
+
+            return response.candidates[0].content.parts[0].text  # ⚠️ Asumiendo estructura típica
+        except Exception as e:
+            print(f"⚠️ Error al llamar a Gemini (intento {attempt}): {e}")
+            if attempt == max_attempts:
+                raise
 
 def sanitize_filename(text):
     return re.sub(r'[^a-zA-Z0-9_-]', '_', text).lower()
