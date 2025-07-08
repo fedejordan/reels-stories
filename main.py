@@ -22,6 +22,8 @@ from moviepy.editor import VideoFileClip
 import argparse
 from requests.exceptions import Timeout
 from PIL import ImageDraw, ImageFont
+import signal
+from google import genai
 
 # === CONFIGURACIÓN ===
 load_dotenv()
@@ -43,7 +45,39 @@ MAX_REINTENTOS = 10
 MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 SUBTITLE_AS_IMAGE = False
+USE_GEMINI = True  # Cambiar a True para usar Gemini en vez de DeepSeek
 
+def timeout_handler(signum, frame):
+    raise TimeoutError("Llamado a Gemini excedió el tiempo máximo permitido.")
+
+def llamar_a_gemini(prompt, model="gemini-pro"):
+    api_key = os.getenv("GEMINI_API_KEY")
+    genai.configure(api_key=api_key)
+    client = genai.Client(api_key=api_key)
+
+    max_attempts = 3
+    attempt = 0
+
+    # Setear handler de timeout
+    signal.signal(signal.SIGALRM, timeout_handler)
+
+    while attempt < max_attempts:
+        try:
+            attempt += 1
+            signal.alarm(60)  # 60 segundos de timeout
+
+            response = client.models.generate_content(
+                model=model,
+                contents=[{"role": "user", "parts": [prompt]}]
+            )
+
+            signal.alarm(0)  # Desactivar alarma
+
+            return response.candidates[0].content.parts[0].text  # ⚠️ Asumiendo estructura típica
+        except Exception as e:
+            print(f"⚠️ Error al llamar a Gemini (intento {attempt}): {e}")
+            if attempt == max_attempts:
+                raise
 
 def sanitize_filename(text):
     return re.sub(r'[^a-zA-Z0-9_-]', '_', text).lower()
@@ -84,6 +118,26 @@ Formato de salida:
 {{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}.
 """
 
+def llamar_a_modelo(prompt):
+    if USE_GEMINI:
+        return llamar_a_gemini(prompt)
+    else:
+        headers = {
+            "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+            "Content-Type": "application/json",
+        }
+        payload = {
+            "model": "deepseek-chat",
+            "messages": [
+                {"role": "system", "content": "Sos un guionista experto en reels"},
+                {"role": "user", "content": prompt}
+            ],
+            "temperature": 0.8
+        }
+        response = requests.post(DEEPSEEK_ENDPOINT, headers=headers, json=payload)
+        response.raise_for_status()
+        return response.json()["choices"][0]["message"]["content"]
+        
 def llamar_a_deepseek(prompt):
     headers = {
         "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
@@ -577,7 +631,7 @@ if __name__ == "__main__":
                 idea = elegir_idea()
                 print(f"🧠 Generando historia para: {idea['titulo']}")
                 prompt = generar_prompt(idea)
-                historia_json = extraer_json(llamar_a_deepseek(prompt))
+                historia_json = extraer_json(llamar_a_modelo(prompt))
                 guardar_historia_json(story_dir, idea, historia_json)
 
                 generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
