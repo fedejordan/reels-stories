@@ -23,7 +23,7 @@ import argparse
 from requests.exceptions import Timeout
 from PIL import ImageDraw, ImageFont
 import signal
-import google.generativeai as genai
+from google import genai
 
 # === CONFIGURACIÓN ===
 load_dotenv()
