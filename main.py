@@ -28,6 +28,9 @@ load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
+OPENAI_API_KEY  = os.getenv("OPENAI_API_KEY")
+SUNO_API_KEY    = os.getenv("SUNO_API_KEY")
+GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY")
 # IDEAS_FILE = "ideas.json"
 # IDEAS_FILE = "real-stories.json"
 # IDEAS_FILE = "argentina-football-players.json"
@@ -37,12 +40,35 @@ OUTPUT_DIR = "stories"
 os.environ["IMAGEMAGICK_BINARY"] = "/opt/homebrew/bin/convert"  # o el path que te dé `which convert`
 FINAL_WIDTH = 1080
 FINAL_HEIGHT = 1920
-client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY"))
 SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
 MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 SUBTITLE_AS_IMAGE = False
+
+# ================================================================
+# PROVIDER CONFIGURATION — cambiar estos valores para switching
+# ================================================================
+
+IMAGE_PROVIDER   = "flux"         # "flux" | "hf-default"
+HF_IMAGE_MODEL   = "black-forest-labs/FLUX.1-dev"
+HF_IMAGE_WIDTH   = 768
+HF_IMAGE_HEIGHT  = 1344           # 9:16 portrait
+
+TTS_PROVIDER     = "elevenlabs"   # "elevenlabs" | "openai" | "gtts"
+ELEVENLABS_VOICE_ID  = "80lPKtzJMPh1vjYMUgwe"
+ELEVENLABS_MODEL_ID  = "eleven_multilingual_v2"
+OPENAI_TTS_MODEL     = "tts-1-hd"
+OPENAI_TTS_VOICE     = "onyx"
+
+MUSIC_PROVIDER   = "local"        # "suno" | "local" | "ytdlp"
+SUNO_POLL_INTERVAL = 5
+SUNO_MAX_WAIT      = 300
+
+LLM_PROVIDER     = "deepseek"     # "deepseek" | "openai" | "gemini"
+DEEPSEEK_MODEL   = "deepseek-chat"
+OPENAI_LLM_MODEL = "gpt-4o"
+GEMINI_MODEL     = "gemini-2.0-flash"
 
 
 def sanitize_filename(text):
@@ -73,7 +99,7 @@ El video debe tener estos elementos:
    - Indicá tipo de plano (general, primer plano, detalle).
    - Todas deben compartir un estilo visual coherente y representativo de la época histórica.
 
-3. `audio`: nombre exacto de una pieza instrumental real (sin letra), disponible en YouTube, que intensifique el tono narrativo del video. Puede ser épico, melancólico, intrigante o inspirador según el caso.
+3. `audio`: {"descripción del estilo/mood musical para generación automática, ej: 'instrumental épico cinematográfico, estilo Hans Zimmer'" if MUSIC_PROVIDER == "suno" else "nombre exacto de una pieza instrumental real (sin letra), disponible en YouTube, que intensifique el tono narrativo del video. Puede ser épico, melancólico, intrigante o inspirador según el caso."}
 
 ⚠️ Agregá un campo `contexto_visual_global` con detalles sobre:
 - Estética cinematográfica (películas, series o documentales que inspiren el estilo visual)
@@ -84,13 +110,13 @@ Formato de salida:
 {{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}.
 """
 
-def llamar_a_deepseek(prompt):
+def _llm_deepseek(prompt):
     headers = {
         "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
         "Content-Type": "application/json",
     }
     payload = {
-        "model": "deepseek-chat",
+        "model": DEEPSEEK_MODEL,
         "messages": [
             {"role": "system", "content": "Sos un guionista experto en reels"},
             {"role": "user", "content": prompt}
@@ -100,6 +126,39 @@ def llamar_a_deepseek(prompt):
     response = requests.post(DEEPSEEK_ENDPOINT, headers=headers, json=payload)
     response.raise_for_status()
     return response.json()["choices"][0]["message"]["content"]
+
+def _llm_openai(prompt):
+    import openai
+    oa_client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    response = oa_client.chat.completions.create(
+        model=OPENAI_LLM_MODEL,
+        messages=[
+            {"role": "system", "content": "Sos un guionista experto en reels"},
+            {"role": "user", "content": prompt},
+        ],
+        temperature=0.8,
+    )
+    return response.choices[0].message.content
+
+def _llm_gemini(prompt):
+    from google import genai as google_genai
+    gc = google_genai.Client(api_key=GEMINI_API_KEY)
+    response = gc.models.generate_content(model=GEMINI_MODEL, contents=prompt)
+    return response.text
+
+def llamar_llm(prompt):
+    if LLM_PROVIDER == "deepseek":
+        return _llm_deepseek(prompt)
+    elif LLM_PROVIDER == "openai":
+        return _llm_openai(prompt)
+    elif LLM_PROVIDER == "gemini":
+        return _llm_gemini(prompt)
+    else:
+        raise ValueError(f"Unknown LLM_PROVIDER: {LLM_PROVIDER}")
+
+# Backwards compat alias
+def llamar_a_deepseek(prompt):
+    return _llm_deepseek(prompt)
 
 def extraer_json(respuesta):
     inicio = respuesta.find("{")
@@ -185,9 +244,25 @@ def animar_imagen(input_image_path, prompt, output_video_path, duracion):
 
 
 
+def _build_hf_image_client():
+    if IMAGE_PROVIDER == "flux":
+        return InferenceClient(model=HF_IMAGE_MODEL, token=HF_TOKEN, provider="black-forest-labs")
+    return InferenceClient(token=HF_TOKEN)
+
+def _generate_single_image(hf_client, prompt):
+    if IMAGE_PROVIDER == "flux":
+        return hf_client.text_to_image(
+            prompt,
+            width=HF_IMAGE_WIDTH,
+            height=HF_IMAGE_HEIGHT,
+            num_inference_steps=28,
+            guidance_scale=3.5,
+        )
+    return hf_client.text_to_image(prompt)
+
 def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reintentos=10):
     os.makedirs(image_dir, exist_ok=True)
-    client = InferenceClient(token=HF_TOKEN)
+    hf_client = _build_hf_image_client()
 
     for idx, img in enumerate(imagenes, 1):
         prompt = f"Imagen a dibujar: {img['descripcion']}\n\nContexto: {contexto_visual_global}." if contexto_visual_global else img["descripcion"]
@@ -197,7 +272,7 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
         while intentos < max_reintentos and not exito:
             print(f"🖼️ Generando imagen {idx:03} (intento {intentos + 1}) → {prompt}")
             try:
-                image = client.text_to_image(prompt) #), timeout=300)
+                image = _generate_single_image(hf_client, prompt)
                 img_path = os.path.join(image_dir, f"{idx:03}.png")
                 image.save(img_path)
                 exito = True
@@ -221,8 +296,43 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
 
 
 
-def generar_audios(textos, audio_dir, use_elevenlabs=True):
+def _tts_elevenlabs(text, filename, elevenlabs_client):
+    audio = elevenlabs_client.text_to_speech.convert(
+        voice_id=ELEVENLABS_VOICE_ID,
+        model_id=ELEVENLABS_MODEL_ID,
+        text=text,
+    )
+    with open(filename, "wb") as f:
+        for chunk in audio:
+            f.write(chunk)
+
+def _tts_openai(text, filename):
+    import openai
+    oa_client = openai.OpenAI(api_key=OPENAI_API_KEY)
+    response = oa_client.audio.speech.create(
+        model=OPENAI_TTS_MODEL,
+        voice=OPENAI_TTS_VOICE,
+        input=text,
+    )
+    response.stream_to_file(filename)
+
+def _tts_gtts(text, filename):
+    gTTS(text=text, lang="es").save(filename)
+
+def _sintetizar_texto(text, filename, elevenlabs_client=None):
+    if TTS_PROVIDER == "elevenlabs":
+        _tts_elevenlabs(text, filename, elevenlabs_client)
+    elif TTS_PROVIDER == "openai":
+        _tts_openai(text, filename)
+    elif TTS_PROVIDER == "gtts":
+        _tts_gtts(text, filename)
+    else:
+        raise ValueError(f"Unknown TTS_PROVIDER: {TTS_PROVIDER}")
+
+def generar_audios(textos, audio_dir):
     os.makedirs(audio_dir, exist_ok=True)
+
+    elevenlabs_client = ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY")) if TTS_PROVIDER == "elevenlabs" else None
 
     # Crear un archivo de silencio de 0.5s si no existe
     silencio_path = os.path.join(audio_dir, "silencio.mp3")
@@ -232,38 +342,14 @@ def generar_audios(textos, audio_dir, use_elevenlabs=True):
             "-t", str(SILENCIO_SEGUNDOS), "-q:a", "9", "-acodec", "libmp3lame", silencio_path
         ])
 
-
     audio_files = []
     durations = []
-
-    VOICE_ID = "80lPKtzJMPh1vjYMUgwe"  # o "Bella", "Adam", u otra voz preexistente
 
     for idx, fragmento in enumerate(textos, 1):
         texto = fragmento["texto"]
         filename = os.path.abspath(os.path.join(audio_dir, f"{idx:03}.mp3"))
 
-        if use_elevenlabs:
-            VOICE_ID = "80lPKtzJMPh1vjYMUgwe"
-            audio = client.text_to_speech.convert(
-                voice_id=VOICE_ID,
-                model_id="eleven_multilingual_v2",
-                text=texto
-            )
-            with open(filename, "wb") as f:
-                for chunk in audio:
-                    f.write(chunk)
-
-            # Ralentizar el audio (tempo < 1.0 = más lento)
-            # slow_filename = filename.replace(".mp3", "_slow.mp3")
-            # subprocess.run([
-            #     "ffmpeg", "-i", filename,
-            #     "-filter:a", "atempo=0.9",
-            #     "-y", slow_filename
-            # ])
-            # os.replace(slow_filename, filename)
-
-        else:
-            gTTS(text=texto, lang='es').save(filename)
+        _sintetizar_texto(texto, filename, elevenlabs_client)
 
         audio_files.append(filename)
 
@@ -313,23 +399,102 @@ def unir_audios_fragmentados(audio_dir, num_fragmentos):
     print(f"✅ Audio final generado: {os.path.join(audio_dir, 'cuento_completo.mp3')}")
 
 
-def download_music(output_path=None, max_duration_sec=600):
+def _download_music_local():
     music_dir = os.path.join("assets", "music")
     if not os.path.exists(music_dir):
-        print("❌ No se encontró la carpeta de música local.")
         return None
-
     archivos = [f for f in os.listdir(music_dir) if f.endswith(".mp3")]
     if not archivos:
-        print("❌ No hay archivos .mp3 en la carpeta de música.")
         return None
+    return os.path.join(music_dir, random.choice(archivos))
 
-    seleccionada = random.choice(archivos)
-    ruta_completa = os.path.join(music_dir, seleccionada)
-    print(f"🎵 Música seleccionada: {ruta_completa}")
-    return ruta_completa
+def _download_music_ytdlp(query, output_dir):
+    if not query:
+        print("No query para yt-dlp. Usando música local.")
+        return _download_music_local()
+    os.makedirs(output_dir, exist_ok=True)
+    output_template = os.path.join(output_dir, "music")
+    ydl_opts = {
+        "format": "bestaudio/best",
+        "outtmpl": output_template + ".%(ext)s",
+        "quiet": False,
+        "noplaylist": True,
+        "postprocessors": [{
+            "key": "FFmpegExtractAudio",
+            "preferredcodec": "mp3",
+            "preferredquality": "192",
+        }],
+    }
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.extract_info(f"ytsearch1:{query}", download=True)
+    return output_template + ".mp3"
 
-    return temp_path
+def _download_music_suno(query, output_dir):
+    if not SUNO_API_KEY:
+        print("SUNO_API_KEY no configurado. Usando música local.")
+        return _download_music_local()
+
+    os.makedirs(output_dir, exist_ok=True)
+    headers = {
+        "Authorization": f"Bearer {SUNO_API_KEY}",
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "prompt": query,
+        "make_instrumental": True,
+        "wait_audio": False,
+    }
+    try:
+        resp = requests.post(
+            "https://studio-api.suno.ai/api/generate/v2/",
+            headers=headers, json=payload, timeout=30,
+        )
+        resp.raise_for_status()
+        songs = resp.json()
+        clip_id = songs[0]["id"]
+    except Exception as e:
+        print(f"Error al iniciar generación en Suno: {e}. Usando música local.")
+        return _download_music_local()
+
+    deadline = time.time() + SUNO_MAX_WAIT
+    audio_url = None
+    while time.time() < deadline:
+        try:
+            check = requests.get(
+                f"https://studio-api.suno.ai/api/feed/?ids={clip_id}",
+                headers=headers, timeout=15,
+            )
+            check.raise_for_status()
+            item = check.json()[0]
+            if item["status"] == "complete":
+                audio_url = item["audio_url"]
+                break
+        except Exception as e:
+            print(f"Error al consultar estado en Suno: {e}")
+        time.sleep(SUNO_POLL_INTERVAL)
+
+    if not audio_url:
+        print("Suno generación excedió el tiempo límite. Usando música local.")
+        return _download_music_local()
+
+    output_path = os.path.join(output_dir, "music.mp3")
+    try:
+        audio_data = requests.get(audio_url, timeout=60)
+        audio_data.raise_for_status()
+        with open(output_path, "wb") as f:
+            f.write(audio_data.content)
+        return output_path
+    except Exception as e:
+        print(f"Error al descargar audio de Suno: {e}. Usando música local.")
+        return _download_music_local()
+
+def download_music(query=None, output_dir=None):
+    if MUSIC_PROVIDER == "suno":
+        return _download_music_suno(query, output_dir)
+    elif MUSIC_PROVIDER == "ytdlp":
+        return _download_music_ytdlp(query, output_dir)
+    else:
+        return _download_music_local()
 
 def crear_subtitulo_como_imagen(texto, width, fontsize=36):
     # Crear imagen base
@@ -454,12 +619,11 @@ def generar_video_desde_story_id(story_id):
     story_dir = os.path.join(OUTPUT_DIR, story_id)
     image_dir = os.path.join(story_dir, "images")
     audio_dir = os.path.join(story_dir, "audios")
-    musica_path = download_music()
     narracion_path = os.path.join(audio_dir, "cuento_completo.mp3")
     json_path = os.path.join(story_dir, "story.json")
     final_video_path = os.path.join(story_dir, "video.mp4")
 
-    if not all(os.path.exists(p) for p in [image_dir, audio_dir, musica_path, narracion_path, json_path]):
+    if not all(os.path.exists(p) for p in [image_dir, audio_dir, narracion_path, json_path]):
         print("❌ Faltan archivos requeridos. Verificá que estén generadas las imágenes, audio, música y JSON.")
         return
 
@@ -467,6 +631,12 @@ def generar_video_desde_story_id(story_id):
         historia_json = json.load(f)
 
     textos = historia_json["textos"]
+
+    musica_path = download_music(historia_json.get("audio"), os.path.join(story_dir, "music"))
+
+    if not musica_path or not os.path.exists(musica_path):
+        print("❌ No se pudo obtener música válida. Abortando.")
+        return
 
     # Calcular los tiempos de entrada y duración exactos de cada fragmento
     fragment_paths = [os.path.join(audio_dir, f"{idx:03}.mp3") for idx in range(1, len(textos) + 1)]
@@ -539,7 +709,7 @@ if __name__ == "__main__":
             generar_audios(historia_json["textos"], audio_dir)
 
         elif modo == "musica":
-            musica_path = download_music()
+            musica_path = download_music(historia_json.get("audio"), os.path.join(story_dir, "music"))
             if musica_path:
                 print(f"🎵 Música descargada: {musica_path}")
             else:
@@ -577,7 +747,7 @@ if __name__ == "__main__":
                 idea = elegir_idea()
                 print(f"🧠 Generando historia para: {idea['titulo']}")
                 prompt = generar_prompt(idea)
-                historia_json = extraer_json(llamar_a_deepseek(prompt))
+                historia_json = extraer_json(llamar_llm(prompt))
                 guardar_historia_json(story_dir, idea, historia_json)
 
                 generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))

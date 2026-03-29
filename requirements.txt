@@ -7,3 +7,5 @@ yt-dlp==2025.6.9
 requests==2.32.4
 elevenlabs==2.5.0
 gradio_client==1.10.3
+openai>=1.30.0
+google-genai>=1.21.1
