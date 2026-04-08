@@ -8,6 +8,10 @@ from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 from PIL import Image
 from gtts import gTTS
+
+if not hasattr(Image, "ANTIALIAS"):
+    Image.ANTIALIAS = Image.Resampling.LANCZOS
+
 from moviepy.editor import *
 import yt_dlp
 import requests
@@ -50,8 +54,8 @@ SUBTITLE_AS_IMAGE = False
 # PROVIDER CONFIGURATION — cambiar estos valores para switching
 # ================================================================
 
-IMAGE_PROVIDER   = "flux"         # "flux" | "hf-default"
-HF_IMAGE_MODEL   = "black-forest-labs/FLUX.1-dev"
+IMAGE_PROVIDER   = "hf-default"   # "flux" | "hf-default"
+HF_IMAGE_MODEL   = "black-forest-labs/FLUX.1-schnell"
 HF_IMAGE_WIDTH   = 768
 HF_IMAGE_HEIGHT  = 1344           # 9:16 portrait
 
@@ -247,7 +251,7 @@ def animar_imagen(input_image_path, prompt, output_video_path, duracion):
 def _build_hf_image_client():
     if IMAGE_PROVIDER == "flux":
         return InferenceClient(model=HF_IMAGE_MODEL, token=HF_TOKEN, provider="black-forest-labs")
-    return InferenceClient(token=HF_TOKEN)
+    return InferenceClient(model=HF_IMAGE_MODEL, token=HF_TOKEN)
 
 def _generate_single_image(hf_client, prompt):
     if IMAGE_PROVIDER == "flux":
