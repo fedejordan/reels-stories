@@ -6,6 +6,7 @@ import random
 import subprocess
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
+from huggingface_hub import login
 from PIL import Image
 from gtts import gTTS
 
@@ -30,11 +31,15 @@ from PIL import ImageDraw, ImageFont
 # === CONFIGURACIÓN ===
 load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")
+login(token=HF_TOKEN)
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 DEEPSEEK_ENDPOINT = "https://api.deepseek.com/v1/chat/completions"
 OPENAI_API_KEY  = os.getenv("OPENAI_API_KEY")
 SUNO_API_KEY    = os.getenv("SUNO_API_KEY")
 GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY")
+HIGGSFIELD_KEY_ID     = os.getenv("HIGGSFIELD_KEY_ID")
+HIGGSFIELD_KEY_SECRET = os.getenv("HIGGSFIELD_KEY_SECRET")
+REPLICATE_API_TOKEN   = os.getenv("REPLICATE_API_TOKEN")
 # IDEAS_FILE = "ideas.json"
 # IDEAS_FILE = "real-stories.json"
 # IDEAS_FILE = "argentina-football-players.json"
@@ -46,7 +51,7 @@ FINAL_WIDTH = 1080
 FINAL_HEIGHT = 1920
 SILENCIO_SEGUNDOS = 0.5
 MAX_REINTENTOS = 10
-MODO_ANIMADO = False  # Cambiar a False para usar imágenes estáticas
+MODO_ANIMADO = True  # Cambiar a False para usar imágenes estáticas
 SHOULD_INCLUDE_SUBTITLES = True  # Cambiar a False si no se quieren subtítulos
 SUBTITLE_AS_IMAGE = False
 
@@ -73,6 +78,14 @@ LLM_PROVIDER     = "deepseek"     # "deepseek" | "openai" | "gemini"
 DEEPSEEK_MODEL   = "deepseek-chat"
 OPENAI_LLM_MODEL = "gpt-4o"
 GEMINI_MODEL     = "gemini-2.0-flash"
+
+VIDEO_PROVIDER        = "replicate-seedance"  # "gradio" | "higgsfield" | "replicate-seedance"  (usado solo si MODO_ANIMADO=True)
+HIGGSFIELD_VIDEO_MODEL = "dop-standard"       # "dop-standard" | "dop-preview" | "kling" | "seedance"
+REPLICATE_SEEDANCE_MODEL    = "bytedance/seedance-2.0-fast"  # "bytedance/seedance-1.5-pro" | "bytedance/seedance-2.0-fast"
+# REPLICATE_SEEDANCE_DURATION ya no se usa — la duración viene del audio real (clampeada a [2,12]s)
+REPLICATE_SEEDANCE_FPS      = 24
+REPLICATE_SEEDANCE_RESOLUTION = "480p"        # "480p" | "720p" | "1080p" (solo seedance-2.0+)
+REPLICATE_SEEDANCE_MODE     = "t2v"           # "i2v" (imagen→video) | "t2v" (texto→video, más barato)
 
 
 def sanitize_filename(text):
@@ -200,6 +213,10 @@ def prepare_image_dimensions(input_path, base_height=512):
 
 def ralentizar_video(input_path, duracion_objetivo, output_path):
     clip = VideoFileClip(input_path)
+    if duracion_objetivo <= 0 or clip.duration <= 0:
+        clip.close()
+        import shutil; shutil.copy(input_path, output_path)
+        return
     velocidad = clip.duration / duracion_objetivo
     if velocidad > 0:
         clip_ralentizado = clip.fx(vfx.speedx, factor=velocidad)
@@ -208,7 +225,181 @@ def ralentizar_video(input_path, duracion_objetivo, output_path):
         clip_ralentizado.close()
     clip.close()
     
-def animar_imagen(input_image_path, prompt, output_video_path, duracion):
+def _animar_higgsfield(input_image_path, prompt, output_video_path, duracion):
+    """Anima una imagen usando la API de Higgsfield y ajusta la duración."""
+    import mimetypes
+
+    HIGGSFIELD_BASE = "https://platform.higgsfield.ai"
+    model_to_app = {
+        "dop-standard": "higgsfield-ai/dop/standard",
+        "dop-preview":  "higgsfield-ai/dop/preview",
+        "kling":        "kling-video/v2.1/pro/image-to-video",
+        "seedance":     "bytedance/seedance/v1/pro/image-to-video",
+    }
+    app_id = model_to_app.get(HIGGSFIELD_VIDEO_MODEL, "higgsfield-ai/dop/standard")
+    hf_headers = {
+        "Authorization": f"Key {HIGGSFIELD_KEY_ID}:{HIGGSFIELD_KEY_SECRET}",
+        "Content-Type": "application/json",
+    }
+
+    # 1. Subir imagen
+    print(f"⬆️  Subiendo imagen a Higgsfield: {input_image_path}")
+    content_type = mimetypes.guess_type(input_image_path)[0] or "image/png"
+    resp = requests.post(
+        f"{HIGGSFIELD_BASE}/files/generate-upload-url",
+        headers=hf_headers,
+        json={"content_type": content_type},
+        timeout=30,
+    )
+    resp.raise_for_status()
+    urls = resp.json()
+    with open(input_image_path, "rb") as f:
+        requests.put(urls["upload_url"], data=f,
+                     headers={"Content-Type": content_type}, timeout=120).raise_for_status()
+    image_url = urls["public_url"]
+
+    # 2. Enviar job
+    print(f"🎬 Generando video con Higgsfield ({HIGGSFIELD_VIDEO_MODEL})...")
+    payload = {"prompt": prompt, "image_url": image_url}
+    if HIGGSFIELD_VIDEO_MODEL.startswith("dop"):
+        payload.update({"motion_strength": 0.8, "enhance_prompt": True, "check_nsfw": True})
+    resp = requests.post(
+        f"{HIGGSFIELD_BASE}/{app_id}",
+        headers=hf_headers,
+        json=payload,
+        timeout=60,
+    )
+    resp.raise_for_status()
+    request_id = resp.json().get("request_id")
+    if not request_id:
+        raise ValueError(f"Higgsfield no devolvió request_id: {resp.json()}")
+
+    # 3. Polling
+    status_url = f"{HIGGSFIELD_BASE}/requests/{request_id}/status"
+    elapsed = 0
+    while elapsed < 600:
+        status_data = requests.get(status_url, headers=hf_headers, timeout=30).json()
+        status = status_data.get("status", "").lower()
+        print(f"  [{elapsed}s] Higgsfield status: {status}")
+        if status == "completed":
+            break
+        if status in ("failed", "nsfw", "cancelled"):
+            raise RuntimeError(f"Higgsfield falló con status: {status}")
+        time.sleep(5)
+        elapsed += 5
+    else:
+        raise TimeoutError("Higgsfield: tiempo de espera agotado")
+
+    video_url = status_data.get("video", {}).get("url")
+    if not video_url:
+        raise ValueError(f"No hay URL de video en la respuesta: {status_data}")
+
+    # 4. Descargar
+    temp_path = output_video_path.replace(".mp4", "_hf_raw.mp4")
+    print(f"⬇️  Descargando video de Higgsfield...")
+    r = requests.get(video_url, stream=True, timeout=120)
+    r.raise_for_status()
+    with open(temp_path, "wb") as f:
+        for chunk in r.iter_content(8192):
+            f.write(chunk)
+
+    # 5. Ajustar duración
+    ralentizar_video(temp_path, duracion, output_video_path)
+    print(f"✅ Video Higgsfield guardado: {output_video_path}")
+
+
+SEEDANCE_DURATION_MIN = 2
+SEEDANCE_DURATION_MAX = 12
+
+def _animar_replicate_seedance(input_image_path, prompt, output_video_path, duracion):
+    """Genera un clip de video usando Seedance via Replicate.
+
+    Pasa la duración real del audio al API (clampeada a [2, 12]s).
+    Solo ralentiza/acelera si la duración está fuera del rango soportado.
+    """
+    import base64, mimetypes
+
+    REPLICATE_BASE = "https://api.replicate.com/v1"
+    headers = {
+        "Authorization": f"Bearer {REPLICATE_API_TOKEN}",
+        "Content-Type": "application/json",
+    }
+
+    duracion_api = max(SEEDANCE_DURATION_MIN, min(SEEDANCE_DURATION_MAX, round(duracion)))
+    necesita_ajuste = abs(duracion_api - duracion) > 0.1
+
+    input_payload = {
+        "prompt":   prompt,
+        "duration": duracion_api,
+    }
+
+    if REPLICATE_SEEDANCE_MODE == "i2v":
+        print(f"🖼️  Codificando imagen: {input_image_path}")
+        content_type = mimetypes.guess_type(input_image_path)[0] or "image/png"
+        with open(input_image_path, "rb") as f:
+            b64 = base64.b64encode(f.read()).decode("utf-8")
+        input_payload["image"] = f"data:{content_type};base64,{b64}"
+    else:
+        input_payload["aspect_ratio"] = "9:16"
+
+    if "seedance-1.5" in REPLICATE_SEEDANCE_MODEL:
+        input_payload["fps"] = REPLICATE_SEEDANCE_FPS
+    else:
+        input_payload["resolution"] = REPLICATE_SEEDANCE_RESOLUTION
+        input_payload["generate_audio"] = False
+
+    print(f"🎬 Generando video con {REPLICATE_SEEDANCE_MODEL} modo={REPLICATE_SEEDANCE_MODE} ({duracion_api}s → objetivo {duracion:.1f}s)...")
+
+    resp = requests.post(
+        f"{REPLICATE_BASE}/models/{REPLICATE_SEEDANCE_MODEL}/predictions",
+        headers=headers,
+        json={"input": input_payload},
+        timeout=60,
+    )
+    resp.raise_for_status()
+    prediction_id = resp.json().get("id")
+    if not prediction_id:
+        raise ValueError(f"Replicate no devolvió prediction id: {resp.json()}")
+
+    status_url = f"{REPLICATE_BASE}/predictions/{prediction_id}"
+    elapsed = 0
+    while elapsed < 600:
+        data = requests.get(status_url, headers=headers, timeout=30).json()
+        status = data.get("status", "")
+        print(f"  [{elapsed}s] Replicate status: {status}")
+        if status == "succeeded":
+            break
+        if status in ("failed", "canceled"):
+            raise RuntimeError(f"Replicate Seedance falló con status: {status} — {data.get('error')}")
+        time.sleep(5)
+        elapsed += 5
+    else:
+        raise TimeoutError("Replicate Seedance: tiempo de espera agotado")
+
+    output = data.get("output")
+    if not output:
+        raise ValueError(f"No hay output en la respuesta: {data}")
+    video_url = output if isinstance(output, str) else output[0]
+
+    print(f"⬇️  Descargando video de Replicate...")
+    r = requests.get(video_url, stream=True, timeout=120)
+    r.raise_for_status()
+
+    if necesita_ajuste:
+        temp_path = output_video_path.replace(".mp4", "_seedance_raw.mp4")
+        with open(temp_path, "wb") as f:
+            for chunk in r.iter_content(8192):
+                f.write(chunk)
+        ralentizar_video(temp_path, duracion, output_video_path)
+    else:
+        with open(output_video_path, "wb") as f:
+            for chunk in r.iter_content(8192):
+                f.write(chunk)
+
+    print(f"✅ Video Replicate Seedance guardado: {output_video_path}")
+
+
+def animar_imagen2(input_image_path, prompt, output_video_path, duracion):
     try:
         print(f"🎨 Animando imagen {input_image_path} con duración {duracion:.2f}s...")
         resized_img, width, height = prepare_image_dimensions(input_image_path)
@@ -246,6 +437,64 @@ def animar_imagen(input_image_path, prompt, output_video_path, duracion):
     except Exception as e:
         print("❌ Excepción al animar imagen:", e)
 
+def animar_imagen(input_image_path, prompt, output_video_path, duracion):
+    try:
+        if duracion <= 0:
+            duracion = 2.0
+
+        print(f"🎨 Animando imagen {input_image_path} con duración {duracion:.2f}s...")
+        resized_img, width, height = prepare_image_dimensions(input_image_path)
+
+        from gradio_client import handle_file
+        import shutil
+
+        # Este Space requiere input_image y last_image.
+        # Como no tenés una imagen final distinta, por ahora usamos la misma.
+        result = client_wan.predict(
+            input_image=handle_file(resized_img),
+            last_image=handle_file(resized_img),
+            prompt="make this image come alive, cinematic motion, smooth animation",
+            steps=6,
+            negative_prompt=(
+                "Bright tones, overexposed, static, blurred details, subtitles, style, works, paintings, images, "
+                "static, overall gray, worst quality, low quality, JPEG compression residue, ugly, incomplete, "
+                "extra fingers, poorly drawn hands, poorly drawn faces, deformed, disfigured, misshapen limbs, "
+                "fused fingers, still picture, messy background, watermark, text, signature"
+            ),
+            duration_seconds=3.5,
+            guidance_scale=1,
+            guidance_scale_2=1,
+            seed=42,
+            randomize_seed=True,
+            quality=6,
+            scheduler="UniPCMultistep",
+            flow_shift=3.0,
+            frame_multiplier=16,
+            video_component=True,
+            api_name="/generate_video"
+        )
+
+        print("🧪 Resultado raw del Space:", result)
+
+        # Según la firma que mostraste, el retorno es:
+        # (generated_video, download_video, seed)
+        generated_video = result[0]
+
+        if isinstance(generated_video, dict) and "video" in generated_video:
+            video_path = generated_video["video"]
+        else:
+            raise ValueError(f"No pude encontrar generated_video['video'] en la respuesta: {result}")
+
+        temp_path = output_video_path.replace(".mp4", "_original.mp4")
+        shutil.copy(video_path, temp_path)
+        print(f"🎞️ Video base copiado: {temp_path}")
+
+        ralentizar_video(temp_path, duracion, output_video_path)
+        print(f"🐢 Video ralentizado guardado: {output_video_path}")
+
+    except Exception as e:
+        print("❌ Excepción al animar imagen:", e)
+        traceback.print_exc()
 
 
 def _build_hf_image_client():
@@ -264,9 +513,48 @@ def _generate_single_image(hf_client, prompt):
         )
     return hf_client.text_to_image(prompt)
 
-def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reintentos=10):
+def _calcular_duraciones_imagenes(imagenes, audio_dir=None, duracion_default=5.0):
+    """Devuelve duraciones por imagen.
+
+    Si audio_dir existe y tiene los fragmentos .mp3, usa esas duraciones (fuente de verdad).
+    Sino, calcula la diferencia entre timestamps consecutivos del JSON como fallback.
+    """
+    n = len(imagenes)
+
+    if audio_dir and os.path.isdir(audio_dir):
+        fragmentos = sorted([
+            f for f in os.listdir(audio_dir)
+            if f.endswith(".mp3") and not f.startswith("cuento") and not f.startswith("silencio")
+        ])
+        if len(fragmentos) == n:
+            duraciones = []
+            for i, fname in enumerate(fragmentos):
+                clip = AudioFileClip(os.path.join(audio_dir, fname))
+                dur = clip.duration
+                clip.close()
+                if i < n - 1:
+                    dur += SILENCIO_SEGUNDOS
+                duraciones.append(dur)
+            print(f"📐 Duraciones calculadas desde audios: {[f'{d:.1f}s' for d in duraciones]}")
+            return duraciones
+
+    # Fallback: diferencia de timestamps del JSON
+    duraciones = []
+    for i, img in enumerate(imagenes):
+        ms_actual = img.get("milisegundos", 0)
+        if i + 1 < n:
+            ms_siguiente = imagenes[i + 1].get("milisegundos", ms_actual)
+            dur = (ms_siguiente - ms_actual) / 1000.0
+        else:
+            dur = duracion_default
+        duraciones.append(dur if dur > 0 else duracion_default)
+    return duraciones
+
+
+def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reintentos=10, audio_dir=None):
     os.makedirs(image_dir, exist_ok=True)
     hf_client = _build_hf_image_client()
+    duraciones = _calcular_duraciones_imagenes(imagenes, audio_dir=audio_dir)
 
     for idx, img in enumerate(imagenes, 1):
         prompt = f"Imagen a dibujar: {img['descripcion']}\n\nContexto: {contexto_visual_global}." if contexto_visual_global else img["descripcion"]
@@ -283,8 +571,23 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
 
                 if MODO_ANIMADO:
                     anim_path = os.path.join(image_dir, f"{idx:03}.mp4")
-                    duracion = img.get("milisegundos", 2000) / 1000.0
-                    animar_imagen(img_path, prompt, anim_path, duracion)
+                    duracion = duraciones[idx - 1]
+                    try:
+                        if VIDEO_PROVIDER == "higgsfield":
+                            _animar_higgsfield(img_path, prompt, anim_path, duracion)
+                        elif VIDEO_PROVIDER == "replicate-seedance":
+                            if REPLICATE_SEEDANCE_MODE == "t2v":
+                                video_prompt = f"{img['descripcion']}. {contexto_visual_global}" if contexto_visual_global else img["descripcion"]
+                            else:
+                                video_prompt = prompt
+                            _animar_replicate_seedance(img_path, video_prompt, anim_path, duracion)
+                        else:
+                            animar_imagen(img_path, prompt, anim_path, duracion)
+                    except Exception as e:
+                        print(f"⚠️  Falló generación de video {idx:03} ({e}). Usando imagen estática como fallback.")
+                        clip = ImageClip(img_path, duration=duracion).resize(height=FINAL_HEIGHT)
+                        clip.write_videofile(anim_path, fps=24, codec="libx264", audio=False)
+                        clip.close()
             except Timeout:
                 print(f"⚠️ Timeout alcanzado al generar imagen {idx:03}")
             except Exception as e:
@@ -678,18 +981,27 @@ if __name__ == "__main__":
 
     parser.add_argument("--story-id", type=str, help="ID de la historia generada (carpeta dentro de stories/)")
     parser.add_argument("--mode", type=str, default="video", help="Modo de ejecución: imagenes | audios | video | musica | juntar-audios")
+    parser.add_argument("--dev", action="store_true", default=False, help="Modo dev: limita la historia a 4 secciones para probar el flujo rápido")
 
     args = parser.parse_args()
     IDEAS_FILE = "ideas/" + args.ideas_file
     SUBTITLE_AS_IMAGE = args.subtitle_as_image
     story_id = args.story_id
     modo = args.mode
+    DEV_MAX_SECTIONS = 4 if args.dev else None
+
+    if args.dev:
+        print(f"🛠️  Modo dev activo — máximo {DEV_MAX_SECTIONS} secciones")
 
 
     reintento = 0
 
-    if MODO_ANIMADO:
-        client_wan = Client("multimodalart/wan2-1-fast")  # carga remota correcta
+    if MODO_ANIMADO and VIDEO_PROVIDER == "gradio":
+        client_wan = Client(
+            "fedejordan/wan2-2-fp8da-aoti-preview",
+        )
+        # print(client_wan.view_api())
+        # client_wan = Client("multimodalart/wan2-1-fast")  # carga remota correcta
 
     if story_id:
         print(f"📂 Usando historia ya generada: {story_id}")
@@ -702,11 +1014,15 @@ if __name__ == "__main__":
 
         with open(json_path, "r", encoding="utf-8") as f:
             historia_json = json.load(f)
+        if DEV_MAX_SECTIONS:
+            historia_json["textos"]   = historia_json["textos"][:DEV_MAX_SECTIONS]
+            historia_json["imagenes"] = historia_json["imagenes"][:DEV_MAX_SECTIONS]
         textos = historia_json["textos"]
 
         if modo == "imagenes":
             image_dir = os.path.join(story_dir, "images")
-            generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
+            audio_dir = os.path.join(story_dir, "audios")
+            generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"), audio_dir=audio_dir)
 
         elif modo == "audios":
             audio_dir = os.path.join(story_dir, "audios")
@@ -721,6 +1037,20 @@ if __name__ == "__main__":
 
         elif modo == "video":
             generar_video_desde_story_id(story_id)
+
+        elif modo == "ralentizar":
+            image_dir = os.path.join(story_dir, "images")
+            audio_dir = os.path.join(story_dir, "audios")
+            duraciones = _calcular_duraciones_imagenes(historia_json["imagenes"], audio_dir=audio_dir)
+            for idx, duracion in enumerate(duraciones, 1):
+                raw_path = os.path.join(image_dir, f"{idx:03}_seedance_raw.mp4")
+                out_path = os.path.join(image_dir, f"{idx:03}.mp4")
+                if not os.path.exists(raw_path):
+                    print(f"⏭️  Sin raw para imagen {idx:03}, saltando")
+                    continue
+                print(f"🐢 Ralentizando {idx:03}_seedance_raw.mp4 → {duracion:.1f}s")
+                ralentizar_video(raw_path, duracion, out_path)
+                print(f"✅ {idx:03}.mp4 listo")
 
         elif modo == "juntar-audios":
             audio_dir = os.path.join(story_dir, "audios")
@@ -752,15 +1082,19 @@ if __name__ == "__main__":
                 print(f"🧠 Generando historia para: {idea['titulo']}")
                 prompt = generar_prompt(idea)
                 historia_json = extraer_json(llamar_llm(prompt))
+                if DEV_MAX_SECTIONS:
+                    historia_json["textos"]   = historia_json["textos"][:DEV_MAX_SECTIONS]
+                    historia_json["imagenes"] = historia_json["imagenes"][:DEV_MAX_SECTIONS]
                 guardar_historia_json(story_dir, idea, historia_json)
 
-                generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"))
                 narracion_path, duraciones = generar_audios(historia_json["textos"], audio_dir)
                 duraciones_corregidas = []
                 for i, d in enumerate(duraciones):
-                    if i != len(duraciones) - 1:          # silencio entre fragmentos
+                    if i != len(duraciones) - 1:
                         d += SILENCIO_SEGUNDOS
                     duraciones_corregidas.append(d)
+
+                generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"), audio_dir=audio_dir)
 
                 print(f"Duracion imágenes : {sum(duraciones_corregidas):.2f}s")
                 print(f"Duracion audio solo: {AudioFileClip(narracion_path).duration:.2f}s")
