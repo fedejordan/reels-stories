@@ -58,30 +58,58 @@ ELEVENLABS_MODEL_ID = "eleven_multilingual_v2"
 
 DEEPSEEK_MODEL = "deepseek-chat"
 
-REPLICATE_SEEDANCE_MODEL      = "bytedance/seedance-2.0-fast"  # "bytedance/seedance-1.5-pro" | "bytedance/seedance-2.0-fast"
-REPLICATE_SEEDANCE_RESOLUTION = "480p"   # "480p" | "720p" | "1080p"
-REPLICATE_SEEDANCE_MODE       = "t2v"    # "i2v" (imagen→video) | "t2v" (texto→video)
+LLM_PROVIDER = "gemini"  # "deepseek" | "gemini"
+
+GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY")
+GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+GEMINI_MODEL    = "gemini-2.5-pro"
+
+VIDEO_PROVIDER = "seedance"  # "seedance" | "wan"
+
+# Seedance config (solo aplica si VIDEO_PROVIDER = "seedance")
+REPLICATE_SEEDANCE_MODEL      = "bytedance/seedance-1.5-pro"  # "bytedance/seedance-1.5-pro" | "bytedance/seedance-2.0-fast"
+REPLICATE_SEEDANCE_RESOLUTION = "480p"   # solo seedance-2.0-fast: "480p" | "720p" | "1080p"
+REPLICATE_SEEDANCE_MODE       = "t2v"    # "i2v" | "t2v"
+
+# Wan config (solo aplica si VIDEO_PROVIDER = "wan")
+WAN_MODEL      = "wan-video/wan2.6-i2v-flash"
+WAN_RESOLUTION = "720p"   # "720p" | "1080p"
 
 # ── Pricing (USD) ────────────────────────────────────────────────────────────
-DEEPSEEK_PRICE_INPUT_PER_1M  = 0.27   # $ por 1M tokens input
-DEEPSEEK_PRICE_OUTPUT_PER_1M = 1.10   # $ por 1M tokens output
-REPLICATE_PRICE_PER_VIDEO_SEC = 0.07  # $ por segundo de video generado (seedance-2.0-fast 480p t2v)
+DEEPSEEK_PRICE_INPUT_PER_1M  = 0.27
+DEEPSEEK_PRICE_OUTPUT_PER_1M = 1.10
+GEMINI_PRICE_INPUT_PER_1M    = 1.25
+GEMINI_PRICE_OUTPUT_PER_1M   = 10.00
+_PRICE_PER_VIDEO_SEC = {
+    "seedance-1.5-pro":  0.026,
+    "seedance-2.0-fast": 0.070,
+    "wan":               0.018,
+}
 
 # Acumulador de costos — se resetea al inicio de cada run
-_costs = {"deepseek_input_tokens": 0, "deepseek_output_tokens": 0,
+_costs = {"llm_input_tokens": 0, "llm_output_tokens": 0,
           "elevenlabs_chars": 0, "replicate_video_secs": 0}
 
 
 def imprimir_costos():
-    deepseek_usd = (
-        _costs["deepseek_input_tokens"]  / 1_000_000 * DEEPSEEK_PRICE_INPUT_PER_1M +
-        _costs["deepseek_output_tokens"] / 1_000_000 * DEEPSEEK_PRICE_OUTPUT_PER_1M
-    )
-    replicate_usd = _costs["replicate_video_secs"] * REPLICATE_PRICE_PER_VIDEO_SEC
-    total_usd = deepseek_usd + replicate_usd
+    if LLM_PROVIDER == "gemini":
+        llm_usd = (
+            _costs["llm_input_tokens"]  / 1_000_000 * GEMINI_PRICE_INPUT_PER_1M +
+            _costs["llm_output_tokens"] / 1_000_000 * GEMINI_PRICE_OUTPUT_PER_1M
+        )
+        llm_label = "Gemini"
+    else:
+        llm_usd = (
+            _costs["llm_input_tokens"]  / 1_000_000 * DEEPSEEK_PRICE_INPUT_PER_1M +
+            _costs["llm_output_tokens"] / 1_000_000 * DEEPSEEK_PRICE_OUTPUT_PER_1M
+        )
+        llm_label = "DeepSeek"
+    price_key = REPLICATE_SEEDANCE_MODEL if VIDEO_PROVIDER == "seedance" else VIDEO_PROVIDER
+    replicate_usd = _costs["replicate_video_secs"] * _PRICE_PER_VIDEO_SEC.get(price_key, 0.07)
+    total_usd = llm_usd + replicate_usd
     print(f"\n{'─'*50}")
     print(f"💰 Costo estimado del video:")
-    print(f"   DeepSeek   → {_costs['deepseek_input_tokens']:,} input + {_costs['deepseek_output_tokens']:,} output tokens → ${deepseek_usd:.4f}")
+    print(f"   {llm_label:<10} → {_costs['llm_input_tokens']:,} input + {_costs['llm_output_tokens']:,} output tokens → ${llm_usd:.4f}")
     print(f"   ElevenLabs → {_costs['elevenlabs_chars']:,} chars (créditos según tu plan)")
     print(f"   Replicate  → {_costs['replicate_video_secs']:.0f}s video generado → ${replicate_usd:.4f}")
     print(f"   {'─'*30}")
@@ -129,29 +157,38 @@ Output format:
 {{"segments":[{{"milliseconds":0,"text":"..."}}], "images":[{{"milliseconds":0,"description":"..."}}], "audio":"...", "visual_context": "..."}}.
 """
 
-def _llm_deepseek(prompt):
+def _llm_call(endpoint, api_key, model, prompt):
     headers = {
-        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+        "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
     }
     payload = {
-        "model": DEEPSEEK_MODEL,
+        "model": model,
         "messages": [
             {"role": "system", "content": "Sos un guionista experto en reels"},
             {"role": "user", "content": prompt}
         ],
         "temperature": 0.8
     }
-    response = requests.post(DEEPSEEK_ENDPOINT, headers=headers, json=payload)
+    for attempt in range(5):
+        response = requests.post(endpoint, headers=headers, json=payload)
+        if response.status_code == 429:
+            wait = 15 * (attempt + 1)
+            print(f"⏳ Rate limit LLM (429), reintentando en {wait}s...")
+            time.sleep(wait)
+            continue
+        response.raise_for_status()
+        data = response.json()
+        usage = data.get("usage", {})
+        _costs["llm_input_tokens"]  += usage.get("prompt_tokens", 0)
+        _costs["llm_output_tokens"] += usage.get("completion_tokens", 0)
+        return data["choices"][0]["message"]["content"]
     response.raise_for_status()
-    data = response.json()
-    usage = data.get("usage", {})
-    _costs["deepseek_input_tokens"]  += usage.get("prompt_tokens", 0)
-    _costs["deepseek_output_tokens"] += usage.get("completion_tokens", 0)
-    return data["choices"][0]["message"]["content"]
 
 def llamar_llm(prompt):
-    return _llm_deepseek(prompt)
+    if LLM_PROVIDER == "gemini":
+        return _llm_call(GEMINI_ENDPOINT, GEMINI_API_KEY, GEMINI_MODEL, prompt)
+    return _llm_call(DEEPSEEK_ENDPOINT, DEEPSEEK_API_KEY, DEEPSEEK_MODEL, prompt)
 
 def extraer_json(respuesta):
     inicio = respuesta.find("{")
@@ -182,31 +219,55 @@ def ralentizar_video(input_path, duracion_objetivo, output_path):
         clip_ralentizado.close()
     clip.close()
     
-SEEDANCE_DURATION_MIN = 2
-SEEDANCE_DURATION_MAX = 12
+SEEDANCE_DURATION_LIMITS = {
+    "bytedance/seedance-1.5-pro":  (2, 10),
+    "bytedance/seedance-2.0-fast": (4, 15),
+}
+WAN_VALID_DURATIONS   = [2, 5, 10, 15]
 REPLICATE_BASE = "https://api.replicate.com/v1"
+CLIP_TIMEOUT_SECS = 180  # cancela un clip si lleva más de este tiempo sin terminar
+
+def _encode_image_base64(img_path):
+    import base64, mimetypes
+    content_type = mimetypes.guess_type(img_path)[0] or "image/png"
+    with open(img_path, "rb") as f:
+        b64 = base64.b64encode(f.read()).decode("utf-8")
+    return f"data:{content_type};base64,{b64}"
 
 def _build_replicate_input(img_path, prompt, duracion):
-    import base64, mimetypes
-    duracion_api = max(SEEDANCE_DURATION_MIN, min(SEEDANCE_DURATION_MAX, round(duracion)))
-    payload = {"prompt": prompt, "duration": duracion_api}
-    if REPLICATE_SEEDANCE_MODE == "i2v":
-        content_type = mimetypes.guess_type(img_path)[0] or "image/png"
-        with open(img_path, "rb") as f:
-            b64 = base64.b64encode(f.read()).decode("utf-8")
-        payload["image"] = f"data:{content_type};base64,{b64}"
+    if VIDEO_PROVIDER == "wan":
+        duracion_api = min(WAN_VALID_DURATIONS, key=lambda x: abs(x - duracion))
+        payload = {
+            "prompt":        prompt,
+            "image":         _encode_image_base64(img_path),
+            "duration":      duracion_api,
+            "resolution":    WAN_RESOLUTION.lower(),
+            "audio_enabled": False,
+        }
     else:
-        payload["aspect_ratio"] = "9:16"
-    payload["resolution"] = REPLICATE_SEEDANCE_RESOLUTION
-    payload["generate_audio"] = False
+        dur_min, dur_max = SEEDANCE_DURATION_LIMITS.get(REPLICATE_SEEDANCE_MODEL, (4, 15))
+        duracion_api = max(dur_min, min(dur_max, round(duracion)))
+        payload = {"prompt": prompt, "duration": duracion_api}
+        if REPLICATE_SEEDANCE_MODE == "i2v":
+            payload["image"] = _encode_image_base64(img_path)
+        else:
+            payload["aspect_ratio"] = "9:16"
+        if REPLICATE_SEEDANCE_MODEL == "bytedance/seedance-2.0-fast":
+            payload["resolution"] = REPLICATE_SEEDANCE_RESOLUTION
+        payload["generate_audio"] = False
+
     _costs["replicate_video_secs"] += duracion_api
     return payload, duracion_api
+
+
+def _active_model():
+    return WAN_MODEL if VIDEO_PROVIDER == "wan" else REPLICATE_SEEDANCE_MODEL
 
 
 def _submit_replicate_prediction(input_payload):
     headers = {"Authorization": f"Bearer {REPLICATE_API_TOKEN}", "Content-Type": "application/json"}
     resp = requests.post(
-        f"{REPLICATE_BASE}/models/{REPLICATE_SEEDANCE_MODEL}/predictions",
+        f"{REPLICATE_BASE}/models/{_active_model()}/predictions",
         headers=headers, json={"input": input_payload}, timeout=60,
     )
     resp.raise_for_status()
@@ -223,8 +284,18 @@ def _poll_replicate_predictions(jobs):
     pending = dict(jobs)
     results = {}
     elapsed = 0
+    clip_start = {idx: time.time() for idx in pending}
     while pending and elapsed < 600:
         for idx in list(pending.keys()):
+            if time.time() - clip_start[idx] > CLIP_TIMEOUT_SECS:
+                try:
+                    requests.post(f"{REPLICATE_BASE}/predictions/{pending[idx]}/cancel", headers=headers, timeout=10)
+                except Exception:
+                    pass
+                results[idx] = {"error": "timeout", "status": "canceled"}
+                del pending[idx]
+                print(f"  [{elapsed}s] ⏰ Clip {idx:03d} cancelado por timeout ({CLIP_TIMEOUT_SECS}s)")
+                continue
             data = requests.get(f"{REPLICATE_BASE}/predictions/{pending[idx]}", headers=headers, timeout=30).json()
             status = data.get("status", "")
             if status == "succeeded":
@@ -249,7 +320,8 @@ def _download_replicate_result(result, output_path, duracion):
     video_url = output if isinstance(output, str) else output[0]
     r = requests.get(video_url, stream=True, timeout=120)
     r.raise_for_status()
-    duracion_api = max(SEEDANCE_DURATION_MIN, min(SEEDANCE_DURATION_MAX, round(duracion)))
+    dur_min, dur_max = SEEDANCE_DURATION_LIMITS.get(REPLICATE_SEEDANCE_MODEL, (4, 15))
+    duracion_api = max(dur_min, min(dur_max, round(duracion)))
     if abs(duracion_api - duracion) > 0.1:
         temp_path = output_path.replace(".mp4", "_seedance_raw.mp4")
         with open(temp_path, "wb") as f:
@@ -359,17 +431,19 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
         return
 
     # ── Fase 2: enviar todos los jobs a Replicate ────────────────────────────
-    submitted = {}  # {idx: (prediction_id, duracion, img_path)}
+    print(f"🎬 Video provider: {VIDEO_PROVIDER} ({_active_model()})")
+    submitted = {}  # {idx: (prediction_id, duracion, img_path, prompt_bare)}
     for idx, img in enumerate(imagenes, 1):
         if idx not in img_results:
             continue
         img_path, img_prompt = img_results[idx]
         duracion = duraciones[idx - 1]
-        video_prompt = (f"{_desc(img)}. {contexto_visual_global}" if contexto_visual_global else _desc(img)) if REPLICATE_SEEDANCE_MODE == "t2v" else img_prompt
+        prompt_bare = _desc(img)
+        video_prompt = (f"{prompt_bare}. {contexto_visual_global}" if contexto_visual_global else prompt_bare) if REPLICATE_SEEDANCE_MODE == "t2v" else img_prompt
         try:
             input_payload, _ = _build_replicate_input(img_path, video_prompt, duracion)
             pid = _submit_replicate_prediction(input_payload)
-            submitted[idx] = (pid, duracion, img_path)
+            submitted[idx] = (pid, duracion, img_path, prompt_bare)
             print(f"🚀 Job {idx:03} enviado (id={pid[:8]}...)")
         except Exception as e:
             print(f"⚠️ No se pudo enviar job {idx:03}: {e}. Fallback estático.")
@@ -380,14 +454,28 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
 
     # ── Fase 3: polling de todos los jobs juntos ─────────────────────────────
     print(f"\n⏳ Esperando {len(submitted)} clips de Replicate en paralelo...")
-    poll_results = _poll_replicate_predictions({idx: pid for idx, (pid, _, _) in submitted.items()})
+    poll_results = _poll_replicate_predictions({idx: val[0] for idx, val in submitted.items()})
 
-    # ── Fase 4: descargar todos los videos ───────────────────────────────────
-    for idx, (pid, duracion, img_path) in submitted.items():
+    # ── Fase 4: descargar o reintentar con prompt simplificado ───────────────
+    for idx, (pid, duracion, img_path, prompt_bare) in submitted.items():
         anim_path = os.path.join(image_dir, f"{idx:03}.mp4")
         result = poll_results.get(idx, {})
-        if result.get("error"):
-            print(f"⚠️ Clip {idx:03} falló ({result['error']}). Fallback estático.")
+        error = result.get("error", "")
+
+        if error and "E005" in str(error):
+            # Contenido sensible → reintentar solo con descripción visual sin contexto
+            print(f"🔄 Clip {idx:03} bloqueado por contenido sensible, reintentando con prompt simplificado...")
+            try:
+                input_payload, _ = _build_replicate_input(img_path, prompt_bare, duracion)
+                pid2 = _submit_replicate_prediction(input_payload)
+                retry_results = _poll_replicate_predictions({idx: pid2})
+                result = retry_results.get(idx, {})
+                error = result.get("error", "")
+            except Exception as e:
+                error = str(e)
+
+        if error:
+            print(f"⚠️ Clip {idx:03} falló ({error}). Fallback estático.")
             _static_video_fallback(img_path, anim_path, duracion)
         else:
             try:
