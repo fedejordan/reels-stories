@@ -98,33 +98,35 @@ def elegir_idea():
 
 def generar_prompt(idea):
     return f"""
-Quiero que generes un video corto estilo "reel" de 2 minutos, basado en la siguiente historia real sobre una figura histórica célebre:
+Generate a 2-minute short-form video script ("reel") based on the following real historical story:
 
 {idea['descripcion']}
 
-El objetivo es emocionar, sorprender e informar al espectador, manteniendo su atención hasta el final. No debe ser una biografía plana, sino una narrativa poderosa basada en hechos reales, que destaque un momento clave, un dilema, un conflicto o una decisión crucial en la vida de ese personaje.
+The goal is to emotionally engage the viewer, surprise them, and keep their attention until the end. This should not be a flat biography — it must be a powerful narrative based on real facts, highlighting a key moment, dilemma, conflict, or crucial decision in the subject's life.
 
-El video debe tener estos elementos:
+The video must include:
 
-1. `textos`: una lista ordenada de fragmentos narrativos para voz en off. Cada uno con duración (`milisegundos`) y contenido (`texto`). 
-   - El primer fragmento debe captar la atención con una pregunta intrigante, una afirmación inesperada o una situación límite.
-   - El relato debe tener introducción (contexto histórico breve), desarrollo (tensión, dilema, desafío) y un cierre emocional o inspirador.
-   - Mostrá claramente la curva emocional.
-   - IMPORTANTE: El texto debe ser exactamente lo narrado, no incluyas aclaraciones (como indicar silencios, o sonidos de fondo, etc) ya que se leerán y no tendrian sentido al escucharse
+1. `segments`: an ordered list of narration voice-over fragments. Each with `milliseconds` (cumulative timestamp) and `text`.
+   - IMPORTANT: `text` must be written in SPANISH — it will be read aloud as voice-over.
+   - The first segment must hook the viewer with an intriguing question, unexpected claim, or extreme situation.
+   - The narrative must have a clear arc: brief historical context → tension/dilemma/conflict → emotional or inspiring close.
+   - Show a clear emotional curve.
+   - The text must be exactly what is narrated. Do not include stage directions, sound cues, or parenthetical notes — they will be read aloud and will sound wrong.
 
-2. `imagenes`: una lista con descripciones visuales alineadas a cada texto, también con `milisegundos` y `descripcion`.
-   - Indicá tipo de plano (general, primer plano, detalle).
-   - Todas deben compartir un estilo visual coherente y representativo de la época histórica.
+2. `images`: a list of visual descriptions aligned to each segment. Each with `milliseconds` and `description`.
+   - IMPORTANT: `description` must be written in ENGLISH — it will be used directly as an AI image/video generation prompt.
+   - Specify shot type (wide shot, close-up, detail shot).
+   - All images must share a coherent visual style representative of the historical era.
 
-3. `audio`: nombre exacto de una pieza instrumental real (sin letra), disponible en YouTube, que intensifique el tono narrativo del video. Puede ser épico, melancólico, intrigante o inspirador según el caso.
+3. `audio`: exact name of a real instrumental piece (no lyrics), available on YouTube, that intensifies the narrative tone. Can be epic, melancholic, mysterious, or inspiring.
 
-⚠️ Agregá un campo `contexto_visual_global` con detalles sobre:
-- Estética cinematográfica (películas, series o documentales que inspiren el estilo visual)
-- Paleta de colores
-- Iluminación, clima y época histórica representada
+4. `visual_context`: a cinematic style guide for the entire video (in ENGLISH — used as AI generation context).
+   - Cinematographic references (films, series, or documentaries that inspire the visual style)
+   - Color palette
+   - Lighting, atmosphere, and historical era
 
-Formato de salida:
-{{"textos":[{{"milisegundos":0,"texto":"..."}}], "imagenes":[{{"milisegundos":0,"descripcion":"..."}}], "audio":"...", "contexto_visual_global": "..."}}.
+Output format:
+{{"segments":[{{"milliseconds":0,"text":"..."}}], "images":[{{"milliseconds":0,"description":"..."}}], "audio":"...", "visual_context": "..."}}.
 """
 
 def _llm_deepseek(prompt):
@@ -304,9 +306,9 @@ def _calcular_duraciones_imagenes(imagenes, audio_dir=None, duracion_default=5.0
     # Fallback: diferencia de timestamps del JSON
     duraciones = []
     for i, img in enumerate(imagenes):
-        ms_actual = img.get("milisegundos", 0)
+        ms_actual = img.get("milliseconds", 0)
         if i + 1 < n:
-            ms_siguiente = imagenes[i + 1].get("milisegundos", ms_actual)
+            ms_siguiente = imagenes[i + 1].get("milliseconds", ms_actual)
             dur = (ms_siguiente - ms_actual) / 1000.0
         else:
             dur = duracion_default
@@ -325,9 +327,12 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
     hf_client = _build_hf_image_client()
     duraciones = _calcular_duraciones_imagenes(imagenes, audio_dir=audio_dir)
 
+    def _desc(img):
+        return img.get("description") or ""
+
     # ── Fase 1: generar todas las imágenes en paralelo ────────────────────────
     def _gen_image(idx, img):
-        prompt = f"Imagen a dibujar: {img['descripcion']}\n\nContexto: {contexto_visual_global}." if contexto_visual_global else img["descripcion"]
+        prompt = f"{_desc(img)}\n\nContext: {contexto_visual_global}." if contexto_visual_global else _desc(img)
         for intento in range(max_reintentos):
             try:
                 print(f"🖼️ Generando imagen {idx:03} (intento {intento+1})")
@@ -360,7 +365,7 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
             continue
         img_path, img_prompt = img_results[idx]
         duracion = duraciones[idx - 1]
-        video_prompt = (f"{img['descripcion']}. {contexto_visual_global}" if contexto_visual_global else img["descripcion"]) if REPLICATE_SEEDANCE_MODE == "t2v" else img_prompt
+        video_prompt = (f"{_desc(img)}. {contexto_visual_global}" if contexto_visual_global else _desc(img)) if REPLICATE_SEEDANCE_MODE == "t2v" else img_prompt
         try:
             input_payload, _ = _build_replicate_input(img_path, video_prompt, duracion)
             pid = _submit_replicate_prediction(input_payload)
@@ -421,7 +426,7 @@ def generar_audios(textos, audio_dir):
         ])
 
     def _gen_audio(idx, fragmento):
-        texto = fragmento["texto"]
+        texto = fragmento["text"]
         filename = os.path.abspath(os.path.join(audio_dir, f"{idx:03}.mp3"))
         for attempt in range(5):
             try:
@@ -523,7 +528,7 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
         zoom_factor_start = 1.0 if zoom_type == "in" else 1.1
         zoom_factor_end = 1.1 if zoom_type == "in" else 1.0
 
-        texto_subtitulo = textos[idx - 1]["texto"]
+        texto_subtitulo = textos[idx - 1]["text"]
 
         if SHOULD_INCLUDE_SUBTITLES:
             subtitle_clip = TextClip(
@@ -594,7 +599,7 @@ def generar_video_desde_story_id(story_id):
     with open(json_path, "r", encoding="utf-8") as f:
         historia_json = json.load(f)
 
-    textos = historia_json["textos"]
+    textos = historia_json["segments"]
 
     musica_path = download_music()
 
@@ -658,18 +663,18 @@ if __name__ == "__main__":
         with open(json_path, "r", encoding="utf-8") as f:
             historia_json = json.load(f)
         if DEV_MAX_SECTIONS:
-            historia_json["textos"]   = historia_json["textos"][:DEV_MAX_SECTIONS]
-            historia_json["imagenes"] = historia_json["imagenes"][:DEV_MAX_SECTIONS]
-        textos = historia_json["textos"]
+            historia_json["segments"]   = historia_json["segments"][:DEV_MAX_SECTIONS]
+            historia_json["images"] = historia_json["images"][:DEV_MAX_SECTIONS]
+        textos = historia_json["segments"]
 
         if modo == "imagenes":
             image_dir = os.path.join(story_dir, "images")
             audio_dir = os.path.join(story_dir, "audios")
-            generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"), audio_dir=audio_dir)
+            generar_imagenes(historia_json["images"], image_dir, historia_json.get("visual_context"), audio_dir=audio_dir)
 
         elif modo == "audios":
             audio_dir = os.path.join(story_dir, "audios")
-            generar_audios(historia_json["textos"], audio_dir)
+            generar_audios(historia_json["segments"], audio_dir)
 
         elif modo == "musica":
             musica_path = download_music()
@@ -684,7 +689,7 @@ if __name__ == "__main__":
         elif modo == "ralentizar":
             image_dir = os.path.join(story_dir, "images")
             audio_dir = os.path.join(story_dir, "audios")
-            duraciones = _calcular_duraciones_imagenes(historia_json["imagenes"], audio_dir=audio_dir)
+            duraciones = _calcular_duraciones_imagenes(historia_json["images"], audio_dir=audio_dir)
             for idx, duracion in enumerate(duraciones, 1):
                 raw_path = os.path.join(image_dir, f"{idx:03}_seedance_raw.mp4")
                 out_path = os.path.join(image_dir, f"{idx:03}.mp4")
@@ -726,18 +731,18 @@ if __name__ == "__main__":
                 prompt = generar_prompt(idea)
                 historia_json = extraer_json(llamar_llm(prompt))
                 if DEV_MAX_SECTIONS:
-                    historia_json["textos"]   = historia_json["textos"][:DEV_MAX_SECTIONS]
-                    historia_json["imagenes"] = historia_json["imagenes"][:DEV_MAX_SECTIONS]
+                    historia_json["segments"]   = historia_json["segments"][:DEV_MAX_SECTIONS]
+                    historia_json["images"] = historia_json["images"][:DEV_MAX_SECTIONS]
                 guardar_historia_json(story_dir, idea, historia_json)
 
-                narracion_path, duraciones = generar_audios(historia_json["textos"], audio_dir)
+                narracion_path, duraciones = generar_audios(historia_json["segments"], audio_dir)
                 duraciones_corregidas = []
                 for i, d in enumerate(duraciones):
                     if i != len(duraciones) - 1:
                         d += SILENCIO_SEGUNDOS
                     duraciones_corregidas.append(d)
 
-                generar_imagenes(historia_json["imagenes"], image_dir, historia_json.get("contexto_visual_global"), audio_dir=audio_dir)
+                generar_imagenes(historia_json["images"], image_dir, historia_json.get("visual_context"), audio_dir=audio_dir)
 
                 print(f"Duracion imágenes : {sum(duraciones_corregidas):.2f}s")
                 print(f"Duracion audio solo: {AudioFileClip(narracion_path).duration:.2f}s")
@@ -749,7 +754,7 @@ if __name__ == "__main__":
                     exit(1)
 
                 final_video_path = os.path.join(story_dir, "video.mp4")
-                generar_video(historia_json["textos"], duraciones_corregidas, image_dir, narracion_path, musica_path, final_video_path)
+                generar_video(historia_json["segments"], duraciones_corregidas, image_dir, narracion_path, musica_path, final_video_path)
                 print(f"\n🎬 Video final generado: {final_video_path}")
                 imprimir_costos()
                 break
