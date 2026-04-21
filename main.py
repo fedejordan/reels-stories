@@ -62,6 +62,31 @@ REPLICATE_SEEDANCE_MODEL      = "bytedance/seedance-2.0-fast"  # "bytedance/seed
 REPLICATE_SEEDANCE_RESOLUTION = "480p"   # "480p" | "720p" | "1080p"
 REPLICATE_SEEDANCE_MODE       = "t2v"    # "i2v" (imagen→video) | "t2v" (texto→video)
 
+# ── Pricing (USD) ────────────────────────────────────────────────────────────
+DEEPSEEK_PRICE_INPUT_PER_1M  = 0.27   # $ por 1M tokens input
+DEEPSEEK_PRICE_OUTPUT_PER_1M = 1.10   # $ por 1M tokens output
+REPLICATE_PRICE_PER_VIDEO_SEC = 0.07  # $ por segundo de video generado (seedance-2.0-fast 480p t2v)
+
+# Acumulador de costos — se resetea al inicio de cada run
+_costs = {"deepseek_input_tokens": 0, "deepseek_output_tokens": 0,
+          "elevenlabs_chars": 0, "replicate_video_secs": 0}
+
+
+def imprimir_costos():
+    deepseek_usd = (
+        _costs["deepseek_input_tokens"]  / 1_000_000 * DEEPSEEK_PRICE_INPUT_PER_1M +
+        _costs["deepseek_output_tokens"] / 1_000_000 * DEEPSEEK_PRICE_OUTPUT_PER_1M
+    )
+    replicate_usd = _costs["replicate_video_secs"] * REPLICATE_PRICE_PER_VIDEO_SEC
+    total_usd = deepseek_usd + replicate_usd
+    print(f"\n{'─'*50}")
+    print(f"💰 Costo estimado del video:")
+    print(f"   DeepSeek   → {_costs['deepseek_input_tokens']:,} input + {_costs['deepseek_output_tokens']:,} output tokens → ${deepseek_usd:.4f}")
+    print(f"   ElevenLabs → {_costs['elevenlabs_chars']:,} chars (créditos según tu plan)")
+    print(f"   Replicate  → {_costs['replicate_video_secs']:.0f}s video generado → ${replicate_usd:.4f}")
+    print(f"   {'─'*30}")
+    print(f"   Total USD  → ${total_usd:.4f}")
+    print(f"{'─'*50}\n")
 
 def sanitize_filename(text):
     return re.sub(r'[^a-zA-Z0-9_-]', '_', text).lower()
@@ -117,7 +142,11 @@ def _llm_deepseek(prompt):
     }
     response = requests.post(DEEPSEEK_ENDPOINT, headers=headers, json=payload)
     response.raise_for_status()
-    return response.json()["choices"][0]["message"]["content"]
+    data = response.json()
+    usage = data.get("usage", {})
+    _costs["deepseek_input_tokens"]  += usage.get("prompt_tokens", 0)
+    _costs["deepseek_output_tokens"] += usage.get("completion_tokens", 0)
+    return data["choices"][0]["message"]["content"]
 
 def llamar_llm(prompt):
     return _llm_deepseek(prompt)
@@ -168,6 +197,7 @@ def _build_replicate_input(img_path, prompt, duracion):
         payload["aspect_ratio"] = "9:16"
     payload["resolution"] = REPLICATE_SEEDANCE_RESOLUTION
     payload["generate_audio"] = False
+    _costs["replicate_video_secs"] += duracion_api
     return payload, duracion_api
 
 
@@ -376,6 +406,7 @@ def _tts_elevenlabs(text, filename, elevenlabs_client):
     with open(filename, "wb") as f:
         for chunk in audio:
             f.write(chunk)
+    _costs["elevenlabs_chars"] += len(text)
 
 def generar_audios(textos, audio_dir):
     os.makedirs(audio_dir, exist_ok=True)
@@ -720,6 +751,7 @@ if __name__ == "__main__":
                 final_video_path = os.path.join(story_dir, "video.mp4")
                 generar_video(historia_json["textos"], duraciones_corregidas, image_dir, narracion_path, musica_path, final_video_path)
                 print(f"\n🎬 Video final generado: {final_video_path}")
+                imprimir_costos()
                 break
 
             except Exception as e:
