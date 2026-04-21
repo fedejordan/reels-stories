@@ -351,8 +351,8 @@ def generar_imagenes(imagenes, image_dir, contexto_visual_global=None, max_reint
     for idx, (pid, duracion, img_path) in submitted.items():
         anim_path = os.path.join(image_dir, f"{idx:03}.mp4")
         result = poll_results.get(idx, {})
-        if "error" in result:
-            print(f"⚠️ Clip {idx:03} falló. Fallback estático.")
+        if result.get("error"):
+            print(f"⚠️ Clip {idx:03} falló ({result['error']}). Fallback estático.")
             _static_video_fallback(img_path, anim_path, duracion)
         else:
             try:
@@ -470,23 +470,28 @@ def download_music():
     return _download_music_local()
 
 def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, output_path):
+    print(f"\n🎬 Ensamblando video — {len(duraciones)} clips, {sum(duraciones):.1f}s total")
     clips = []
 
     for idx, dur in enumerate(duraciones, 1):
         if MODO_ANIMADO:
             video_path = os.path.join(image_dir, f"{idx:03}.mp4")
-            base_clip = VideoFileClip(video_path).subclip(0, dur).resize(height=1920)
+            if not os.path.exists(video_path):
+                raise FileNotFoundError(f"Clip {idx:03}.mp4 no encontrado en {image_dir}")
+            vc = VideoFileClip(video_path)
+            print(f"  🎞️  Clip {idx:03} — archivo: {video_path} | duración archivo: {vc.duration:.2f}s | duración objetivo: {dur:.2f}s")
+            base_clip = vc.subclip(0, min(dur, vc.duration)).resize(height=1920)
         else:
             img_path = os.path.join(image_dir, f"{idx:03}.png")
+            if not os.path.exists(img_path):
+                raise FileNotFoundError(f"Imagen {idx:03}.png no encontrada en {image_dir}")
+            print(f"  🖼️  Clip {idx:03} — imagen estática | duración: {dur:.2f}s")
             base_clip = ImageClip(img_path, duration=dur).resize(height=1920).fadein(0.2).fadeout(0.2)
 
-
-        # Zoom aleatorio: in (acercar) o out (alejar)
-        zoom_type = "in" #random.choice(["in", "out"])
+        zoom_type = "in"
         zoom_factor_start = 1.0 if zoom_type == "in" else 1.1
         zoom_factor_end = 1.1 if zoom_type == "in" else 1.0
 
-        # Texto del fragmento correspondiente
         texto_subtitulo = textos[idx - 1]["texto"]
 
         if SHOULD_INCLUDE_SUBTITLES:
@@ -506,13 +511,11 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
                 subtitle_clip
                 .on_color(size=(FINAL_WIDTH, subtitle_h), color=(0, 0, 0), col_opacity=0.5)
                 .set_duration(dur)
-                .set_position(("center", FINAL_HEIGHT * 0.75))  # 70% desde arriba
+                .set_position(("center", FINAL_HEIGHT * 0.75))
             )
 
-        # Zoom centrado (resize + crop para evitar bordes negros)
         zoom = lambda t: zoom_factor_start + (zoom_factor_end - zoom_factor_start) * (t / dur)
 
-        # Escalamos y centramos para mantener movimiento y relación 9:16
         animated_clip = (
             base_clip
             .resize(lambda t: zoom(t))
@@ -525,20 +528,23 @@ def generar_video(textos, duraciones, image_dir, narracion_path, musica_path, ou
         )
 
         composed = CompositeVideoClip([animated_clip, subtitle]) if SHOULD_INCLUDE_SUBTITLES else animated_clip
-
         clips.append(composed)
+        print(f"  ✅ Clip {idx:03} listo para ensamblar")
 
+    print(f"\n🔗 Concatenando {len(clips)} clips...")
     video = concatenate_videoclips(clips, method="compose")
+    print(f"   Video concatenado: {video.duration:.2f}s")
 
+    print(f"🎵 Cargando audio — narración: {narracion_path} | música: {musica_path}")
     audio_narracion = AudioFileClip(narracion_path)
     audio_musica = AudioFileClip(musica_path).volumex(0.2)
+    print(f"   Narración: {audio_narracion.duration:.2f}s | Música: {audio_musica.duration:.2f}s")
     audio_musica = audio_musica.subclip(0, min(audio_narracion.duration, audio_musica.duration))
 
-    # Combinar audio
     audio_final = CompositeAudioClip([audio_musica, audio_narracion])
     video_final = video.set_audio(audio_final)
 
-    # Exportar video
+    print(f"💾 Exportando video → {output_path}")
     video_final.write_videofile(output_path, fps=24, codec='libx264', audio_codec='aac')
 
 
